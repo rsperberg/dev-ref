@@ -36,7 +36,7 @@
   margin: 0 !important;
   outline: 0 !important;
   overflow: visible !important;
-  padding: 0 !important;
+  padding: 2pt 0pt 2pt 0pt !important;
   position: static !important;
   right: auto !important;
   text-align: left !important;
@@ -51,6 +51,7 @@
   min-height: inherit !important;
   min-height: auto !important;
 }
+
 
 .syntaxhighlighter {
   width: 100% !important;
