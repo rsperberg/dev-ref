@@ -545,8 +545,8 @@
     the expression using the <code class="cerise">{{   }}</code> notation. Here is an example:
 </p>
 
-<pre class="brush: js; html-script: true; tab-size: 3">&lt;div ng-controller="MyController" &gt;
-    &lt;span&gt;<b>{{myData.text}}</b>&lt;/span&gt;
+<pre class="brush: js; html-script: true; tab-size: 3; highlight: 2">&lt;div ng-controller="MyController" &gt;
+    &lt;span&gt;{{myData.text}}&lt;/span&gt;
 &lt;/div&gt;
 </pre>
 
@@ -596,7 +596,7 @@
     want AngularJS to insert data into. Here is an example:
 </p>
 
-<pre class="brush: js; html-script: true; tab-size: 3">&lt;div ng-controller="MyController" &gt;
+<pre class="brush: js; html-script: true; tab-size: 3; highlight: 2">&lt;div ng-controller="MyController" &gt;
   &lt;span ng-bind="myData.textf()"&gt;&lt;/span&gt;
 &lt;/div&gt;
 </pre>
@@ -631,7 +631,7 @@
     like this:
 </p>
 
-<pre class="brush: js; html-script: true; tab-size: 3">&lt;div ng-controller="MyController" &gt;
+<pre class="brush: js; html-script: true; tab-size: 3; highlight: 2">&lt;div ng-controller="MyController" &gt;
   &lt;span ng-bind-html-unsafe="myData.textf()"&gt;&lt;/span&gt;
 &lt;/div&gt;
 </pre>
@@ -663,7 +663,7 @@
 </p>
 
 
-<pre class="brush: js; html-script: true; tab-size: 3">  &lt;div ng-controller="MyController" &gt;
+<pre class="brush: js; html-script: true; tab-size: 3; highlight: [2, 3]">  &lt;div ng-controller="MyController" &gt;
       &lt;span ng-show="myData.showIt"&gt;&lt;/span&gt;
       &lt;span ng-hide="myData.showIt"&gt;&lt;/span&gt;
   &lt;/div&gt;
@@ -693,7 +693,7 @@
 
 <p>
     The HTML elements (<code class="keyword">span</code> elements in this case) are hidden using the CSS property <code class="azure">display: none;</code>.
-    That means, that the HTML elements are still present in the DOM. They are just not visible.
+    That means that the HTML elements are still present in the DOM. They are just not visible.
 </p>
 
 
@@ -706,7 +706,7 @@
     on data in the model. Here is an example:
 </p>
 
-<pre class="brush: js; html-script: true; tab-size: 3">&lt;div ng-controller="MyController" &gt;
+<pre class="brush: js; html-script: true; tab-size: 3; highlight: [3, 4]">&lt;div ng-controller="MyController" &gt;
     &lt;div ng-switch on="myData.switch"&gt;
         &lt;div ng-switch-when="1"&gt;Shown when switch is 1&lt;/div&gt;
         &lt;div ng-switch-when="2"&gt;Shown when switch is 2&lt;/div&gt;
@@ -735,18 +735,18 @@
     two nested <code class="keyword">div</code> elements contains an <code class="ang">ng-switch-when</code> attribute. The
     value of this attribute tells what value the model data referenced in the <code class="azure">on</code> attribute of
     the parent <code class="keyword">div</code> should have, for the nested <code class="keyword">div</code> to be visible. In this
-    example the first nested <code class="keyword">div</code> is visible when <code class="cerise">myData.switch</code> is 1, and the
-    second nested <code class="keyword">div</code> is visible when <code class="cerise">myData.switch</code> is 2.
+    example the first nested <code class="keyword">div</code> is visible when <code class="cerise">myData.switch</code> is <code>1</code>code>, and the
+    second nested <code class="keyword">div</code> is visible when <code class="cerise">myData.switch</code> is <code>2</code>.
 </p>
 
 <p>
-    The <code>third</code> nested <code class="keyword">div</code> has an <code class="ang">ng-switch-default</code> attribute.
-    If no of the other <code class="ang">ng-switch-when</code> directives are matched, then the <code class="keyword">div</code>
+    The <em>third</em> nested <code class="keyword">div</code> has an <code class="ang">ng-switch-default</code> attribute.
+    If neither of the other <code class="ang">ng-switch-when</code> directives are matched, then the <code class="keyword">div</code>
     with the <code class="ang">ng-switch-default</code> attribute is shown.
 </p>
 
 <p>
-    In the example above the controller function sets <code class="cerise">myData.switch</code> to 3. That means
+    In the example above the controller function sets <code class="cerise">myData.switch</code> to <code>3</code>. That means
     that the nested <code class="keyword">div</code> with the <code class="ang">ng-switch-default</code> attribute will be shown.
     The two other nested <code class="keyword">div</code> elements will be removed from the DOM completely.
 </p>
@@ -761,7 +761,7 @@
 </p>
 
 
-<pre class="brush: js; html-script: true; tab-size: 3">&lt;div ng-controller="MyController" &gt;
+<pre class="brush: js; html-script: true; tab-size: 3; highlight: 2">&lt;div ng-controller="MyController" &gt;
     &lt;div ng-if="myData.showIt"&gt;ng-if Show it&lt;/div&gt;
 &lt;/div&gt;
 
@@ -789,7 +789,7 @@
     the view's HTML template. Here is an example:
 </p>
 
-<pre class="brush: js; html-script: true; tab-size: 3">&lt;div ng-controller="MyController" &gt;
+<pre class="brush: js; html-script: true; tab-size: 3; highlight: 2">&lt;div ng-controller="MyController" &gt;
     &lt;div ng-include="'angular-included-fragment.html'"&gt;&lt;/div&gt;
 &lt;/div&gt;
 </pre>
@@ -841,7 +841,7 @@
     Here is a simple <code class="ang">ng-repeat</code> example:
 </p>
 
-<pre class="brush: js; html-script: true; tab-size: 3">&lt;ol&gt;
+<pre class="brush: js; html-script: true; tab-size: 3; highlight: 2">&lt;ol&gt;
    &lt;li ng-repeat="theItem in myData.items"&gt;{{theItem.text}}&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -862,7 +862,7 @@
     You can also iterate over collections returned from a function call. Here is an example:
 </p>
 
-<pre class="brush: js; html-script: true; tab-size: 3">&lt;ol&gt;
+<pre class="brush: js; html-script: true; tab-size: 3; highlight: 2">&lt;ol&gt;
    &lt;li ng-repeat="theItem in myData.getItems()"&gt;{{theItem.text}}&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -883,7 +883,7 @@
 
 
 
-<pre class="brush: js; html-script: true; tab-size: 3">&lt;ol&gt;
+<pre class="brush: js; html-script: true; tab-size: 3; highlight: 2">&lt;ol&gt;
    &lt;li ng-repeat="(name, value) in myData.myObject"&gt;{{name}} = {{value}}&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -917,10 +917,10 @@
 </p>
 
 <ul>
-    <li>$index</li>
-    <li>$first</li>
-    <li>$middle</li>
-    <li>$last</li>
+    <li><code class="keyword">$index</code></li>
+    <li><code class="keyword">$first</code></li>
+    <li><code class="keyword">$middle</code></li>
+    <li><code class="keyword">$last</code></li>
 </ul>
 
 <p>
@@ -928,9 +928,9 @@
 </p>
 
 <p>
-    The <code class="keyword">$first</code>, <code class="keyword">$middle</code> and <code class="keyword">$last</code> contain a boolean
+    The <code class="keyword">$first</code>, <code class="keyword">$middle</code> and <code class="keyword">$last</code> variables contain a boolean
     value depending on whether the current item is the first, middle or last element
-    in the collection being iterated. An item is "middle" if it is not first nor last. You can use these variables to generate different
+    in the collection being iterated. An item is "middle" if it is neither first nor last. You can use these variables to generate different
     HTML using e.g. the <code class="ang">ng-show</code> / <code class="ang">ng-hide</code>, <code class="ang">ng-switch</code>,
     <code class="ang">ng-if</code> and <code class="ang">ng-include</code> directives described earlier.
 </p>
@@ -946,7 +946,7 @@
     element, like this:
 </p>
 
-<pre class="brush: js; html-script: true; tab-size: 3">&lt;div ng-repeat="(name, value) in myData.myObject"&gt;
+<pre class="brush: js; html-script: true; tab-size: 3; highlight: 1">&lt;div ng-repeat="(name, value) in myData.myObject"&gt;
    &lt;div&gt;{{name}}&lt;/li&gt;
    &lt;div&gt;{{value}}&lt;/li&gt;
 &lt;/div&gt;
@@ -959,7 +959,7 @@
 </p>
 
 
-<pre class="brush: js; html-script: true; tab-size: 3">&lt;ol&gt;
+<pre class="brush: js; html-script: true; tab-size: 3; highlight: [2,3]">&lt;ol&gt;
     &lt;li ng-repeat-start="(name, value) in myData.myObject"&gt;{{name}}&lt;/li&gt;
     &lt;li ng-repeat-end&gt;{{value}}&lt;/li&gt;
 &lt;/ol&gt;
@@ -997,7 +997,7 @@
 </p>
 
 
-<pre class="brush: js; html-script: true; tab-size: 3">&lt;script&gt;
+<pre class="brush: js; html-script: true; tab-size: 3; highlight: [8,9]">&lt;script&gt;
   angular.module("myapp", [])
     .controller("MyController", function($scope) {
       $scope.myData = {};
@@ -1026,22 +1026,22 @@
     <tbody><tr><th>Filter</th>
         <th>Description</th>
     </tr>
-    <tr><td><code>date</code></td>
+    <tr><td><code class="azure">date</code></td>
         <td>Formats the variable as a date according to the given date format</td>
     </tr>
-    <tr><td><code>currency</code></td>
+    <tr><td><code class="azure">currency</code></td>
         <td>Formats the variable as a number with a currency symbol</td>
     </tr>
-    <tr><td><code>number</code></td>
+    <tr><td><code class="azure">number</code></td>
         <td>Formats the variable as a number</td>
     </tr>
-    <tr><td><code>lowercase</code></td>
+    <tr><td><code class="azure">lowercase</code></td>
         <td>Converts the variable to lowercase</td>
     </tr>
-    <tr><td><code>uppercase</code></td>
+    <tr><td><code class="azure">uppercase</code></td>
         <td>Converts the variable to uppercase</td>
     </tr>
-    <tr><td><code>json</code></td>
+    <tr><td><code class="azure">json</code></td>
         <td>Converts the variable to a JSON string</td>
     </tr>
 </tbody></table>
@@ -1282,14 +1282,14 @@
 </p>
 
 
-<pre class="brush: js; html-script: true; tab-size: 3">&lt;div&gt;Filtered: {{myData.text | myFilter<b>:2:5</b>}}&lt;/div&gt;
+<pre class="brush: js; html-script: true; tab-size: 3">&lt;div&gt;Filtered: {{myData.text | myFilter:2:5}}&lt;/div&gt;
 
 &lt;script&gt;
     var module = angular.module("myapp", []);
 
     module.filter('myFilter', function() {
 
-        return function(stringValue, <b>startIndex</b>, <b>endIndex</b>) {
+        return function(stringValue, startIndex, endIndex) {
             return stringValue.substring(parseInt(startIndex), parseInt(endIndex));
         };
     });
