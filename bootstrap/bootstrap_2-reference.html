@@ -1,0 +1,967 @@
+<html>
+<head>
+   <title>Bootstrap reference</title>
+   <style type="text/css">
+    body { width: 900px; font-family: Share; font-size: 11pt; line-height: 15pt; }
+    h1, h3, h4 { font-family: Share-Bold; color: #246da6; font-weight: normal; }
+    h3, ul { margin-top: 1em; margin-bottom: .4em; -webkit-margin-before: 1em; -webkit-margin-after: .4em; }
+    h2 { font-family: Share-Bold; background-color: #246da6; color: white; padding: 3px; font-weight: normal; }
+    .notbold { font-family: Share; font-weight: normal; }
+    li:first { margin-top: 8pt; }
+    li:last { margin-bottom: 6pt; }
+    a { text-decoration: none; font-family: Share; font-weight: normal; }
+    a:hover {text-decoration: underline; }
+    table {border-collapse: collapse;}
+    td { padding: 4px; }
+   </style>
+</head>
+
+<body>
+<div id="content">
+
+<div>
+  <div style="float:left; width:100%">
+    <h1 class="a_heading" title="taken from http://blog.seosemanticxhtml.com/a-complete-reference-library-of-bootstrap-classes/"> <span class="title_block">
+      A Complete Reference Library of Bootstrap 2 Classes</span>
+      </h1>
+      <div class="blog_img"><img src="auxi/pix//Bootstrap-Framework.jpg" alt="The Bootstrap framework"></div>
+
+
+
+
+<p>Bootstrap is currently the most used pre-fabricated CSS style sheet framework in existence today. It is used by millions of webpages and can be used to create any type of website using any type of content management system. Using Bootstrap reduces chances of errors and frees the developer from menial CSS coding to focus on more important stuff. <a href="http://www.seosemanticxhtml.com/" target="_blank" rel="nofollow"><strong>Seosematicxhtml is the only PSD to HTML and PSD to CMS conversion service provider available on the internet that specializes in Bootstrap Framework</strong></a> and thus highly recommends using Bootstrap for every project. Therefore to make the Bootstrap more easily accessible and understandable, here we are giving a <strong>comprehensive reference library of all the major Bootstrap classes and sub classes</strong> that can be used to create any type of design element. But before that let’s see what exactly Bootstrap framework is.</p>
+
+<h2>What is Bootstrap Framework</h2>
+
+<p>If you ask an experienced web developer what is the most boring and strenuous portion of their job, they will most probably have the same reply, CSS. Don’t get me wrong here, CSS is an extremely important aspect of any website and is responsible for how the website will look. But most of the elements of a website have nearly similar features. They may have different color scheme, or different fonts, or different background colors, but they will have same padding, margins, buttons, font sizes, navigations, rows, sliders, data boxes, containers etc. So for an experienced programmer coding CSS from scratch can be a bit tiring process because of its repetitiveness. Keeping this in mind, two employees from Twitter social networking website created <strong>a standardized CSS code framework that can be used to style nearly any type of website, and called this framework Bootstrap</strong>. This CSS framework was loaded with hundreds of components and has every major design element that a website may need, and best part about this framework was that <strong>it was responsive</strong>.</p>
+
+<p>It became an instant hit and eventually evolved in into an open source project and is <strong>currently the most worked upon open-source project on Github</strong>. Since Bootstrap is developed through a community effort, understanding the code is not very difficult. Bootstrap enjoys a whole community of open source developers and resource material which can be used by website owners to troubleshoot or alter the framework code by themselves.</p>
+
+<p>Currently because of so many advantages of Bootstrap, we are witnessing a new wave of web-development trend in which more and more website owners are shifting to Bootstrap framework rather than developing 100% custom CSS framework. This trend is even visible today and has already taken roots in web-developer community.</p>
+
+
+
+<table class="alignleft" width="900" border="1">
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Class</strong></td>
+<td style="text-align: center;"><strong>Type</strong></td>
+<td style="text-align: center;"><strong>Use</strong></td>
+<td style="text-align: center;"><strong>Usage Example</strong></td>
+</tr>
+<tr>
+<td>.hide-text</td>
+<td>Miscellaneous</td>
+<td>Hide div text. A great hack for embedding invisible data in a webpage.</td>
+<td style="text-align: center;">——-</td>
+</tr>
+<tr>
+<td>.input-block-level</td>
+<td>Forms (Base CSS)</td>
+<td>Create a elongated block shaped input field</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" target="_blank" rel="nofollow"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.img-rounded</td>
+<td>Images (Base CSS)</td>
+<td>This creates an image element in which the image is displayed with rounded corners</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#images" target="_blank" rel="nofollow"> base-css.html#images</a></td>
+</tr>
+<tr>
+<td>.img-polaroid</td>
+<td>Images (Base CSS)</td>
+<td>This creates an image element with a broad border that gives the feel of a poloroid image</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#images" target="_blank" rel="nofollow"> base-css.html#images</a></td>
+</tr>
+<tr>
+<td>.img-circle</td>
+<td>Images (Base CSS)</td>
+<td>This creates an image element in which the image is dispaled in a circle. The image is cropped accordingly.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#images" target="_blank" rel="nofollow"> base-css.html#images</a></td>
+</tr>
+<tr>
+<td>.row</td>
+<td>Grid System (Scaffolding)</td>
+<td>Create a basic row for displaying content. Default length of the row is full 12 colums i.e. 940 px, but it can be chanaged using span classes. Alos with responsive classes added, the grid can adapt to 724px and 1170px length depending upon viewport. In responsive the columns become fulid and stack vertically.</td>
+<td><a href="http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem" target="_blank" rel="nofollow"> scaffolding.html#gridSystem</a></td>
+</tr>
+<tr>
+<td>.container</td>
+<td>Layout (Scaffolding)</td>
+<td>Provides a fixed layout for the content. You can add rows with different spans inside it to create multi columned layout.</td>
+<td><a href="http://getbootstrap.com/2.3.2/scaffolding.html#layouts" target="_blank" rel="nofollow"> scaffolding.html#layouts</a></td>
+</tr>
+<tr>
+<td>.span1 – .span12</td>
+<td>Grid System (Scaffolding)</td>
+<td>This class can be used to define the length of a component. This length is represented in number of columns for example for a conatiner spanning 4 columns use class span4. There are 12 lenth classes span1 to span12. The default lenth of each span is 60 px with 5px border on all sides.</td>
+<td><a href="http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem" target="_blank" rel="nofollow"> scaffolding.html#gridSystem</a></td>
+</tr>
+<tr>
+<td>.offset1 – .offset12</td>
+<td>Grid System (Scaffolding)</td>
+<td>This class allows you to move the content by a desired amount of space. Here this spae is counted in terns of number of columns. Thus if you you use offset2 class you will skip 2 colums and display in the third one.</td>
+<td><a href="http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem" target="_blank" rel="nofollow"> scaffolding.html#gridSystem</a></td>
+</tr>
+<tr>
+<td>.row-fluid</td>
+<td>Fluid Grid System (Scaffolding)</td>
+<td>The same as row class, with the only difference being that row-fluid creates responsive rows with fluid layout</td>
+<td><a href="http://getbootstrap.com/2.3.2/scaffolding.html#fluidGridSystem" target="_blank" rel="nofollow"> scaffolding.html#fluidGridSystem</a></td>
+</tr>
+<tr>
+<td>.container-fluid</td>
+<td>Fluid Grid System (Scaffolding)</td>
+<td>The same as container class, with the only difference being that container-fluid creates responsive rows with fluid layout</td>
+<td><a href="http://getbootstrap.com/2.3.2/scaffolding.html#fluidGridSystem" target="_blank" rel="nofollow"> scaffolding.html#fluidGridSystem</a></td>
+</tr>
+<tr>
+<td>.lead</td>
+<td>Typography (Base CSS)</td>
+<td>Make a paragraph stand out by adding&nbsp;.lead</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#typography" target="_blank" rel="nofollow"> base-css.html#typography</a></td>
+</tr>
+<tr>
+<td>.muted</td>
+<td>Typography (Base CSS)</td>
+<td>an emphasis class that changes the value of text color to #999999. Gives a subtle emaphis to the text.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#typography" target="_blank" rel="nofollow"> base-css.html#typography</a></td>
+</tr>
+<tr>
+<td>.text-warning</td>
+<td>Typography (Base CSS)</td>
+<td>This class changes the text color to bright orange, the standard color of warning text</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#typography" target="_blank" rel="nofollow"> base-css.html#typography</a></td>
+</tr>
+<tr>
+<td>.text-error</td>
+<td>Typography (Base CSS)</td>
+<td>This class changes the text color to bright red, the standard color of error text</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#typography" target="_blank" rel="nofollow"> base-css.html#typography</a></td>
+</tr>
+<tr>
+<td>.text-info</td>
+<td>Typography (Base CSS)</td>
+<td>This class changes the text color to Blue color. This is specially use ful when depicting some technical information or in typography in general.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#typography" target="_blank" rel="nofollow"> base-css.html#typography</a></td>
+</tr>
+<tr>
+<td>.text-success</td>
+<td>Typography (Base CSS)</td>
+<td>This class changes the text color to Green, the standard programming color to denote successful operation. Very useful in creating user driven websites and websites that require user inputs.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#typography" target="_blank" rel="nofollow"> base-css.html#typography</a></td>
+</tr>
+<tr>
+<td>.text-left</td>
+<td>Typography (Base CSS)</td>
+<td>This class changes alignement of the text from default to left alingned</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#typography" target="_blank" rel="nofollow"> base-css.html#typography</a></td>
+</tr>
+<tr>
+<td>.text-right</td>
+<td>Typography (Base CSS)</td>
+<td>This class changes alignement of the text from default to left alingned</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#typography" target="_blank" rel="nofollow"> base-css.html#typography</a></td>
+</tr>
+<tr>
+<td>.text-center</td>
+<td>Typography (Base CSS)</td>
+<td>This class changes alignement of the text from default to center aligned alingned</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#typography" target="_blank" rel="nofollow"> base-css.html#typography</a></td>
+</tr>
+<tr>
+<td>.page-header</td>
+<td>Typography (Components)</td>
+<td>This class will give the div a bottom padding of 9px, top and bottom margin of 20 px and 30 px respectively, and a grey colored (#eeeeee) solid 1 px bottom border</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#typography" target="_blank" rel="nofollow"> components.html#typography</a></td>
+</tr>
+<tr>
+<td>.dl-horizontal</td>
+<td>Typography (Base CSS)</td>
+<td>The go-to class for styling horizontal datalists. It also styles nestesd &lt;dd&gt; and &lt;dl&gt; HTML 5 tags</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#typography" target="_blank" rel="nofollow"> base-css.html#typography</a></td>
+</tr>
+<tr>
+<td>.pre-scrollable</td>
+<td>Code (Base CSS)</td>
+<td>This class will set a maximum height of 350px of a content box and provide a y axis scroll bar on the div</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#code" target="_blank" rel="nofollow"> base-css.html#code</a></td>
+</tr>
+
+<tr>
+<td>.label</td>
+<td>Labels and badges (Component)</td>
+<td>A basic component of Bootstrap that allow you to create volored labels that can highlight content. By default the color is light gray (#999999)</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#labels-badges" target="_blank" rel="nofollow"> components.html#labels-badges</a></td>
+</tr>
+
+<tr>
+<td>.badge</td>
+<td>Labels and badges (Component)</td>
+<td>It is nearly the same as lable class but has some subtel diffrences such as a little broader left and right padding padding and a little larger border radius</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#labels-badges" rel="nofollow" target="_blank"> components.html#labels-badges</a></td>
+</tr>
+<tr>
+<td>.label-important</td>
+<td>Labels and badges (Component)</td>
+<td>Same as lable class but with back ground color #953b39 (Red)</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#labels-badges" rel="nofollow" target="_blank"> components.html#labels-badges</a></td>
+</tr>
+<tr>
+<td>.badge-important</td>
+<td>Labels and badges (Component)</td>
+<td>Same as badge class but with back ground color #953b39 (Red)</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#labels-badges" rel="nofollow" target="_blank"> components.html#labels-badges</a></td>
+</tr>
+<tr>
+<td>.label-warning</td>
+<td>Labels and badges (Component)</td>
+<td>Same as badge class but with back ground color #f89406 (Orange)</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#labels-badges" rel="nofollow" target="_blank"> components.html#labels-badges</a></td>
+</tr>
+<tr>
+<td>.badge-warning</td>
+<td>Labels and badges (Component)</td>
+<td>Same as badge class but with back ground color #f89406 (Orange)</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#labels-badges" rel="nofollow" target="_blank"> components.html#labels-badges</a></td>
+</tr>
+<tr>
+<td>.label-success</td>
+<td>Labels and badges (Component)</td>
+<td>Same as lable class but with back ground color #468847 (Green)</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#labels-badges" rel="nofollow" target="_blank"> components.html#labels-badges</a></td>
+</tr>
+<tr>
+<td>.badge-success</td>
+<td>Labels and badges (Component)</td>
+<td>Same as badge class but with back ground color #468847 (Green)</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#labels-badges" rel="nofollow" target="_blank"> components.html#labels-badges</a></td>
+</tr>
+<tr>
+<td>.label-info</td>
+<td>Labels and badges (Component)</td>
+<td>Same as lable class but with back ground color #3a87ad (Blue)</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#labels-badges" rel="nofollow" target="_blank"> components.html#labels-badges</a></td>
+</tr>
+<tr>
+<td>.badge-info</td>
+<td>Labels and badges (Component)</td>
+<td>Same as badge class but with back ground color #3a87ad (Blue)</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#labels-badges" rel="nofollow" target="_blank"> components.html#labels-badges</a></td>
+</tr>
+<tr>
+<td>.label-inverse</td>
+<td>Labels and badges (Component)</td>
+<td>Same as lable class but with back ground color as Black and text color as white</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#labels-badges" rel="nofollow" target="_blank"> components.html#labels-badges</a></td>
+</tr>
+<tr>
+<td>.badge-inverse</td>
+<td>Labels and badges (Component)</td>
+<td>Same as badge class but with back ground color as Black and text color as white</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#labels-badges" rel="nofollow" target="_blank"> components.html#labels-badges</a></td>
+</tr>
+<tr>
+<td>.table</td>
+<td>Tables (Base CSS)</td>
+<td>Basic bootstrap class to create a table. Mostly used in conjunction with &lt;table&gt; tag</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#tables" rel="nofollow" target="_blank"> base-css.html#tables</a></td>
+</tr>
+<tr>
+<td>.table-bordered</td>
+<td>Tables (Base CSS)</td>
+<td>A basic Bootstap table class that will create a table with visible solid border</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#tables" rel="nofollow" target="_blank"> base-css.html#tables</a></td>
+</tr>
+<tr>
+<td>.table-striped</td>
+<td>Tables (Base CSS)</td>
+<td>An interesting bootstrap table class that will style a table into a zebra-stripe pattern i.e. the first row would be of light grey color the next white the next grey and so on.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#tables" rel="nofollow" target="_blank"> base-css.html#tables</a></td>
+</tr>
+<tr>
+<td>.table-hover</td>
+<td>Tables (Base CSS)</td>
+<td>Another intresting table class in which the row will change color whenever you will hover your mouse over it. A great and useful effect.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#tables" rel="nofollow" target="_blank"> base-css.html#tables</a></td>
+</tr>
+<tr>
+<td>&lt;code&gt;</td>
+<td>Bottstrap specific Tag</td>
+<td>A tag unique to bootstrap that can be used to style programming code that has to be displayed in a page. A very useful tag for technical blogs and websites.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#typography" rel="nofollow" target="_blank"> base-css.html#typography</a></td>
+</tr>
+<tr>
+<td>&lt;pre&gt;</td>
+<td>Bottstrap specific Tag</td>
+<td>a tag for representing multiple lines of code</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#typography" rel="nofollow" target="_blank"> base-css.html#typography</a></td>
+</tr>
+<tr>
+<td>&lt;section&gt;</td>
+<td>Bottstrap specific Tag</td>
+<td>A tag for presenting small sections of code</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#typography" rel="nofollow" target="_blank"> base-css.html#typography</a></td>
+</tr>
+<tr>
+<td>&lt;Address&gt;</td>
+<td>Bottstrap specific Tag</td>
+<td>A useful tag for styling Addresses that have to be displayed.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#typography" rel="nofollow" target="_blank"> base-css.html#typography</a></td>
+</tr>
+<tr>
+<td>&lt;blockquote&gt;</td>
+<td>Bootstrap specific Tag</td>
+<td>This tag can be used to embed quotes in a stylized block.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#typography" rel="nofollow" target="_blank"> base-css.html#typography</a></td>
+</tr>
+<tr>
+<td>.input-mini</td>
+<td>Forms (Base CSS)</td>
+<td>Creates a very small input area the size of 60px</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.input-small</td>
+<td>Forms (Base CSS)</td>
+<td>Create a small input area of the size of 90 px</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.input-medium</td>
+<td>Forms (Base CSS)</td>
+<td>Create a medium sized input area of the size of 150px</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.input-large</td>
+<td>Forms (Base CSS)</td>
+<td>Create a large input area of the size of 210px</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>input-xlarge</td>
+<td>Forms (Base CSS)</td>
+<td>Create a extra large input area of the size of 270px</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.input-xxlarge</td>
+<td>Forms (Base CSS)</td>
+<td>Create a extra extra large input area of the size of 530 px</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.controls-row</td>
+<td>Forms (Base CSS)</td>
+<td>A modifier class used for controlling proper spacing between input boxes. Most used for creating multiple input forms.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.contol-group.warning</td>
+<td>Forms (Base CSS)</td>
+<td>A bootstrap validation class that shows warning message in orange color around the input</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.contol-group.error</td>
+<td>Forms (Base CSS)</td>
+<td>A bootstrap validation class that shows error message in red color around the input</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.contol-group.info</td>
+<td>Forms (Base CSS)</td>
+<td>A bootstrap validation class that shows special information message in blue color around the input</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.contol-group.success</td>
+<td>Forms (Base CSS)</td>
+<td>A bootstrap validation class that shows success message in green color around the input</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.form-actions</td>
+<td>Forms (Base CSS)</td>
+<td>This class will automatically line up the indentation of the buttons in the div with the form controls</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.help-block</td>
+<td>Forms (Base CSS)</td>
+<td>This class can be used to create a block type text class. Its best suited to display help text beside input boxes</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.help-inline</td>
+<td>Forms (Base CSS)</td>
+<td>Same as help-block class with diffrence being that is mostly used to display help text in the same line as the input</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.form-search</td>
+<td>Forms (Base CSS)</td>
+<td>A class dedicated for craeting search input boxes</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.form-inline</td>
+<td>Forms (Base CSS)</td>
+<td>A class used for creting multiple input boxes in a same line. Mostly used by websites that have space constraints</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.form-horizontal</td>
+<td>Forms (Base CSS)</td>
+<td>The basic form class used for creating horizontal input boxes.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.control-group</td>
+<td>Forms (Base CSS)</td>
+<td>A control class for taking common types of inputs such as emails, passwords and useer ids, especially in horizontal forms</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.uneditable-input</td>
+<td>Forms (Base CSS)</td>
+<td>As the name it self suggest this class creates a input form that is not editable without accessing the actual form markup</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.uneditable-textarea</td>
+<td>Forms (Base CSS)</td>
+<td>Same as the uneditable-input but a instead an uneditable text area.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.radio</td>
+<td>Forms (Base CSS)</td>
+<td>Bootstrap’s radio Input Button</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.checkbox</td>
+<td>Forms (Base CSS)</td>
+<td>Bootstrap’s checkbox input button</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#forms" rel="nofollow" target="_blank"> base-css.html#forms</a></td>
+</tr>
+<tr>
+<td>.btn</td>
+<td>Buttons (Base CSS)</td>
+<td>Standard white colored Bootstrap button. It has dedicated hover, focus, active, and disabled pseudo calsses</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#buttons" rel="nofollow" target="_blank"> base-css.html#buttons</a></td>
+</tr>
+<tr>
+<td>.btn-large</td>
+<td>Buttons (Base CSS)</td>
+<td>A large button with padding size of 11px by 19px</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#buttons" rel="nofollow" target="_blank"> base-css.html#buttons</a></td>
+</tr>
+<tr>
+<td>.btn-small</td>
+<td>Buttons (Base CSS)</td>
+<td>A relatively smaller button with padding size of 2px by 10px</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#buttons" rel="nofollow" target="_blank"> base-css.html#buttons</a></td>
+</tr>
+<tr>
+<td>.btn-mini</td>
+<td>Buttons (Base CSS)</td>
+<td>A very small button with padding size of 0px by 6px</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#buttons" rel="nofollow" target="_blank"> base-css.html#buttons</a></td>
+</tr>
+<tr>
+<td>.btn-block</td>
+<td>Buttons (Base CSS)</td>
+<td>A very large button that spans the whole lenth of its parent class</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#buttons" rel="nofollow" target="_blank"> base-css.html#buttons</a></td>
+</tr>
+<tr>
+<td>.btn-primary</td>
+<td>Buttons (Base CSS)</td>
+<td>Creates a Dark blue colored button that gives extra weight to to the button, complete with borders, white font and shadows.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#buttons" rel="nofollow" target="_blank"> base-css.html#buttons</a></td>
+</tr>
+<tr>
+<td>.btn-warning</td>
+<td>Buttons (Base CSS)</td>
+<td>This class creates an onange colored warning button</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#buttons" rel="nofollow" target="_blank"> base-css.html#buttons</a></td>
+</tr>
+<tr>
+<td>.btn-danger</td>
+<td>Buttons (Base CSS)</td>
+<td>This class is used to create a red colored danger button</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#buttons" rel="nofollow" target="_blank"> base-css.html#buttons</a></td>
+</tr>
+<tr>
+<td>.btn-inverse</td>
+<td>Buttons (Base CSS)</td>
+<td>This class inverses the color of button and text, i.e. it creates a dark greay colored button with white font</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#buttons" rel="nofollow" target="_blank"> base-css.html#buttons</a></td>
+</tr>
+<tr>
+<td>.btn-success</td>
+<td>Buttons (Base CSS)</td>
+<td>Create a green colored button that signifies success</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#buttons" rel="nofollow" target="_blank"> base-css.html#buttons</a></td>
+</tr>
+<tr>
+<td>.btn-info</td>
+<td>Buttons (Base CSS)</td>
+<td>Used to create a light blue colored button that is best used for displaying information</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#buttons" rel="nofollow" target="_blank"> base-css.html#buttons</a></td>
+</tr>
+<tr>
+<td>.btn-link</td>
+<td>Buttons (Base CSS)</td>
+<td>A very clever class that makes a button that has no border or clor just blue text. Makes the text looks like a hyperlink which instead acts like a button.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#buttons" rel="nofollow" target="_blank"> base-css.html#buttons</a></td>
+</tr>
+<tr>
+<td>.icon-white</td>
+<td>Icons (Base CSS)</td>
+<td>This class is used to diplay permanent hover or clicked state of an element. Mostly used for showing parent and child tabs</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#icons" rel="nofollow" target="_blank"> base-css.html#icons</a></td>
+</tr>
+<tr>
+<td>.dropdown-menu</td>
+<td>Dropdown Menu (Components)</td>
+<td>The basic class for creating drop down menues. Its used as an unordered list</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#dropdowns" rel="nofollow" target="_blank"> components.html#dropdowns</a></td>
+</tr>
+<tr>
+<td>.dropdown-submenu</td>
+<td>Dropdown Menu (Components)</td>
+<td>A class that is used to create nested dropdown menues or second level dropdown menues</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navs" rel="nofollow" target="_blank"> components.html#navs</a></td>
+</tr>
+<tr>
+<td>.icon-glass</td>
+<td>140 icons</td>
+<td>one of the 140 icons that comes with bootstrap.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#icons" rel="nofollow" target="_blank"> base-css.html#icons</a></td>
+</tr>
+<tr>
+<td>.icon-music</td>
+<td>140 icons</td>
+<td>one of the 140 icons that comes with bootstrap.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#icons" rel="nofollow" target="_blank"> base-css.html#icons</a></td>
+</tr>
+<tr>
+<td>.icon-search</td>
+<td>140 icons</td>
+<td>one of the 140 icons that comes with bootstrap.</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#icons" rel="nofollow" target="_blank"> base-css.html#icons</a></td>
+</tr>
+<tr>
+<td>.icon-envelope</td>
+<td>140 icons</td>
+<td>one of the 140 icons that comes with bootstrap</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#icons" rel="nofollow" target="_blank"> base-css.html#icons</a></td>
+</tr>
+<tr>
+<td>.icon-heart</td>
+<td>140 icons</td>
+<td>one of the 140 icons that comes with bootstrap</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#icons" rel="nofollow" target="_blank"> base-css.html#icons</a></td>
+</tr>
+<tr>
+<td>.btn-group</td>
+<td>Buttons (Base CSS)</td>
+<td>This class is used to create groups of buttons</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#buttons" rel="nofollow" target="_blank"> base-css.html#buttons</a></td>
+</tr>
+<tr>
+<td>.btn-toolbar</td>
+<td>Buttons (Base CSS)</td>
+<td>This class is used to create a group of button-groups or in other words button tool bars</td>
+<td><a href="http://getbootstrap.com/2.3.2/base-css.html#buttons" rel="nofollow" target="_blank"> base-css.html#buttons</a></td>
+</tr>
+<tr>
+<td>.nav</td>
+<td>Navigational buttons (Components)</td>
+<td>The parent class of types of navigational button classes</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navs" rel="nofollow" target="_blank"> components.html#navs</a></td>
+</tr>
+<tr>
+<td>.nav-header</td>
+<td>Navigational buttons (Components)</td>
+<td>This class is used to create a navigational list in the header. It can also be used for creating table of<br>
+content</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navs" rel="nofollow" target="_blank"> components.html#navs</a></td>
+</tr>
+<tr>
+<td>.nav-pills</td>
+<td>Navigational buttons (Components)</td>
+<td>A sub class of .nav, this class is used to create a list of pill shaped navigational buttons.</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navs" rel="nofollow" target="_blank"> components.html#navs</a></td>
+</tr>
+<tr>
+<td>.nav-list</td>
+<td>Navigational buttons (Components)</td>
+<td>A basic sub class used for creating navigational lists</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navs" rel="nofollow" target="_blank"> components.html#navs</a></td>
+</tr>
+<tr>
+<td>.nav-tabs</td>
+<td>Navigational buttons (Components)</td>
+<td>A sub class of .nav, this class is used to create tab shaped navigational buttons. Each tab takes to a<br>
+different page</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navs" rel="nofollow" target="_blank"> components.html#navs</a></td>
+</tr>
+<tr>
+<td>.tabbable</td>
+<td>Navigational buttons (Components)</td>
+<td>A creative plugin class that allows you to switch from one content piece to another through tabs. It has&nbsp;<p></p>
+<p>four different styles for tabs up (default), down, right, and left.</p></td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navs" rel="nofollow" target="_blank"> components.html#navs</a></td>
+</tr>
+<tr>
+<td>.tab-pane</td>
+<td>Navigational buttons (Components)</td>
+<td>this class is used for creating content panes that are switched through tabballe class</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navs" rel="nofollow" target="_blank"> components.html#navs</a></td>
+</tr>
+<tr>
+<td>.tabs-below</td>
+<td>Navigational buttons (Components)</td>
+<td>This is subclass that is used in conjunction with tabbable and nav-tabs. This class changes the stle of the&nbsp;<p></p>
+<p>tabs. The tab hangs down as opposed to up (the default syle)</p></td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navs" rel="nofollow" target="_blank"> components.html#navs</a></td>
+</tr>
+<tr>
+<td>.tabs-left</td>
+<td>Navigational buttons (Components)</td>
+<td>This is subclass that is used in conjunction with tabbable and nav-tabs. This class changes the stle of the&nbsp;<p></p>
+<p>tabs. The tab are pulled to left as opposed to up (the default syle)</p></td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navs" rel="nofollow" target="_blank"> components.html#navs</a></td>
+</tr>
+<tr>
+<td>.tabs-right</td>
+<td>Navigational buttons (Components)</td>
+<td>This is subclass that is used in conjunction with tabbable and nav-tabs. This class changes the stle of the&nbsp;<p></p>
+<p>tabs. The tabs are pulled to right as opposed to up (the default syle)</p></td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navs" rel="nofollow" target="_blank"> components.html#navs</a></td>
+</tr>
+<tr>
+<td>.tab-content</td>
+<td>Navigational buttons (Components)</td>
+<td>This is the class that is used to embed switchable content in the website. This class is used in&nbsp;<p></p>
+<p>conjunction with tabbable and nav-tabs</p></td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navs" rel="nofollow" target="_blank"> components.html#navs</a></td>
+</tr>
+<tr>
+<td>.nav-stacked</td>
+<td>Navigational buttons (Components)</td>
+<td>A sub class that is used to create stacked navigational buttons. When combined with nav-pills and nav-tabs&nbsp;<p></p>
+<p>class it create stacked nav tabs and nav pills</p></td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navs" rel="nofollow" target="_blank"> components.html#navs</a></td>
+</tr>
+<tr>
+<td>.navbar</td>
+<td>Navigational buttons (Components)</td>
+<td>The main class used for creating a navbar, which is usually used in conjuncture with secondary navbar&nbsp;<p></p>
+<p>classes to get desired effects</p></td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navbar" rel="nofollow" target="_blank"> components.html#navbar</a></td>
+</tr>
+<tr>
+<td>.navbar-inverse</td>
+<td>Navigational buttons (Components)</td>
+<td>Create a nav bar with inverted colors, i.e. black background with white font</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navbar" rel="nofollow" target="_blank"> components.html#navbar</a></td>
+</tr>
+<tr>
+<td>.navbar-form</td>
+<td>Navigational buttons (Components)</td>
+<td>This is the class that is used to integrate form elements in the navbar, like submit input boxes, userid-&nbsp;<p></p>
+<p>pass etc. You can align the form using pull-left or pull-right classes</p></td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navbar" rel="nofollow" target="_blank"> components.html#navbar</a></td>
+</tr>
+<tr>
+<td>.navbar-search</td>
+<td>Navigational buttons (Components)</td>
+<td>This class is used to specifiacally embed search forms</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navbar" rel="nofollow" target="_blank"> components.html#navbar</a></td>
+</tr>
+<tr>
+<td>.navbar-static-top</td>
+<td>Navigational buttons (Components)</td>
+<td>Use this class to create a navbar that sticks to the top of the page and scrolls with the page.</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navbar" rel="nofollow" target="_blank"> components.html#navbar</a></td>
+</tr>
+<tr>
+<td>.navbar-fixed-top</td>
+<td>Navigational buttons (Components)</td>
+<td>Use this class to create navbar that sticks to the top of the viewport</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navbar" rel="nofollow" target="_blank"> components.html#navbar</a></td>
+</tr>
+<tr>
+<td>.navbar-fixed-bottom</td>
+<td>Navigational buttons (Components)</td>
+<td>Use this class to create navbars that sticks to the bottom ov the viewport</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navbar" rel="nofollow" target="_blank"> components.html#navbar</a></td>
+</tr>
+<tr>
+<td>.breadcrumb</td>
+<td>breadcrumb trail navigation</td>
+<td>The main classed used to implement breadcrumb navigation</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#breadcrumbs" rel="nofollow" target="_blank"> components.html#breadcrumbs</a></td>
+</tr>
+<tr>
+<td>.pagination</td>
+<td>Pagination (Component)</td>
+<td>Standard bootstrap class to create page-number style navigation buttons</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#pagination" rel="nofollow" target="_blank"> components.html#pagination</a></td>
+</tr>
+<tr>
+<td>.thumbnail</td>
+<td>Thumbnail (Component)</td>
+<td>Bootstrap class to style images in different thumbnail sizes.</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#thumbnails" rel="nofollow" target="_blank"> components.html#thumbnails</a></td>
+</tr>
+<tr>
+<td>.alert</td>
+<td>Alerts (Components)</td>
+<td>This class creates a inpage closable alert box. Its mostly used for displaying alert messages or&nbsp;<p></p>
+<p>errors.</p></td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#alerts" rel="nofollow" target="_blank"> components.html#alerts</a></td>
+</tr>
+<tr>
+<td>.alert-success</td>
+<td>Alerts (Components)</td>
+<td>A alert message box with green colored styling that coud be used to confirm successful actions</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#alerts" rel="nofollow" target="_blank"> components.html#alerts</a></td>
+</tr>
+<tr>
+<td>.alert-danger</td>
+<td>Alerts (Components)</td>
+<td>A alert message box with red colored styling that coud be used to depict errors or unauthorised&nbsp;<p></p>
+<p>actions.</p></td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#alerts" rel="nofollow" target="_blank"> components.html#alerts</a></td>
+</tr>
+<tr>
+<td>.alert-error</td>
+<td>Alerts (Components)</td>
+<td>Same as alert-danger class</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#alerts" rel="nofollow" target="_blank"> components.html#alerts</a></td>
+</tr>
+<tr>
+<td>.alert-info</td>
+<td>Alerts (Components)</td>
+<td>A alert message box with blue colored styling that coud be used display relevant information in-page&nbsp;<p></p>
+<p>popups</p></td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#alerts" rel="nofollow" target="_blank"> components.html#alerts</a></td>
+</tr>
+<tr>
+<td>.alert-block</td>
+<td>Alerts (Components)</td>
+<td>this creats a block sized alert message box.</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#alerts" rel="nofollow" target="_blank"> components.html#alerts</a></td>
+</tr>
+<tr>
+<td>.progress</td>
+<td>miscellaneous</td>
+<td>Use this class to implement progress bars in webpages.</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#progress" rel="nofollow" target="_blank"> components.html#progress</a></td>
+</tr>
+<tr>
+<td>.tooltip</td>
+<td>Tooltip (JavaScript)</td>
+<td>the main bootstrap class to implement tooltip effect</td>
+<td><a href="http://getbootstrap.com/2.3.2/javascript.html#tooltips" rel="nofollow" target="_blank"> javascript.html#tooltips</a></td>
+</tr>
+<tr>
+<td>.hero-unit</td>
+<td>Typography (Component)</td>
+<td>A unique Bootstrap class that especially highlights a content element with large font, different&nbsp;<p></p>
+<p>background, and borders.</p></td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#typography" rel="nofollow" target="_blank"> components.html#typography</a></td>
+</tr>
+<tr>
+<td>.media</td>
+<td>Media (Components)</td>
+<td>The main bootstrap class to style media elements of a webpage.</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#media" rel="nofollow" target="_blank"> components.html#media</a></td>
+</tr>
+<tr>
+<td>.popover</td>
+<td>Popovers (JavaScript)</td>
+<td>Main bootstrap class to create popovers</td>
+<td><a href="http://getbootstrap.com/2.3.2/javascript.html#popovers" rel="nofollow" target="_blank"> javascript.html#popovers</a></td>
+</tr>
+<tr>
+<td>.modal</td>
+<td>Modal (JavaScript)</td>
+<td>A unique feature of bootstrap. This class allows you to create streamlined and flexible dialouge prompts</td>
+<td><a href="http://getbootstrap.com/2.3.2/javascript.html#modals" rel="nofollow" target="_blank"> javascript.html#modals</a></td>
+</tr>
+<tr>
+<td>.modal</td>
+<td>Modal (JavaScript)</td>
+<td>A unique feature of bootstrap. This class allows you to create streamlined and flexible dialouge prompts</td>
+<td><a href="http://getbootstrap.com/2.3.2/javascript.html#modals" rel="nofollow" target="_blank"> javascript.html#modals</a></td>
+</tr>
+<tr>
+<td>.dropup,</td>
+<td>Dropdowns (Components)</td>
+<td>Same effect as dropdowns with only difference being that this class gives the effect of content popping up.</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#dropdowns" rel="nofollow" target="_blank"> components.html#dropdowns</a></td>
+</tr>
+<tr>
+<td>.dropdown</td>
+<td>Dropdowns (Components)</td>
+<td>The main bootstrap class that is used to create dropdown menues or dropdown contents</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#dropdowns" rel="nofollow" target="_blank"> components.html#dropdowns</a></td>
+</tr>
+<tr>
+<td>.dropdown-toggle</td>
+<td>Buttons (Base CSS)</td>
+<td>Bootstrap class to create dropdown buttons.</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#buttonDropdowns" rel="nofollow" target="_blank"> components.html#buttonDropdowns</a></td>
+</tr>
+<tr>
+<td>.typeahead</td>
+<td>Typehead (JavaScript)</td>
+<td>The main bootstrap class to handle typehead functionality in the website.</td>
+<td><a href="http://getbootstrap.com/2.3.2/javascript.html#typeahead" rel="nofollow" target="_blank"> javascript.html#typeahead</a></td>
+</tr>
+<tr>
+<td>.accordion</td>
+<td>Accordion (JavaScript)</td>
+<td>Basic bootstrap class to create Accordian effects</td>
+<td><a href="http://getbootstrap.com/2.3.2/javascript.html#collapse" rel="nofollow" target="_blank"> javascript.html#collapse</a></td>
+</tr>
+<tr>
+<td>.carousel</td>
+<td>Carousel (JavaScript)</td>
+<td>Main bootstrap class that is used to create carousel type content or image sliders</td>
+<td><a href="http://getbootstrap.com/2.3.2/javascript.html#collapse" rel="nofollow" target="_blank"> javascript.html#collapse</a></td>
+</tr>
+<tr>
+<td>.well</td>
+<td>Miscellaneous (Components)</td>
+<td>This class is used to give a simple effect on any element. The element will appear as it is inserted inside the page.</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#misc" rel="nofollow" target="_blank"> components.html#misc</a></td>
+</tr>
+<tr>
+<td>.hidden</td>
+<td>Miscellaneous (Components)</td>
+<td>A simple class that will hide the contents of the div.</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#misc" rel="nofollow" target="_blank"> components.html#misc</a></td>
+</tr>
+<tr>
+<td>.pull-right</td>
+<td>Miscellaneous (Components)</td>
+<td>Change the indentation of the element to to right side. In other words the element floats to the right.</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#misc" rel="nofollow" target="_blank"> components.html#misc</a></td>
+</tr>
+<tr>
+<td>.pull-left</td>
+<td>Miscellaneous (Components)</td>
+<td>Change the indentation of the element to to left side. In other words the element floats to the left.</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#misc" rel="nofollow" target="_blank"> components.html#misc</a></td>
+</tr>
+<tr>
+<td>.clearfix</td>
+<td>Miscellaneous (Components)</td>
+<td>Clears the floating of the element and restors the default indentation.</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#misc" rel="nofollow" target="_blank"> components.html#misc</a></td>
+</tr>
+<tr>
+<td>.hide</td>
+<td>Miscellaneous (Components)</td>
+<td>Sets the Display characteristic of the div to none. It hides the entire div in normal viewport so that you can use media queries to make it visible in custom viewport sizes.</td>
+<td>Miscellaneous</td>
+</tr>
+<tr>
+<td>.show</td>
+<td>Miscellaneous (Components)</td>
+<td>Bake the div visible in the desired viewport size.</td>
+<td>Miscellaneous</td>
+</tr>
+<tr>
+<td>.invisible</td>
+<td>Miscellaneous (Components)</td>
+<td>Sets the visibility of the div to hidden for the desired viewport size</td>
+<td>Miscellaneous</td>
+</tr>
+<tr>
+<td>.fade.in</td>
+<td>Miscellaneous (Components)</td>
+<td>this class give the animation effect of fading out. Mostly used with elements like alerts or warnings.</td>
+<td>Miscellaneous</td>
+</tr>
+<tr>
+<td>.fade</td>
+<td>Miscellaneous (Components)</td>
+<td>This class decreases the opacity of the div to give it a faded effect</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navs" rel="nofollow" target="_blank"> components.html#navs</a></td>
+</tr>
+<tr>
+<td>.collapse</td>
+<td>Miscellaneous (Components)</td>
+<td>This class hides the div container into a collapsable box when the div is viewd through a viewport lesser than the size of desktop. Mainly used for creating responsive website.</td>
+<td><a href="http://getbootstrap.com/2.3.2/components.html#navbar" rel="nofollow" target="_blank"> components.html#navbar</a></td>
+</tr>
+<tr>
+<td>.visible-phone</td>
+<td>Mobile Device compatiblity</td>
+<td>This class hides the div when viewed form devices having viewport size greater than 786px</td>
+<td><a href="http://getbootstrap.com/2.3.2/scaffolding.html#responsive" rel="nofollow" target="_blank"> scaffolding.html#responsive</a></td>
+</tr>
+<tr>
+<td>.hidden-phone</td>
+<td>Mobile Device compatiblity</td>
+<td>This class hides the div when viewd in phones (viewports having size than 786px)</td>
+<td><a href="http://getbootstrap.com/2.3.2/scaffolding.html#responsive" rel="nofollow" target="_blank"> scaffolding.html#responsive</a></td>
+</tr>
+<tr>
+<td>.visible-tablet</td>
+<td>Mobile Device compatiblity</td>
+<td>This class hides the div when viewed form devices having viewport size other than between 979px and 786px</td>
+<td><a href="http://getbootstrap.com/2.3.2/scaffolding.html#responsive" rel="nofollow" target="_blank"> scaffolding.html#responsive</a></td>
+</tr>
+<tr>
+<td>.hidden-tablet</td>
+<td>Mobile Device compatiblity</td>
+<td>This class hides the div when viewed in tablets (viewports having size greater than 786px but less than 979px)</td>
+<td><a href="http://getbootstrap.com/2.3.2/scaffolding.html#responsive" rel="nofollow" target="_blank"> scaffolding.html#responsive</a></td>
+</tr>
+<tr>
+<td>.visible-desktop</td>
+<td>Mobile Device compatiblity</td>
+<td>This class hides the div when viewed form devices having viewport size less than 979px</td>
+<td><a href="http://getbootstrap.com/2.3.2/scaffolding.html#responsive" rel="nofollow" target="_blank"> scaffolding.html#responsive</a></td>
+</tr>
+<tr>
+<td>.hidden-desktop</td>
+<td>Mobile Device compatiblity</td>
+<td>This class hides the div when viewed in desktops (viewports having size greater than 979px)</td>
+<td><a href="http://getbootstrap.com/2.3.2/scaffolding.html#responsive" rel="nofollow" target="_blank"> scaffolding.html#responsive</a></td>
+</tr>
+</tbody>
+</table>
+  <br class="clear" />
+
+
+
+<h3 class="ie_fix" id="post_author">About the Author</h3>
+<a name="post_author"></a>
+<div id="about_author"> <img alt="no author photo available" src="auxi/pix/gray-square.gif" class="avatar avatar-80 photo" height="80" width="80">  <div class="author_text">
+    <h4>
+      <a href="http://www.seosemanticxhtml.com/" title="Visit Mudit’s website" rel="author external">Mudit Singh</a>    </h4>
+    <p>
+      Mudit Singh is an expert commentator who's allied with <strong>SeoSemanticXhtml</strong>, which is a sister concern of <a href="http://www.ipraxa.com/" rel="nofollow" target="_blank">Ipraxa</a> – a web agency that's created its niche in providing high-end <a href="http://www.seosemanticxhtml.com/">PSD to HTML and Integration</a> with third-party applications such as PSD to Magento, Wordpress, Drupal, Joomla, etc. For the latest in Web designing and Web development, touch base with us via <a href="http://www.facebook.com/seosemanticxhtmlcompany" rel="nofollow" target="_blank">Facebook</a> and <a href="https://twitter.com/SeoSemanticFans" rel="nofollow" target="_blank">Twitter</a> also on <a href="https://plus.google.com/108325279540717895019" rel="nofollow" target="_blank">Google+</a>.    </p>
+    <br class="clear" />
+  </div>  <!--  author_text  -->
+</div> <!--  about_author"  -->
+  <br class="clear" />
+
+
+
+</div>
+</div>
+</body>
+</html>
