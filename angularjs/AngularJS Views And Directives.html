@@ -998,16 +998,16 @@
 
 
 <pre class="brush: js; html-script: true; tab-size: 3; highlight: [8,9]">&lt;script&gt;
-  angular.module("myapp", [])
-    .controller("MyController", function($scope) {
-      $scope.myData = {};
-      $scope.myData.items  = [ {text : "one"}, {text : "two"}, {text : "three"}, {text : "four"} ];
+    angular.module("myapp", [])
+        .controller("MyController", function($scope) {
+            $scope.myData = {};
+            $scope.myData.items  = [ {text : "one"}, {text : "two"}, {text : "three"}, {text : "four"} ];
 
-      $scope.itemFilter = function(item) {
-        if(item.text == "two") return false;
-          return true;
+            $scope.itemFilter = function(item) {
+                if(item.text == "two") return false;
+                return true;
+            }
         }
-      }
     });
 &lt;/script&gt;
 </pre>
@@ -1174,12 +1174,12 @@
 
 &lt;script&gt;
     angular.module("myapp", [])
-            .controller("MyController", function($scope) {
-                $scope.myData = {};
-                $scope.myData.items    = [ {text : "one"}, {text : "two"}, {text : "three"}, {text : "four"} ];
-                $scope.sortField = "text";
-                $scope.reverse   = true;
-            } );
+        .controller("MyController", function($scope) {
+            $scope.myData = {};
+            $scope.myData.items    = [ {text : "one"}, {text : "two"}, {text : "three"}, {text : "four"} ];
+            $scope.sortField = "text";
+            $scope.reverse   = true;
+        } );
 &lt;/script&gt;
 </pre>
 
@@ -1262,7 +1262,6 @@
     var module = angular.module("myapp", []);
 
     module.filter('myFilter', function() {
-
         return function(stringValue) {
             return stringValue.substring(0,3);
         };
@@ -1288,7 +1287,6 @@
     var module = angular.module("myapp", []);
 
     module.filter('myFilter', function() {
-
         return function(stringValue, startIndex, endIndex) {
             return stringValue.substring(parseInt(startIndex), parseInt(endIndex));
         };
@@ -1308,15 +1306,13 @@
 
         <br /><br />
 
-        <!--  nav>
-             <a href="http://tutorials.jenkov.com/angularjs/scope-hierarchy.html">
-                <div class="nextArticleInCategory">
-                    <b>Next:</b>&nbsp;&nbsp;&nbsp;AngularJS $scope Hierarchy
-                </div>
-            </a>
-        </nav  -->
+         <nav>
+            <b>Prev:</b>&nbsp;&nbsp;<a href="./AngularJS Tutorial.html">AngularJS Tutorial (e.g., part I)</a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            <!--  b>This:</b>&nbsp;&nbsp;<a href="./AngularJS Views And Directives.html">AngularJS Views And Directives</a  -->
+            <b>Next:</b>&nbsp;&nbsp;<a href="./AngularJS Events.html">AngularJS Events</a>
+        </nav>
 
-        <!--  div style="height: 30px"></div  -->
+        <div style="height: 30px"></div>
 
         <!--  table>
             <tbody><tr>
