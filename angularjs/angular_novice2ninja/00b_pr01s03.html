@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html -->
+<html lang="en" class=" js no-touch svg inlinesvg svgclippaths no-ie8compat"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta charset="utf-8">
+<meta content="Learnable: Learn web development and design from the masters." name="description">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AngularJS: Novice to Ninja
+ - Learnable</title>
+<link href="https://d3jdkh4ynqm70e.cloudfront.net/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+<link href="https://learnable.com/apple-touch-icon-57x57-precomposed.png" rel="apple-touch-icon-precomposed">
+<link href="https://learnable.com/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+<link href="https://learnable.com/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+<link href="https://learnable.com/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+<link href="./00b_pr01s03_files/css" rel="stylesheet" type="text/css">
+<link href="./00b_pr01s03_files/styles-ba8f133bbfd5e18e07f4f31fb014dad8.css" media="screen" rel="stylesheet" type="text/css">
+<link href="./00b_pr01s03_files/zenbox-2.6-4a52dd35ef307bd1204300155fbf24fa.css" media="screen" rel="stylesheet" type="text/css">
+
+<meta content="authenticity_token" name="csrf-param">
+<meta content="IpbeAO7NXdRjrGIrDRheEcCHqb09V+j8oXiNXvr+/5w=" name="csrf-token">
+<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+<!--[if lt IE 9]>
+<script src="https://d3jdkh4ynqm70e.cloudfront.net/assets/html5shiv-50e45963d13405cd700515b11ecfc834.js" type="text/javascript"></script>
+<![endif]-->
+<!-- / We should strive to load only the bare essential Javascript in head, please use javascript_body -->
+<script type="text/javascript" async="" src="./00b_pr01s03_files/036d78b986aa12a6c8f3ada4d8790c42e73d6193.1.js"></script><script type="text/javascript" async="" src="./00b_pr01s03_files/i.js"></script><script type="text/javascript" async="" src="./00b_pr01s03_files/linkid.js" id="undefined"></script><script async="" src="./00b_pr01s03_files/analytics.js"></script><script>
+  window.x = window.x || {};
+</script>
+<script src="./00b_pr01s03_files/loader-a862464be43ba97f2ec6a24a50943a34.js" type="text/javascript"></script>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', "UA-20931357-1", ".learnable.com");
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js');
+ga('set', 'dimension1', 'Logged in');
+ga('send', 'pageview');
+
+</script>
+<meta content="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03" property="og:url">
+<meta content="AngularJS: Novice to Ninja on Learnable" property="og:title">
+<meta content="Build richer, more powerful JavaScript apps in less time" property="og:description">
+<meta content="https://d2sis3lil8ndrq.cloudfront.net/books/angularjs1_large_3d.png" property="og:image">
+<meta content="Learnable" property="og:site_name">
+<meta content="books.book" property="og:type">
+<meta content="summary" property="twitter:card">
+<meta content="@LearnableHQ" property="twitter:site">
+<meta content="AngularJS: Novice to Ninja on Learnable" property="twitter:title">
+<meta content="Build richer, more powerful JavaScript apps in less time" property="twitter:description">
+<meta content="https://d2sis3lil8ndrq.cloudfront.net/books/angularjs1_large_3d.png" property="twitter:image:src">
+
+
+<link href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03" rel="canonical">
+<script type="text/javascript">
+//<![CDATA[
+      var _kmq = _kmq || [];
+      var _kmk = _kmk || '036d78b986aa12a6c8f3ada4d8790c42e73d6193';
+      function _kms(u){
+        setTimeout(function(){
+          var d = document, f = d.getElementsByTagName('script')[0],
+          s = d.createElement('script');
+          s.type = 'text/javascript'; s.async = true; s.src = u;
+          f.parentNode.insertBefore(s, f);
+        }, 1);
+      }
+      _kms('//i.kissmetrics.com/i.js');
+      _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
+
+//]]>
+</script><style type="text/css"></style><style type="text/css"></style><style type="text/css"></style></head>
+<body class="book-page">
+<div class="TopBar" role="navigation">
+<div class="TopBar_inner TopBar-desktop">
+<h1 class="TopBar_logo"><a href="https://learnable.com/">Learnable</a></h1>
+<div class="TopBarItems TopBarItems-left">
+<div class="TopBarItem"><a href="https://learnable.com/home">Home</a></div>
+<div class="TopBarItem"><a href="https://learnable.com/topics/all">Books &amp; Courses</a></div>
+<div data-children="[{&quot;label&quot;:&quot;The Hub&quot;,&quot;href&quot;:&quot;/hub&quot;},{&quot;label&quot;:&quot;Coming Soon&quot;,&quot;href&quot;:&quot;/coming-soon&quot;},{&quot;label&quot;:&quot;Suggestions&quot;,&quot;href&quot;:&quot;/upvote&quot;},{&quot;label&quot;:&quot;Contact Us&quot;,&quot;href&quot;:&quot;/contact&quot;},{&quot;label&quot;:&quot;Teach for Us&quot;,&quot;href&quot;:&quot;/teachers&quot;},{&quot;label&quot;:&quot;Live Update&quot;,&quot;href&quot;:&quot;/liveupdate&quot;}]" data-label="More" data-x="TopBarDropdown" id="TopBarItem_more"><div class="TopBarItem TopBarItem-caret" data-reactid=".0"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#" data-reactid=".0.0">More</a></div></div>
+</div>
+<div class="TopBarItems TopBarItems-right">
+<div data-children="[{&quot;label&quot;:&quot;Profile&quot;,&quot;href&quot;:&quot;/account&quot;},{&quot;label&quot;:&quot;Notifications&quot;,&quot;href&quot;:&quot;/account/notifications&quot;},{&quot;label&quot;:&quot;Membership&quot;,&quot;href&quot;:&quot;/account/membership&quot;},{&quot;label&quot;:&quot;Payment History&quot;,&quot;href&quot;:&quot;/account/payments&quot;},{&quot;label&quot;:&quot;Log Out&quot;,&quot;href&quot;:&quot;/sign-out?from=%2Fbooks%2Fangularjs-novice-to-ninja%2Fonline%2Fpr01s03.html&quot;}]" data-src="https://d3jdkh4ynqm70e.cloudfront.net/images/default-avatar.png" data-x="TopBarAvatarDropdown" id="TopBarItem_user"><div class="TopBarItem" data-reactid=".2"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#" data-reactid=".2.0"><img src="./00b_pr01s03_files/default-avatar.png" data-reactid=".2.0.0"></a></div></div>
+</div>
+<div class="TopBarItems TopBarItems-right">
+<div data-user-id="110353" data-x="TopBarNotificationsDropdown" id="TopBarItem_notificiations"><div class="TopBarItem" data-badge="3" data-reactid=".4"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#" data-reactid=".4.0"><span class="icon-bell" data-reactid=".4.0.0"></span></a></div></div>
+</div>
+<div class="TopbarItems TopBarItems-right">
+<div class="TopBarItem">
+<a href="https://learnable.com/topics/search"><span class="icon-search"></span></a>
+</div>
+</div>
+<div class="TopbarItems TopBarItems-right">
+<form action="https://learnable.com/topics/search" class="TopBar_form">
+<div class="TopBarItem">
+<input class="searchquery TopBarItem_input" id="s" name="q" placeholder="Search..." type="text">
+</div>
+</form>
+</div>
+<div class="TopBarItems TopBarItems-right">
+</div>
+</div>
+<div class="TopBar_inner TopBar-mobile">
+<h1 class="TopBar_logo"><a href="https://learnable.com/">Learnable</a></h1>
+<div class="TopBarItems TopBarItems-right">
+<div data-children="[{&quot;label&quot;:&quot;Profile&quot;,&quot;href&quot;:&quot;/account&quot;},{&quot;label&quot;:&quot;Notifications&quot;,&quot;href&quot;:&quot;/account/notifications&quot;},{&quot;label&quot;:&quot;Membership&quot;,&quot;href&quot;:&quot;/account/membership&quot;},{&quot;label&quot;:&quot;Payment History&quot;,&quot;href&quot;:&quot;/account/payments&quot;},{&quot;label&quot;:&quot;Log Out&quot;,&quot;href&quot;:&quot;/sign-out?from=%2Fbooks%2Fangularjs-novice-to-ninja%2Fonline%2Fpr01s03.html&quot;}]" data-src="https://d3jdkh4ynqm70e.cloudfront.net/images/default-avatar.png" data-x="TopBarAvatarDropdown"><div class="TopBarItem" data-reactid=".3"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#" data-reactid=".3.0"><img src="./00b_pr01s03_files/default-avatar.png" data-reactid=".3.0.0"></a></div></div>
+</div>
+<div class="TopBarItems TopBarItems-right">
+<div data-user-id="110353" data-x="TopBarNotificationsDropdown"><div class="TopBarItem" data-badge="3" data-reactid=".5"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#" data-reactid=".5.0"><span class="icon-bell" data-reactid=".5.0.0"></span></a></div></div>
+</div>
+<div class="TopBarItems TopBarItems-right">
+<div class="TopBarItem">
+<a href="https://learnable.com/topics/search"><span class="icon-search"></span></a>
+</div>
+</div>
+<div class="TopBarItems TopBarItems-right">
+<div data-children="[{&quot;label&quot;:&quot;Books &amp; Courses&quot;,&quot;href&quot;:&quot;/topics/all&quot;},{&quot;label&quot;:&quot;The Hub&quot;,&quot;href&quot;:&quot;/hub&quot;},{&quot;label&quot;:&quot;Coming Soon&quot;,&quot;href&quot;:&quot;/coming-soon&quot;},{&quot;label&quot;:&quot;Suggestions&quot;,&quot;href&quot;:&quot;/upvote&quot;}]" data-x="TopBarMobileMenu"><div class="TopBarItem" data-reactid=".1"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#" data-reactid=".1.0"><span class="icon-menu" data-reactid=".1.0.0"></span></a></div></div>
+</div>
+</div>
+</div>
+
+
+
+<div class="row flash-messages">
+<div class="columns">
+</div>
+</div>
+
+<div class="book">
+<div class="maincontent">
+<div class="row">
+<div class="course-view columns">
+<div class="panel">
+
+<div class="title-unit">
+<div class="title-unit_title">
+<h1>AngularJS: Novice to Ninja</h1>
+<h2><span itemprop="author">Sandeep Panda</span></h2>
+</div>
+</div>
+<div class="row">
+<div class="columns">
+
+      
+   <title>Supplementary Materials</title><link rel="stylesheet" type="text/css" href="./00b_pr01s03_files/docbook.css"><link rel="stylesheet" type="text/css" href="./00b_pr01s03_files/sitepoint.css"><meta name="generator" content="DocBook XSL Stylesheets V1.77.1"><link rel="home" href="https://learnable.com/books/angularjs-novice-to-ninja/online/index.html" title="AngularJS: Novice to Ninja"><link rel="up" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01.html" title="Preface"><link rel="prev" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s02.html" title="Conventions Used"><link rel="next" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s04.html" title="Want to Take Your Learning Further?"><nav class="booktoc"><p class="structural-label">Table of Contents</p><div class="toc"><dl><dt><span class="book"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/index.html">Cover</a></span></dt><dt><span class="bookinfo"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/bookinfo.html">About the Author</a></span></dt><dt><span class="preface"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01.html">Preface</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch01.html">1. Falling In Love With AngularJS</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch02.html">2. Modules, Controllers &amp; Data Binding</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch03.html">3. AngularJS Scope &amp; Events</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch04.html">4. Multiple Views and Routing</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch05.html">5. AngularJS Services, Factories, and Providers</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch06.html">6. Developing Single Page Blogger</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch07.html">7. Understanding AngularJS Forms</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch08.html">8. Interacting with REST APIs</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch09.html">9. Using REST APIs in Single Page Blogger</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch10.html">10. AngularJS Directives</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch11.html">11. Adding a Comment System to Single Page Blogger</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch12.html">12. Dependency Injection In AngularJS</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch13.html">13. AngularJS Filters</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch14.html">14. AngularJS Animation</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch15.html">15. Deployment and Internationalization</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch16.html">16. Authentication and Authorization in AngularJS</a></span></dt></dl></div></nav><div class="navheader"><p class="structural-label">Navigation</p><ul><li class="prev"><a accesskey="p" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s02.html">Prev</a></li><li class="next"><a accesskey="n" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s04.html">Next</a></li><li class="up">In: <a accesskey="u" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01.html">Preface</a></li></ul></div><div id="book-content"><section class="section"><div class="titlepage"><div><div><h2 class="title"><a name="d5e108"></a>Supplementary Materials</h2></div></div></div>
+    
+
+    <div class="variablelist"><dl class="variablelist"><dt class="term"><a class="ulink" href="http://www.learnable.com/books/angularjs1/" target="_top">http://www.learnable.com/books/angularjs1/</a></dt><dd>
+          <p>The book’s website, containing links, updates, resources, and
+          more.</p>
+        </dd><dt class="term"><a class="ulink" href="https://github.com/spbooks/angularjs1/" target="_top">https://github.com/spbooks/angularjs1/</a></dt><dd>
+          <p>The downloadable code archive for this book.</p>
+        </dd><dt class="term"><a class="ulink" href="http://community.sitepoint.com/category/javascript" target="_top">http://community.sitepoint.com/category/javascript</a></dt><dd>
+          <p>SitePoint’s forums, for help on any tricky web
+          problems.</p>
+        </dd><dt class="term"><code class="email"><a class="email" href="mailto:books@sitepoint.com">books@sitepoint.com</a></code></dt><dd>
+          <p>Our email address, should you need to contact us for support,
+          to report a problem, or for any other reason.</p>
+        </dd></dl></div>
+  </section></div><div class="navfooter"><p class="structural-label">Navigation</p><ul><li class="prev"><a accesskey="p" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s02.html">Prev</a></li><li class="next"><a accesskey="n" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s04.html">Next</a></li><li class="up">In: <a accesskey="u" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01.html">Preface</a></li></ul></div><script type="text/javascript">
+//<![CDATA[
+_kmq.push(['identify', '110353']);
+//]]>
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="course-support">
+<div class="panel panel--tabbed">
+<div class="row collapse">
+<div class="column">
+<div class="section-container tabs" data-section="tabs" style="">
+<section class="section active" style="padding-top: 42px;">
+<div class="title" style="left: 0px;">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#panel1">Discussion</a>
+</div>
+<div class="content" data-slug="panel1">
+<script>
+  var stammer = {}
+</script>
+<script>
+  stammer.user = {
+    learnable_user_id: 110353,
+    username: "rsperberg",
+    is_admin: false,
+    avatar: "<img alt=\"avatar\" class=\"avatar-large\" src=\"https://d3jdkh4ynqm70e.cloudfront.net/assets/the86/default-avatar-64x-123b675803bd424d7e376e699801ed79.png\" />",
+    the86_user_id: 58288
+  };
+</script>
+<script>
+  stammer.settings = {
+    default_avatar: "<img alt=\"avatar\" class=\"avatar-large\" src=\"https://d3jdkh4ynqm70e.cloudfront.net/assets/the86/default-avatar-64x-123b675803bd424d7e376e699801ed79.png\" />",
+    metadata: {"origin":"book-consumption","book_id":1067,"topic":["front-end","all","angular-js","javascript"],"book_section":"pr01s03"}
+  };
+  
+  loader.push(function() {
+    stammer.app = new Stammer(stammer.user, stammer.settings);
+  });
+</script>
+
+<script id="new-thread-textarea" type="text/x-moustache">
+<div class='thread-starter' data-stammer-section='thread'>
+<div class='comment-contribution'>
+<div class='comment-contribution_text-entry'>
+<textarea class='response markdown-source' data-stammer-text placeholder='Ask a question or post a comment' rows='4'></textarea>
+<div class='comment-contribution_text-entry_help'>
+<strong>
+Markdown:
+</strong>
+<span class='examples fine-print'>
+<strong>
+**bold**
+</strong>
+<em>
+_italics_
+</em>
+<code>`code`</code>
+<code>```preformatted```</code>
+<span>
+>blockquote
+</span>
+</span>
+</div>
+
+<div class='comment-contribution_markdown-preview markdown-preview'>
+<p></p>
+</div>
+</div>
+<div class='comment-contribution_submit'>
+<a class='button small publish' data-stammer-submit href='#'>
+Publish
+</a>
+</div>
+</div>
+</div>
+
+</script>
+<script id="new-thread" type="text/x-moustache">
+<div class='thread' data-id='{{id}}' data-updated-at='{{updated_at}}'>
+<ul class='comment-list conversations'>
+<li class='comment post' data-author='rsperberg' data-id='{{post_id}}' data-learnable-user-id='{{learnable_user_id}}' data-user-id='{{user_id}}'>
+<div class='comment-contribution_avatar'>
+<img alt="avatar" class="avatar-small" src="https://d3jdkh4ynqm70e.cloudfront.net/assets/the86/default-avatar-27x-41ff03aa3fcceab240f6d2d067d1f6e6.png" />
+</div>
+<div class='poster_title'>
+<a class='poster_name' href=''>
+rsperberg
+</a>
+</div>
+<div class='comment_body'>
+<div class='comment_content'>{{{content}}}</div>
+<div class='comment-metadata'>
+<div class='comment-metadata_when large-offset-8'>
+<time class='timeago' datetime='2014-10-24 23:08:12 +0000'></time>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</script>
+<script id="new-reply-textarea" type="text/x-moustache">
+<div class='comment-inline' data-stammer-section='reply'>
+<div class='comment-contribution_text-entry'>
+<a class='comment-contribution-in_reply_to'></a>
+<textarea class='reply markdown-source' data-stammer-text placeholder='Reply..' rows='4'></textarea>
+<div class='comment-contribution_text-entry_help'>
+<strong>
+Markdown:
+</strong>
+<span class='examples fine-print'>
+<strong>
+**bold**
+</strong>
+<em>
+_italics_
+</em>
+<code>`code`</code>
+<code>```preformatted```</code>
+<span>
+>blockquote
+</span>
+</span>
+</div>
+
+<div class='comment-contribution_markdown-preview markdown-preview'>
+<p></p>
+</div>
+<div class='comment-contribution_submit'>
+<a class='button small reply' data-stammer-submit href='#'>
+Reply
+</a>
+</div>
+</div>
+</div>
+
+</script>
+<script id="new-reply" type="text/x-moustache">
+<li class='comment post' data-author='rsperberg' data-id='{{post_id}}' data-learnable-user-id='{{learnable_user_id}}' data-user-id='{{user_id}}'>
+<div class='comment-contribution_avatar'>
+<img alt="avatar" class="avatar-small" src="https://d3jdkh4ynqm70e.cloudfront.net/assets/the86/default-avatar-27x-41ff03aa3fcceab240f6d2d067d1f6e6.png" />
+</div>
+<div class='poster_title'>
+<a class='poster_name' href=''>
+rsperberg
+</a>
+</div>
+<div class='comment_body'>
+<div class='comment_content'>{{{content}}}</div>
+<div class='comment-metadata'>
+<div class='comment-metadata_when large-offset-8'>
+<time class='timeago' datetime='2014-10-24 23:08:12 +0000'></time>
+</div>
+</div>
+</div>
+</li>
+</script>
+<script id="stammer-error-notification" type="text/x-moustache">
+<div class='alert-box alert radius' data-alert id='new-posts-notification'>
+{{{message}}}
+<a class='close' href=''>×</a>
+</div>
+</script>
+<script id="stammer-notification" type="text/x-moustache">
+<div class='alert-box radius' data-alert id='new-posts-notification'>
+<a onclick='location.reload();'>{{{message}}}</a>
+<a class='close' href=''>×</a>
+</div>
+</script>
+
+<script>
+  loader.push(function() {
+    discussion.init("/discussion/conversations_only", {"origin":"book-consumption","book_id":1067}, {"badge":true,"limit":10,"cta":"generic"});
+    discussion.loadFaqs('#conversation-faqs');
+    discussion.loadConversations('#conversation-loader');
+  });
+</script>
+<div class="notifications" data-stammer-placeholder="notifications"></div>
+<div class="comment-contribution">
+<div class="comment-contribution_avatar">
+<a class="avatar-link" href="https://learnable.com/account">
+<img alt="avatar" class="avatar-medium" src="./00b_pr01s03_files/default-avatar-48x-973c159de46493f05aac556e13ccd1d7.png">
+</a>
+</div>
+<div class="thread-starter" data-stammer-section="thread">
+<div class="comment-contribution">
+<div class="comment-contribution_text-entry">
+<textarea class="response markdown-source" data-stammer-text="" placeholder="Ask a question or post a comment" rows="4"></textarea>
+<div class="comment-contribution_text-entry_help">
+<strong>
+Markdown:
+</strong>
+<span class="examples fine-print">
+<strong>
+**bold**
+</strong>
+<em>
+_italics_
+</em>
+<code>`code`</code>
+<code>```preformatted```</code>
+<span>
+&gt;blockquote
+</span>
+</span>
+</div>
+
+<div class="comment-contribution_markdown-preview markdown-preview">
+<p></p>
+</div>
+</div>
+<div class="comment-contribution_submit">
+<a class="button small publish" data-stammer-submit="" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Publish
+</a>
+</div>
+</div>
+</div>
+
+</div>
+<div class="new-conversations" data-stammer-placeholder="conversations"></div>
+<div class="faq-conversations">
+</div>
+
+
+<div class="thread" data-id="7348" data-updated-at="2014-10-23T17:14:14+00:00">
+<ul class="comment-list conversations">
+<li class="comment post" data-author="Federico Balboa" data-created-at="2014-09-25T23:21:37+00:00" data-id="21298" data-learnable-user-id="47548" data-user-id="5914" id="post_21298">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/Captura_de_pantalla_2013-11-03_a_la_s__21.36.41_thumb.png">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/lsfc4" class="poster_name">Federico Balboa</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Please, the angular seed master in github <a href="https://github.com/angular/angular-seed">https://github.com/angular/angular-seed</a> hasn’t the same folder structure like the examples displayed on the book, it is very diffuclt to follow the excercises because the order has changed since the book was edited.</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-09-25T23:21:37+00:00">29 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="text-center more-replies-holder">
+<p>
+<a class="more-replies">Show 4 older replies</a>
+</p>
+</li>
+
+</ul>
+<ul class="comment-replies" data-stammer-replies="">
+<li class="HIDDEN comment post" data-author="Sandeep Panda" data-created-at="2014-09-27T21:21:35+00:00" data-id="21323" data-learnable-user-id="43664" data-user-id="25865" id="post_21323">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/3ZFqaBzf_thumb.jpeg">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/sandeeppanda92" class="poster_name">Sandeep Panda</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Hi Federico,</p>
+
+<p>Yes, Angular Seed recently got a new structure. You need to download the Angular Seed from a particular commit i.e. the commit at the time of writing the book. The book is going to be updated to reflect the changed URL.</p>
+
+<p>Please download Angular Seed from this URL: <a href="https://github.com/angular/angular-seed/tree/69c9416c8407fd5806aab3c63916dfcf0522ecbc">https://github.com/angular/angular-seed/tree/69c9416c8407fd5806aab3c63916dfcf0522ecbc</a></p>
+
+<p>Thanks!</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-09-27T21:21:35+00:00">27 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="HIDDEN comment post" data-author="Russell Chamberland" data-created-at="2014-09-30T20:14:06+00:00" data-id="21383" data-learnable-user-id="40515" data-user-id="23927" id="post_21383">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/default-avatar-27x-41ff03aa3fcceab240f6d2d067d1f6e6.png">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/russellcha" class="poster_name">Russell Chamberland</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>I tried executing the End-To-End Test script and (  sh scripts/e2e-test.sh ) it launch a Chrome browser web page with a message of “This webpage is not available” and I got an error in the Terminal (see below).</p>
+
+<p>Error: Angular could not be found on the page http://localhost:8000/app/index.html</p>
+
+<p>However, the Unit Test worked fine for me. I’m sure I followed all the steps and installed everything correctly.</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-09-30T20:14:06+00:00">24 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="HIDDEN comment post" data-author="Sandeep Panda" data-created-at="2014-10-01T06:53:31+00:00" data-id="21389" data-learnable-user-id="43664" data-user-id="25865" id="post_21389">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/3ZFqaBzf_thumb.jpeg">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/sandeeppanda92" class="poster_name">Sandeep Panda</a> in reply to <a href="https://learnable.com/users/russellcha" class="poster_name">Russell Chamberland</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Hi Russell,</p>
+
+<p>This means you are running Protractor tests without starting the server. That’s why the browser says “This webpage is not available”. Once you start the server (using scripts/web-server.js) you should be able to run the tests.</p>
+
+<p>Regards,
+Sandeep</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-01T06:53:31+00:00">24 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="HIDDEN comment post" data-author="Russell Chamberland" data-created-at="2014-10-01T20:41:35+00:00" data-id="21406" data-learnable-user-id="40515" data-user-id="23927" id="post_21406">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/default-avatar-27x-41ff03aa3fcceab240f6d2d067d1f6e6.png">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/russellcha" class="poster_name">Russell Chamberland</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Hello Sandeep,</p>
+
+<p>But how do I execute the “sh scripts/e2e-test.sh” command line in the terminal while the web server is running?</p>
+
+<p>Thanks for your help,</p>
+
+<p>Russell</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-01T20:41:35+00:00">23 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="comment post" data-author="Sandeep Panda" data-created-at="2014-10-01T21:10:20+00:00" data-id="21407" data-learnable-user-id="43664" data-user-id="25865" id="post_21407">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/3ZFqaBzf_thumb.jpeg">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/sandeeppanda92" class="poster_name">Sandeep Panda</a> in reply to <a href="https://learnable.com/users/russellcha" class="poster_name">Russell Chamberland</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>You can open up a new terminal and execute  <code>sh scripts/e2e-test.sh</code>.</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-01T21:10:20+00:00">23 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="comment post" data-author="dirkecker4" data-created-at="2014-10-03T05:36:50+00:00" data-id="21441" data-learnable-user-id="49839" data-user-id="9225" id="post_21441">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/default-avatar-27x-41ff03aa3fcceab240f6d2d067d1f6e6.png">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/dirkecker4" class="poster_name">dirkecker4</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Should be, but does not work. Look into the package.json. There are all available commands contained. I think you have to call npm with protactor: <code>npm protactor</code>to execute the e2e tests.</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-03T05:36:50+00:00">22 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="comment post" data-author="schristm" data-created-at="2014-10-23T17:14:14+00:00" data-id="21812" data-learnable-user-id="86289" data-user-id="32852" id="post_21812">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/default-avatar-27x-41ff03aa3fcceab240f6d2d067d1f6e6.png">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/schristm" class="poster_name">schristm</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>I don’t see a a path for post/views and after reading the other comments.. I’m a little concerned that this book is a waste of time.  All I wanted to do was add a blog page to site.  I went to Github via the link.. </p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-23T17:14:14+00:00">a day ago</time>
+</div>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="comment-inline" data-stammer-section="reply">
+<div class="comment-contribution_text-entry">
+<a class="comment-contribution-in_reply_to"></a>
+<textarea class="reply markdown-source" data-stammer-text="" placeholder="Reply.." rows="4"></textarea>
+<div class="comment-contribution_text-entry_help">
+<strong>
+Markdown:
+</strong>
+<span class="examples fine-print">
+<strong>
+**bold**
+</strong>
+<em>
+_italics_
+</em>
+<code>`code`</code>
+<code>```preformatted```</code>
+<span>
+&gt;blockquote
+</span>
+</span>
+</div>
+
+<div class="comment-contribution_markdown-preview markdown-preview">
+<p></p>
+</div>
+<div class="comment-contribution_submit">
+<a class="button small reply" data-stammer-submit="" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="thread" data-id="7461" data-updated-at="2014-10-12T21:26:28+00:00">
+<ul class="comment-list conversations">
+<li class="comment post" data-author="Bill Hannah" data-created-at="2014-10-12T10:51:57+00:00" data-id="21593" data-learnable-user-id="7935" data-user-id="13999" id="post_21593">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/65e7ceb62ac89533f33933b41a2a0fdf_thumb.jpg">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/billhannah" class="poster_name">Bill Hannah</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01">
+<span class="label">
+Section
+</span>
+:
+<span class="name">pr01</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Is the code samples mentioned in Chapter 2 the ones at <a href="https://github.com/spbooks/angularjs1">https://github.com/spbooks/angularjs1</a>?</p>
+
+<p>I have spent a lot of time fixing the project structure in the Ch 02 folder for use in Chapter 6. I had to fix the web-server.js file (to server from the app directory by default, and serve index.html if path is ./), add bootstrap-min.css and posts.css as they were missing.</p>
+
+<p>I find I’m spending a lot of time messing with either angular seed (because of the code restructure) or trying to figure out what I need to do to get the samples from the github repo working.</p>
+
+<p>I’m wondering how someone with less experience (especially with npm or node) would be able to figure out how to do the things I’ve done (like getting the new angular-seed repo working with the code examples in the book) or hacking the web-server.js file so that it works as said in the book.</p>
+
+<p>It’s a great book so far (just working through Chapter 6) and has taught me a lot about Angular, but the code samples definitely need some loving soon.</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-12T10:51:57+00:00">13 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+
+</ul>
+<ul class="comment-replies" data-stammer-replies="">
+<li class="comment post" data-author="Sandeep Panda" data-created-at="2014-10-12T10:58:08+00:00" data-id="21595" data-learnable-user-id="43664" data-user-id="25865" id="post_21595">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/3ZFqaBzf_thumb.jpeg">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/sandeeppanda92" class="poster_name">Sandeep Panda</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01">
+<span class="label">
+Section
+</span>
+:
+<span class="name">pr01</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Hi.. I have mentioned this somewhere below. The Angular Seed structure recently changed. So, you can download Angular Seed from a previous commit - the one used in the book. </p>
+
+<p>Please download the seed project from this location : <a href="https://github.com/angular/angular-seed/tree/69c9416c8407fd5806aab3c63916dfcf0522ecbc">https://github.com/angular/angular-seed/tree/69c9416c8407fd5806aab3c63916dfcf0522ecbc</a></p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-12T10:58:08+00:00">13 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="comment post" data-author="Bill Hannah" data-created-at="2014-10-12T21:26:28+00:00" data-id="21611" data-learnable-user-id="7935" data-user-id="13999" id="post_21611">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/65e7ceb62ac89533f33933b41a2a0fdf_thumb.jpg">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/billhannah" class="poster_name">Bill Hannah</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01">
+<span class="label">
+Section
+</span>
+:
+<span class="name">pr01</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>That’s true, but there are other problems. I have Angular Seed from the correct commit, but the wrong version of Angular UI Route it seems as Angular can’t load $scopeProvider. Also, as mentioned the supporting files (such as the CSS) are either missing or incorrect. </p>
+
+<p>I am spending most of my time fixing problems and chasing down the correct files from external sources rather than learning Angular. I know it’s a new book but it seems like no one has checked the code archive for accuracy or completeness.</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-12T21:26:28+00:00">12 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="comment-inline" data-stammer-section="reply">
+<div class="comment-contribution_text-entry">
+<a class="comment-contribution-in_reply_to"></a>
+<textarea class="reply markdown-source" data-stammer-text="" placeholder="Reply.." rows="4"></textarea>
+<div class="comment-contribution_text-entry_help">
+<strong>
+Markdown:
+</strong>
+<span class="examples fine-print">
+<strong>
+**bold**
+</strong>
+<em>
+_italics_
+</em>
+<code>`code`</code>
+<code>```preformatted```</code>
+<span>
+&gt;blockquote
+</span>
+</span>
+</div>
+
+<div class="comment-contribution_markdown-preview markdown-preview">
+<p></p>
+</div>
+<div class="comment-contribution_submit">
+<a class="button small reply" data-stammer-submit="" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="thread" data-id="7425" data-updated-at="2014-10-12T18:35:55+00:00">
+<ul class="comment-list conversations">
+<li class="comment post" data-author="Ravi Teja" data-created-at="2014-10-07T19:32:53+00:00" data-id="21515" data-learnable-user-id="178595" data-user-id="61030" id="post_21515">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/default-avatar-27x-41ff03aa3fcceab240f6d2d067d1f6e6.png">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/lravi272" class="poster_name">Ravi Teja</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch01s05">
+<span class="label">
+Section
+</span>
+:
+<span class="name">Chapter 1, Section 5</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>The amount to be spent on gadgets will be: 
+➥{{result()}}
+This statement displays {{result()}} as the answer but not the actual result.I have made all the changes mentioned in the book but I have no clue.Where could I have gone wrong?</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-07T19:32:53+00:00">17 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+
+</ul>
+<ul class="comment-replies" data-stammer-replies="">
+<li class="comment post" data-author="Ilya Bodrov" data-created-at="2014-10-08T07:58:14+00:00" data-id="21529" data-learnable-user-id="112002" data-user-id="43084" id="post_21529">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/36249cc270f3a46bf3d70e7cad7b7e11_thumb">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/ilyabodrov" class="poster_name"><span>(staff) </span>Ilya Bodrov</a> in reply to <a href="https://learnable.com/users/lravi272" class="poster_name">Ravi Teja</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch01s05">
+<span class="label">
+Section
+</span>
+:
+<span class="name">Chapter 1, Section 5</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Any errors in the browser’s console?</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-08T07:58:14+00:00">17 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="comment post" data-author="Bill Hannah" data-created-at="2014-10-12T10:55:01+00:00" data-id="21594" data-learnable-user-id="7935" data-user-id="13999" id="post_21594">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/65e7ceb62ac89533f33933b41a2a0fdf_thumb.jpg">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/billhannah" class="poster_name">Bill Hannah</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch01s05">
+<span class="label">
+Section
+</span>
+:
+<span class="name">Chapter 1, Section 5</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Usually there is a typo somewhere in your source (such as $scope.reslt) so the HTML expression can’t be bound to the scope object.</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-12T10:55:01+00:00">13 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="comment post" data-author="Ravi Teja" data-created-at="2014-10-12T18:35:55+00:00" data-id="21606" data-learnable-user-id="178595" data-user-id="61030" id="post_21606">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/default-avatar-27x-41ff03aa3fcceab240f6d2d067d1f6e6.png">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/lravi272" class="poster_name">Ravi Teja</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch01s05">
+<span class="label">
+Section
+</span>
+:
+<span class="name">Chapter 1, Section 5</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Ok.Thank you all for the replies.I will check.</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-12T18:35:55+00:00">12 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="comment-inline" data-stammer-section="reply">
+<div class="comment-contribution_text-entry">
+<a class="comment-contribution-in_reply_to"></a>
+<textarea class="reply markdown-source" data-stammer-text="" placeholder="Reply.." rows="4"></textarea>
+<div class="comment-contribution_text-entry_help">
+<strong>
+Markdown:
+</strong>
+<span class="examples fine-print">
+<strong>
+**bold**
+</strong>
+<em>
+_italics_
+</em>
+<code>`code`</code>
+<code>```preformatted```</code>
+<span>
+&gt;blockquote
+</span>
+</span>
+</div>
+
+<div class="comment-contribution_markdown-preview markdown-preview">
+<p></p>
+</div>
+<div class="comment-contribution_submit">
+<a class="button small reply" data-stammer-submit="" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="thread" data-id="7462" data-updated-at="2014-10-12T10:59:12+00:00">
+<ul class="comment-list conversations">
+<li class="comment post" data-author="Sandeep Panda" data-created-at="2014-10-12T10:59:12+00:00" data-id="21596" data-learnable-user-id="43664" data-user-id="25865" id="post_21596">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/3ZFqaBzf_thumb.jpeg">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/sandeeppanda92" class="poster_name">Sandeep Panda</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch02">
+<span class="label">
+Section
+</span>
+:
+<span class="name">ch02</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Hi,</p>
+
+<p>Angular Seed recently got a new structure. You need to download the Angular Seed from a particular commit i.e. the commit at the time of writing the book. The book is going to be updated to reflect the changed URL.</p>
+
+<p>Please download Angular Seed from this URL: <a href="https://github.com/angular/angular-seed/tree/69c9416c8407fd5806aab3c63916dfcf0522ecbc">https://github.com/angular/angular-seed/tree/69c9416c8407fd5806aab3c63916dfcf0522ecbc</a></p>
+
+<p>Thanks!</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-12T10:59:12+00:00">13 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+
+</ul>
+<ul class="comment-replies" data-stammer-replies="">
+</ul>
+<div class="comment-inline" data-stammer-section="reply">
+<div class="comment-contribution_text-entry">
+<a class="comment-contribution-in_reply_to"></a>
+<textarea class="reply markdown-source" data-stammer-text="" placeholder="Reply.." rows="4"></textarea>
+<div class="comment-contribution_text-entry_help">
+<strong>
+Markdown:
+</strong>
+<span class="examples fine-print">
+<strong>
+**bold**
+</strong>
+<em>
+_italics_
+</em>
+<code>`code`</code>
+<code>```preformatted```</code>
+<span>
+&gt;blockquote
+</span>
+</span>
+</div>
+
+<div class="comment-contribution_markdown-preview markdown-preview">
+<p></p>
+</div>
+<div class="comment-contribution_submit">
+<a class="button small reply" data-stammer-submit="" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="thread" data-id="7428" data-updated-at="2014-10-12T10:37:45+00:00">
+<ul class="comment-list conversations">
+<li class="comment post" data-author="Yorick" data-created-at="2014-10-07T23:47:02+00:00" data-id="21521" data-learnable-user-id="161868" data-user-id="57424" id="post_21521">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/daea8a54c0dd017309f167d1ae7bb76b_thumb">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/ybrown" class="poster_name">Yorick</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch01s06">
+<span class="label">
+Section
+</span>
+:
+<span class="name">Chapter 1, Section 6</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>I couldn’t get either test to work. Using Windows, open command line in angular-seed-master, then click on test.bat in scripts. I get another command line open and close but too fast too see any commands.</p>
+
+<p>I accidentally clicked on test.sh – it opened another command line and ran Git and then installed some stuff.</p>
+
+<p>Is there information on what all these files do?</p>
+
+<p>And then it opened the Karma test server in Chrome. So it’s working. But using test.sh not test.bat.</p>
+
+<p>Be great if I could understand what just happened though! :-)</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-07T23:47:02+00:00">17 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+
+</ul>
+<ul class="comment-replies" data-stammer-replies="">
+<li class="comment post" data-author="Bill Hannah" data-created-at="2014-10-12T10:37:45+00:00" data-id="21592" data-learnable-user-id="7935" data-user-id="13999" id="post_21592">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/65e7ceb62ac89533f33933b41a2a0fdf_thumb.jpg">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/billhannah" class="poster_name">Bill Hannah</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch01s06">
+<span class="label">
+Section
+</span>
+:
+<span class="name">Chapter 1, Section 6</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>If you open up the command line application and cd to the folder and run test.bat, you will see the output. Windows will close the window immediately after completion if you double-click a ,bat file. Chances are there was an error reported to the console but it closed before you could read it.</p>
+
+<p>The reason you had a different result with test.sh is that you have some command line tool (probably CYGWIN) which seems to have associated itself with .sh files and it behaves differently than a raw console. This won’t always work with all .sh files.</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-12T10:37:45+00:00">13 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="comment-inline" data-stammer-section="reply">
+<div class="comment-contribution_text-entry">
+<a class="comment-contribution-in_reply_to"></a>
+<textarea class="reply markdown-source" data-stammer-text="" placeholder="Reply.." rows="4"></textarea>
+<div class="comment-contribution_text-entry_help">
+<strong>
+Markdown:
+</strong>
+<span class="examples fine-print">
+<strong>
+**bold**
+</strong>
+<em>
+_italics_
+</em>
+<code>`code`</code>
+<code>```preformatted```</code>
+<span>
+&gt;blockquote
+</span>
+</span>
+</div>
+
+<div class="comment-contribution_markdown-preview markdown-preview">
+<p></p>
+</div>
+<div class="comment-contribution_submit">
+<a class="button small reply" data-stammer-submit="" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="thread" data-id="7387" data-updated-at="2014-10-03T23:40:20+00:00">
+<ul class="comment-list conversations">
+<li class="comment post" data-author="Steven Nunez" data-created-at="2014-10-03T16:19:23+00:00" data-id="21447" data-learnable-user-id="117813" data-user-id="61038" id="post_21447">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/default-avatar-27x-41ff03aa3fcceab240f6d2d067d1f6e6.png">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/stevennunez" class="poster_name">Steven Nunez</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Where can we contribute to the errata of this book?</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-03T16:19:23+00:00">21 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+
+</ul>
+<ul class="comment-replies" data-stammer-replies="">
+<li class="comment post" data-author="Erica Wass" data-created-at="2014-10-03T23:40:20+00:00" data-id="21453" data-learnable-user-id="106411" data-user-id="40598" id="post_21453">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/me_thumb.jpg">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/EricaWass" class="poster_name"><span>(staff) </span>Erica Wass</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Hi Steven. You can just email <a href="mailto:support@learnable.com">support@learnable.com</a> with any errata you find. Thanks! Erica</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-03T23:40:20+00:00">21 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="comment-inline" data-stammer-section="reply">
+<div class="comment-contribution_text-entry">
+<a class="comment-contribution-in_reply_to"></a>
+<textarea class="reply markdown-source" data-stammer-text="" placeholder="Reply.." rows="4"></textarea>
+<div class="comment-contribution_text-entry_help">
+<strong>
+Markdown:
+</strong>
+<span class="examples fine-print">
+<strong>
+**bold**
+</strong>
+<em>
+_italics_
+</em>
+<code>`code`</code>
+<code>```preformatted```</code>
+<span>
+&gt;blockquote
+</span>
+</span>
+</div>
+
+<div class="comment-contribution_markdown-preview markdown-preview">
+<p></p>
+</div>
+<div class="comment-contribution_submit">
+<a class="button small reply" data-stammer-submit="" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="thread" data-id="7354" data-updated-at="2014-10-03T07:55:53+00:00">
+<ul class="comment-list conversations">
+<li class="comment post" data-author="gomezbl" data-created-at="2014-09-27T10:13:14+00:00" data-id="21318" data-learnable-user-id="144874" data-user-id="52315" id="post_21318">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/default-avatar-27x-41ff03aa3fcceab240f6d2d067d1f6e6.png">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/rafablanes" class="poster_name">gomezbl</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Hi, reading the book, by now I like it but folder “scripts” with .sh or .bat file to run the test doesn’t exist in the angular-seed project. Thanks.</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-09-27T10:13:14+00:00">28 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="text-center more-replies-holder">
+<p>
+<a class="more-replies">Show 3 older replies</a>
+</p>
+</li>
+
+</ul>
+<ul class="comment-replies" data-stammer-replies="">
+<li class="HIDDEN comment post" data-author="Sandeep Panda" data-created-at="2014-09-27T21:22:28+00:00" data-id="21324" data-learnable-user-id="43664" data-user-id="25865" id="post_21324">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/3ZFqaBzf_thumb.jpeg">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/sandeeppanda92" class="poster_name">Sandeep Panda</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Hi there. Please see my reply to Federico. Thanks!</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-09-27T21:22:28+00:00">27 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="HIDDEN comment post" data-author="dirkecker4" data-created-at="2014-10-02T23:09:42+00:00" data-id="21430" data-learnable-user-id="49839" data-user-id="9225" id="post_21430">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/default-avatar-27x-41ff03aa3fcceab240f6d2d067d1f6e6.png">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/dirkecker4" class="poster_name">dirkecker4</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>That does not help.</p>
+
+<p>Use instead <code>code</code>sudo npm install -g http-server<code>code</code> to install a Webserver and start it with <code>code</code>http-server -a localhost -p 8000<code>code</code>.</p>
+
+<p>Be sure to be in the seed directory to start the server ;-)</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-02T23:09:42+00:00">22 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="HIDDEN comment post" data-author="dirkecker4" data-created-at="2014-10-02T23:28:11+00:00" data-id="21432" data-learnable-user-id="49839" data-user-id="9225" id="post_21432">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/default-avatar-27x-41ff03aa3fcceab240f6d2d067d1f6e6.png">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/dirkecker4" class="poster_name">dirkecker4</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>And it is a good idea to install bower through <code>npm install</code>. But don’t forget to prepend sudo in front of the command.</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-02T23:28:11+00:00">22 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="comment post" data-author="dirkecker4" data-created-at="2014-10-02T23:29:55+00:00" data-id="21433" data-learnable-user-id="49839" data-user-id="9225" id="post_21433">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/default-avatar-27x-41ff03aa3fcceab240f6d2d067d1f6e6.png">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/dirkecker4" class="poster_name">dirkecker4</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>npm installs all components in package.json</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-02T23:29:55+00:00">22 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="comment post" data-author="dirkecker4" data-created-at="2014-10-02T23:34:44+00:00" data-id="21434" data-learnable-user-id="49839" data-user-id="9225" id="post_21434">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/default-avatar-27x-41ff03aa3fcceab240f6d2d067d1f6e6.png">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/dirkecker4" class="poster_name">dirkecker4</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Shit. And after that, you have to start the server also with sudo ;-(</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-02T23:34:44+00:00">22 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+<li class="comment post" data-author="gomezbl" data-created-at="2014-10-03T07:55:53+00:00" data-id="21444" data-learnable-user-id="144874" data-user-id="52315" id="post_21444">
+<div class="comment-contribution_avatar">
+<img alt="avatar" class="avatar-small" src="./00b_pr01s03_files/default-avatar-27x-41ff03aa3fcceab240f6d2d067d1f6e6.png">
+</div>
+<div class="poster_title">
+<a href="https://learnable.com/users/rafablanes" class="poster_name">gomezbl</a> in reply to <a href="https://learnable.com/users/dirkecker4" class="poster_name">dirkecker4</a>
+</div>
+<div class="comment_body">
+<div class="comment_badge">
+<div class="origin">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/">
+<span class="label">
+Book
+</span>
+:
+<span class="name">AngularJS: Novice to Ninja</span>
+</a>
+</div>
+
+</div>
+<div class="comment_content"><p>Ok, thanks.</p>
+</div>
+<div class="comment-metadata">
+<div class="comment-metadata_actions">
+<a class="conversation-reply" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+<div class="comment-metadata_when">
+<time class="timeago" datetime="2014-10-03T07:55:53+00:00">22 days ago</time>
+</div>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="comment-inline" data-stammer-section="reply">
+<div class="comment-contribution_text-entry">
+<a class="comment-contribution-in_reply_to"></a>
+<textarea class="reply markdown-source" data-stammer-text="" placeholder="Reply.." rows="4"></textarea>
+<div class="comment-contribution_text-entry_help">
+<strong>
+Markdown:
+</strong>
+<span class="examples fine-print">
+<strong>
+**bold**
+</strong>
+<em>
+_italics_
+</em>
+<code>`code`</code>
+<code>```preformatted```</code>
+<span>
+&gt;blockquote
+</span>
+</span>
+</div>
+
+<div class="comment-contribution_markdown-preview markdown-preview">
+<p></p>
+</div>
+<div class="comment-contribution_submit">
+<a class="button small reply" data-stammer-submit="" href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#">
+Reply
+</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="more-conversations">
+</div>
+
+
+
+</div>
+</section>
+<section class="section toc">
+<div class="title" style="left: 122px;">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#panel2">Table of Contents</a>
+</div>
+<div class="content" data-slug="panel2">
+<p class="structural-label">Table of Contents</p><div class="toc"><dl><dt><span class="book"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/index.html">Cover</a></span></dt><dt><span class="bookinfo"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/bookinfo.html">About the Author</a></span></dt><dt><span class="preface"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01.html">Preface</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch01.html">1. Falling In Love With AngularJS</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch02.html">2. Modules, Controllers &amp; Data Binding</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch03.html">3. AngularJS Scope &amp; Events</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch04.html">4. Multiple Views and Routing</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch05.html">5. AngularJS Services, Factories, and Providers</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch06.html">6. Developing Single Page Blogger</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch07.html">7. Understanding AngularJS Forms</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch08.html">8. Interacting with REST APIs</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch09.html">9. Using REST APIs in Single Page Blogger</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch10.html">10. AngularJS Directives</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch11.html">11. Adding a Comment System to Single Page Blogger</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch12.html">12. Dependency Injection In AngularJS</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch13.html">13. AngularJS Filters</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch14.html">14. AngularJS Animation</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch15.html">15. Deployment and Internationalization</a></span></dt><dt><span class="chapter"><a href="https://learnable.com/books/angularjs-novice-to-ninja/online/ch16.html">16. Authentication and Authorization in AngularJS</a></span></dt></dl></div>
+<p class="structural-label">Code Archive</p>
+<p>
+Save time, download the code archive
+<a href="http://github.com/spbooks/angularjs1/" target="_blank">here</a>
+</p>
+</div>
+</section>
+<section class="section search">
+<div class="title" style="left: 286px;">
+<a href="https://learnable.com/books/angularjs-novice-to-ninja/online/pr01s03.html#panel3">Search</a>
+</div>
+<div class="content" data-slug="panel3">
+<form accept-charset="utf-8" action="https://learnable.com/books/angularjs-novice-to-ninja/search" method="get">
+<div class="toc-search">
+<input class="search-query" id="search_query" name="q" placeholder="Search AngularJS: Novice to Ninja" type="text">
+<button class="radius" type="submit">Search</button>
+
+</div>
+</form>
+
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<footer class="site-footer" role="contentinfo">
+<div class="row">
+<div class="large-3 small-5 columns">
+<ul class="footer-links">
+<li>
+About Us
+</li>
+<li><a href="https://learnable.com/about">Our Story</a></li>
+<li><a href="https://learnable.com/testimonials">Testimonials</a></li>
+<li><a href="http://support.learnable.com/">FAQ</a></li>
+<li><a href="https://learnable.com/legal-stuff/terms-of-service">Terms</a></li>
+<li><a href="https://learnable.com/coming-soon">Coming Soon</a></li>
+<li><a href="https://learnable.com/affiliate">Affiliates</a></li>
+<li><a href="https://learnable.com/contact">Contact Us</a></li>
+</ul>
+</div>
+<div class="large-3 small-5 columns">
+<ul class="footer-links">
+<li>
+Learn
+</li>
+<li>
+<a href="https://learnable.com/topics/htmlcss">
+HTML &amp; CSS
+</a>
+</li>
+<li>
+<a href="https://learnable.com/topics/javascript">
+JavaScript
+</a>
+</li>
+<li>
+<a href="https://learnable.com/topics/php">
+PHP
+</a>
+</li>
+<li>
+<a href="https://learnable.com/topics/ruby">
+Ruby
+</a>
+</li>
+<li>
+<a href="https://learnable.com/topics/designux">
+Design &amp; UX
+</a>
+</li>
+<li>
+<a href="https://learnable.com/topics/mobile">
+Mobile
+</a>
+</li>
+<li>
+<a href="https://learnable.com/topics/workflow">
+Workflow
+</a>
+</li>
+</ul>
+</div>
+<div class="large-3 small-5 columns">
+<ul class="footer-links">
+<li>
+Connect
+</li>
+<li>
+<a href="https://www.facebook.com/learnable" target="_blank">
+Facebook
+</a>
+</li>
+<li>
+<a href="https://twitter.com/LearnableHQ" target="_blank">
+Twitter
+</a>
+</li>
+<li>
+<a href="https://learnable.com/teachers">
+Teach for Us
+</a>
+</li>
+</ul>
+</div>
+<div class="large-5 columns large-offset-2 newsletter">
+<h4>Newsletter</h4>
+<p>Sign up and we'll let you know when we publish new courses and books!</p>
+<form action="https://sitepointdotcom.createsend.com/t/y/s/cdtjri/" method="post" target="_blank">
+<input class="string optional" id="newsletter" name="cm-cdtjri-cdtjri" size="50" type="text">
+<input class="button" type="submit" value="Submit">
+</form>
+</div>
+</div>
+<div class="row">
+<div class="site-footer__copyright">
+<div class="columns">
+© 2000 –
+2014
+Learnable Pty. Ltd. All Rights reserved. Learnable is a SitePoint Company.
+</div>
+</div>
+</div>
+</footer>
+
+<!-- / post_footer: (used for modals etc so that their positioning is unaffected by the content) -->
+<div aria-hidden="true" aria-labelledby="Download" class="reveal-modal small modal--standard modal--download" id="modal-download" role="dialog" tabindex="-1">
+<a aria-hidden="true" class="close-reveal-modal" data-dismiss="modal" type="button">×</a>
+<div class="content"></div>
+</div>
+
+
+
+<script src="./00b_pr01s03_files/application-d92492acd2522c9cad4482ce78964c81.js" type="text/javascript"></script>
+
+<!-- / JS included in javascript_body provides functions and frameworks -->
+<script>
+      window.learnable.onlineBook = {};
+      window.learnable.onlineBook.sampleOnly = false
+      </script><script src="./00b_pr01s03_files/content-d861dfe1cda0b4663dc0aa492dc234ec.js" type="text/javascript"></script><script src="./00b_pr01s03_files/download-83f722758a998a70f8cef2e5c31efc2d.js" type="text/javascript"></script>
+<script>
+  // populate tabs with book meta content
+  (function() {
+    var $toc = $('.book-page nav.booktoc'),
+        $tocTarget = $('.section.toc .content .contents-holder');
+    $tocTarget.replaceWith($toc.html());
+  })();
+</script>
+<!-- / Load the zenbox tab -->
+<script>
+  zenbox_loader.go();
+</script><div id="zenbox_tab" href="#" title="Support" class="ZenboxTabRight" classname="ZenboxTabRight" style="border-color: rgb(26, 116, 176); background-color: rgb(26, 116, 176);"><img src="./00b_pr01s03_files/tab_support_right-3e02edf5b937a063bdf182e54206b798.png"></div><div id="zenbox_overlay" style="display: none;"><div id="zenbox_container">  <div class="zenbox_header"><img id="zenbox_close" src="./00b_pr01s03_files/close_big.png"></div>  <iframe id="zenbox_body" frameborder="0" scrolling="auto" allowtransparency="true" src="./00b_pr01s03_files/loading.html"></iframe></div><div id="zenbox_scrim">&nbsp;</div></div>
+
+<!-- / JS included javascript_app_data is directly executed by the page -->
+
+<!-- / loader.exec: any delayed JS from a page body is now run -->
+<script>
+  loader.exec();
+</script>
+<!-- / until respond.js is working in production (where styles are served cross-domain), make the top bar menu icon clicks work when window is larger than breakpoint (see foundation.topbar.js breakpoint()) -->
+<!--[if lt IE 9]>
+<script> $('html').addClass('lt-ie9')</script>
+<![endif]-->
+
+
+</body></html>

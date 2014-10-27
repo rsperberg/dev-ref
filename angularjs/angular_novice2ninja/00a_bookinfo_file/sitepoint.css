@@ -1,0 +1,187 @@
+#book-content .sitepoint-titlepage-coverimage .mediaobject
+{
+  text-align: left;
+}
+#book-content .sitepoint-titlepage-coverimage .mediaobject img
+{
+  border: 1px solid #000;
+}
+#book-content .sitepoint-creditspage-title, #book-content .sitepoint-creditspage-legalnotice-title {
+  color:rgb(0,82,136);
+  font-family:sans-serif;
+  font-size:120%;
+  font-weight:bold;
+  margin:1em 0 0;
+  text-align:left;
+}
+#book-content .sitepoint-creditspage-credits {
+  font-size:smaller;
+}
+#book-content .sitepoint-creditspage-contrib {
+  font-family:sans-serif;
+  font-size:80%;
+  font-weight:bold;
+}
+#book-content .sitepoint-creditspage-legalnotice p {
+  font-size:80%;
+  margin:1em 0;
+}
+#book-content .sitepoint-creditspage-legalnotice-title {
+  font-size:100%;
+  margin-bottom:1em;
+}
+#book-content .sitepoint-creditspage-publisher {
+  font-size:80%;
+  text-align:center;
+}
+#book-content .sitepoint-aboutpage-authorblurb-title {
+  color:rgb(0,82,136);
+  font-family:sans-serif;
+  font-size:120%;
+  font-weight:bold;
+  text-align:left;
+}
+#book-content .sitepoint-aboutpage-dedication {
+  margin:2em 25% 0;
+}
+#book-content .sitepoint-aboutpage-dedication-title {
+  text-align:right;
+}
+#book-content .sitepoint-aboutpage-dedication p {
+  text-align:center;
+}
+#book-content .sitepoint-aboutpage-dedication .literallayout, #book-content .sitepoint-dedicationpage-dedication .literallayout p {
+  text-align:left;
+}
+#book-content .chapter h1.title, .preface h1.title, #book-content .appendix h1.title, #book-content .index h1.title {
+  color:rgb(0,82,136);
+  font-family:sans-serif;
+  font-weight:bold;
+  text-align:left;
+  padding-top:21px;
+}
+#book-content .sitepoint-chapter-titlepage-label {
+  color:rgb(247,142,29);
+  display:block;
+  font-weight:normal;
+  text-align:right;
+}
+#book-content .sitepoint-chapter-titlepage-number {
+  color:rgb(0,82,136);
+  font-size:750%;
+  line-height: normal;
+  font-weight:bold;
+  position:relative;
+  top:-0.314em;
+  vertical-align:text-top;
+}
+#book-content h1, #book-content h2, #book-content h3, #book-content h4, #book-content h5, #book-content h6,
+.indexdiv .title {
+  color:rgb(0,82,136);
+  font-family:sans-serif;
+  font-weight:bold;
+}
+#book-content .figure-contents, #book-content .mediaobject {
+  background-color: #fff;
+  text-align:center;
+}
+#book-content .figure .title {
+  font-family:sans-serif;
+  font-size:80%;
+  text-align:center;
+}
+#book-content .table .title {
+  color:rgb(0,82,136);
+  font-family:sans-serif;
+  font-weight:bold;
+}
+#book-content pre.programlisting {
+  background-color:rgb(214,222,235);
+  color:#000;
+  padding:0.25em;
+  white-space:pre-wrap;
+}
+#book-content pre.programlisting {
+  margin-top:0;
+}
+#book-content .sitepoint-formal-example-heading {
+  background-color:rgb(186,201,224);
+  color:#000;
+  font-family:sans-serif;
+  font-size:90%;
+  margin-bottom:0;
+  padding:0.25em;
+  text-align:right;
+}
+#book-content .sitepoint-formal-example-filename {
+  font-style:normal;
+}
+#book-content .firstterm {
+  font-style: normal;
+  font-weight: bold;
+}
+#book-content table {
+  border-collapse: collapse;
+}
+#book-content td, #book-content th {
+  border: 1px solid rgb(0,82,136);
+  padding: 2px 5px;
+}
+#book-content th {
+  background-color:#F2F2E1;
+  color:#000;
+  font-family:sans-serif;
+  font-size:90%;
+  font-weight:bold;
+}
+#book-content .footnotes .structural-label
+{
+  border-top: 1px dotted;
+  height: 0;
+  overflow: hidden;
+  width: 6em;
+}
+#book-content .variablelist .term {
+  display: block;
+  margin-bottom:7px;
+}
+#book-content .calloutlist {
+  margin: -1em 0;
+}
+#book-content .calloutlist table {
+  border-collapse: separate;
+  border-spacing: 0 1em;
+}
+#book-content .calloutlist th, #book-content .calloutlist td {
+  border: 0 none;
+  padding: 0;
+  vertical-align: top;
+}
+#book-content .callout-bug {
+  width: 1.5em;
+}
+#book-content .callout-bug a:link, #book-content .callout-bug a:visited {
+  text-decoration: none;
+}
+#book-content .note, #book-content .tip, #book-content .warning, #book-content .caution, #book-content .important {
+  background-color: #f2f2e1;
+  font-size: 90%;
+  padding-bottom: 1px; /* tiny padding to force container to wrap contained paragraph's margin */
+  padding-left: 45px;
+  padding-right: 5px;
+  position: relative;
+}
+#book-content .note h1, #book-content .tip h1, #book-content .warning h1, #book-content .caution h1, #book-content .important h1 {
+  background-color: #ededdd;
+  color: #000;
+  font: 133% sans-serif;
+  margin-bottom: 0;
+  margin-left: -45px;
+  margin-right: -5px;
+  padding: 6px 5px 6px 45px;
+}
+#book-content .admon-graphic {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+}

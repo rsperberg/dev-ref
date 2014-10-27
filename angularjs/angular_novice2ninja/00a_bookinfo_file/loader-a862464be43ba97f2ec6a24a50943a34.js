@@ -1,0 +1,1 @@
+var loader={functions:[],push:function(e){loader.functions.push(e)},exec:function(){for(var e=0,t=loader.functions.length;e<t;e++)loader.functions[e]();loader.functions=[]}};
