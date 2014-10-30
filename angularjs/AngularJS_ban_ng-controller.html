@@ -72,7 +72,7 @@
 
 <p>But the more I got into it, the less clear this picture became.</p>
 
-<p>For instance, Angular has <em>scopes</em>. Every controller is paired with a <em>separate</em> object - a scope - which is used to communicate with views. When you include scopes in the picture, controllers are no longer "the first receivers of user actions". Scopes are. When you think about it like this, the pattern becomes more like <a href="http://addyosmani.com/blog/understanding-mvvm-a-guide-for-javascript-developers/">Model-View-ViewModel</a>, with the Scope being the ViewModel, as <a href="https://plus.google.com/+AngularJS/posts/aZNVhj355G2">Igor Minar has described</a>.</p>
+<p>For instance, Angular has <em>scopes</em>. Every controller is paired with a <em>separate</em> object — a scope — which is used to communicate with views. When you include scopes in the picture, controllers are no longer "the first receivers of user actions". Scopes are. When you think about it like this, the pattern becomes more like <a href="http://addyosmani.com/blog/understanding-mvvm-a-guide-for-javascript-developers/">Model-View-ViewModel</a>, with the Scope being the ViewModel, as <a href="https://plus.google.com/+AngularJS/posts/aZNVhj355G2">Igor Minar has described</a>.</p>
 
 <p>Also, Angular has <em>directives</em>, and directives can in many cases be used interchangeably with controllers. Thus, the decision between writing a directive and just using ng-controller is not always obvious.</p>
 
@@ -98,7 +98,7 @@
 
 <p>While the mechanics of prototypal inheritance are something you can learn to work with, there's  also a trickier problem that rampant scope inheritance causes. It has to do with the sharing of data and functions.</p>
 
-<p>Deep scope hierarchies encourage you to share data and behaviour by just making it directly available on scope objects. This seems like a very convenient thing to do - it even seems what you're <em>supposed</em> to do - because it's so easy: Just put an attribute on a parent scope and all the nested ng-controllers and included templates gain access to it.</p>
+<p>Deep scope hierarchies encourage you to share data and behaviour by just making it directly available on scope objects. This seems like a very convenient thing to do — it even seems what you're <em>supposed</em> to do — because it's so easy: Just put an attribute on a parent scope and all the nested ng-controllers and included templates gain access to it.</p>
 
 <p>Unfortunately, while this is easy, it also makes your code more difficult to understand and maintain.</p>
 
@@ -200,7 +200,7 @@
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>The component pattern, as described here, has clarified the design of my Angular apps a great deal. It is nice to hear Angular 2.0 moving in a direction where this style is preferred - just with a much better API. Angular 2.0 Components will also be based on Web Components standards like the Shadow DOM, which opens up possibilities for further modularity. For example, each component may bundle its own CSS.</p>
+<p>The component pattern, as described here, has clarified the design of my Angular apps a great deal. It is nice to hear Angular 2.0 moving in a direction where this style is preferred — just with a much better API. Angular 2.0 Components will also be based on Web Components standards like the Shadow DOM, which opens up possibilities for further modularity. For example, each component may bundle its own CSS.</p>
 
 <p>The pattern solves the problems of <em>prototypal inheritance</em> by just not doing it. The attribute shadowing issues that so often trip up beginners just aren't there in the same sense. With isolate scopes you use two-way data binding where, instead of <em>shadowing</em> the parent scope's property, you actually <em>reassign</em> it, matching most people's intuition of what should happen.</p>
 
