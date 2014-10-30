@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)http://teropa.info/blog/2014/10/24/how-ive-improved-my-angular-apps-by-banning-ng-controller.html -->
+<html class=" js no-touch svg inlinesvg svgclippaths no-ie8compat" lang="en"><!--<![endif]--><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="description" content="Tero Parviainen, Independent Software Maker" />
+    <meta name="copyright" content="Tero Parviainen" />
+    <link type="text/plain" rel="author" href="http://teropa.info/humans.txt" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta http-equiv="cleartype" content="on" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>How I've Improved My Angular Apps by Banning ng-controller</title>
+
+    <link href="./auxi/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="./auxi/css/ban_controller_application.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="./auxi/css/ban_controller_application_print.css" media="print" rel="stylesheet" type="text/css" />
+
+
+
+
+    <!--  script async="" src="./AngularJS_ban_ng-controller_files/analytics.js"></script  -->
+    <script id="twitter-wjs" src="./AngularJS_ban_ng-controller_files/widgets.js"></script>
+    <script src="./AngularJS_ban_ng-controller_files/modernizr.js" type="text/javascript"></script>
+    <style type="text/css">
+
+    </style>
+
+
+  <script type="text/javascript" async="" src="./AngularJS_ban_ng-controller_files/embed.js"></script>
+  <script src="./AngularJS_ban_ng-controller_files/alfie.f51946af45e0b561c60f768335c9eb79.js" async="" charset="UTF-8"></script>
+  </head>
+
+
+  <body data-twttr-rendered="true">
+
+    <!-- Main page container -->
+    <div class="row">
+      <div class="small-12 large-9 columns">
+          <div class="row">
+  <article class="small-12 large-11 columns left">
+    <h2>
+
+        How I've Improved My Angular Apps by Banning ng-controller
+
+    </h2>
+
+    <div class="time">Posted on <time datetime="2014-10-24">Friday Oct 24, 2014</time> by Tero Parviainen; <a href="http://teropa.info/blog/2014/10/24/how-ive-improved-my-angular-apps-by-banning-ng-controller.html" title="link to original article">original</a></div>
+
+
+      <p>The "Angular 2.0 Core" talk by <a href="https://twitter.com/IgorMinar">Igor Minar</a> and <a href="https://twitter.com/tbosch1009">Tobias Bosch</a> was an <a href="http://ngeurope.org/">ng-europe</a> highlight for me. What they basically did was announce a mass slaughter of Angular 1.x features and API cruft, worthy of a Game of Thrones wedding.</p>
+
+<p>One of my favourite moments was when they announced the removal of controllers. This is because I've recently come to a realization that using standalone controllers, as with <a href="https://docs.angularjs.org/api/ng/directive/ngController">ng-controller</a>, rarely leads to an optimal design.</p>
+
+<p></p>
+
+<div class="no-print">
+<iframe class="no-print" width="560" height="315" src="./auxi/htm/angular_20_core_video.html" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+<p>Now, this is not a new idea. I've talked with several people who have said they don't use ng-controller at all in their apps, and just use directives instead. However, until recently, it didn't really click for me, and the idea never came up when I was first learning Angular. I hope this article will help communicate the approach.</p>
+
+<h2 id="this-isnt-mvc">This Isn't MVC</h2>
+
+<p>When I first started with Angular, the use case for controllers seemed straightforward: Angular is an MVC framework, and in such frameworks the role of controllers is well established. It is the arbitrator between models and views, and the first receiver of user actions.</p>
+
+<p>But the more I got into it, the less clear this picture became.</p>
+
+<p>For instance, Angular has <em>scopes</em>. Every controller is paired with a <em>separate</em> object - a scope - which is used to communicate with views. When you include scopes in the picture, controllers are no longer "the first receivers of user actions". Scopes are. When you think about it like this, the pattern becomes more like <a href="http://addyosmani.com/blog/understanding-mvvm-a-guide-for-javascript-developers/">Model-View-ViewModel</a>, with the Scope being the ViewModel, as <a href="https://plus.google.com/+AngularJS/posts/aZNVhj355G2">Igor Minar has described</a>.</p>
+
+<p>Also, Angular has <em>directives</em>, and directives can in many cases be used interchangeably with controllers. Thus, the decision between writing a directive and just using ng-controller is not always obvious.</p>
+
+<p>Early on, I preferred to use directives just to "extend the DOM" with generic features like tab bars and data grids, and leave all the application-specific behavior to plain controllers and ng-controller. Over time my thinking on this has shifted significantly, to the point where I now find little reason to ever use ng-controller.</p>
+
+<p>So, a part of the Angular learning curve is coming to understand that controllers aren't quite what they seem, especially if you're coming from a straight-up MVC framework. In fact, using plain controllers in Angular may actually not be a good idea at all.</p>
+
+<h2 id="problems-with-ng-controller">Problems With ng-controller</h2>
+
+<p>There are a few reasons why I think using ng-controller is problematic.</p>
+
+<h3 id="inheritance">Inheritance</h3>
+
+<p>The ng-controller directive creates a controller, and gives it a scope that prototypally inherits from the parent scope. This prototypal inheritance tends to trip a lot of people up.</p>
+
+<p>It is tricky to understand the effects of scope inheritance on your data. Every Angular newcomer runs into this at some point, and <a href="https://egghead.io/lessons/angularjs-the-dot">the "dot rule"</a> is something everyone needs to learn.</p>
+
+<p>Granted, this is just JavaScript's <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain">prototype inheritance</a> in action, which is something every JavaScript developer should learn anyway. But the thing is, I don't think we really need it. There are better ways, like isolate scopes, to "pass data" along to your children. There's no need to add the cognitive overhead of inheritance chains.</p>
+
+<p>It think it is a good idea to try to minimize scope inheritance in applications. Given that many of the built-in directives, like <a href="https://docs.angularjs.org/api/ng/directive/ngRepeat">ng-repeat</a>, use inheritance, you can't really remove inheritance <em>compleletely</em>. But you can remove the inheritance done by ng-controller, by not using ng-controller.</p>
+
+<h3 id="semi-global-data">Semi-Global Data</h3>
+
+<p>While the mechanics of prototypal inheritance are something you can learn to work with, there's  also a trickier problem that rampant scope inheritance causes. It has to do with the sharing of data and functions.</p>
+
+<p>Deep scope hierarchies encourage you to share data and behaviour by just making it directly available on scope objects. This seems like a very convenient thing to do - it even seems what you're <em>supposed</em> to do - because it's so easy: Just put an attribute on a parent scope and all the nested ng-controllers and included templates gain access to it.</p>
+
+<p>Unfortunately, while this is easy, it also makes your code more difficult to understand and maintain.</p>
+
+<p>When you access some piece of data on a scope, how do you know where that data comes from? When you have even a couple of nested controllers, this isn't at all clear. The data might come from any controller that has access to some scope in the inheritance chain. You can easily lose track of where things are defined. (I should mention that the Angular 1.2+ <a href="http://toddmotto.com/digging-into-angulars-controller-as-syntax/">"controller as" syntax</a> does a lot to help with this particular problem, if you use it consistently.)</p>
+
+<p>On the other hand, when you put some data on a scope, how do you know where that data is accessed?  You don't, if there's inheritance involved. When you want to change the structure of that data, or even just rename an attribute, you'll have to find all the locations in nested controllers and templates that <em>might</em> access that data. And there are not many clues in the code for where they might be. You just have to remember them, or rely on a thorough test suite to find them, or go over all the code every time. There have been several instances when I've failed to do that, resulting in some hilarious bug hunting sessions.</p>
+
+<h3 id="poor-view-organization">Poor View Organization</h3>
+
+<p>Since you can annotate any DOM element with an ng-controller, you may have several ng-controller instances in one HTML template. This causes a common problem, which is that there's no one-to-one correspondence between HTML files and controller JavaScript files. You'll often end up asking yourself where a particular controller might have been used in the HTML, and also where the markup that goes with a particular controller might be found.</p>
+
+<p>This problem, like all of the problems I've described, can be overcome with a strict organizational discipline. It's just that the framework doesn't really guide you in the right direction. If you're like me, that means you'll often just get it wrong.</p>
+
+<h2 id="solution-component-pattern">Solution: Component Pattern</h2>
+
+<p>To deal with these problems, I set out to do an experiment: Ban the use of ng-controller completely and see what happens. It turns out, this is probably the best thing that ever happened to the code in my current project. The code is now clearer, easier to change, and more organized.</p>
+
+<p>So, what did I replace ng-controller <em>with</em>? I replaced it with directives. To be more precise, I replaced it with <em>isolate scope directives</em> that have their own <em>templates</em> and <em>controllers</em>.</p>
+
+<p>This is a step in the direction of how <a href="https://angulardart.org/tutorial/05-ch03-component.html">Components work in AngularDart</a> and how they are likely to work in Angular 2.0. It also results in an organization close to what you get when you use Web Components, so I've been calling this the Component Pattern.</p>
+
+<p>Each component consists of a few key pieces:</p>
+
+<h4 id="an-isolate-scope-definition">1. An isolate scope definition</h4>
+
+<p>The scope definition <em>explicitly</em> defines what incoming data the component accepts. A component does <em>not</em> inherit its parent scope, but everything it needs should come in through the isolate.</p>
+
+<h4 id="a-controller">2. A controller</h4>
+
+<p>Since the component is defined as a directive, its behavior could just be defined in its link function. But since I'd rather have the behavior be unit-testable without a dependency to the DOM, I'm pairing each component directive with a controller.</p>
+
+<h4 id="an-html-template">3. An HTML template</h4>
+
+<p>Components have a one-to-one correspondence with HTML templates. When you apply a component, what goes inside it is defined by the component's own template. Transclusion may be used to augment the component's contents, but I've yet to come across a use case for that.</p>
+
+<h3 id="example">Example</h3>
+
+<p>Here's a simple application with a list of people, and a little form for adding more people to the list:</p>
+
+<div class="lang-banner">index.html</div>
+<div class="blackbg"><div id="highlighter_578393" class="syntaxhighlighter nogutter  html blackbg"><div class="toolbar"><span><a href="http://teropa.info/blog/2014/10/24/how-ive-improved-my-angular-apps-by-banning-ng-controller.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code blackbg"><div class="container blackbg"><div class="line number1 index0 alt2"><code class="html punc">&lt;</code><code class="html keyword">div</code> <code class="html color1">ng-app</code><code class="html punc">=</code><code class="html string">"contestantApp"</code><code class="html punc">&gt;</code></div><div class="line number2 index1 alt1"><code class="html spaces">&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">h1</code><code class="html punc">&gt;</code><code class="html plain">Contestants</code><code class="html punc">&lt;/</code><code class="html keyword">h1</code><code class="html punc">&gt;</code></div><div class="line number3 index2 alt2"><code class="html spaces">&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">section</code> <code class="html color1">ng-controller</code><code class="html punc">=</code><code class="html string">"ContestantsCtrl as ctrl"</code><code class="html punc">&gt;</code></div><div class="line number4 index3 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">ul</code><code class="html punc">&gt;</code></div><div class="line number5 index4 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">li</code> <code class="html color1">ng-repeat</code><code class="html punc">=</code><code class="html string">"contestant in ctrl.contestants"</code><code class="html punc">&gt;</code></div><div class="line number6 index5 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">{{contestant.firstName}} {{contestant.lastName}}</code></div><div class="line number7 index6 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">li</code><code class="html punc">&gt;</code></div><div class="line number8 index7 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">ul</code><code class="html punc">&gt;</code></div><div class="line number9 index8 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">form</code> <code class="html color1">ng-controller</code><code class="html punc">=</code><code class="html string">"ContestantEditorCtrl as editorCtrl"</code><code class="html punc">&gt;</code></div><div class="line number10 index9 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">h2</code><code class="html punc">&gt;</code><code class="html plain">New Contestant</code><code class="html punc">&lt;/</code><code class="html keyword">h2</code><code class="html punc">&gt;</code></div><div class="line number11 index10 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">fieldset</code><code class="html punc">&gt;</code></div><div class="line number12 index11 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">label</code><code class="html punc">&gt;</code></div><div class="line number13 index12 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">First name</code></div><div class="line number14 index13 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">input</code> <code class="html color1">ng-model</code><code class="html punc">=</code><code class="html string">"editorCtrl.contestant.firstName"</code><code class="html punc">&gt;</code></div><div class="line number15 index14 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">label</code><code class="html punc">&gt;</code></div><div class="line number16 index15 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">label</code><code class="html punc">&gt;</code></div><div class="line number17 index16 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">Last name</code></div><div class="line number18 index17 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">input</code> <code class="html color1">ng-model</code><code class="html punc">=</code><code class="html string">"editorCtrl.contestant.lastName"</code><code class="html punc">&gt;</code></div><div class="line number19 index18 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">label</code><code class="html punc">&gt;</code></div><div class="line number20 index19 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">button</code> <code class="html color1">ng-click</code><code class="html punc">=</code><code class="html string">"editorCtrl.save()"</code><code class="html punc">&gt;</code><code class="html plain">Save</code><code class="html punc">&lt;/</code><code class="html keyword">button</code><code class="html punc">&gt;</code></div><div class="line number21 index20 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">fieldset</code><code class="html punc">&gt;</code></div><div class="line number22 index21 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">form</code><code class="html punc">&gt;</code></div><div class="line number23 index22 alt2"><code class="html spaces">&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">section</code><code class="html punc">&gt;</code></div><div class="line number24 index23 alt1"><code class="html punc">&lt;/</code><code class="html keyword">div</code><code class="html punc">&gt;</code></div></div></td></tr></tbody></table></div></div>
+
+<p>The app has two controllers: One, called <code>ContestantsCtrl</code>, whose job is to provide the list of contestants to display, and one, called <code>ContestantEditorCtrl</code>, whose job is to deal with the form for adding new contestants.</p>
+
+<p>The list controller does nothing but initialize the collection of people to show:</p>
+
+<div class="lang-banner">app.js</div>
+<div><div id="highlighter_32394" class="syntaxhighlighter nogutter  js"><div class="toolbar"><span><a href="http://teropa.info/blog/2014/10/24/how-ive-improved-my-angular-apps-by-banning-ng-controller.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js ang">app.controller</code><code class="js plain">(</code><code class="js string">'ContestantsCtrl'</code><code class="js plain">, </code><code class="jskeyword">function</code><code class="js plain">() {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="jskeyword">this</code><code class="js plain">.contestants = [</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{firstName: </code><code class="js string">'Rachel'</code><code class="js plain">, lastName: </code><code class="js string">'Washington'</code><code class="js plain">},</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{firstName: </code><code class="js string">'Joshua'</code><code class="js plain">, lastName: </code><code class="js string">'Foster'</code><code class="js plain">},</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{firstName: </code><code class="js string">'Samuel'</code><code class="js plain">, lastName: </code><code class="js string">'Walker'</code><code class="js plain">},</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{firstName: </code><code class="js string">'Phyllis'</code><code class="js plain">, lastName: </code><code class="js string">'Reynolds'</code><code class="js plain">}</code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">];</code></div><div class="line number8 index7 alt1"><code class="js plain">});</code></div></div></td></tr></tbody></table></div></div>
+
+<p>The form controller adds a new contestant to the list when the save button is clicked, and then reinitializes the form:</p>
+
+<div class="lang-banner">app.js</div>
+<div><div id="highlighter_825498" class="syntaxhighlighter nogutter  js"><div class="toolbar"><span><a href="http://teropa.info/blog/2014/10/24/how-ive-improved-my-angular-apps-by-banning-ng-controller.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js ang">app.controller</code><code class="js plain">(</code><code class="js string">'ContestantEditorCtrl'</code><code class="js punc">, </code><code class="jskeyword">function</code><code class="js plain">(</code><code class="js ang">$scope</code><code class="js plain">) {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="jskeyword">this</code><code class="js plain">.contestant = {};</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="jskeyword">this</code><code class="js plain">.</code><code class="jskeyword">save</code><code class="js plain"> = </code><code class="jskeyword">function</code><code class="js plain">() {</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js ang">$scope</code><code class="js plain">.ctrl.contestants.</code><code class="jskeyword">push</code><code class="js plain">(</code><code class="jskeyword">this</code><code class="js plain">.contestant);</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jskeyword">this</code><code class="js plain">.contestant = {};</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">};</code></div><div class="line number7 index6 alt2"><code class="js plain">});</code></div></div></td></tr></tbody></table></div></div>
+
+<p>While this app is tiny, it already exemplifies some of the problems that the use of ng-controller may cause:</p>
+
+<ul>
+  <li>Both of the controllers are used in the same HTML template. Looking at the controller JavaScript code, it isn't straightforward to deduce where in the HTML it may have been used. In a large application this can be a real problem.</li>
+  <li>The inner <code>ContestantEditorCtrl</code> mutates the <code>contestants</code> array introduced by the parent controller. It relies on this global state that "just comes from somewhere." It isn't at all clear where.</li>
+</ul>
+
+<p>How might one "componentize" this application? Well, first of all, let's think of the editor form. Instead of just defining it in our index template, we could refer to a specialized component. Any data it needs will be <em>explicitly given to it</em>:</p>
+
+<div class="lang-banner">index.html</div>
+<div><div id="highlighter_100619" class="syntaxhighlighter nogutter  html"><div class="toolbar"><span><a href="http://teropa.info/blog/2014/10/24/how-ive-improved-my-angular-apps-by-banning-ng-controller.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="html punc">&lt;</code><code class="html keyword">div</code> <code class="html color1">ng-app</code><code class="html punc">=</code><code class="html string">"contestantApp"</code><code class="html punc">&gt;</code></div><div class="line number2 index1 alt1"><code class="html spaces">&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">h1</code><code class="html punc">&gt;Contestants&lt;/</code><code class="html keyword">h1</code><code class="html punc">&gt;</code></div><div class="line number3 index2 alt2"><code class="html spaces">&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">section</code> <code class="html color1">ng-controller</code><code class="html punc">=</code><code class="html string">"ContestantsCtrl as ctrl"</code><code class="html punc">&gt;</code></div><div class="line number4 index3 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">ul</code><code class="html punc">&gt;</code></div><div class="line number5 index4 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">li</code> <code class="html color1">ng-repeat</code><code class="html punc">=</code><code class="html string">"contestant in ctrl.contestants"</code><code class="html punc">&gt;</code></div><div class="line number6 index5 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">{{contestant.firstName}} {{contestant.lastName}}</code></div><div class="line number7 index6 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">li</code><code class="html punc">&gt;</code></div><div class="line number8 index7 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">ul</code><code class="html punc">&gt;</code></div><div class="line number9 index8 alt2 highlighted"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">myapp-contestant-editor-form</code> <code class="html color1">contestants</code><code class="html punc">=</code><code class="html string">"ctrl.contestants"</code><code class="html punc">&gt;</code></div><div class="line number10 index9 alt1 highlighted"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">myapp-contestant-editor-form</code><code class="html punc">&gt;</code></div><div class="line number11 index10 alt2"><code class="html spaces">&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">section</code><code class="html punc">&gt;</code></div><div class="line number12 index11 alt1"><code class="html punc">&lt;/</code><code class="html keyword">div</code><code class="html punc">&gt;</code></div></div></td></tr></tbody></table></div></div>
+
+<p>This component is defined by a directive, which we can define in its own module. The module also contains the controller for the component:</p>
+
+<div class="lang-banner">my_app_contestant_editor.js</div>
+<div><div id="highlighter_794649" class="syntaxhighlighter nogutter  js"><div class="toolbar"><span><a href="http://teropa.info/blog/2014/10/24/how-ive-improved-my-angular-apps-by-banning-ng-controller.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js ang">angular.module</code><code class="js plain">(</code><code class="js string">'myAppContestantEditor'</code><code class="js plain">, [])</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">.</code><code class="js ang">directive</code><code class="js plain">(</code><code class="js string">'myAppContestantEditorForm'</code><code class="js plain">, </code><code class="jskeyword">function</code><code class="js plain">() {</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jskeyword">return</code> <code class="js plain">{</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js ang">scope</code><code class="js plain">: {</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">contestants: </code><code class="js string">'='</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">},</code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">templateUrl: </code><code class="js string">'my_app_contestant_editor.html'</code><code class="js plain">,</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">replace: </code><code class="jskeyword">true</code><code class="js punc">,</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js ang">controller</code><code class="js plain">: </code><code class="js string">'ContestantEditorFormCtrl'</code><code class="js punc">,</code></div><div class="line number10 index9 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js ang">controllerAs</code><code class="js plain">: </code><code class="js string">'ctrl'</code></div><div class="line number11 index10 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">};</code></div><div class="line number12 index11 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">})</code></div><div class="line number13 index12 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js ang">.controller</code><code class="js plain">(</code><code class="js string">'ContestantEditorFormCtrl'</code><code class="js plain">, </code><code class="jskeyword">function</code><code class="js plain">(</code><code class="js ang">$scope</code><code class="js plain">) {</code></div><div class="line number14 index13 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jskeyword">this</code><code class="js plain">.contestant = {};</code></div><div class="line number15 index14 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jskeyword">this</code><code class="js plain">.</code><code class="jskeyword">save</code><code class="js plain"> = </code><code class="jskeyword">function</code><code class="js plain">() {</code></div><div class="line number16 index15 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js ang">$scope</code><code class="js plain">.contestants.</code><code class="jskeyword">push</code><code class="js plain">(</code><code class="jskeyword">this</code><code class="js plain">.contestant);</code></div><div class="line number17 index16 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jskeyword">this</code><code class="js plain">.contestant = {};</code></div><div class="line number18 index17 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">};</code></div><div class="line number19 index18 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">});</code></div></div></td></tr></tbody></table></div></div>
+
+<p>The form markup that used to be in index.html is now in the component's own template:</p>
+
+<div class="lang-banner">my_app_contestant_editor.html</div>
+<div><div id="highlighter_616650" class="syntaxhighlighter nogutter  html"><div class="toolbar"><span><a href="http://teropa.info/blog/2014/10/24/how-ive-improved-my-angular-apps-by-banning-ng-controller.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="html punc">&lt;</code><code class="html keyword">form</code><code class="html punc">&gt;</code></div><div class="line number2 index1 alt1"><code class="html spaces">&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">h2</code><code class="html punc">&gt;</code><code class="html plain">New Contestant</code><code class="html punc">&lt;/</code><code class="html keyword">h2</code><code class="html punc">&gt;</code></div><div class="line number3 index2 alt2"><code class="html spaces">&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">fieldset</code><code class="html punc">&gt;</code></div><div class="line number4 index3 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">label</code><code class="html punc">&gt;</code></div><div class="line number5 index4 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">First name</code></div><div class="line number6 index5 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">input</code> <code class="html color1">ng-model</code><code class="html punc">=</code><code class="html string">"ctrl.contestant.firstName"</code><code class="html punc">&gt;</code></div><div class="line number7 index6 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">label</code><code class="html punc">&gt;</code></div><div class="line number8 index7 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">label</code><code class="html punc">&gt;</code></div><div class="line number9 index8 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">Last name</code></div><div class="line number10 index9 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">input</code> <code class="html color1">ng-model</code><code class="html punc">=</code><code class="html string">"ctrl.contestant.lastName"</code><code class="html punc">&gt;</code></div><div class="line number11 index10 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">label</code><code class="html punc">&gt;</code></div><div class="line number12 index11 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">button</code> <code class="html color1">ng-click</code><code class="html punc">=</code><code class="html string">"ctrl.save()"</code><code class="html punc">&gt;</code><code class="html plain">Save</code><code class="html punc">&lt;/</code><code class="html keyword">button</code><code class="html punc">&gt;</code></div><div class="line number13 index12 alt2"><code class="html spaces">&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">fieldset</code><code class="html punc">&gt;</code></div><div class="line number14 index13 alt1"><code class="html punc">&lt;/</code><code class="html keyword">form</code><code class="html punc">&gt;</code></div></div></td></tr></tbody></table></div></div>
+
+<p>The logic is pretty much the same as before, with two major differences in how things are organized: The array to which the contestant is pushed no longer comes from an implicit parent scope. It is <em>explicitly</em> passed in to the component and there is no confusion about where it comes from. Also, the component has its own view template now, removing the confusion about where to find the markup: Just find the .html file matching the .js file.</p>
+
+<p>We can go one step further and also make the outer "contestant list" a component of its own, leaving almost nothing in the main template:</p>
+
+<div class="lang-banner">index.html</div>
+<div><div id="highlighter_51096" class="syntaxhighlighter nogutter  html"><div class="toolbar"><span><a href="http://teropa.info/blog/2014/10/24/how-ive-improved-my-angular-apps-by-banning-ng-controller.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="html punc">&lt;</code><code class="html keyword">div</code> <code class="html color1">ng-app</code><code class="html punc">=</code><code class="html string">"contestantApp"</code><code class="html punc">&gt;</code></div><div class="line number2 index1 alt1"><code class="html spaces">&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">h1</code><code class="html punc">&gt;</code><code class="html plain">Contestants</code><code class="html punc">&lt;/</code><code class="html keyword">h1</code><code class="html punc">&gt;</code></div><div class="line number3 index2 alt2 highlighted"><code class="html spaces">&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">my-app-contestant-list</code><code class="html punc">&gt;&lt;/</code><code class="html keyword">my-app-contestant-list</code><code class="html punc">&gt;</code></div><div class="line number4 index3 alt1"><code class="html punc">&lt;/</code><code class="html keyword">div</code><code class="html punc">&gt;</code></div></div></td></tr></tbody></table></div></div>
+
+<p>The structure of the list component is the same as for the form component. This component does not have any inputs, as is made clear in the empty isolate scope definition:</p>
+
+<div class="lang-banner">my_app_contestant_list.js</div>
+<div><div id="highlighter_674198" class="syntaxhighlighter nogutter  js"><div class="toolbar"><span><a href="http://teropa.info/blog/2014/10/24/how-ive-improved-my-angular-apps-by-banning-ng-controller.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js ang">angular.module</code><code class="js plain">(</code><code class="js string">'myAppContestantList'</code><code class="js plain">, [])</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">.</code><code class="js ang">directive</code><code class="js plain">(</code><code class="js string">'myAppContestantList'</code><code class="js plain">, </code><code class="jskeyword">function</code><code class="js plain">() {</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jskeyword">return</code> <code class="js plain">{</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js ang">scope</code><code class="js plain">: {},</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">templateUrl: </code><code class="js string">'my_app_contestant_list.html'</code><code class="js plain">,</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">replace: </code><code class="jskeyword">true</code><code class="js plain">,</code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js ang">controller</code><code class="js plain">: </code><code class="js string">'ContestantListCtrl'</code><code class="js plain">,</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js ang">controllerAs</code><code class="js plain">: </code><code class="js string">'ctrl'</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">};</code></div><div class="line number10 index9 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">})</code></div><div class="line number11 index10 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">.</code><code class="js ang">controller</code><code class="js plain">(</code><code class="js string">'ContestantListCtrl'</code><code class="js plain">, </code><code class="jskeyword">function</code><code class="js plain">() {</code></div><div class="line number12 index11 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jskeyword">this</code><code class="js plain">.contestants = [</code></div><div class="line number13 index12 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{firstName: </code><code class="js string">'Rachel'</code><code class="js plain">, lastName: </code><code class="js string">'Washington'</code><code class="js plain">},</code></div><div class="line number14 index13 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{firstName: </code><code class="js string">'Joshua'</code><code class="js plain">, lastName: </code><code class="js string">'Foster'</code><code class="js plain">},</code></div><div class="line number15 index14 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{firstName: </code><code class="js string">'Samuel'</code><code class="js plain">, lastName: </code><code class="js string">'Walker'</code><code class="js plain">},</code></div><div class="line number16 index15 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">{firstName: </code><code class="js string">'Phyllis'</code><code class="js plain">, lastName: </code><code class="js string">'Reynolds'</code><code class="js plain">}</code></div><div class="line number17 index16 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">];</code></div><div class="line number18 index17 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">});</code></div></div></td></tr></tbody></table></div></div>
+
+<p>This component's own view template now has the contents of the list, as well as the inclusion of the nested form component:</p>
+
+<div class="lang-banner">my_app_contestant_list.html</div>
+<div><div id="highlighter_567340" class="syntaxhighlighter nogutter  html"><div class="toolbar"><span><a href="http://teropa.info/blog/2014/10/24/how-ive-improved-my-angular-apps-by-banning-ng-controller.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="html punc">&lt;</code><code class="html keyword">section</code><code class="html punc">&gt;</code></div><div class="line number2 index1 alt1"><code class="html spaces">&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">ul</code><code class="html punc">&gt;</code></div><div class="line number3 index2 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">li</code> <code class="html color1">ng-repeat</code><code class="html punc">=</code><code class="html string">"contestant in ctrl.contestants"</code><code class="html punc">&gt;</code></div><div class="line number4 index3 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">{{contestant.firstName}} {{contestant.lastName}}</code></div><div class="line number5 index4 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">li</code><code class="html punc">&gt;</code></div><div class="line number6 index5 alt1"><code class="html spaces">&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">ul</code><code class="html punc">&gt;</code></div><div class="line number7 index6 alt2"><code class="html spaces">&nbsp;&nbsp;</code><code class="html punc">&lt;</code><code class="html keyword">c-contestant-editor-form</code> <code class="html color1">contestants</code><code class="html punc">=</code><code class="html string">"ctrl.contestants"</code><code class="html punc">&gt;</code></div><div class="line number8 index7 alt1"><code class="html spaces">&nbsp;&nbsp;</code><code class="html punc">&lt;/</code><code class="html keyword">c-contestant-editor-form</code><code class="html punc">&gt;</code></div><div class="line number9 index8 alt2"><code class="html punc">&lt;/</code><code class="html keyword">section</code><code class="html punc">&gt;</code></div></div></td></tr></tbody></table></div></div>
+
+<p>Now, while I like the feel of this pattern, what I don't like so much is the fact that it results in more code. In particular, the directive definition object is quite verbose, with no fewer than five required attributes. Also, the controller, defined just a couple of rows beneath the directive, needs to be referred to by name, causing some unfortunate duplication. You <em>could</em> define the controller function right in the directive, but this would make it harder to unit test, which is not a trade-off I'm willing to make.</p>
+
+<p>These issues are caused mostly by Angular's directive API, which Miško Hevery himself described as "convoluted" at ng-europe. There are probably ways to make the pattern a lot less verbose by introducing an Angular extension module that is streamlined for it. I might explore this in the near future. In any case, defining actual, official Angular Components will be a lot more streamlined in Angular 2.0.</p>
+
+<p>There are Plunkers for <a href="http://plnkr.co/edit/WHcjcEHdny0yhM2Rs95d?p=preview">the original version of the app</a>, as well as <a href="http://plnkr.co/edit/F2wq7j?p=preview">the componentized version</a>, if you want to explore the code further.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The component pattern, as described here, has clarified the design of my Angular apps a great deal. It is nice to hear Angular 2.0 moving in a direction where this style is preferred - just with a much better API. Angular 2.0 Components will also be based on Web Components standards like the Shadow DOM, which opens up possibilities for further modularity. For example, each component may bundle its own CSS.</p>
+
+<p>The pattern solves the problems of <em>prototypal inheritance</em> by just not doing it. The attribute shadowing issues that so often trip up beginners just aren't there in the same sense. With isolate scopes you use two-way data binding where, instead of <em>shadowing</em> the parent scope's property, you actually <em>reassign</em> it, matching most people's intuition of what should happen.</p>
+
+<p>The pattern solves the problem of <em>semi-global state</em> by explicitly encoding what attributes a component takes from the parent scope, and how they are bound. Thanks to the isolation, there is no magical semi-global context on which to do ad hoc data access.</p>
+
+<p>The pattern solves the problem of <em>poor view organization</em> by, as a rule, pairing each component with its own HTML template. It becomes obvious where the markup of a specific component is, and vice versa. A further development of the pattern might also bundle component-specific CSS, as Angular 2.0 Components are likely to do.</p>
+
+
+
+
+
+
+
+      <div class="byoa-box">
+        <h4>Know Your AngularJS Inside Out</h4>
+        <a href="http://teropa.info/build-your-own-angular"><img alt="Build Your Own AngularJS" src="./auxi/pix//books2_small.jpg"></a>
+        <p>Build Your Own AngularJS helps you understand everything there is to understand about Angular. By creating your very own implementation of Angular piece by piece, you gain deep insight into what makes this framework tick. Say goodbye to fixing problems by trial and error and hello to reasoning your way through them</p>
+        <p><a href="http://teropa.info/build-your-own-angular">Early Access eBook Available Now</a></p>
+      </div>
+
+      <ul class="read_next hide-on-print">
+        <li><a href="http://teropa.info/blog/2014/08/10/web-components-and-bottom-up-design.html"><i class="icon-caret-left"></i> Web Components and Bottom-Up Design</a></li>
+        <li>&nbsp;</li>
+      </ul>
+
+       <!--  div id="disqus_thread"><iframe id="dsq-2" data-disqus-uid="2" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./AngularJS_ban_ng-controller_files/saved_resource.html" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 7113px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe><iframe id="dsq-indicator-north" data-disqus-uid="indicator-north" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 658px !important; border: none !important; overflow: hidden !important; top: 0px !important; min-width: 658px !important; max-width: 658px !important; position: fixed !important; z-index: 2147483646 !important; height: 29px !important; min-height: 29px !important; max-height: 29px !important; display: none !important;"></iframe><iframe id="dsq-indicator-south" data-disqus-uid="indicator-south" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 658px !important; border: none !important; overflow: hidden !important; bottom: 0px !important; min-width: 658px !important; max-width: 658px !important; position: fixed !important; z-index: 2147483646 !important; height: 29px !important; min-height: 29px !important; max-height: 29px !important; display: none !important;"></iframe></div  -->
+        <!--  script type="text/javascript">
+            var disqus_shortname = 'teropainfo';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript  -->
+
+
+  </article>
+</div>
+
+  <div class="row hide-on-print">
+    <aside class="small-12 large-12 columns left">
+      <ul class="tags small-12 large-4 columns right">
+
+          <li><a class="tiny button secondary round" href="http://teropa.info/blog/tags/web.html">web</a></li>
+
+          <li><a class="tiny button secondary round" href="http://teropa.info/blog/tags/javascript.html">javascript</a></li>
+
+          <li><a class="tiny button secondary round" href="http://teropa.info/blog/tags/angularjs.html">angularjs</a></li>
+
+      </ul>
+    </aside>
+  </div>
+
+
+
+      </div>
+      <div class="small-12 large-3 right sidebar hide-on-print" data-twttr-id="twttr-sandbox-0">
+        <h3>
+          <a href="http://teropa.info/">Tero Parviainen</a>
+          <small style="margin-top: 0">Independent Software Maker</small>
+        </h3>
+
+        <h4>Find me on</h4>
+        <p>
+          <a href="https://twitter.com/teropa">Twitter</a>,
+          <a href="https://github.com/teropa">GitHub</a>,
+          <a href="http://www.linkedin.com/in/teropa">LinkedIn</a>,
+          <a href="https://www.goodreads.com/author/show/7309507.Tero_Parviainen">Goodreads</a>
+        </p>
+
+        <a href="https://clojurecup.com/"><img alt="Clojure Cup 2014" src="./auxi/pix/cc2014v2.svg"></a>
+
+
+        <h4>My Books</h4>
+        <a href="http://teropa.info/build-your-own-angular"><img alt="Build Your Own Angular.js" src="./auxi/pix/cover.png"></a>
+
+        <a href="http://www.packtpub.com/real-time-web-application-development-using-vert-x-2-0/book"><img alt="Real-time Web Application Development using Vert.x 2.0" src="./auxi/pix/vertx_book_cover.jpg"></a>
+
+        <!--  iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-timeline twitter-timeline-rendered" allowfullscreen="" style="border: none; max-width: 100%; min-width: 180px; width: 250px;" title="Twitter Timeline" height="400"></iframe>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script  -->
+
+        <!--  h4>Feed</h4>
+        <a class="feed-link" href="http://teropa.info/blog/feed.xml">All articles</a  -->
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="row">
+      <div class="small-12 large-3 columns">
+        <p>© 2014 Tero Parviainen</p>
+      </div>
+      <div class="small-12 large-3 columns">
+        <p>Contact: tero (at) teropa.info</p>
+      </div>
+        <p class="right hide-on-print"><i class="icon-heart"></i> <a href="http://github.com/mattolson">Layout based on Matt Olson's middleman-zurb-template</a></p>
+
+    </footer>
+
+    <!--[if lt IE 9]>
+    <div id="ie-warning-overlay">
+      <div id="ie-warning">
+        <h1>Did you know that your copy of Internet Explorer is terribly out of date?</h1>
+        <p>
+          To get the best possible experience using our website, we recommend that you upgrade to the latest version or use another web browser.
+          Any of the following will provide a superior experience, not only on this site, but across the web.
+        </p>
+        <p>Just click one of the icons below to get to the download page.</p>
+        <ul>
+          <li>
+            <a href="http://microsoft.com/ie">
+              <img alt="Download Internet Explorer" src="/images/browser_ie.gif" />
+              <p>Internet Explorer</p>
+            </a>
+          </li>
+          <li>
+            <a href="http://mozilla.org/firefox">
+              <img alt="Download Firefox" src="/images/browser_firefox.gif" />
+              <p>Firefox</p>
+            </a>
+          </li>
+          <li>
+            <a href="http://google.com/chrome">
+              <img alt="Download Chrome" src="/images/browser_chrome.gif" />
+              <p>Google Chrome</p>
+            </a>
+          </li>
+          <li>
+            <a href="http://apple.com/safari">
+              <img alt="Download Safari" src="/images/browser_safari.gif" />
+              <p>Safari</p>
+            </a>
+          </li>
+          <li>
+            <a href="http://opera.com">
+              <img alt="Download Opera" src="/images/browser_opera.gif" />
+              <p>Opera</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <![endif]-->
+
+    <script>
+      document.write('<script src=' +
+        ('__proto__' in {} ? "/javascripts/zepto.js" : "/auxi/js/jquery-1.11.0.min.js") +
+        '><\/script>')
+    </script>
+    <script src="./AngularJS_ban_ng-controller_files/zepto.js"></script>
+
+    <!-- Javascript -->
+    <script src="./auxi/js/ban_controller_application.js" type="text/javascript"></script>
+
+
+    <!--  script>
+      $(document).ready(function () {
+
+        $(document).foundation();
+      });
+
+      SyntaxHighlighter.defaults['gutter'] = false;
+      setTimeout(function() { SyntaxHighlighter.all(); }, 0);
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-41475039-1', 'teropa.info');
+      ga('send', 'pageview');
+    </script   -->
+
+
+
+</body></html>
