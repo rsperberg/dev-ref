@@ -178,6 +178,8 @@ into an output that looks like money.</p>
 Whenever the input values change, the value of the expressions are automatically
 recalculated and the DOM is updated with their values.
 The concept behind this is <a name="databinding">"</a><a href="Angular_databinding_dev-docs.html">two-way data binding</a>".</p>
+
+
 <h2 id="adding-ui-logic-controllers" class="ng-scope">Adding UI logic: Controllers</h2>
 <p class="ng-scope">Let's add some more logic to the example that allows us to enter and calculate the costs in
 different currencies and also pay the invoice.</p>
@@ -193,7 +195,8 @@ different currencies and also pay the invoice.</p>
 
 
     <div class="runnable-example-file" name="invoice1.js" language="js" type="js" style="display: block;">
-      <pre><code><span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'invoice1'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
+      <pre><code><span class="com">/* invoice1.js */</span>
+<span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'invoice1'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
   </span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'InvoiceController'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">qty </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">cost </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
@@ -217,8 +220,14 @@ different currencies and also pay the invoice.</p>
   </span><span class="pun">});</span></code></pre>
     </div>
 
-    <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: none;">
-      <pre><code><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-app</span><span class="pun">=</span><span class="atv">"invoice1"</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"InvoiceController as invoice"</span><span class="tag">&gt;</span><span class="pln">
+    </div>
+
+<!--  p>index.html</p  -->
+    <div class="ng-scope" path="examples/example-guide-concepts-2" name="guide-concepts-2" ng-app-included="true">
+
+    <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
+      <pre><code><span class="com">&lt;!-- index.html  --></span>
+<span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-app</span><span class="pun">=</span><span class="atv">"invoice1"</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"InvoiceController as invoice"</span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;b&gt;</span><span class="pln">Invoice:</span><span class="tag">&lt;/b&gt;</span><span class="pln">
   </span><span class="tag">&lt;div&gt;</span><span class="pln">
     Quantity: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.qty"</span><span class="pln"> </span><span class="atn">required</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
@@ -287,7 +296,8 @@ from the web, e.g. by calling the Yahoo Finance API, without changing the contro
 
 
     <div class="runnable-example-file" name="finance2.js" language="js" type="js" style="display: block;">
-      <pre><code><span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'finance2'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
+      <pre><code><span class="com">/* finance2.js */</span>
+<span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'finance2'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
   </span><span class="pun">.</span><span class="pln">factory</span><span class="pun">(</span><span class="str">'currencyConverter'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">var</span><span class="pln"> currencies </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="str">'USD'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'EUR'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'CNY'</span><span class="pun">];</span><span class="pln">
     </span><span class="kwd">var</span><span class="pln"> usdToForeignRates </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
@@ -306,8 +316,9 @@ from the web, e.g. by calling the Yahoo Finance API, without changing the contro
   </span><span class="pun">});</span></code></pre>
     </div>
 
-    <div class="runnable-example-file" name="invoice2.js" language="js" type="js" style="display: none;">
-      <pre><code><span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'invoice2'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'finance2'</span><span class="pun">])</span><span class="pln">
+    <div class="runnable-example-file" name="invoice2.js" language="js" type="js" style="display: block;">
+      <pre><code><span class="com">/* invoice2.js */</span>
+<span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'invoice2'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'finance2'</span><span class="pun">])</span><span class="pln">
   </span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'InvoiceController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'currencyConverter'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">currencyConverter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">qty </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">cost </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
@@ -323,8 +334,9 @@ from the web, e.g. by calling the Yahoo Finance API, without changing the contro
   </span><span class="pun">}]);</span></code></pre>
     </div>
 
-    <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: none;">
-      <pre><code><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-app</span><span class="pun">=</span><span class="atv">"invoice2"</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"InvoiceController as invoice"</span><span class="tag">&gt;</span><span class="pln">
+    <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
+      <pre><code><span class="com">&lt;!-- index.html  --></span>
+<span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-app</span><span class="pun">=</span><span class="atv">"invoice2"</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"InvoiceController as invoice"</span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;b&gt;</span><span class="pln">Invoice:</span><span class="tag">&lt;/b&gt;</span><span class="pln">
   </span><span class="tag">&lt;div&gt;</span><span class="pln">
     Quantity: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.qty"</span><span class="pln"> </span><span class="atn">required</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
@@ -407,7 +419,8 @@ The following example shows how this is done with Angular:</p>
 
 
     <div class="runnable-example-file" name="invoice3.js" language="js" type="js" style="display: block;">
-      <pre><code><span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'invoice3'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'finance3'</span><span class="pun">])</span><span class="pln">
+      <pre><code><span class="com">/* invoice3.js */</span>
+<span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'invoice3'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'finance3'</span><span class="pun">])</span><span class="pln">
   </span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'InvoiceController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'currencyConverter'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">currencyConverter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">qty </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">cost </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
@@ -423,8 +436,9 @@ The following example shows how this is done with Angular:</p>
   </span><span class="pun">}]);</span></code></pre>
     </div>
 
-    <div class="runnable-example-file" name="finance3.js" language="js" type="js" style="display: none;">
-      <pre><code><span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'finance3'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
+    <div class="runnable-example-file" name="finance3.js" language="js" type="js" style="display: block;">
+      <pre><code><span class="com">/* finance3.js */</span>
+<span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'finance3'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
   </span><span class="pun">.</span><span class="pln">factory</span><span class="pun">(</span><span class="str">'currencyConverter'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$http'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$http</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">var</span><span class="pln"> YAHOO_FINANCE_URL_PATTERN </span><span class="pun">=</span><span class="pln">
           </span><span class="str">'//query.yahooapis.com/v1/public/yql?q=select * from '</span><span class="pun">+</span><span class="pln">
@@ -460,8 +474,9 @@ The following example shows how this is done with Angular:</p>
   </span><span class="pun">}]);</span></code></pre>
     </div>
 
-    <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: none;">
-      <pre><code><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-app</span><span class="pun">=</span><span class="atv">"invoice3"</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"InvoiceController as invoice"</span><span class="tag">&gt;</span><span class="pln">
+    <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
+      <pre><code><span class="com">&lt;!-- index.html  --></span>
+<span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-app</span><span class="pun">=</span><span class="atv">"invoice3"</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"InvoiceController as invoice"</span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;b&gt;</span><span class="pln">Invoice:</span><span class="tag">&lt;/b&gt;</span><span class="pln">
   </span><span class="tag">&lt;div&gt;</span><span class="pln">
     Quantity: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.qty"</span><span class="pln"> </span><span class="atn">required</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
@@ -495,7 +510,7 @@ built-in service provided by Angular for accessing a server backend. <code><span
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest"><code><span class="typ">XMLHttpRequest</span></code></a>
 and <a href="http://en.wikipedia.org/wiki/JSONP">JSONP</a> transports.</p>
 
-
+<p> &nbsp; </p>
 </div>
 
 
