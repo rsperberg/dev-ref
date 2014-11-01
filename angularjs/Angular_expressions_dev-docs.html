@@ -40,6 +40,7 @@
 <p class="ng-scope">Angular expressions are JavaScript-like code snippets that are usually placed in bindings such as
 <code><span class="pun">{{</span><span class="pln"> expression </span><span class="pun">}}</span></code>.</p>
 <p class="ng-scope">For example, these are valid expressions in Angular:</p>
+
 <ul class="ng-scope">
 <li><code><span class="lit">1</span><span class="pun">+</span><span class="lit">2</span></code></li>
 <li><code><span class="pln">a</span><span class="pun">+</span><span class="pln">b</span></code></li>
@@ -66,6 +67,53 @@ displaying it.</p>
 the method from your view. If you want to <code><span class="kwd">eval</span><span class="pun">()</span></code> an Angular expression yourself, use the
 <a href="api/ng/type/$rootScope.Scope#$eval"><code><span class="pln">$eval</span><span class="pun">()</span></code></a> method.</p>
 
+<h2 id="example" class="ng-scope">Example</h2>
+<div class="runnable-example ng-scope" path="examples/example-example21">
+    <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
+      <pre><code><span class="tag">&lt;span&gt;</span><span class="pln">
+  1+2={{1+2}}
+</span><span class="tag">&lt;/span&gt;</span></code></pre>
+    </div>
+  </div>
+
+
+<p class="ng-scope">You can try evaluating different expressions [in this example <a href="https://docs.angularjs.org/guide/expression" title="link to expression page online">online</a>]:</p>
+
+<div class="runnable-example ng-scope" path="examples/example-example22" module="expressionExample">
+  <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
+      <pre><code><span class="com">&lt;!-- index.html  --></span>
+<span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"ExampleController"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"expressions"</span><span class="tag">&gt;</span><span class="pln">
+  Expression:
+  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">'text'</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"expr"</span><span class="pln"> </span><span class="atn">size</span><span class="pun">=</span><span class="atv">"80"</span><span class="tag">/&gt;</span><span class="pln">
+  </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"addExp(expr)"</span><span class="tag">&gt;</span><span class="pln">Evaluate</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+  </span><span class="tag">&lt;ul&gt;</span><span class="pln">
+   </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">ng-repeat</span><span class="pun">=</span><span class="atv">"expr in exprs track by $index"</span><span class="tag">&gt;</span><span class="pln">
+     [ </span><span class="tag">&lt;a</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">""</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"removeExp($index)"</span><span class="tag">&gt;</span><span class="pln">X</span><span class="tag">&lt;/a&gt;</span><span class="pln"> ]
+     </span><span class="tag">&lt;tt&gt;</span><span class="pln">{{expr}}</span><span class="tag">&lt;/tt&gt;</span><span class="pln"> =&gt; </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">ng-bind</span><span class="pun">=</span><span class="atv">"$parent.$eval(expr)"</span><span class="tag">&gt;&lt;/span&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/li&gt;</span><span class="pln">
+  </span><span class="tag">&lt;/ul&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span></code></pre>
+    </div>
+
+
+<div class="runnable-example-file" name="script.js" language="js" type="js" style="display: block;">
+      <pre><code><span class="com">/* script.js */</span>
+<span class="ang">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'expressionExample'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
+  </span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'ExampleController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> exprs </span><span class="pun">=</span><span class="ang"> $scope</span><span class="pun">.</span><span class="pln">exprs </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[];</span><span class="ang">
+    $scope</span><span class="pun">.</span><span class="pln">expr </span><span class="pun">=</span><span class="pln"> </span><span class="str">'3*10|currency'</span><span class="pun">;</span><span class="ang">
+    $scope</span><span class="pun">.</span><span class="pln">addExp </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">expr</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      exprs</span><span class="pun">.</span><span class="pln">push</span><span class="pun">(</span><span class="pln">expr</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">};</span><span class="ang">
+
+    $scope</span><span class="pun">.</span><span class="pln">removeExp </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">index</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      exprs</span><span class="pun">.</span><span class="pln">splice</span><span class="pun">(</span><span class="pln">index</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">};</span><span class="pln">
+  </span><span class="pun">}]);</span></code></pre>
+    </div>
+</div>
+
+
 
 <p class="ng-scope"></p>
 <h2 id="context" class="ng-scope">Context</h2>
@@ -79,11 +127,24 @@ provide mockable access to globals.</p>
 
 </p>
 <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
-      <pre><code class="prettyprint"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"example2"</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"ExampleController"</span><span class="tag">&gt;</span><span class="pln">
+      <pre><code class="prettyprint"><span class="com">&lt;!-- index.html  --></span>
+<span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"example2"</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"ExampleController"</span><span class="tag">&gt;</span><span class="pln">
   Name: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"name"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="tag">/&gt;</span><span class="pln">
   </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"greet()"</span><span class="tag">&gt;</span><span class="pln">Greet</span><span class="tag">&lt;/button&gt;</span><span class="pln">
   </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"window.alert('Should not see me')"</span><span class="tag">&gt;</span><span class="pln">Won't greet</span><span class="tag">&lt;/button&gt;</span><span class="pln">
 </span><span class="tag">&lt;/div&gt;</span></code></pre>
+    </div>
+
+<div class="runnable-example-file" name="script.js" language="js" type="js" style="display: block;">
+      <pre><code><span class="com">/* script.js */</span>
+<span class="ang">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'expressionExample'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
+  </span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'ExampleController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$window'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$window</span><span class="pun">,</span><span class="ang"> $scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+    $scope</span><span class="pun">.</span><span class="pln">name </span><span class="pun">=</span><span class="pln"> </span><span class="str">'World'</span><span class="pun">;</span><span class="ang">
+
+    $scope</span><span class="pun">.</span><span class="pln">greet </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      $window</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">(</span><span class="str">'Hello '</span><span class="pln"> </span><span class="pun">+</span><span class="ang"> $scope</span><span class="pun">.</span><span class="pln">name</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">};</span><span class="pln">
+  </span><span class="pun">}]);</span></code></pre>
     </div>
 
 
@@ -120,11 +181,37 @@ similar jqLite object.</p>
   <div class="runnable-example ng-scope">
 
     <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
-      <pre><code><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"EventController"</span><span class="tag">&gt;</span><span class="pln">
+      <pre><code><span class="com">&lt;!-- index.html  --></span>
+<span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"EventController"</span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"clickMe($event)"</span><span class="tag">&gt;</span><span class="pln">Event</span><span class="tag">&lt;/button&gt;</span><span class="pln">
   </span><span class="tag">&lt;p&gt;&lt;code&gt;</span><span class="pln">$event</span><span class="tag">&lt;/code&gt;</span><span class="pln">: </span><span class="tag">&lt;pre&gt;</span><span class="pln"> {{$event | json}}</span><span class="tag">&lt;/pre&gt;&lt;/p&gt;</span><span class="pln">
   </span><span class="tag">&lt;p&gt;&lt;code&gt;</span><span class="pln">clickEvent</span><span class="tag">&lt;/code&gt;</span><span class="pln">: </span><span class="tag">&lt;pre&gt;</span><span class="pln">{{clickEvent | json}}</span><span class="tag">&lt;/pre&gt;&lt;/p&gt;</span><span class="pln">
 </span><span class="tag">&lt;/div&gt;</span></code></pre>
+    </div>
+
+<div class="runnable-example-file" name="script.js" language="js" type="js" style="display: block;">
+      <pre><code><span class="com">/* script.js */</span>
+<span class="ang">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'eventExampleApp'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[]).</span><span class="ang">
+  controller</span><span class="pun">(</span><span class="str">'EventController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="com">/*
+     * expose the event object to the scope
+     */</span><span class="ang">
+    $scope</span><span class="pun">.</span><span class="pln">clickMe </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">clickEvent</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+      $scope</span><span class="pun">.</span><span class="pln">clickEvent </span><span class="pun">=</span><span class="pln"> simpleKeys</span><span class="pun">(</span><span class="pln">clickEvent</span><span class="pun">);</span><span class="pln">
+      console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">clickEvent</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">};</span><span class="pln">
+
+    </span><span class="com">/*
+     * return a copy of an object with only non-object keys
+     * we need this to avoid circular references
+     */</span><span class="pln">
+    </span><span class="kwd">function</span><span class="pln"> simpleKeys </span><span class="pun">(</span><span class="pln">original</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">Object</span><span class="pun">.</span><span class="pln">keys</span><span class="pun">(</span><span class="pln">original</span><span class="pun">).</span><span class="pln">reduce</span><span class="pun">(</span><span class="kwd">function</span><span class="pln"> </span><span class="pun">(</span><span class="pln">obj</span><span class="pun">,</span><span class="pln"> key</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        obj</span><span class="pun">[</span><span class="pln">key</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">typeof</span><span class="pln"> original</span><span class="pun">[</span><span class="pln">key</span><span class="pun">]</span><span class="pln"> </span><span class="pun">===</span><span class="pln"> </span><span class="str">'object'</span><span class="pln"> </span><span class="pun">?</span><span class="pln"> </span><span class="str">'{ ... }'</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> original</span><span class="pun">[</span><span class="pln">key</span><span class="pun">];</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> obj</span><span class="pun">;</span><span class="pln">
+      </span><span class="pun">},</span><span class="pln"> </span><span class="pun">{});</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}]);</span></code></pre>
     </div>
   </div>
 </div>
@@ -133,6 +220,8 @@ similar jqLite object.</p>
 <p class="ng-scope"></p>
 <p class="ng-scope">Note in the example above how we can pass in <code><span class="pln">$event</span></code> to <code><span class="pln">clickMe</span></code>, but how it does not show up
 in <code><span class="pun">{{</span><span class="pln">$event</span><span class="pun">}}</span></code>. This is because <code><span class="pln">$event</span></code> is outside the scope of that binding.</p>
+
+
 <h2 id="one-time-binding" class="ng-scope">One-time binding</h2>
 <p class="ng-scope">An expression that starts with <code><span class="pun">::</span></code> is considered a one-time expression. One-time expressions
 will stop recalculating once they are stable, which happens after the first digest if the expression
@@ -144,13 +233,29 @@ result is a non-undefined value (see value stabilization algorithm below).</p>
 <div class="ng-scope">
 
     <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
-      <pre><code><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"EventController"</span><span class="tag">&gt;</span><span class="pln">
+      <pre><code><span class="com">&lt;!-- index.html  --></span>
+<span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"EventController"</span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"clickMe($event)"</span><span class="tag">&gt;</span><span class="pln">Click Me</span><span class="tag">&lt;/button&gt;</span><span class="pln">
   </span><span class="tag">&lt;p</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"one-time-binding-example"</span><span class="tag">&gt;</span><span class="pln">One time binding: {{::name}}</span><span class="tag">&lt;/p&gt;</span><span class="pln">
   </span><span class="tag">&lt;p</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"normal-binding-example"</span><span class="tag">&gt;</span><span class="pln">Normal binding: {{name}}</span><span class="tag">&lt;/p&gt;</span><span class="pln">
 </span><span class="tag">&lt;/div&gt;</span></code></pre>
     </div>
 
+<div class="runnable-example-file" name="script.js" language="js" type="js" style="display: block;">
+      <pre><code><span class="com">/* script.js */</span>
+<span class="ang">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'oneTimeBidingExampleApp'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[]).</span><span class="ang">
+  controller</span><span class="pun">(</span><span class="str">'EventController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> counter </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> names </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="str">'Igor'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Misko'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Chirayu'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Lucas'</span><span class="pun">];</span><span class="pln">
+    </span><span class="com">/*
+     * expose the event object to the scope
+     */</span><span class="ang">
+    $scope</span><span class="pun">.</span><span class="pln">clickMe </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">clickEvent</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+      $scope</span><span class="pun">.</span><span class="pln">name </span><span class="pun">=</span><span class="pln"> names</span><span class="pun">[</span><span class="pln">counter </span><span class="pun">%</span><span class="pln"> names</span><span class="pun">.</span><span class="pln">length</span><span class="pun">];</span><span class="pln">
+      counter</span><span class="pun">++;</span><span class="pln">
+    </span><span class="pun">};</span><span class="pln">
+  </span><span class="pun">}]);</span></code></pre>
+    </div>
 
   </div>
 
