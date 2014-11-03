@@ -145,11 +145,11 @@ For a more in-depth explanation, see the <a href="tutorial/">tutorial</a>.</p>
 "<a name="template" href="Angular_templates_dev-docs.html">template</a>." When Angular starts your application, it parses and
 processes this new markup from the template using the so called "<a name="compiler" href="Angular_compiler_dev-docs.html">compiler</a>."
 The loaded, transformed and rendered DOM is then called the "<a name="view">view</a>."</p>
-<p class="ng-scope">The first kind of new markup are the so called "<a name="directive" href="Angular_directives_dev-docs.html">directives</a>."
+<p class="ng-scope">The first kind of new markup are the so-called "<a name="directive" href="Angular_directives_dev-docs.html">directives</a>."
 They apply special behavior to attributes or elements in the HTML. In the example above we use the
 <a href="api/ng/directive/ngApp"><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">app</span></code></a> attribute, which is linked to a directive that automatically
 initializes our application. Angular also defines a directive for the <a href="api/ng/directive/input"><code><span class="pln">input</span></code></a>
-element that adds extra behavior to the element. The <a href="api/ng/directive/ngModel"><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">model</span></code></a> directive
+element that adds extra behavior to the element. The <a href="api/ng/directive/ngModel"><code><span class="atn">ng-model</span></code></a> directive
 stores/updates the value of the input field into/from a variable.</p>
 
 
@@ -165,8 +165,8 @@ When the compiler encounters this markup, it will replace it with the evaluated 
 An "<a name="expression" href="Angular_expressions_dev-docs.html">expression</a>" in a template is a JavaScript-like code snippet that allows
 to read and write variables. Note that those variables are not global variables.
 Just like variables in a JavaScript function live in a scope,
-Angular provides a "<a name="scope" href="Angular_scopes_dev-docs.html">scope</a>" for the variables accessible to expressions.
-The values that are stored in variables on the scope are referred to as the "<a name="model">model</a>"
+Angular provides a "<a name="scope" href="Angular_scopes_dev-docs.html">scope</a>" for the variables that are accessible to expressions.
+The values stored in variables on the scope are referred to as the "<a name="model">model</a>"
 in the rest of the documentation.
 Applied to the example above, the markup directs Angular to "take the data we got from the input widgets
 and multiply them together."</p>
@@ -174,7 +174,7 @@ and multiply them together."</p>
 A filter formats the value of an expression for display to the user.
 In the example above, the filter <a href="api/ng/filter/currency"><code><span class="pln">currency</span></code></a> formats a number
 into an output that looks like money.</p>
-<p class="ng-scope">The important thing in the example is that angular provides <em>live</em> bindings:
+<p class="ng-scope">The important thing in the example is that Angular provides <em>live</em> bindings:
 Whenever the input values change, the value of the expressions are automatically
 recalculated and the DOM is updated with their values.
 The concept behind this is "<a name="databinding" href="Angular_databinding_dev-docs.html">two-way data binding</a>."</p>
@@ -256,21 +256,21 @@ different currencies and also pay the invoice.</p>
 
 <p class="ng-scope"></p>
 <p class="ng-scope">What changed?</p>
-<p class="ng-scope">First, there is a new JavaScript file that contains a so called "<a name="controller" href="Angular_controllers_dev-docs.html">controller</a>."
+<p class="ng-scope">First, there is a new JavaScript file that contains a so-called "<a name="controller" href="Angular_controllers_dev-docs.html">controller</a>."
 More exactly, the file contains a constructor function that creates the actual controller instance.
 The purpose of controllers is to expose variables and functionality to expressions and directives.</p>
-<p class="ng-scope">Besides the new file that contains the controller code we also added a
-<a href="api/ng/directive/ngController"><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">controller</span></code></a> directive to the HTML.
-This directive tells angular that the new <code><span class="typ">InvoiceController</span></code> is responsible for the element with the directive
+<p class="ng-scope">Besides the new file that contains the controller code we also added an
+<a href="api/ng/directive/ngController"><code><span class="pln">ng-controller</span></code></a> directive to the HTML.
+This directive tells Angular that the new <code><span class="typ">InvoiceController</span></code> is responsible for the element with the directive
 and all of the element's children.
 The syntax <code><span class="typ">InvoiceController</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> invoice</span></code> tells Angular to instantiate the controller
 and save it in the variable <code><span class="pln">invoice</span></code> in the current scope.</p>
 <p class="ng-scope">We also changed all expressions in the page to read and write variables within that
 controller instance by prefixing them with <code><span class="pln">invoice</span><span class="pun">.</span></code> . The possible currencies are defined in the controller
-and added to the template using <a href="api/ng/directive/ngRepeat"><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">repeat</span></code></a>.
+and added to the template using <a href="api/ng/directive/ngRepeat"><code><span class="pln">ng-repeat</span></code></a>.
 As the controller contains a <code><span class="pln">total</span></code> function
 we are also able to bind the result of that function to the DOM using <code><span class="pun">{{</span><span class="pln"> invoice</span><span class="pun">.</span><span class="pln">total</span><span class="pun">(...)</span><span class="pln"> </span><span class="pun">}}</span></code>.</p>
-<p class="ng-scope">Again, this binding is live, i.e. the DOM will be automatically updated
+<p class="ng-scope">Again, this binding is live, i.e., the DOM will be automatically updated
 whenever the result of the function changes.
 The button to pay the invoice uses the directive <a href="api/ng/directive/ngClick"><code><span class="pln">ngClick</span></code></a>. This will evaluate the
 corresponding expression whenever the button is clicked.</p>
@@ -283,7 +283,7 @@ at which we register the controller. We will talk about modules in the next sect
 is a good practice to move view independent logic from the controller into a so called
 "<a name="service" href="Angular_services_dev-docs.html">service</a>," so it can be reused by other parts
 of the application as well. Later on, we could also change that service to load the exchange rates
-from the web, e.g. by calling the Yahoo Finance API, without changing the controller.</p>
+from the web, e.g., by calling the Yahoo Finance API, without changing the controller.</p>
 <p class="ng-scope">Let's refactor our example and move the currency conversion into a service in another file:</p>
 <p class="ng-scope">
 
@@ -366,19 +366,19 @@ from the web, e.g. by calling the Yahoo Finance API, without changing the contro
 <p class="ng-scope">What changed?
 We moved the <code><span class="pln">convertCurrency</span></code> function and the definition of the existing currencies
 into the new file <code><span class="pln">finance2</span><span class="pun">.</span><span class="pln">js</span></code>. But how does the controller
-get a hold of the now separated function?</p>
+get ahold of the now-separated function?</p>
 <p class="ng-scope">This is where "<a name="di" href="Angular_di_dev-docs.html">Dependency Injection</a>" comes into play.
 Dependency Injection (DI) is a software design pattern that
-deals with how objects and functions get created and how they get a hold of their dependencies.
+deals with how objects and functions get created and how they get ahold of their dependencies.
 Everything within Angular (directives, filters, controllers,
 services, ...) is created and wired using dependency injection. Within Angular,
 the DI container is called the "<a name="injector" href="Angular_di_dev-docs.html">injector</a>."</p>
 <p class="ng-scope">To use DI, there needs to be a place where all the things that should work together are registered.
-In Angular, this is the purpose of the so called "<a name="module" href="Angular_modules_dev-docs.html">modules</a>."
-When Angular starts, it will use the configuration of the module with the name defined by the <code><span class="pln">ng</span><span class="pun">-</span><span class="pln">app</span></code> directive,
+In Angular, this is the purpose of the so-called "<a name="module" href="Angular_modules_dev-docs.html">modules</a>."
+When Angular starts, it will use the configuration of the module with the name defined by the <code><span class="pln">ng-app</span></code> directive,
 including the configuration of all modules that this module depends on.</p>
 <p class="ng-scope">In the example above:
-The template contains the directive <code><span class="pln">ng</span><span class="pun">-</span><span class="pln">app</span><span class="pun">=</span><span class="str">"invoice2"</span></code>. This tells Angular
+The template contains the directive <code><span class="pln">ng<-app</span><span class="pun">=</span><span class="str">"invoice2"</span></code>. This tells Angular
 to use the <code><span class="pln">invoice2</span></code> module as the main module for the application.
 The code snippet <code><span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'invoice2'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'finance2'</span><span class="pun">])</span></code>  specifies that the <code><span class="pln">invoice2</span></code> module depends on the
 <code><span class="pln">finance2</span></code> module. By this, Angular uses the <code><span class="typ">InvoiceController</span></code> as well as the <code><span class="pln">currencyConverter</span></code> service.</p>
