@@ -1,7 +1,7 @@
 <html>
 <head>
   <title>Angular Expressions</title>
-
+  <!--  from https://docs.angularjs.org/guide/expression  -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -11,9 +11,9 @@
   <meta name="fragment" content="!"/>
 
   <!--  base href="https://docs.angularjs.org/"  -->
-  <link rel="stylesheet" href="auxi/css/bootstrap.min.css" type="text/css"/>
+  <link rel="stylesheet" href="auxi/css/bootstrap.nomin.css" type="text/css"/>
   <link rel="stylesheet" href="auxi/css/open-sans.css" type="text/css"/>
-  <link rel="stylesheet" href="auxi/css/doxy.css" type="text/css"/>
+  <link rel="stylesheet" href="auxi/css/doxy-prism.css" type="text/css"/>
   <!--  link rel="stylesheet" href="auxi/css/prettify-theme.css" type="text/css"/  -->
   <link rel="stylesheet" href="auxi/css/docs.css" type="text/css"/>
 
@@ -32,10 +32,6 @@
 <div class="wrapper">
 <section class="container main-body">
 
-<!-- from https://github.com/angular/angular.js/edit/master/docs/content/guide/expression.ngdoc?message=docs(guide%2FExpressions)%3A%20describe%20your%20change..." class="improve-docs btn btn-primary ng-scope"  -->
-
-
-
 <h1 id="angular-expressions" class="ng-scope">Angular Expressions</h1>
 <p class="ng-scope">Angular expressions are JavaScript-like code snippets that are usually placed in bindings such as
 <code><span class="pun">{{</span><span class="pln"> expression </span><span class="pun">}}</span></code>.</p>
@@ -51,7 +47,7 @@
 <p class="ng-scope">Angular expressions are like JavaScript expressions with the following differences:</p>
 <ul class="ng-scope">
 <li><p><strong>Context:</strong> JavaScript expressions are evaluated against the global <code><span class="pln">window</span></code>.
-In Angular, expressions are evaluated against a <a href="api/ng/type/$rootScope.Scope"><code><span class="pln">scope</span></code></a> object.</p>
+In Angular, expressions are evaluated against a <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope"><code><span class="pln">scope</span></code></a> object.</p>
 </li>
 <li><p><strong>Forgiving:</strong> In JavaScript, trying to evaluate undefined properties generates <code><span class="typ">ReferenceError</span></code>
 or <code><span class="typ">TypeError</span></code>. In Angular, expression evaluation is forgiving to <code><span class="kwd">undefined</span></code> and <code><span class="kwd">null</span></code>.</p>
@@ -59,13 +55,13 @@ or <code><span class="typ">TypeError</span></code>. In Angular, expression evalu
 <li><p><strong>No Control Flow Statements:</strong> you cannot use the following in an Angular expression:
 conditionals, loops, or exceptions.</p>
 </li>
-<li><p><strong>Filters:</strong> You can use <a href="guide/filter">filters</a> within expressions to format data before
+<li><p><strong>Filters:</strong> You can use <a class="uriless" href="guide/filter">filters</a> within expressions to format data before
 displaying it.</p>
 </li>
 </ul>
 <p class="ng-scope">If you want to run more complex JavaScript code, you should make it a controller method and call
 the method from your view. If you want to <code><span class="kwd">eval</span><span class="pun">()</span></code> an Angular expression yourself, use the
-<a href="api/ng/type/$rootScope.Scope#$eval"><code><span class="pln">$eval</span><span class="pun">()</span></code></a> method.</p>
+<a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$eval"><code><span class="pln">$eval</span><span class="pun">()</span></code></a> method.</p>
 
 <h2 id="example" class="ng-scope">Example</h2>
 <div class="runnable-example ng-scope" path="examples/example-example21">
@@ -118,7 +114,7 @@ the method from your view. If you want to <code><span class="kwd">eval</span><sp
 <p class="ng-scope"></p>
 <h2 id="context" class="ng-scope">Context</h2>
 <p class="ng-scope">Angular does not use JavaScript's <code><span class="kwd">eval</span><span class="pun">()</span></code> to evaluate expressions. Instead Angular's
-<a href="api/ng/service/$parse">$parse</a> service processes these expressions.</p>
+<a href="https://docs.angularjs.org/api/ng/service/$parse">$parse</a> service processes these expressions.</p>
 <p class="ng-scope">Angular expressions do not have access to global variables like <code><span class="pln">window</span></code>, <code><span class="pln">document</span></code> or <code><span class="pln">location</span></code>.
 This restriction is intentional. It prevents accidental access to the global state – a common source of subtle bugs.</p>
 <p class="ng-scope">Instead use services like <code><span class="pln">$window</span></code> and <code><span class="pln">$location</span></code> in functions called from expressions. Such services
@@ -163,11 +159,11 @@ forgiving we'd have to write bindings that clutter the code, for example: <code>
 <h2 id="no-control-flow-statements" class="ng-scope">No Control Flow Statements</h2>
 <p class="ng-scope">Apart from the ternary operator (<code><span class="pln">a </span><span class="pun">?</span><span class="pln"> b </span><span class="pun">:</span><span class="pln"> c</span></code>), you cannot write a control flow statement in an
 expression. The reason behind this is core to the Angular philosophy that application logic should
-be in controllers, not the views. If you need a real conditional, loop, or to throw from a view
+be in controllers, not the views. If you need a real conditional or loop or need to throw from a view
 expression, delegate to a JavaScript method instead.</p>
 
 <h2 id="-event-" class="ng-scope"><span style="font-family:Share-TechMono">$event</span></h2>
-<p class="ng-scope">Directives like <a href="api/ng/directive/ngClick"><code><span class="pln">ngClick</span></code></a> and <a href="api/ng/directive/ngFocus"><code><span class="pln">ngFocus</span></code></a>
+<p class="ng-scope">Directives like <a href="https://docs.angularjs.org/api/ng/directive/ngClick"><code><span class="pln">ngClick</span></code></a> and <a href="https://docs.angularjs.org/api/ng/directive/ngFocus"><code><span class="pln">ngFocus</span></code></a>
 expose a <code><span class="pln">$event</span></code> object within the scope of that expression. The object is an instance of a <a href="http://api.jquery.com/category/events/event-object/">jQuery
 Event Object</a> when jQuery is present or a
 similar jqLite object.</p>
