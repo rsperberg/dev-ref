@@ -1,0 +1,375 @@
+<html>
+<head>
+  <title>Angular Controllers</title>
+  <!-- saved from url=(0043)https://docs.angularjs.org/guide/controller -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="Description" content="AngularJS is what HTML would have been, had it been designed for building web-apps.
+                 Declarative templates with data-binding, MVC, dependency injection and great
+                 testability story all implemented with pure client-side JavaScript!"/>
+  <meta name="fragment" content="!"/>
+
+  <!--  base href="https://docs.angularjs.org/"  -->
+  <link rel="stylesheet" href="auxi/css/bootstrap.nomin.css" type="text/css"/>
+  <link rel="stylesheet" href="auxi/css/open-sans.css" type="text/css"/>
+  <link rel="stylesheet" href="auxi/css/doxy-prism.css" type="text/css"/>
+  <!--  link rel="stylesheet" href="auxi/css/prettify-theme.css" type="text/css"/  -->
+  <link rel="stylesheet" href="auxi/css/docs.css" type="text/css"/>
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+  <script src="js/angular-bootstrap/bootstrap.min.js"></script>
+  <script src="js/angular-bootstrap/dropdown-toggle.min.js"></script>
+  <script src="auxi/js/prettify.js"></script>
+  <script src="auxi/js/lang-css.js"></script>
+  <style type="text/css">
+  </style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+<section class="container main-body">
+
+<h1 id="understanding-controllers" class="ng-scope">Understanding Controllers</h1>
+
+<p class="ng-scope">In Angular, a Controller is a JavaScript <strong>constructor function</strong> that is used to augment the
+<a class="uriless" name="scope" href="Angular_scopes_dev-docs.html">Angular Scope</a>.</p>
+<p class="ng-scope">When a Controller is attached to the DOM via the <a href="https://docs.angularjs.org/api/ng/directive/ngController">ng-controller</a>
+directive, Angular will instantiate a new Controller object, using the specified Controller's
+<strong>constructor function</strong>. A new <strong>child scope</strong> will be available as an injectable parameter to the
+Controller's constructor function as <code><span class="pln">$scope</span></code>.</p>
+<p class="ng-scope">Use controllers to:</p>
+<ul class="ng-scope">
+<li>Set up the initial state of the <code><span class="pln">$scope</span></code> object.</li>
+<li>Add behavior to the <code><span class="pln">$scope</span></code> object.</li>
+</ul>
+<p class="ng-scope">Do not use controllers to:</p>
+<ul class="ng-scope">
+<li>Manipulate DOM — Controllers should contain only business logic.
+Putting any presentation logic into Controllers significantly affects its testability. Angular
+has <a class="uriless" name="databinding" href="Angular_databinding_dev-docs.html">databinding</a> for most cases and <a class="uriless" name="directive" href="Angular_directives_dev-docs.html">directives</a> to
+encapsulate manual DOM manipulation.</li>
+<li>Format input — Use <a class="uriless" href="Angular_forms_dev-docs.html">angular form controls</a> instead.</li>
+<li>Filter output — Use <a class="uriless" href="Angular_filters_dev-docs.html">angular filters</a> instead.</li>
+<li>Share code or state across controllers — Use <a class="uriless" href="Angular_services_dev-docs.html">angular
+services</a> instead.</li>
+<li>Manage the life-cycle of other components (for example, to create service instances).</li>
+</ul>
+
+<h1 id="setting-up-the-initial-state-of-a-scope-object" class="ng-scope">Setting up the initial state of a <code><span class="pln">$scope</span></code> object</h1>
+<p class="ng-scope">Typically, when you create an application you need to set up the initial state for the Angular
+<code><span class="ang">$scope</span></code>. You set up the initial state of a scope by attaching properties to the <code><span class="ang">$scope</span></code> object.
+The properties contain the <strong>view model</strong> (the model that will be presented by the view).  All the
+<code><span class="ang">$scope</span></code> properties will be available to the template at the point in the DOM where the Controller
+is registered.</p>
+<p class="ng-scope">The following example demonstrates creating a <code><span class="typ">GreetingController</span></code>, which attaches a <code><span class="pln">greeting</span></code>
+property containing the string <code><span class="str">'Hola!'</span></code> to the <code><span class="ang">$scope</span></code>:</p>
+
+<pre class="ng-scope"><code class="lang-js"><span class="kwd">var</span><span class="pln"> myApp </span><span class="pun">=</span><span class="ang"> angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'myApp'</span><span class="pun">,[]);</span><span class="pln">
+
+myApp</span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'GreetingController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+  $scope</span><span class="pun">.</span><span class="pln">greeting </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Hola!'</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}]);</span></code></pre>
+
+<p class="ng-scope">We create an <a class="uriless" name="module" href="Angular_modules_dev-docs.html">Angular Module</a>, <code><span class="pln">myApp</span></code>, for our application. Then we add the controller's
+constructor function to the module using the <code><span class="pun">.</span><span class="pln">controller</span><span class="pun">()</span></code> method. This keeps the controller's
+constructor function out of the global scope.</p>
+<div class="alert alert-info ng-scope">
+We have used an <strong>inline injection annotation</strong> to explicitly specify the dependency
+of the Controller on the <code><span class="pln">$scope</span></code> service provided by Angular. See the guide on
+<a class="uriless" href="Angular_di_dev-docs.html">Dependency Injection</a> for more information.
+</div>
+
+<p class="ng-scope">We attach our controller to the DOM using the <code><span class="pln">ng</span><span class="pun">-</span><span class="pln">controller</span></code> directive. The <code><span class="pln">greeting</span></code> property can
+now be data-bound to the template:</p>
+<pre class="ng-scope"><code class="lang-js"><span class="pun">&lt;</span><span class="tag">div </span><span class="ang">ng-controller</span><span class="pun">=</span><span class="str">"GreetingController"</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">{{</span><span class="pln"> greeting </span><span class="pun">}}</span><span class="pln">
+</span><span class="pun">&lt;/</span><span class="tag">div</span><span class="pun">&gt;</span></code></pre>
+
+<h1 id="adding-behavior-to-a-scope-object" class="ng-scope">Adding Behavior to a Scope Object</h1>
+<p class="ng-scope">In order to react to events or execute computation in the view we must provide behavior to the
+scope. We add behavior to the scope by attaching methods to the <code><span class="pln">$scope</span></code> object.  These methods are
+then available to be called from the template/view.</p>
+<p class="ng-scope">The following example uses a Controller to add a method to the scope, which doubles a number:</p>
+
+<pre class="ng-scope"><code class="lang-js"><span class="kwd">var</span><span class="pln"> myApp </span><span class="pun">=</span><span class="ang"> angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'myApp'</span><span class="pun">,[]);</span><span class="pln">
+
+myApp</span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'DoubleController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+  $scope</span><span class="pun">.</span><span class="kwd">double</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">value</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> value </span><span class="pun">*</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln"> </span><span class="pun">};</span><span class="pln">
+</span><span class="pun">}]);</span></code></pre>
+
+<p class="ng-scope">Once the Controller has been attached to the DOM, the <code><span class="kwd">double</span></code> method can be invoked in an Angular
+expression in the template:</p>
+
+<pre class="ng-scope"><code class="lang-js"><span class="pun">&lt;</span><span class="tag">div </span><span class="ang">ng-controller</span><span class="pun">=</span><span class="str">"DoubleController"</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pln">Two times </span><span class="pun">&lt;</span><span class="tag">input </span><span class="ang">ng-model</span><span class="pun">=</span><span class="str">"num"</span><span class="pun">&gt;</span><span class="pln"> equals </span><span class="pun">{{</span><span class="pln"> </span><span class="kwd">double</span><span class="pun">(</span><span class="pln">num</span><span class="pun">)</span><span class="pln"> </span><span class="pun">}}</span><span class="pln">
+</span><span class="pun">&lt;/</span><span class="tag">div</span><span class="pun">&gt;</span></code></pre>
+
+<p class="ng-scope">As discussed in the <a class="uriless" href="Angular_concepts_dev-docs.html">Concepts</a> section of this guide, any
+objects (or primitives) assigned to the scope become model properties. Any methods assigned to
+the scope are available in the template/view, and can be invoked via angular expressions
+and <code><span class="pln">ng</span></code> event handler directives (e.g. <a href="https://docs.angularjs.org/api/ng/directive/ngClick">ngClick</a>).</p>
+
+<h1 id="using-controllers-correctly" class="ng-scope">Using Controllers Correctly</h1>
+<p class="ng-scope">In general, a Controller shouldn't try to do too much. It should contain only the business logic
+needed for a single view.</p>
+<p class="ng-scope">The most common way to keep Controllers slim is by encapsulating work that doesn't belong to
+controllers into services and then using these services in Controllers via dependency injection.
+This is discussed in the <a class="uriless" href="Angular_di_dev-docs.html">Dependency Injection</a> <a class="uriless" href="Angular_services_dev-docs.html">Services</a> sections of this guide.</p>
+
+<h1 id="associating-controllers-with-angular-scope-objects" class="ng-scope">Associating Controllers with Angular Scope Objects</h1>
+<p class="ng-scope">You can associate Controllers with scope objects implicitly via the <a href="https://docs.angularjs.org/api/ng/directive/ngController">ngController
+directive</a> or <a href="https://docs.angularjs.org/api/ngRoute/service/$route">$route service</a>.</p>
+
+<h2 id="simple-spicy-controller-example" class="ng-scope">Simple Spicy Controller Example</h2>
+<p class="ng-scope">To illustrate further how Controller components work in Angular, let's create a little app with the
+following components:</p>
+<ul class="ng-scope">
+<li>A <a class="uriless" href="Angular_templates_dev-docs.html">template</a> with two buttons and a simple message</li>
+<li>A model consisting of a string named <code><span class="pln">spice</span></code></li>
+<li>A Controller with two functions that set the value of <code><span class="pln">spice</span></code></li>
+</ul>
+
+<p class="ng-scope">The message in our template contains a binding to the <code><span class="pln">spice</span></code> model, which by default is set to the
+string "very". Depending on which button is clicked, the <code><span class="pln">spice</span></code> model is set to <code><span class="pln">chili</span></code> or
+<code><span class="pln">jalape</span><span class="pun">ñ</span><span class="pln">o</span></code>, and the message is automatically updated by data-binding.</p>
+<p class="ng-scope">
+
+</p>
+<div class="ng-scope">
+
+  <div class="runnable-example ng-scope" path="examples/example-example4" module="spicyApp1">
+
+    <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
+      <pre><code><span class="com">&lt;!-- index.html  --></span>
+<span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"SpicyController"</span><span class="tag">&gt;</span><span class="pln">
+ </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"chiliSpicy()"</span><span class="tag">&gt;</span><span class="pln">Chili</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+ </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"jalapenoSpicy()"</span><span class="tag">&gt;</span><span class="pln">Jalapeño</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+ </span><span class="tag">&lt;p&gt;</span><span class="pln">The food is {{spice}} spicy!</span><span class="tag">&lt;/p&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span></code></pre>
+    </div>
+
+    <div class="runnable-example-file" name="app.js" language="js" type="js" style="display: block;">
+      <pre><code><span class="com">/* app.js */</span>
+<span class="kwd">var</span><span class="pln"> myApp </span><span class="pun">=</span><span class="ang"> angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'spicyApp1'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[]);</span><span class="pln">
+
+myApp</span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'SpicyController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+    $scope</span><span class="pun">.</span><span class="pln">spice </span><span class="pun">=</span><span class="pln"> </span><span class="str">'very'</span><span class="pun">;</span><span class="ang">
+
+    $scope</span><span class="pun">.</span><span class="pln">chiliSpicy </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+        $scope</span><span class="pun">.</span><span class="pln">spice </span><span class="pun">=</span><span class="pln"> </span><span class="str">'chili'</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">};</span><span class="ang">
+
+    $scope</span><span class="pun">.</span><span class="pln">jalapenoSpicy </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+        $scope</span><span class="pun">.</span><span class="pln">spice </span><span class="pun">=</span><span class="pln"> </span><span class="str">'jalapeño'</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">};</span><span class="pln">
+</span><span class="pun">}]);</span></code></pre>
+    </div>
+
+
+  </div>
+</div>
+
+
+<p class="ng-scope"></p>
+<p class="ng-scope">Things to notice in the example above:</p>
+<ul class="ng-scope">
+<li>The <code><span class="ang">ng-controller</span></code> directive is used to (implicitly) create a scope for our template, and the
+scope is augmented (managed) by the <code><span class="typ">SpicyController</span></code> Controller.</li>
+<li><code><span class="typ">SpicyController</span></code> is just a plain JavaScript function. As an (optional) naming convention the name
+starts with capital letter and ends with "Controller".</li>
+<li>Assigning a property to <code><span class="ang">$scope</span></code> creates or updates the model.</li>
+<li>Controller methods can be created through direct assignment to scope (see the <code><span class="pln">chiliSpicy</span></code> method)</li>
+<li>The Controller methods and properties are available in the template (for the <code><span class="tag">&lt;div&gt;</span></code> element and
+its children).</li>
+</ul>
+
+<h2 id="spicy-arguments-example" class="ng-scope">Spicy Arguments Example</h2>
+<p class="ng-scope">Controller methods can also take arguments, as demonstrated in the following variation of the
+previous example.</p>
+<p class="ng-scope">
+
+</p><div class="ng-scope">
+
+
+  <div class="runnable-example ng-scope" path="examples/example-example5" module="spicyApp2">
+
+    <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
+      <pre><code><span class="com">&lt;!-- index.html  --></span>
+<span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"SpicyController"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"customSpice"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"spicy('chili')"</span><span class="tag">&gt;</span><span class="pln">Chili</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+</span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"spicy(customSpice)"</span><span class="tag">&gt;</span><span class="pln">Custom spice</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+</span><span class="tag">&lt;p&gt;</span><span class="pln">The food is {{spice}} spicy!</span><span class="tag">&lt;/p&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span></code></pre>
+    </div>
+
+    <div class="runnable-example-file" name="app.js" language="js" type="js" style="display: block;">
+      <pre><code><span class="com">/* app.js */</span>
+<span class="kwd">var</span><span class="pln"> myApp </span><span class="pun">=</span><span class="ang"> angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'spicyApp2'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[]);</span><span class="pln">
+
+myApp</span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'SpicyController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+    $scope</span><span class="pun">.</span><span class="pln">customSpice </span><span class="pun">=</span><span class="pln"> </span><span class="str">"wasabi"</span><span class="pun">;</span><span class="ang">
+    $scope</span><span class="pun">.</span><span class="pln">spice </span><span class="pun">=</span><span class="pln"> </span><span class="str">'very'</span><span class="pun">;</span><span class="ang">
+
+    $scope</span><span class="pun">.</span><span class="pln">spicy </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">spice</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+        $scope</span><span class="pun">.</span><span class="pln">spice </span><span class="pun">=</span><span class="pln"> spice</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">};</span><span class="pln">
+</span><span class="pun">}]);</span></code></pre>
+    </div>
+
+  </div>
+</div>
+
+
+<p class="ng-scope"></p>
+<p class="ng-scope">Notice that the <code><span class="typ">SpicyController</span></code> Controller now defines just one method called <code><span class="pln">spicy</span></code>, which takes one
+argument called <code><span class="pln">spice</span></code>. The template then refers to this Controller method and passes in a string
+constant <code><span class="str">'chili'</span></code> in the binding for the first button and a model property <code><span class="pln">customSpice</span></code> (bound to an
+input box) in the second button.</p>
+
+<h2 id="scope-inheritance-example" class="ng-scope">Scope Inheritance Example</h2>
+<p class="ng-scope">It is common to attach Controllers at different levels of the DOM hierarchy.  Since the
+<a href="https://docs.angularjs.org/api/ng/directive/ngController">ng-controller</a> directive creates a new child scope, we get a
+hierarchy of scopes that inherit from each other.  The <code><span class="ang">$scope</span></code> that each Controller receives will
+have access to properties and methods defined by Controllers higher up the hierarchy.
+See <a href="https://github.com/angular/angular.js/wiki/Understanding-Scopes">Understanding Scopes</a> for
+more information about scope inheritance.</p>
+<p class="ng-scope">
+
+</p><div class="ng-scope">
+
+
+  <div class="runnable-example ng-scope" path="examples/example-example6" module="scopeInheritance">
+
+    <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
+      <pre><code><span class="com">&lt;!-- index.html  --></span>
+<span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"spicy"</span><span class="tag">&gt;</span><span class="pln">
+  </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"MainController"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;p&gt;</span><span class="pln">Good {{timeOfDay}}, {{name}}!</span><span class="tag">&lt;/p&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"ChildController"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;p&gt;</span><span class="pln">Good {{timeOfDay}}, {{name}}!</span><span class="tag">&lt;/p&gt;</span><span class="pln">
+
+      </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"GrandChildController"</span><span class="tag">&gt;</span><span class="pln">
+        </span><span class="tag">&lt;p&gt;</span><span class="pln">Good {{timeOfDay}}, {{name}}!</span><span class="tag">&lt;/p&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+  </span><span class="tag">&lt;/div&gt;</span><span class="pln">
+</span><span class="tag">&lt;/div&gt;</span></code></pre>
+    </div>
+
+    <div class="runnable-example-file" name="app.css" language="css" type="css" style="display: block;">
+      <pre><code class="lang-css"><span class="com">/* app.css */</span>
+<span class="tag">div</span><span class="pun">.</span><span class="clss">spicy</span><span class="tag"> div </span><span class="pun">{</span><span class="prop">
+  padding</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10px</span><span class="pun">;</span><span class="prop">
+  border</span><span class="pun">:</span><span class="cons"> solid </span><span class="lit">2px</span><span class="cons"> blue</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+    </div>
+
+    <div class="runnable-example-file" name="app.js" language="js" type="js" style="display: block;">
+      <pre><code><span class="com">/* app.js */</span>
+<span class="kwd">var</span><span class="pln"> myApp </span><span class="pun">=</span><span class="ang"> angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'scopeInheritance'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[]);</span><span class="pln">
+myApp</span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'MainController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+  $scope</span><span class="pun">.</span><span class="pln">timeOfDay </span><span class="pun">=</span><span class="pln"> </span><span class="str">'morning'</span><span class="pun">;</span><span class="ang">
+  $scope</span><span class="pun">.</span><span class="pln">name </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Nikki'</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}]);</span><span class="pln">
+myApp</span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'ChildController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+  $scope</span><span class="pun">.</span><span class="pln">name </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Mattie'</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}]);</span><span class="pln">
+myApp</span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'GrandChildController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+  $scope</span><span class="pun">.</span><span class="pln">timeOfDay </span><span class="pun">=</span><span class="pln"> </span><span class="str">'evening'</span><span class="pun">;</span><span class="ang">
+  $scope</span><span class="pun">.</span><span class="pln">name </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Gingerbread Baby'</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}]);</span></code></pre>
+    </div>
+  </div>
+</div>
+
+
+<p class="ng-scope"></p>
+<p class="ng-scope">Notice how we nested three <code><span class="pln">ng-controller</span></code> directives in our template. This will result in four
+scopes being created for our view:</p>
+<ul class="ng-scope">
+<li>The root scope</li>
+<li>The <code><span class="typ">MainController</span></code> scope, which contains <code><span class="pln">timeOfDay</span></code> and <code><span class="pln">name</span></code> properties</li>
+<li>The <code><span class="typ">ChildController</span></code> scope, which inherits the <code><span class="pln">timeOfDay</span></code> property but overrides (hides) the <code><span class="pln">name</span></code>
+property from the previous</li>
+<li>The <code><span class="typ">GrandChildController</span></code> scope, which overrides (hides) both the <code><span class="pln">timeOfDay</span></code> property defined in <code><span class="typ">MainController</span></code>
+and the <code><span class="pln">name</span></code> property defined in <code><span class="typ">ChildController</span></code></li>
+</ul>
+<p class="ng-scope">Inheritance works with methods in the same way as it does with properties. So in our previous
+examples, all of the properties could be replaced with methods that return string values.</p>
+
+<h2 id="testing-controllers" class="ng-scope">Testing Controllers</h2>
+<p class="ng-scope">Although there are many ways to test a Controller, one of the best conventions, shown below,
+involves injecting the <a href="https://docs.angularjs.org/api/ng/service/$rootScope">$rootScope</a> and <a href="https://docs.angularjs.org/api/ng/service/$controller">$controller</a>:</p>
+<p class="ng-scope"><strong>Controller Definition:</strong></p>
+
+<pre class="ng-scope"><code class="lang-js"><span class="kwd">var</span><span class="pln"> myApp </span><span class="pun">=</span><span class="ang"> angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'myApp'</span><span class="pun">,[]);</span><span class="pln">
+
+myApp</span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'MyController'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+  $scope</span><span class="pun">.</span><span class="pln">spices </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[{</span><span class="str">"name"</span><span class="pun">:</span><span class="str">"pasilla"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"spiciness"</span><span class="pun">:</span><span class="str">"mild"</span><span class="pun">},</span><span class="pln">
+                   </span><span class="pun">{</span><span class="str">"name"</span><span class="pun">:</span><span class="str">"jalapeno"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"spiciness"</span><span class="pun">:</span><span class="str">"hot hot hot!"</span><span class="pun">},</span><span class="pln">
+                   </span><span class="pun">{</span><span class="str">"name"</span><span class="pun">:</span><span class="str">"habanero"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"spiciness"</span><span class="pun">:</span><span class="str">"LAVA HOT!!"</span><span class="pun">}];</span><span class="ang">
+  $scope</span><span class="pun">.</span><span class="pln">spice </span><span class="pun">=</span><span class="pln"> </span><span class="str">"habanero"</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">});</span></code></pre>
+
+<p class="ng-scope"><strong>Controller Test:</strong></p>
+<pre class="ng-scope"><code class="lang-js"><span class="pln">describe</span><span class="pun">(</span><span class="str">'myController function'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+describe</span><span class="pun">(</span><span class="str">'myController'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">var</span><span class="ang"> $scope</span><span class="pun">;</span><span class="pln">
+
+  beforeEach</span><span class="pun">(</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'myApp'</span><span class="pun">));</span><span class="pln">
+
+  beforeEach</span><span class="pun">(</span><span class="pln">inject</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$rootScope</span><span class="pun">,</span><span class="ang"> $controller</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+    $scope </span><span class="pun">=</span><span class="ang"> $rootScope</span><span class="pun">.</span><span class="ang">$new</span><span class="pun">();</span><span class="ang">
+    $controller</span><span class="pun">(</span><span class="str">'MyController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="ang">$scope</span><span class="pun">:</span><span class="ang"> $scope</span><span class="pun">});</span><span class="pln">
+  </span><span class="pun">}));</span><span class="pln">
+
+  it</span><span class="pun">(</span><span class="str">'should create "spices" model with 3 spices'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    expect</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">.</span><span class="pln">spices</span><span class="pun">.</span><span class="pln">length</span><span class="pun">).</span><span class="pln">toBe</span><span class="pun">(</span><span class="lit">3</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">});</span><span class="pln">
+
+  it</span><span class="pun">(</span><span class="str">'should set the default value of spice'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    expect</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">.</span><span class="pln">spice</span><span class="pun">).</span><span class="pln">toBe</span><span class="pun">(</span><span class="str">'habanero'</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">});</span><span class="pln">
+</span><span class="pun">});</span><span class="pln">
+</span><span class="pun">});</span></code></pre>
+
+<p class="ng-scope">If you need to test a nested Controller you need to create the same scope hierarchy
+in your test that exists in the DOM:</p>
+
+<pre class="ng-scope"><code class="lang-js"><span class="pln">describe</span><span class="pun">(</span><span class="str">'state'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+</span><span class="kwd">var</span><span class="pln"> mainScope</span><span class="pun">,</span><span class="pln"> childScope</span><span class="pun">,</span><span class="pln"> grandChildScope</span><span class="pun">;</span><span class="pln">
+
+beforeEach</span><span class="pun">(</span><span class="pln">module</span><span class="pun">(</span><span class="str">'myApp'</span><span class="pun">));</span><span class="pln">
+
+beforeEach</span><span class="pun">(</span><span class="pln">inject</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$rootScope</span><span class="pun">,</span><span class="ang"> $controller</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    mainScope </span><span class="pun">=</span><span class="ang"> $rootScope</span><span class="pun">.</span><span class="ang">$new</span><span class="pun">();</span><span class="ang">
+    $controller</span><span class="pun">(</span><span class="str">'MainController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="ang">$scope</span><span class="pun">:</span><span class="pln"> mainScope</span><span class="pun">});</span><span class="pln">
+    childScope </span><span class="pun">=</span><span class="pln"> mainScope</span><span class="pun">.</span><span class="ang">$new</span><span class="pun">();</span><span class="ang">
+    $controller</span><span class="pun">(</span><span class="str">'ChildController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="ang">$scope</span><span class="pun">:</span><span class="pln"> childScope</span><span class="pun">});</span><span class="pln">
+    grandChildScope </span><span class="pun">=</span><span class="pln"> childScope</span><span class="pun">.</span><span class="ang">$new</span><span class="pun">();</span><span class="ang">
+    $controller</span><span class="pun">(</span><span class="str">'GrandChildController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="ang">$scope</span><span class="pun">:</span><span class="pln"> grandChildScope</span><span class="pun">});</span><span class="pln">
+</span><span class="pun">}));</span><span class="pln">
+
+it</span><span class="pun">(</span><span class="str">'should have over and selected'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    expect</span><span class="pun">(</span><span class="pln">mainScope</span><span class="pun">.</span><span class="pln">timeOfDay</span><span class="pun">).</span><span class="pln">toBe</span><span class="pun">(</span><span class="str">'morning'</span><span class="pun">);</span><span class="pln">
+    expect</span><span class="pun">(</span><span class="pln">mainScope</span><span class="pun">.</span><span class="pln">name</span><span class="pun">).</span><span class="pln">toBe</span><span class="pun">(</span><span class="str">'Nikki'</span><span class="pun">);</span><span class="pln">
+    expect</span><span class="pun">(</span><span class="pln">childScope</span><span class="pun">.</span><span class="pln">timeOfDay</span><span class="pun">).</span><span class="pln">toBe</span><span class="pun">(</span><span class="str">'morning'</span><span class="pun">);</span><span class="pln">
+    expect</span><span class="pun">(</span><span class="pln">childScope</span><span class="pun">.</span><span class="pln">name</span><span class="pun">).</span><span class="pln">toBe</span><span class="pun">(</span><span class="str">'Mattie'</span><span class="pun">);</span><span class="pln">
+    expect</span><span class="pun">(</span><span class="pln">grandChildScope</span><span class="pun">.</span><span class="pln">timeOfDay</span><span class="pun">).</span><span class="pln">toBe</span><span class="pun">(</span><span class="str">'evening'</span><span class="pun">);</span><span class="pln">
+    expect</span><span class="pun">(</span><span class="pln">grandChildScope</span><span class="pun">.</span><span class="pln">name</span><span class="pun">).</span><span class="pln">toBe</span><span class="pun">(</span><span class="str">'Gingerbreak Baby'</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">});</span><span class="pln">
+</span><span class="pun">});</span></code></pre>
+
+
+</div>
+        </div>
+      </div>
+    </section>
+
+</body></html>
