@@ -1,0 +1,75 @@
+<html>
+<head>
+  <title>Angular Data Binding</title>
+  <!-- saved from url=(0044)https://docs.angularjs.org/guide/databinding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="Description" content="AngularJS is what HTML would have been, had it been designed for building web-apps.
+                 Declarative templates with data-binding, MVC, dependency injection and great
+                 testability story all implemented with pure client-side JavaScript!"/>
+  <meta name="fragment" content="!"/>
+
+  <!--  base href="https://docs.angularjs.org/"  -->
+  <link rel="stylesheet" href="auxi/css/bootstrap.nomin.css" type="text/css"/>
+  <link rel="stylesheet" href="auxi/css/open-sans.css" type="text/css"/>
+  <link rel="stylesheet" href="auxi/css/doxy-prism.css" type="text/css"/>
+  <!--  link rel="stylesheet" href="auxi/css/prettify-theme.css" type="text/css"/  -->
+  <link rel="stylesheet" href="auxi/css/docs.css" type="text/css"/>
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+  <script src="auxi/js/bootstrap.min.js"></script>
+  <script src="auxi/js/dropdown-toggle.min.js"></script>
+  <script src="auxi/js/prettify.js"></script>
+  <script src="auxi/js/lang-css.js"></script>
+  <style type="text/css">
+  </style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+<section class="container main-body">
+
+<h1 id="angular-databinding" class="ng-scope">Angular Data Binding</h1>
+
+<p class="ng-scope">Data binding in Angular apps is the automatic synchronization of data between the model and view
+components.  The way that Angular implements data binding lets you treat the model as the
+single-source-of-truth in your application.  The view is a projection of the model at all times.
+When the model changes, the view reflects the change, and vice versa.</p>
+
+<h2 id="data-binding-in-classical-template-systems" class="ng-scope">Data Binding in Classical Template Systems</h2>
+<p class="ng-scope"><img class="right" src="./auxi/pix/One_Way_Data_Binding.png" /><br />
+Most templating systems bind data in only one direction: they merge template and model components
+together into a view. After the merge occurs, changes to the model
+or related sections of the view are NOT automatically reflected in the view. Worse, any changes
+that the user makes to the view are not reflected in the model. This means that the developer has
+to write code that constantly syncs the view with the model and the model with the view.</p>
+
+<h2 id="data-binding-in-angular-templates" class="ng-scope">Data Binding in Angular Templates</h2>
+<p class="ng-scope"><img class="right" src="./auxi/pix/Two_Way_Data_Binding.png" /><br />
+Angular templates work differently. First the template (which is the uncompiled HTML along with
+any additional markup or directives) is compiled on the browser. The compilation step produces a
+live view. Any changes to the view are immediately reflected in the model, and any changes in
+the model are propagated to the view. The model is the single-source-of-truth for the application
+state, greatly simplifying the programming model for the developer. You can think of
+the view as simply an instant projection of your model.</p>
+
+<p class="ng-scope">Because the view is just a projection of the model, the controller is completely separated from the
+view and unaware of it. This makes testing a snap because it is easy to test your controller in
+isolation without the view and the related DOM/browser dependency.</p>
+
+<h2 id="related-topics" class="ng-scope">Related Topics</h2>
+<ul class="ng-scope">
+<li><a class="uriless" name="expression" href="Angular_scopes_dev-docs.html">Angular Scopes</a></li>
+<li><a class="uriless" name="expression" href="Angular_templates_dev-docs.html">Angular Templates</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+    </section>
+
+</body></html>
