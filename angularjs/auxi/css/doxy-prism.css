@@ -1,0 +1,155 @@
+/* Doxy pretty-printing styles. Used with prettify.js.  */
+
+pre .str, code .str { color: #fec243; } /* string  - eggyolk gold */
+pre .kwd, code .kwd, .token .keyword { color: #ae8aff; } /* keyword - light slate blue #8470FF */
+pre .com, code .com, .token .comment { color: #32cd32; font-style: italic; } /* comment - green */
+pre .typ, code .typ { color: #6ecbcc; } /* type - turq green */
+pre .lit, code .lit { color: #d06; } /* literal - cherry red */
+pre .num, code .num { color: #d06; } /* literal - cherry red */
+pre .pun, code .pun, .token .punctuation { color: #8B8970;  } /* punctuation - lemon chiffon4  */
+pre .pln, pre code span.pln { color: #f0f0f0; } /* plaintext - white */
+pre .tag, code .tag, .token .tag { color: #7b90f8 } /* html/xml tag  (soft blue)  */
+pre .htm, code .htm { color: #9c9cff; } /* html tag  light purply  #dda0dd*/
+pre .xsl, code .xsl { color: #d0a0d0; } /* xslt tag  light purply*/
+pre .atn, code .atn, .token .attr-name { color: #43fec2; font-weight: normal;} /* html/xml attribute name  - lt turquoise  #46eeee */
+pre .atv, code .atv, .token .attr-value { color: #fecf6a; } /* html/xml attribute value - rosy brown2  #EEB4B4 */
+pre .clss, code .clss { color: #e08bad; } /* css class name */
+pre .prop, code .prop { color: #CFC996; } /* css property name */
+pre .cons, code .cons { color: #31b9ab; } /* css constant */
+pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
+  .lang-js { color: #f0f0f0; } /* default white */
+  .lang-css { color: #f0f0f0; } /* default white */
+  .opn { color: #333333; }
+  .clo { color: #333333; }
+  .var { color: #333333; }
+  .fun, pre code.language-javascript .function { color: #3387CC; }
+  .ang { color: #de4894; } /* cerise, for Angular reserved words   #da3287 */
+  .token .style  { color: #f0f0f0; }
+  .token .selector { color: #d06; }
+  .token .property { color: #3387CC; }
+  pre code.language-javascript, pre code.language-markup  { color: #f0f0f0;  }
+  pre code.language-javascript .colon, pre code.language-javascript .bracket { color: #de4894; }
+  pre code.language-javascript .punctuation { color: #8B8970;  }
+  pre code.language-javascript .keyword { color: #ae8aff; }
+  pre code.language-javascript .operator, pre code.language-javascript .punctuation .colon { color: #de4894; }
+  pre code.language-javascript .string, pre code.language-markup .string { color: #fec243; }
+  pre code.language-javascript .number { color: #d06; }
+  pre code.language-markup .comment, pre code.language-javascript .comment { color: #32cd32; font-style: italic; }
+  pre code.language-markup .attr-name { color: #43fec2; font-weight: normal;}
+  pre code.language-markup .attr-value { color: #fecf6a; }
+  pre code.language-markup .number { color: #d06; }
+  pre code.language-markup .tag { color: #7b90f8 }
+  pre code.language-css .tag { color: #7b90f8 }
+  pre code.language-css .atn, pre code.language-css .prop { color: #CFC996; font-weight: normal;}  /*  css property name   see above:  .prop; */
+  pre code.language-css .atv { color: #fecf6a; }
+  pre code.language-css .clss { color: #e08bad !important; }
+  pre code.language-css .constant { color: #31b9ab;}
+  code span.pln {color: #ff8400; }
+  a {
+  text-decoration: none;
+  }
+  .prettyprint, pre.prettyprint, code.prettyprint {
+  font-family:Share-TechMono,'Droid Sans Mono','CPMono_v07 Bold','Droid Sans';
+  font-weight: normal;
+  font-size: 11pt;
+  background-color: #0f0f0f;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
+}  /*  background is black (well, just a tad less dark )  */
+
+pre.prettyprint {
+  width: 95%;
+  margin: 0.5em auto !important;
+  padding: 0.5em;
+  white-space: pre-wrap;
+}
+
+pre.prettyprint a, code.prettyprint a {
+   text-decoration:none;
+}
+/* Specify class=linenums on a pre to get line numbering; line numbers themselves are the same color as punctuation */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #8B8970; } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+/* print is mostly unchanged from default at present  */
+@media print {
+pre .str, code .str { color: #fec243; } /* string  - eggyolk gold */
+pre .kwd, code .kwd, .token .keyword { color: #ae8aff; } /* keyword - light slate blue #8470FF */
+pre .com, code .com, .token .comment { color: #32cd32; font-style: italic; } /* comment - green */
+pre .typ, code .typ { color: #6ecbcc; } /* type - turq green */
+pre .lit, code .lit { color: #d06; } /* literal - cherry red */
+pre .num, code .num { color: #d06; } /* literal - cherry red */
+pre .pun, code .pun, .token .punctuation { color: #8B8970;  } /* punctuation - lemon chiffon4  */
+pre .pln, pre code span.pln { color: #f0f0f0; } /* plaintext - white */
+pre .tag, code .tag, .token .tag { color: #7b90f8 } /* html/xml tag  (soft blue)  */
+pre .htm, code .htm { color: #9c9cff; } /* html tag  light purply  #dda0dd*/
+pre .xsl, code .xsl { color: #d0a0d0; } /* xslt tag  light purply*/
+pre .atn, code .atn, .token .attr-name { color: #43fec2; font-weight: normal;} /* html/xml attribute name  - lt turquoise  #46eeee */
+pre .atv, code .atv, .token .attr-value { color: #fecf6a; } /* html/xml attribute value - rosy brown2  #EEB4B4 */
+pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
+  .opn { color: #333333; }
+  .clo { color: #333333; }
+  .var { color: #333333; }
+  .fun, pre code.language-javascript .function { color: #3387CC; }
+  .ang { color: #de4894; } /* cerise, for Angular reserved words   #da3287 */
+  .token .style  { color: #f0f0f0; }
+  .token .selector { color: #d06; }
+  .token .property { color: #3387CC; }
+  pre code.language-javascript, pre code.language-markup  { color: #f0f0f0;  }
+  pre code.language-javascript .colon, pre code.language-javascript .bracket { color: #de4894; }
+  pre code.language-javascript .punctuation { color: #8B8970;  }
+  pre code.language-javascript .keyword { color: #ae8aff; }
+  pre code.language-javascript .operator, pre code.language-javascript .punctuation .colon { color: #de4894; }
+  pre code.language-javascript .string, pre code.language-markup .string { color: #fec243; }
+  pre code.language-javascript .number { color: #d06; }
+  pre code.language-markup .comment, pre code.language-javascript .comment { color: #32cd32; font-style: italic; }
+  pre code.language-markup .attr-name { color: #43fec2; font-weight: normal;}
+  pre code.language-markup .attr-value { color: #fecf6a; }
+  pre code.language-markup .number { color: #d06; }
+  pre code.language-markup .tag { color: #7b90f8 }
+  code span.pln {color: #ff8400; }
+  a {
+  text-decoration: none;
+  }
+  .prettyprint, pre.prettyprint, code.prettyprint {
+  font-family:Share-TechMono,'Droid Sans Mono','CPMono_v07 Bold','Droid Sans';
+  font-weight: normal;
+  font-size: 11pt;
+  background-color: #0f0f0f;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
+}  /*  background is black (well, just a tad less dark )  */
+
+pre.prettyprint {
+  width: 95%;
+  margin: 0.5em auto !important;
+  padding: 0.5em;
+  white-space: pre-wrap;
+}
+
+pre.prettyprint a, code.prettyprint a {
+   text-decoration:none;
+}
+/* Specify class=linenums on a pre to get line numbering; line numbers themselves are the same color as punctuation */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #8B8970; } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+.lang-text * {
+  color: #333333!important;
+}
+
+.pln {
+  color: #333333;
+}
