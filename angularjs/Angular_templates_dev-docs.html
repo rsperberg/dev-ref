@@ -1,0 +1,93 @@
+<html>
+<head>
+  <title>Angular Templates</title>
+  <!-- saved from url=(0042)https://docs.angularjs.org/guide/templates -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="Description" content="AngularJS is what HTML would have been, had it been designed for building web-apps.
+                 Declarative templates with data-binding, MVC, dependency injection and great
+                 testability story all implemented with pure client-side JavaScript!"/>
+  <meta name="fragment" content="!"/>
+
+  <!--  base href="https://docs.angularjs.org/"  -->
+  <link rel="stylesheet" href="auxi/css/bootstrap.nomin.css" type="text/css"/>
+  <link rel="stylesheet" href="auxi/css/open-sans.css" type="text/css"/>
+  <link rel="stylesheet" href="auxi/css/doxy-prism.css" type="text/css"/>
+  <!--  link rel="stylesheet" href="auxi/css/prettify-theme.css" type="text/css"/  -->
+  <link rel="stylesheet" href="auxi/css/docs.css" type="text/css"/>
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+  <script src="auxi/js/bootstrap.min.js"></script>
+  <script src="auxi/js/dropdown-toggle.min.js"></script>
+  <script src="auxi/js/prettify.js"></script>
+  <script src="auxi/js/lang-css.js"></script>
+  <style type="text/css">
+  </style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+<section class="container main-body">
+
+<h1 id="angular-templates" class="ng-scope">Angular Templates</h1>
+
+
+<p class="ng-scope">In Angular, templates are written with HTML that contains Angular-specific elements and attributes.
+Angular combines the template with information from the model and controller to render the dynamic
+view that a user sees in the browser.</p>
+<p class="ng-scope">These are the types of Angular elements and attributes you can use:</p>
+<ul class="ng-scope">
+<li><a class="uriless" name="expression" href="Angular_directives_dev-docs.html">Directive</a> — An attribute or element that
+augments an existing DOM element or represents a reusable DOM component.</li>
+<li><a href="https://docs.angularjs.org/api/ng/service/$interpolate">Markup</a> — The double curly brace notation <code><span class="pun">{{</span><span class="pln"> </span><span class="pun">}}</span></code> to bind expressions
+to elements is built-in Angular markup.</li>
+<li><a class="uriless" name="expression" href="Angular_filters_dev-docs.html">Filter</a> — Formats data for display.</li>
+<li><a class="uriless" name="expression" href="Angular_forms_dev-docs.html">Form controls</a> — Validates user input.</li>
+</ul>
+<p class="ng-scope">The following code snippet shows a template with <a class="uriless" name="expression" href="Angular_directives_dev-docs.html">directives</a> and
+curly-brace <a class="uriless" name="expression" href="Angular_expressions_dev-docs.html">expression</a> bindings:</p>
+
+<pre class="ng-scope"><code class="lang-html"><span class="tag">&lt;html</span><span class="pln"> </span><span class="atn">ng-app</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="com">&lt;!-- Body tag augmented with ngController directive  --&gt;</span><span class="pln">
+</span><span class="tag">&lt;body</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"MyController"</span><span class="tag">&gt;</span><span class="pln">
+  </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"foo"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"bar"</span><span class="tag">&gt;</span><span class="pln">
+  </span><span class="com">&lt;!-- Button tag with ng-click directive, and
+         string expression 'buttonText'
+         wrapped in "{{ }}" markup --&gt;</span><span class="pln">
+  </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"changeFoo()"</span><span class="tag">&gt;</span><span class="pln">{{buttonText}}</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+  </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"angular.js"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></code></pre>
+
+<p class="ng-scope">In a simple app, the template consists of HTML, CSS, and Angular directives contained
+in just one HTML file (usually <code><span class="pln">index</span><span class="pun">.</span><span class="pln">html</span></code>).</p>
+<p class="ng-scope">In a more complex app, you can display multiple views within one main page using "partials" –
+segments of template located in separate HTML files. You can use the
+<a href="https://docs.angularjs.org/api/ngRoute/directive/ngView">ngView</a> directive to load partials based on configuration passed
+to the <a href="https://docs.angularjs.org/api/ngRoute/service/$route">$route</a> service. The <a href="https://docs.angularjs.org/tutorial/">angular tutorial</a> shows this
+technique in steps seven and eight.</p>
+
+
+<h2 id="related-topics" class="ng-scope">Related Topics</h2>
+<ul class="ng-scope">
+<li><a class="uriless" name="expression" href="Angular_filters_dev-docs.html">Filters</a></li>
+<li><a class="uriless" name="expression" href="Angular_forms_dev-docs.html">Forms</a></li>
+</ul>
+<h2 id="related-api" class="ng-scope">Related API</h2>
+<ul class="ng-scope">
+<li><a href="https://docs.angularjs.org/api">API Reference</a></li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+
+</body></html>
