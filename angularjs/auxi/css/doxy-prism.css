@@ -1,6 +1,7 @@
 /* Doxy pretty-printing styles. Used with prettify.js.  */
 
 pre .str, code .str { color: #fec243; } /* string  - eggyolk gold */
+li code .str { color: #3183b9; } /* string in code in text  - same as contrast */
 pre .kwd, code .kwd, .token .keyword { color: #ae8aff; } /* keyword - light slate blue #8470FF */
 pre .com, code .com, .token .comment { color: #32cd32; font-style: italic; } /* comment - green */
 pre .typ, code .typ { color: #6ecbcc; } /* type - turq green */
@@ -11,7 +12,8 @@ pre .pln, pre code span.pln { color: #f0f0f0; } /* plaintext - white */
 pre .tag, code .tag, .token .tag { color: #7b90f8 } /* html/xml tag  (soft blue)  */
 pre .htm, code .htm { color: #9c9cff; } /* html tag  light purply  #dda0dd*/
 pre .xsl, code .xsl { color: #d0a0d0; } /* xslt tag  light purply*/
-pre .atn, code .atn, .token .attr-name { color: #43fec2; font-weight: normal;} /* html/xml attribute name  - lt turquoise  #46eeee */
+pre .aatn, code .atn, .token .ang-attr-name { color: #43fec2; font-weight: normal;} /* html/xml angular attribute name  - lt turquoise  #46eeee */
+pre .atn, code .atn, .token .attr-name { color: #31b9ab; font-weight: normal;} /* html/xml attribute name  - dasrkerturquoise  #46eeee */
 pre .atv, code .atv, .token .attr-value { color: #fecf6a; } /* html/xml attribute value - rosy brown2  #EEB4B4 */
 pre .clss, code .clss { color: #e08bad; } /* css class name */
 pre .prop, code .prop { color: #CFC996; } /* css property name */
@@ -23,7 +25,8 @@ pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
   .clo { color: #333333; }
   .var { color: #333333; }
   .fun, pre code.language-javascript .function { color: #3387CC; }
-  .ang { color: #de4894; } /* cerise, for Angular reserved words   #da3287 */
+  .ang { color: #e25ea1; } /* cerise, for Angular reserved words   #de4894 #da3287 */
+  .contrast { color: #3183b9; }  /* turquoisey-blue #31b9ab, for punctuation in text uses of code  */
   .token .style  { color: #f0f0f0; }
   .token .selector { color: #d06; }
   .token .property { color: #3387CC; }
@@ -35,7 +38,8 @@ pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
   pre code.language-javascript .string, pre code.language-markup .string { color: #fec243; }
   pre code.language-javascript .number { color: #d06; }
   pre code.language-markup .comment, pre code.language-javascript .comment { color: #32cd32; font-style: italic; }
-  pre code.language-markup .attr-name { color: #43fec2; font-weight: normal;}
+  pre code.language-markup .ang-attr-name { color: #43fec2; font-weight: normal;}
+  pre code.language-markup .attr-name { color: #31b9ab; font-weight: normal;}
   pre code.language-markup .attr-value { color: #fecf6a; }
   pre code.language-markup .number { color: #d06; }
   pre code.language-markup .tag { color: #7b90f8 }
@@ -43,7 +47,7 @@ pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
   pre code.language-css .atn, pre code.language-css .prop { color: #CFC996; font-weight: normal;}  /*  css property name   see above:  .prop; */
   pre code.language-css .atv { color: #fecf6a; }
   pre code.language-css .clss { color: #e08bad !important; }
-  pre code.language-css .constant { color: #31b9ab;}
+  pre code.language-css .cnstant, .cnstant { color: #31b9ab;}  /* css constant such as "solid" or "red" or "none"  */
   code span.pln {color: #ff8400; }
   a {
   text-decoration: none;
