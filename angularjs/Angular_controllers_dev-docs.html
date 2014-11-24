@@ -245,7 +245,7 @@ more information about scope inheritance.</p>
   <div class="runnable-example ng-scope" path="examples/example-example6" module="scopeInheritance">
 
     <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
-      <pre><code><span class="com">&lt;!-- index.html  --></span>
+      <pre><code><span class="com">&lt;!--  index.html  --></span>
 <span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"spicy"</span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"MainController"</span><span class="tag">&gt;</span><span class="pln">
     </span><span class="tag">&lt;p&gt;</span><span class="pln">Good {{timeOfDay}}, {{name}}!</span><span class="tag">&lt;/p&gt;</span><span class="pln">
@@ -262,7 +262,7 @@ more information about scope inheritance.</p>
     </div>
 
     <div class="runnable-example-file" name="app.css" language="css" type="css" style="display: block;">
-      <pre><code class="lang-css"><span class="com">/* app.css */</span>
+      <pre><code class="lang-css"><span class="com">/*  app.css  */</span>
 <span class="tag">div</span><span class="pun">.</span><span class="clss">spicy</span><span class="tag"> div </span><span class="pun">{</span><span class="prop">
   padding</span><span class="pun">:</span><span class="pln"> </span><span class="lit">10px</span><span class="pun">;</span><span class="prop">
   border</span><span class="pun">:</span><span class="cons"> solid </span><span class="lit">2px</span><span class="cons"> blue</span><span class="pun">;</span><span class="pln">
@@ -270,7 +270,7 @@ more information about scope inheritance.</p>
     </div>
 
     <div class="runnable-example-file" name="app.js" language="js" type="js" style="display: block;">
-      <pre><code><span class="com">/* app.js */</span>
+      <pre><code><span class="com">/*  app.js  */</span>
 <span class="kwd">var</span><span class="pln"> myApp </span><span class="pun">=</span><span class="ang"> angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'scopeInheritance'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[]);</span><span class="pln">
 myApp</span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'MainController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
   $scope</span><span class="pun">.</span><span class="pln">timeOfDay </span><span class="pun">=</span><span class="pln"> </span><span class="str">'morning'</span><span class="pun">;</span><span class="ang">
