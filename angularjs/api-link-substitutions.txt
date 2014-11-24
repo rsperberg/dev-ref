@@ -1,0 +1,253 @@
+
+ng  api/ng
+
+function	api/ng/function
+angular.bind	api/ng/function/angular.bind
+angular.bootstrap	api/ng/function/angular.bootstrap
+angular.copy	api/ng/function/angular.copy
+angular.element	api/ng/function/angular.element
+angular.equals	api/ng/function/angular.equals
+angular.extend	api/ng/function/angular.extend
+angular.forEach	api/ng/function/angular.forEach
+angular.fromJson	api/ng/function/angular.fromJson
+angular.identity	api/ng/function/angular.identity
+angular.injector	api/ng/function/angular.injector
+angular.isArray	api/ng/function/angular.isArray
+angular.isDate	api/ng/function/angular.isDate
+angular.isDefined	api/ng/function/angular.isDefined
+angular.isElement	api/ng/function/angular.isElement
+angular.isFunction	api/ng/function/angular.isFunction
+angular.isNumber	api/ng/function/angular.isNumber
+angular.isObject	api/ng/function/angular.isObject
+angular.isString	api/ng/function/angular.isString
+angular.isUndefined	api/ng/function/angular.isUndefined
+angular.lowercase	api/ng/function/angular.lowercase
+angular.module	api/ng/function/angular.module
+angular.noop	api/ng/function/angular.noop
+angular.reloadWithDebugInfo	api/ng/function/angular.reloadWithDebugInfo
+angular.toJson	api/ng/function/angular.toJson
+angular.uppercase	api/ng/function/angular.uppercase
+
+directive	api/ng/directive
+a	api/ng/directive/a
+form	api/ng/directive/form
+input	api/ng/directive/input
+input[checkbox]	api/ng/input/input[checkbox]
+input[date]	api/ng/input/input[date]
+input[datetime-local]	api/ng/input/input[datetime-local]
+input[email]	api/ng/input/input[email]
+input[month]	api/ng/input/input[month]
+input[number]	api/ng/input/input[number]
+input[radio]	api/ng/input/input[radio]
+input[text]	api/ng/input/input[text]
+input[time]	api/ng/input/input[time]
+input[url]	api/ng/input/input[url]
+input[week]	api/ng/input/input[week]
+ngApp	api/ng/directive/ngApp
+ngBind	api/ng/directive/ngBind
+ngBindHtml	api/ng/directive/ngBindHtml
+ngBindTemplate	api/ng/directive/ngBindTemplate
+ngBlur	api/ng/directive/ngBlur
+ngChange	api/ng/directive/ngChange
+ngChecked	api/ng/directive/ngChecked
+ngClass	api/ng/directive/ngClass
+ngClassEven	api/ng/directive/ngClassEven
+ngClassOdd	api/ng/directive/ngClassOdd
+ngClick	api/ng/directive/ngClick
+ngCloak	api/ng/directive/ngCloak
+ngController	api/ng/directive/ngController
+ngCopy	api/ng/directive/ngCopy
+ngCsp	api/ng/directive/ngCsp
+ngCut	api/ng/directive/ngCut
+ngDblclick	api/ng/directive/ngDblclick
+ngDisabled	api/ng/directive/ngDisabled
+ngFocus	api/ng/directive/ngFocus
+ngForm	api/ng/directive/ngForm
+ngHide	api/ng/directive/ngHide
+ngHref	api/ng/directive/ngHref
+ngIf	api/ng/directive/ngIf
+ngInclude	api/ng/directive/ngInclude
+ngInit	api/ng/directive/ngInit
+ngKeydown	api/ng/directive/ngKeydown
+ngKeypress	api/ng/directive/ngKeypress
+ngKeyup	api/ng/directive/ngKeyup
+ngList	api/ng/directive/ngList
+ngModel	api/ng/directive/ngModel
+ngModelOptions	api/ng/directive/ngModelOptions
+ngMousedown	api/ng/directive/ngMousedown
+ngMouseenter	api/ng/directive/ngMouseenter
+ngMouseleave	api/ng/directive/ngMouseleave
+ngMousemove	api/ng/directive/ngMousemove
+ngMouseover	api/ng/directive/ngMouseover
+ngMouseup	api/ng/directive/ngMouseup
+ngNonBindable	api/ng/directive/ngNonBindable
+ngOpen	api/ng/directive/ngOpen
+ngPaste	api/ng/directive/ngPaste
+ngPluralize	api/ng/directive/ngPluralize
+ngReadonly	api/ng/directive/ngReadonly
+ngRepeat	api/ng/directive/ngRepeat
+ngSelected	api/ng/directive/ngSelected
+ngShow	api/ng/directive/ngShow
+ngSrc	api/ng/directive/ngSrc
+ngSrcset	api/ng/directive/ngSrcset
+ngStyle	api/ng/directive/ngStyle
+ngSubmit	api/ng/directive/ngSubmit
+ngSwitch	api/ng/directive/ngSwitch
+ngTransclude	api/ng/directive/ngTransclude
+ngValue	api/ng/directive/ngValue
+script	api/ng/directive/script
+select	api/ng/directive/select
+textarea	api/ng/directive/textarea
+
+object	api/ng/object
+angular.version	api/ng/object/angular.version
+
+type	api/ng/type
+$cacheFactory.Cache	api/ng/type/$cacheFactory.Cache
+$compile.directive.Attributes	api/ng/type/$compile.directive.Attributes
+$rootScope.Scope	api/ng/type/$rootScope.Scope
+angular.Module	api/ng/type/angular.Module
+form.FormController	api/ng/type/form.FormController
+ngModel.NgModelController	api/ng/type/ngModel.NgModelController
+
+provider	api/ng/provider
+$anchorScrollProvider	api/ng/provider/$anchorScrollProvider
+$animateProvider	api/ng/provider/$animateProvider
+$compileProvider	api/ng/provider/$compileProvider
+$controllerProvider	api/ng/provider/$controllerProvider
+$filterProvider	api/ng/provider/$filterProvider
+$httpProvider	api/ng/provider/$httpProvider
+$interpolateProvider	api/ng/provider/$interpolateProvider
+$locationProvider	api/ng/provider/$locationProvider
+$logProvider	api/ng/provider/$logProvider
+$parseProvider	api/ng/provider/$parseProvider
+$rootScopeProvider	api/ng/provider/$rootScopeProvider
+$sceDelegateProvider	api/ng/provider/$sceDelegateProvider
+$sceProvider	api/ng/provider/$sceProvider
+
+service	api/ng/service
+$anchorScroll	api/ng/service/$anchorScroll
+$animate	api/ng/service/$animate
+$cacheFactory	api/ng/service/$cacheFactory
+$compile	api/ng/service/$compile
+$controller	api/ng/service/$controller
+$document	api/ng/service/$document
+$exceptionHandler	api/ng/service/$exceptionHandler
+$filter	api/ng/service/$filter
+$http	api/ng/service/$http
+$httpBackend	api/ng/service/$httpBackend
+$interpolate	api/ng/service/$interpolate
+$interval	api/ng/service/$interval
+$locale	api/ng/service/$locale
+$location	api/ng/service/$location
+$log	api/ng/service/$log
+$parse	api/ng/service/$parse
+$q	api/ng/service/$q
+$rootElement	api/ng/service/$rootElement
+$rootScope	api/ng/service/$rootScope
+$sce	api/ng/service/$sce
+$sceDelegate	api/ng/service/$sceDelegate
+$templateCache	api/ng/service/$templateCache
+$templateRequest	api/ng/service/$templateRequest
+$timeout	api/ng/service/$timeout
+$window	api/ng/service/$window
+
+filter	api/ng/filter
+currency	api/ng/filter/currency
+date	api/ng/filter/date
+filter	api/ng/filter/filter
+json	api/ng/filter/json
+limitTo	api/ng/filter/limitTo
+lowercase	api/ng/filter/lowercase
+number	api/ng/filter/number
+orderBy	api/ng/filter/orderBy
+uppercase	api/ng/filter/uppercase
+
+auto	api/auto
+
+service	api/auto/service
+$injector	api/auto/service/$injector
+$provide	api/auto/service/$provide
+
+ngAnimate	api/ngAnimate
+
+provider	api/ngAnimate/provider
+$animateProvider	api/ngAnimate/provider/$animateProvider
+service	api/ngAnimate/service
+$animate	api/ngAnimate/service/$animate
+
+ngAria	api/ngAria
+
+provider	api/ngAria/provider
+$ariaProvider	api/ngAria/provider/$ariaProvider
+service	api/ngAria/service
+$aria	api/ngAria/service/$aria
+
+ngCookies	api/ngCookies
+
+service	api/ngCookies/service
+$cookieStore	api/ngCookies/service/$cookieStore
+$cookies	api/ngCookies/service/$cookies
+
+ngMessages	api/ngMessages
+
+directive	api/ngMessages/directive
+ngMessage	api/ngMessages/directive/ngMessage
+ngMessages	api/ngMessages/directive/ngMessages
+
+ngMock	api/ngMock
+
+object	api/ngMock/object
+angular.mock	api/ngMock/object/angular.mock
+provider	api/ngMock/provider
+$exceptionHandlerProvider	api/ngMock/provider/$exceptionHandlerProvider
+service	api/ngMock/service
+$exceptionHandler	api/ngMock/service/$exceptionHandler
+$httpBackend	api/ngMock/service/$httpBackend
+$interval	api/ngMock/service/$interval
+$log	api/ngMock/service/$log
+$timeout	api/ngMock/service/$timeout
+type	api/ngMock/type
+$rootScope.Scope	api/ngMock/type/$rootScope.Scope
+angular.mock.TzDate	api/ngMock/type/angular.mock.TzDate
+function	api/ngMock/function
+angular.mock.dump	api/ngMock/function/angular.mock.dump
+angular.mock.inject	api/ngMock/function/angular.mock.inject
+angular.mock.module	api/ngMock/function/angular.mock.module
+
+ngMockE2E	api/ngMockE2E
+
+service	api/ngMockE2E/service
+$httpBackend	api/ngMockE2E/service/$httpBackend
+
+ngResource	api/ngResource
+
+service	api/ngResource/service
+$resource	api/ngResource/service/$resource
+
+ngRoute	api/ngRoute
+
+directive	api/ngRoute/directive
+ngView	api/ngRoute/directive/ngView
+provider	api/ngRoute/provider
+$routeProvider	api/ngRoute/provider/$routeProvider
+service	api/ngRoute/service
+$route	api/ngRoute/service/$route
+$routeParams	api/ngRoute/service/$routeParams
+
+ngSanitize	api/ngSanitize
+
+filter	api/ngSanitize/filter
+linky	api/ngSanitize/filter/linky
+service	api/ngSanitize/service
+$sanitize	api/ngSanitize/service/$sanitize
+
+ngTouch	api/ngTouch
+
+directive	api/ngTouch/directive
+ngClick	api/ngTouch/directive/ngClick
+ngSwipeLeft	api/ngTouch/directive/ngSwipeLeft
+ngSwipeRight	api/ngTouch/directive/ngSwipeRight
+service	api/ngTouch/service
+$swipe	api/ngTouch/service/$swipe
+
