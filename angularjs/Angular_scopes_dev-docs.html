@@ -82,7 +82,7 @@ does not. See <a href="Angular_directives_dev-docs.html#isolating-the-scope-of-a
 scopes</a> for more information.</p>
 </li>
 <li><p>Scopes provide context against which <a href="Angular_expressions_dev-docs.html">expressions</a> are evaluated. For
-example <code><span class="pun">{{</span><span class="pln">username</span><span class="pun">}}</span></code> expression is meaningless, unless it is evaluated against a specific
+example <code><span class="contrast">{{</span><span class="pln">username</span><span class="contrast">}}</span></code> expression is meaningless, unless it is evaluated against a specific
 scope which defines the <code><span class="pln">username</span></code> property.</p>
 </li>
 </ul>
@@ -90,8 +90,8 @@ scope which defines the <code><span class="pln">username</span></code> property.
 
 <h2 id="scope-as-data-model" class="ng-scope">Scope as Data-Model</h2>
 <p class="ng-scope">Scope is the glue between application controller and the view. During the template <a href="https://docs.angularjs.org/guide/compiler">linking</a> phase the <a href="https://docs.angularjs.org/api/ng/provider/$compileProvider#directive">directives</a> set up
-<a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch"><code><span class="pln">$watch</span></code></a> expressions on the scope. The
-<code><span class="pln">$watch</span></code> allows the directives to be notified of property changes, which allows the directive to
+<a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch"><code><span class="ang">$watch</span></code></a> expressions on the scope. The
+<code><span class="ang">$watch</span></code> allows the directives to be notified of property changes, which allows the directive to
 render the updated value to the DOM.</p>
 <p class="ng-scope">Both controllers and directives have reference to the scope, but not to each other. This
 arrangement isolates the controller from the directive as well as from the DOM. This is an important
@@ -106,24 +106,25 @@ the applications.</p>
 
 
     <div class="runnable-example-file" name="script.js" language="js" type="js" style="display: block;">
-      <pre><code><span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'scopeExample'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
-  </span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'MyController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    $scope</span><span class="pun">.</span><span class="pln">username </span><span class="pun">=</span><span class="pln"> </span><span class="str">'World'</span><span class="pun">;</span><span class="pln">
+      <pre><code><span class="com">/*  script.js  */</span>
+<span class="ang">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'scopeExample'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
+  </span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'MyController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+    $scope</span><span class="pun">.</span><span class="pln">username </span><span class="pun">=</span><span class="pln"> </span><span class="str">'World'</span><span class="pun">;</span><span class="ang">
 
-    $scope</span><span class="pun">.</span><span class="pln">sayHello </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-      $scope</span><span class="pun">.</span><span class="pln">greeting </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Hello '</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> $scope</span><span class="pun">.</span><span class="pln">username </span><span class="pun">+</span><span class="pln"> </span><span class="str">'!'</span><span class="pun">;</span><span class="pln">
+    $scope</span><span class="pun">.</span><span class="pln">sayHello </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+      $scope</span><span class="pun">.</span><span class="pln">greeting </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Hello '</span><span class="pln"> </span><span class="pun">+</span><span class="ang"> $scope</span><span class="pun">.</span><span class="pln">username </span><span class="pun">+</span><span class="pln"> </span><span class="str">'!'</span><span class="pun">;</span><span class="pln">
     </span><span class="pun">};</span><span class="pln">
   </span><span class="pun">}]);</span></code></pre>
     </div>
 
     <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
-      <pre><code><span class="com">&lt;!-- index.html  --></span>
-<span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"MyController"</span><span class="tag">&gt;</span><span class="pln">
+      <pre><code><span class="com">&lt;!--  index.html  --></span>
+<span class="tag">&lt;div</span><span class="pln"> </span><span class="aatn">ng-controller</span><span class="pun">=</span><span class="atv">"MyController"</span><span class="tag">&gt;</span><span class="pln">
   Your name:
-    </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"username"</span><span class="tag">&gt;</span><span class="pln">
-    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">'sayHello()'</span><span class="tag">&gt;</span><span class="pln">greet</span><span class="tag">&lt;/button&gt;</span><span class="pln">
-  </span><span class="tag">&lt;hr&gt;</span><span class="pln">
-  {{greeting}}
+    </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="aatn">ng-model</span><span class="pun">=</span><span class="atv">"username"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="aatn">ng-click</span><span class="pun">=</span><span class="atv">'sayHello()'</span><span class="tag">&gt;</span><span class="pln">greet</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+  </span><span class="tag">&lt;hr&gt;</span><span class="ang">
+  {{</span><span class="pln">greeting</span><span class="ang">}}
 </span><span class="tag">&lt;/div&gt;</span></code></pre>
     </div>
 
@@ -140,9 +141,9 @@ with username pre-filled. This demonstrates how a controller can write data into
 invoked when the user clicks on the 'greet' button. The <code><span class="pln">sayHello</span></code> method can read the <code><span class="pln">username</span></code>
 property and create a <code><span class="pln">greeting</span></code> property. This demonstrates that the properties on scope update
 automatically when they are bound to HTML input widgets.</p>
-<p class="ng-scope">Logically the rendering of <code><span class="pun">{{</span><span class="pln">greeting</span><span class="pun">}}</span></code> involves:</p>
+<p class="ng-scope">Logically the rendering of <code><span class="contrast">{{</span><span class="pln">greeting</span><span class="contrast">}}</span></code> involves:</p>
     <ul class="ng-scope">
-    <li><p>retrieval of the scope associated with DOM node where <code><span class="pun">{{</span><span class="pln">greeting</span><span class="pun">}}</span></code> is defined in template.
+    <li><p>retrieval of the scope associated with DOM node where <code><span class="contrast">{{</span><span class="pln">greeting</span><span class="contrast">}}</span></code> is defined in template.
     In this example this is the same scope as the scope which was passed into <code><span class="typ">MyController</span></code>. (We
     will discuss scope hierarchies later.)</p>
     </li>
@@ -176,7 +177,7 @@ may have several child scopes.</p>
 new child scopes (refer to directive documentation to see which directives create new scopes).
 When new scopes are created, they are added as children of their parent scope. This creates a tree
 structure which parallels the DOM where they're attached.</p>
-<p class="ng-scope">When Angular evaluates <code><span class="pun">{{</span><span class="pln">name</span><span class="pun">}}</span></code>, it first looks at the scope associated with the given
+<p class="ng-scope">When Angular evaluates <code><span class="contrast">{{</span><span class="pln">name</span><span class="contrast">}}</span></code>, it first looks at the scope associated with the given
 element for the <code><span class="pln">name</span></code> property. If no such property is found, it searches the parent scope
 and so on until the root scope is reached. In JavaScript this behavior is known as prototypical
 inheritance, and child scopes prototypically inherit from their parents.</p>
@@ -191,35 +192,36 @@ a diagram depicting the scope boundaries.</p>
 
 
     <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
-      <pre><code><span class="com">&lt;!-- index.html  --></span>
+      <pre><code><span class="com">&lt;!--  index.html  --></span>
 <span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"show-scope-demo"</span><span class="tag">&gt;</span><span class="pln">
-</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"GreetController"</span><span class="tag">&gt;</span><span class="pln">
-  Hello {{name}}!
+</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="aatn">ng-controller</span><span class="pun">=</span><span class="atv">"GreetController"</span><span class="tag">&gt;</span><span class="pln">
+  Hello </span><span class="ang">{{</span><span class="pln">name</span><span class="ang">}}</span><span class="pln">!
 </span><span class="tag">&lt;/div&gt;</span><span class="pln">
-</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"ListController"</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;div</span><span class="pln"> </span><span class="aatn">ng-controller</span><span class="pun">=</span><span class="atv">"ListController"</span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;ol&gt;</span><span class="pln">
-    </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">ng-repeat</span><span class="pun">=</span><span class="atv">"name in names"</span><span class="tag">&gt;</span><span class="pln">{{name}} from {{department}}</span><span class="tag">&lt;/li&gt;</span><span class="pln">
+    </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="aatn">ng-repeat</span><span class="pun">=</span><span class="atv">"name in names"</span><span class="tag">&gt;</span><span class="ang">{{</span><span class="pln">name</span><span class="ang">}}</span><span class="pln"> from </span><span class="ang">{{</span><span class="pln">department</span><span class="ang">}}</span><span class="pln"></span><span class="tag">&lt;/li&gt;</span><span class="pln">
   </span><span class="tag">&lt;/ol&gt;</span><span class="pln">
 </span><span class="tag">&lt;/div&gt;</span><span class="pln">
 </span><span class="tag">&lt;/div&gt;</span></code></pre>
     </div>
 
     <div class="runnable-example-file" name="script.js" language="js" type="js" style="display: block;">
-      <pre><code><span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'scopeExample'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
-  </span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'GreetController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'$rootScope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$scope</span><span class="pun">,</span><span class="pln"> $rootScope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    $scope</span><span class="pun">.</span><span class="pln">name </span><span class="pun">=</span><span class="pln"> </span><span class="str">'World'</span><span class="pun">;</span><span class="pln">
+      <pre><code><span class="com">/*  script.js  */</span>
+<span class="ang">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'scopeExample'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
+  </span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'GreetController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'$rootScope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">,</span><span class="ang"> $rootScope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+    $scope</span><span class="pun">.</span><span class="pln">name </span><span class="pun">=</span><span class="pln"> </span><span class="str">'World'</span><span class="pun">;</span><span class="ang">
     $rootScope</span><span class="pun">.</span><span class="pln">department </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Angular'</span><span class="pun">;</span><span class="pln">
   </span><span class="pun">}])</span><span class="pln">
-  </span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'ListController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'ListController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
     $scope</span><span class="pun">.</span><span class="pln">names </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="str">'Igor'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Misko'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Vojta'</span><span class="pun">];</span><span class="pln">
   </span><span class="pun">}]);</span></code></pre>
     </div>
 
     <div class="runnable-example-file" name="style.css" language="css" type="css" style="display: block;">
-      <pre><code class="lang-css"><span class="com">/* app.css */</span>
-<span class="pun">.</span><span class="pln">show</span><span class="pun">-</span><span class="pln">scope</span><span class="pun">-</span><span class="pln">demo</span><span class="pun">.</span><span class="pln">ng</span><span class="pun">-</span><span class="pln">scope</span><span class="pun">,</span><span class="pln">
-</span><span class="pun">.</span><span class="pln">show</span><span class="pun">-</span><span class="pln">scope</span><span class="pun">-</span><span class="pln">demo </span><span class="pun">.</span><span class="pln">ng</span><span class="pun">-</span><span class="pln">scope  </span><span class="pun">{</span><span class="pln">
-  border</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1px</span><span class="pln"> solid red</span><span class="pun">;</span><span class="pln">
+      <pre><code class="lang-css"><span class="com">/*  style.css  */</span>
+<span class="pun">.</span><span class="clss">show-scope-demo</span><span class="pun">.</span><span class="clss">ng-scope</span><span class="pun">,</span><span class="pln">
+</span><span class="pun">.</span><span class="clss">show-scope-demo </span><span class="pun">.</span><span class="clss">ng-scope  </span><span class="pun">{</span><span class="prop">
+  border</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1px</span><span class="cnstant"> solid red</span><span class="pun">;</span><span class="prop">
   margin</span><span class="pun">:</span><span class="pln"> </span><span class="lit">3px</span><span class="pun">;</span><span class="pln">
 </span><span class="pun">}</span></code></pre>
     </div>
@@ -231,18 +233,18 @@ a diagram depicting the scope boundaries.</p>
 
 <p class="ng-scope"></p>
 <p class="ng-scope"><img class="center" src="./auxi/pix/concepts-scope.png" /></p>
-<p class="ng-scope">Notice that Angular automatically places <code><span class="pln">ng</span><span class="pun">-</span><span class="pln">scope</span></code> class on elements where scopes are
+<p class="ng-scope">Notice that Angular automatically places <code><span class="ang">ng-scope</span></code> class on elements where scopes are
 attached. The <code><span class="tag">&lt;style&gt;</span></code> definition in this example highlights in red the new scope locations. The
-child scopes are necessary because the repeater evaluates <code><span class="pun">{{</span><span class="pln">name</span><span class="pun">}}</span></code> expression, but
+child scopes are necessary because the repeater evaluates <code><span class="contrast">{{</span><span class="pln">name</span><span class="contrast">}}</span></code> expression, but
 depending on which scope the expression is evaluated it produces different result. Similarly the
-evaluation of <code><span class="pun">{{</span><span class="pln">department</span><span class="pun">}}</span></code> prototypically inherits from root scope, as it is the only place
+evaluation of <code><span class="contrast">{{</span><span class="pln">department</span><span class="contrast">}}</span></code> prototypically inherits from root scope, as it is the only place
 where the <code><span class="pln">department</span></code> property is defined.</p>
 <h2 id="retrieving-scopes-from-the-dom-" class="ng-scope">Retrieving Scopes from the DOM.</h2>
-<p class="ng-scope">Scopes are attached to the DOM as <code><span class="pln">$scope</span></code> data property, and can be retrieved for debugging
+<p class="ng-scope">Scopes are attached to the DOM as <code><span class="ang">$scope</span></code> data property, and can be retrieved for debugging
 purposes. (It is unlikely that one would need to retrieve scopes in this way inside the
 application.) The location where the root scope is attached to the DOM is defined by the location
-of <a href="https://docs.angularjs.org/api/ng/directive/ngApp"><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">app</span></code></a> directive. Typically
-<code><span class="pln">ng</span><span class="pun">-</span><span class="pln">app</span></code> is placed on the <code><span class="tag">&lt;html&gt;</span></code> element, but it can be placed on other elements as well, if,
+of <a href="https://docs.angularjs.org/api/ng/directive/ngApp"><code><span class="ang">ng-app</span></code></a> directive. Typically
+<code><span class="ang">ng-app</span></code> is placed on the <code><span class="tag">&lt;html&gt;</span></code> element, but it can be placed on other elements as well, if,
 for example, only a portion of the view needs to be controlled by Angular.</p>
 <p class="ng-scope">To examine the scope in the debugger:</p>
 <ol class="ng-scope">
@@ -267,29 +269,30 @@ variable.</p>
   <div class="runnable-example ng-scope" path="examples/example-example41" module="eventExample">
 
     <div class="runnable-example-file" name="script.js" language="js" type="js" style="display: block;">
-      <pre><code><span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'eventExample'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
-  </span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'EventController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    $scope</span><span class="pun">.</span><span class="pln">count </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
-    $scope</span><span class="pun">.</span><span class="pln">$on</span><span class="pun">(</span><span class="str">'MyEvent'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      <pre><code><span class="com">/*  script.js  */</span>
+<span class="ang">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'eventExample'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
+  </span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'EventController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+    $scope</span><span class="pun">.</span><span class="pln">count </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="ang">
+    $scope</span><span class="pun">.</span><span class="ang">$on</span><span class="pun">(</span><span class="str">'MyEvent'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
       $scope</span><span class="pun">.</span><span class="pln">count</span><span class="pun">++;</span><span class="pln">
     </span><span class="pun">});</span><span class="pln">
   </span><span class="pun">}]);</span></code></pre>
     </div>
 
     <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
-      <pre><code><span class="com">&lt;!-- index.html  --></span>
-<span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"EventController"</span><span class="tag">&gt;</span><span class="pln">
-  Root scope </span><span class="tag">&lt;tt&gt;</span><span class="pln">MyEvent</span><span class="tag">&lt;/tt&gt;</span><span class="pln"> count: {{count}}
-  </span><span class="tag">&lt;ul&gt;</span><span class="pln">
-    </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">ng-repeat</span><span class="pun">=</span><span class="atv">"i in [1]"</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"EventController"</span><span class="tag">&gt;</span><span class="pln">
-      </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"$emit('MyEvent')"</span><span class="tag">&gt;</span><span class="pln">$emit('MyEvent')</span><span class="tag">&lt;/button&gt;</span><span class="pln">
-      </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"$broadcast('MyEvent')"</span><span class="tag">&gt;</span><span class="pln">$broadcast('MyEvent')</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+      <pre><code><span class="com">&lt;!--  index.html  --></span>
+<span class="tag">&lt;div</span><span class="pln"> </span><span class="aatn">ng-controller</span><span class="pun">=</span><span class="atv">"EventController"</span><span class="tag">&gt;</span><span class="pln">
+  Root scope </span><span class="tag">&lt;tt&gt;</span><span class="pln">MyEvent</span><span class="tag">&lt;/tt&gt;</span><span class="pln"> count: </span><span class="contrast">{{</span><span class="pln">count</span><span class="contrast">}}</span>
+  <span class="tag">&lt;ul&gt;</span><span class="pln">
+    </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="aatn">ng-repeat</span><span class="pun">=</span><span class="atv">"i in [1]"</span><span class="pln"> </span><span class="aatn">ng-controller</span><span class="pun">=</span><span class="atv">"EventController"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="aatn">ng-click</span><span class="pun">=</span><span class="atv">"$emit('MyEvent')"</span><span class="tag">&gt;</span><span class="pln">$emit('MyEvent')</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+      </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="aatn">ng-click</span><span class="pun">=</span><span class="atv">"$broadcast('MyEvent')"</span><span class="tag">&gt;</span><span class="pln">$broadcast('MyEvent')</span><span class="tag">&lt;/button&gt;</span><span class="pln">
       </span><span class="tag">&lt;br&gt;</span><span class="pln">
-      Middle scope </span><span class="tag">&lt;tt&gt;</span><span class="pln">MyEvent</span><span class="tag">&lt;/tt&gt;</span><span class="pln"> count: {{count}}
-      </span><span class="tag">&lt;ul&gt;</span><span class="pln">
-        </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">ng-repeat</span><span class="pun">=</span><span class="atv">"item in [1, 2]"</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"EventController"</span><span class="tag">&gt;</span><span class="pln">
-          Leaf scope </span><span class="tag">&lt;tt&gt;</span><span class="pln">MyEvent</span><span class="tag">&lt;/tt&gt;</span><span class="pln"> count: {{count}}
-        </span><span class="tag">&lt;/li&gt;</span><span class="pln">
+      Middle scope </span><span class="tag">&lt;tt&gt;</span><span class="pln">MyEvent</span><span class="tag">&lt;/tt&gt;</span><span class="pln"> count: </span><span class="contrast">{{</span><span class="pln">count</span><span class="contrast">}}</span>
+      <span class="tag">&lt;ul&gt;</span><span class="pln">
+        </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="aatn">ng-repeat</span><span class="pun">=</span><span class="atv">"item in [1, 2]"</span><span class="pln"> </span><span class="aatn">ng-controller</span><span class="pun">=</span><span class="atv">"EventController"</span><span class="tag">&gt;</span><span class="pln">
+          Leaf scope </span><span class="tag">&lt;tt&gt;</span><span class="pln">MyEvent</span><span class="tag">&lt;/tt&gt;</span><span class="pln"> count: </span><span class="contrast">{{</span><span class="pln">count</span><span class="contrast">}}</span>
+        <span class="tag">&lt;/li&gt;</span><span class="pln">
       </span><span class="tag">&lt;/ul&gt;</span><span class="pln">
     </span><span class="tag">&lt;/li&gt;</span><span class="pln">
   </span><span class="tag">&lt;/ul&gt;</span><span class="pln">
@@ -307,18 +310,18 @@ callback. Once the callback completes the browser re-renders the DOM and returns
 more events.</p>
 <p class="ng-scope">When the browser calls into JavaScript the code executes outside the Angular execution context,
 which means that Angular is unaware of model modifications. To properly process model
-modifications the execution has to enter the Angular execution context using the <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply"><code><span class="pln">$apply</span></code></a> method. Only model modifications which
-execute inside the <code><span class="pln">$apply</span></code> method will be properly accounted for by Angular. For example if a
-directive listens on DOM events, such as <a href="https://docs.angularjs.org/api/ng/directive/ngClick"><code><span class="pln">ng</span><span class="pun">-</span><span class="pln">click</span></code></a> it must evaluate the
-expression inside the <code><span class="pln">$apply</span></code> method.</p>
-<p class="ng-scope">After evaluating the expression, the <code><span class="pln">$apply</span></code> method performs a <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest"><code><span class="pln">$digest</span></code></a>. In the $digest phase the scope examines all
-of the <code><span class="pln">$watch</span></code> expressions and compares them with the previous value. This dirty checking is done
-asynchronously. This means that assignment such as <code><span class="pln">$scope</span><span class="pun">.</span><span class="pln">username</span><span class="pun">=</span><span class="str">"angular"</span></code> will not
-immediately cause a <code><span class="pln">$watch</span></code> to be notified, instead the <code><span class="pln">$watch</span></code> notification is delayed until
-the <code><span class="pln">$digest</span></code> phase. This delay is desirable, since it coalesces multiple model updates into one
-<code><span class="pln">$watch</span></code> notification as well as it guarantees that during the <code><span class="pln">$watch</span></code> notification no other
-<code><span class="pln">$watch</span></code>es are running. If a <code><span class="pln">$watch</span></code> changes the value of the model, it will force additional
-<code><span class="pln">$digest</span></code> cycle.</p>
+modifications the execution has to enter the Angular execution context using the <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply"><code><span class="ang">$apply</span></code></a> method. Only model modifications which
+execute inside the <code><span class="ang">$apply</span></code> method will be properly accounted for by Angular. For example if a
+directive listens on DOM events, such as <a href="https://docs.angularjs.org/api/ng/directive/ngClick"><code><span class="ang">ng-click</span></code></a> it must evaluate the
+expression inside the <code><span class="ang">$apply</span></code> method.</p>
+<p class="ng-scope">After evaluating the expression, the <code><span class="ang">$apply</span></code> method performs a <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest"><code><span class="ang">$digest</span></code></a>. In the <code><span class="ang">$digest</span></code> phase the scope examines all
+of the <code><span class="ang">$watch</span></code> expressions and compares them with the previous value. This dirty checking is done
+asynchronously. This means that assignment such as <code><span class="ang">$scope</span><span class="pun">.</span><span class="pln">username</span><span class="pun">=</span><span class="str">"angular"</span></code> will not
+immediately cause a <code><span class="ang">$watch</span></code> to be notified, instead the <code><span class="ang">$watch</span></code> notification is delayed until
+the <code><span class="ang">$digest</span></code> phase. This delay is desirable, since it coalesces multiple model updates into one
+<code><span class="ang">$watch</span></code> notification as well as it guarantees that during the <code><span class="ang">$watch</span></code> notification no other
+<code><span class="ang">$watch</span></code>es are running. If a <code><span class="ang">$watch</span></code> changes the value of the model, it will force additional
+<code><span class="ang">$digest</span></code> cycle.</p>
     <ol class="ng-scope">
         <li><p><strong>Creation</strong></p>
         <p>The <a href="https://docs.angularjs.org/api/ng/service/$rootScope">root scope</a> is created during the application
@@ -331,19 +334,19 @@ the <code><span class="pln">$digest</span></code> phase. This delay is desirable
         </li>
         <li><p><strong>Model mutation</strong></p>
         <p>For mutations to be properly observed, you should make them only within the <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">scope.$apply()</a>. (Angular APIs do this
-        implicitly, so no extra <code><span class="pln">$apply</span></code> call is needed when doing synchronous work in controllers,
+        implicitly, so no extra <code><span class="ang">$apply</span></code> call is needed when doing synchronous work in controllers,
         or asynchronous work with <a href="https://docs.angularjs.org/api/ng/service/$http">$http</a>, <a href="https://docs.angularjs.org/api/ng/service/$timeout">$timeout</a>
         or <a href="https://docs.angularjs.org/api/ng/service/$interval">$interval</a> services.</p>
         </li>
         <li><p><strong>Mutation observation</strong></p>
-        <p>At the end of <code><span class="pln">$apply</span></code>, Angular performs a <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest">$digest</a> cycle on the root scope, which then propagates throughout all child scopes. During
-        the <code><span class="pln">$digest</span></code> cycle, all <code><span class="pln">$watch</span></code>ed expressions or functions are checked for model mutation
-        and if a mutation is detected, the <code><span class="pln">$watch</span></code> listener is called.</p>
+        <p>At the end of <code><span class="ang">$apply</span></code>, Angular performs a <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest">$digest</a> cycle on the root scope, which then propagates throughout all child scopes. During
+        the <code><span class="ang">$digest</span></code> cycle, all <code><span class="ang">$watch</span></code>ed expressions or functions are checked for model mutation
+        and if a mutation is detected, the <code><span class="ang">$watch</span></code> listener is called.</p>
         </li>
         <li><p><strong>Scope destruction</strong></p>
         <p>When child scopes are no longer needed, it is the responsibility of the child scope creator
         to destroy them via <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$destroy">scope.$destroy()</a>
-        API. This will stop propagation of <code><span class="pln">$digest</span></code> calls into the child scope and allow for memory
+        API. This will stop propagation of <code><span class="ang">$digest</span></code> calls into the child scope and allow for memory
         used by the child scope models to be reclaimed by the garbage collector.</p>
         </li>
     </ol>
@@ -367,7 +370,7 @@ correctly.</p>
 <p class="ng-scope">In most cases, <a href="https://docs.angularjs.org/api/ng/provider/$compileProvider#directive">directives</a> and scopes interact
 but do not create new instances of scope. However, some directives, such as <a href="https://docs.angularjs.org/api/ng/directive/ngController">ng-controller</a> and <a href="https://docs.angularjs.org/api/ng/directive/ngRepeat">ng-repeat</a>, create new child scopes
 and attach the child scope to the corresponding DOM element. You can retrieve a scope for any DOM
-element by using an <code><span class="pln">angular</span><span class="pun">.</span><span class="pln">element</span><span class="pun">(</span><span class="pln">aDomElement</span><span class="pun">).</span><span class="pln">scope</span><span class="pun">()</span></code> method call.
+element by using an <code><span class="ang">angular</span><span class="pun">.</span><span class="pln">element</span><span class="pun">(</span><span class="pln">aDomElement</span><span class="pun">).</span><span class="pln">scope</span><span class="pun">()</span></code> method call.
 See the <a href="Angular_directives_dev-docs.html#isolating-the-scope-of-a-directive">directives guide</a> for more information about isolate scopes.</p>
 
 <h3 id="controllers-and-scopes" class="ng-scope">Controllers and Scopes</h3>
@@ -384,12 +387,12 @@ See the <a href="Angular_directives_dev-docs.html#isolating-the-scope-of-a-direc
 <p class="ng-scope">See the <a href="https://docs.angularjs.org/api/ng/directive/ngController">ng-controller</a> for more
 information.</p>
 
-<h3 id="scope-watch-performance-considerations" class="ng-scope">Scope <code><span class="pln">$watch</span></code> Performance Considerations</h3>
+<h3 id="scope-watch-performance-considerations" class="ng-scope">Scope <code><span class="ang">$watch</span></code> Performance Considerations</h3>
 <p class="ng-scope">Dirty checking the scope for property changes is a common operation in Angular and for this reason
 the dirty checking function must be efficient. Care should be taken that the dirty checking
 function does not do any DOM access, as DOM access is orders of magnitude slower than property
 access on JavaScript object.</p>
-<h3 id="scope-watch-depths" class="ng-scope">Scope <code><span class="pln">$watch</span></code> Depths</h3>
+<h3 id="scope-watch-depths" class="ng-scope">Scope <code><span class="ang">$watch</span></code> Depths</h3>
 <p class="ng-scope"><img class="pull-right" style="padding-left: 3em; padding-bottom: 1em;" src="./auxi/pix/concepts-scope-watch-strategies.png" /></p>
 <p class="ng-scope">Dirty checking can be done with three strategies: By reference, by collection contents, and by value. The strategies differ in the kinds of changes they detect, and in their performance characteristics.</p>
     <ul class="ng-scope">
@@ -417,7 +420,7 @@ mind that in most places (controllers, services) $apply has already been called 
 directive which is handling the event. An explicit call to $apply is needed only when
 implementing custom event callbacks, or when working with third-party library callbacks.</p>
     <ol class="ng-scope">
-    <li>Enter the Angular execution context by calling <a href="./auxi/Angular_scopes_dev-docs.html">scope</a><code><span class="pun">.</span></code><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">$apply</a><code><span class="pun">(</span><span class="pln">stimulusFn</span><span class="pun">)</span></code>, where <code><span class="pln">stimulusFn</span></code> is
+    <li>Enter the Angular execution context by calling <a href="./auxi/Angular_scopes_dev-docs.html">scope</a>.<a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">$apply</a><code><span class="pun">(</span><span class="pln">stimulusFn</span><span class="pun">)</span></code>, where <code><span class="pln">stimulusFn</span></code> is
     the work you wish to do in the Angular execution context.</li>
     <li>Angular executes the <code><span class="pln">stimulusFn</span><span class="pun">()</span></code>, which typically modifies application state.</li>
     <li>Angular enters the <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest">$digest</a> loop. The
@@ -435,7 +438,7 @@ implementing custom event callbacks, or when working with third-party library ca
     the execution leaves the Angular and JavaScript context. This is followed by the browser
     re-rendering the DOM to reflect any changes.</li>
     </ol>
-<p class="ng-scope">Here is the explanation of how the <code><span class="typ">Hello</span><span class="pln"> world</span></code> example achieves the data-binding effect when the
+<p class="ng-scope">Here is the explanation of how the <code><span class="pln">Hello world</span></code> example achieves the data-binding effect when the
 user enters text into the text field.</p>
     <ol class="ng-scope">
     <li>During the compilation phase:<ol>
