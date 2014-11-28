@@ -251,10 +251,10 @@ for example, only a portion of the view needs to be controlled by Angular.</p>
 <li><p>right click on the element of interest in your browser and select 'inspect element'. You
 should see the browser debugger with the element you clicked on highlighted.</p>
 </li>
-<li><p>The debugger allows you to access the currently selected element in the console as <code><span class="pln">$0</span></code>
+<li><p>The debugger allows you to access the currently selected element in the console as <code><span class="ang">$0</span></code>
 variable.</p>
 </li>
-<li><p>To retrieve the associated scope in console execute: <code><span class="pln">angular</span><span class="pun">.</span><span class="pln">element</span><span class="pun">(</span><span class="pln">$0</span><span class="pun">).</span><span class="pln">scope</span><span class="pun">()</span></code> or just type $scope</p>
+<li><p>To retrieve the associated scope in console, execute: <code><span class="ang">angular</span><span class="pun">.</span><span class="pln">element</span><span class="pun">(</span><span class="ang">$0</span><span class="pun">).</span><span class="ang">scope</span><span class="pun">()</span></code> or just type <code><span class="ang">$scope</span></code></p>
 </li>
 </ol>
 
@@ -306,7 +306,7 @@ variable.</p>
 <p class="ng-scope"></p>
 <h2 id="scope-life-cycle" class="ng-scope">Scope Life Cycle</h2>
 <p class="ng-scope">The normal flow of a browser receiving an event is that it executes a corresponding JavaScript
-callback. Once the callback completes the browser re-renders the DOM and returns to waiting for
+callback. Once the callback completes, the browser re-renders the DOM and returns to waiting for
 more events.</p>
 <p class="ng-scope">When the browser calls into JavaScript the code executes outside the Angular execution context,
 which means that Angular is unaware of model modifications. To properly process model
