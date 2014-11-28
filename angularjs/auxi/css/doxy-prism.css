@@ -1,7 +1,7 @@
 /* Doxy pretty-printing styles. Used with prettify.js.  */
 
 pre .str, code .str { color: #fec243; } /* string  - eggyolk gold */
-li code .str { color: #3183b9; } /* string in code in text  - same as contrast */
+li code .str, p code .str { color: #3183b9; } /* string in code in text  - same as contrast */
 pre .kwd, code .kwd, .token .keyword { color: #ae8aff; } /* keyword - light slate blue #8470FF */
 pre .com, code .com, .token .comment { color: #32cd32; font-style: italic; } /* comment - green */
 pre .typ, code .typ { color: #6ecbcc; } /* type - turq green */
