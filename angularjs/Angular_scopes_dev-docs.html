@@ -254,7 +254,7 @@ should see the browser debugger with the element you clicked on highlighted.</p>
 <li><p>The debugger allows you to access the currently selected element in the console as <code><span class="ang">$0</span></code>
 variable.</p>
 </li>
-<li><p>To retrieve the associated scope in console, execute: <code><span class="ang">angular</span><span class="pun">.</span><span class="pln">element</span><span class="pun">(</span><span class="ang">$0</span><span class="pun">).</span><span class="ang">scope</span><span class="pun">()</span></code> or just type <code><span class="ang">$scope</span></code></p>
+<li><p>To retrieve the associated scope in console, execute: <code><span class="ang">angular</span><span class="pun">.</span><span class="pln">element</span><span class="contrast">(</span><span class="ang">$0</span><span class="contrast">).</span><span class="ang">scope</span><span class="contrast">()</span></code> or just type <code><span class="ang">$scope</span></code></p>
 </li>
 </ol>
 
@@ -356,7 +356,7 @@ the <code><span class="ang">$digest</span></code> phase. This delay is desirable
 usually fall into one of two categories:</p>
     <ul class="ng-scope">
         <li><p>Observing <a href="https://docs.angularjs.org/api/ng/provider/$compileProvider#directive">directives</a>, such as
-        double-curly expressions <code><span class="pun">{{</span><span class="pln">expression</span><span class="pun">}}</span></code>, register listeners using the <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">$watch()</a> method. This type of directive needs
+        double-curly expressions <code><span class="contrast">{{</span><span class="pln">expression</span><span class="contrast">}}</span></code>, register listeners using the <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">$watch()</a> method. This type of directive needs
         to be notified whenever the expression changes so that it can update the view.</p>
         </li>
         <li><p>Listener directives, such as <a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click</a>, register a listener with the DOM. When the DOM listener fires, the directive
@@ -370,7 +370,7 @@ correctly.</p>
 <p class="ng-scope">In most cases, <a href="https://docs.angularjs.org/api/ng/provider/$compileProvider#directive">directives</a> and scopes interact
 but do not create new instances of scope. However, some directives, such as <a href="https://docs.angularjs.org/api/ng/directive/ngController">ng-controller</a> and <a href="https://docs.angularjs.org/api/ng/directive/ngRepeat">ng-repeat</a>, create new child scopes
 and attach the child scope to the corresponding DOM element. You can retrieve a scope for any DOM
-element by using an <code><span class="ang">angular</span><span class="pun">.</span><span class="pln">element</span><span class="pun">(</span><span class="pln">aDomElement</span><span class="pun">).</span><span class="pln">scope</span><span class="pun">()</span></code> method call.
+element by using an <code><span class="ang">angular</span><span class="pun">.</span><span class="pln">element</span><span class="contrast">(</span><span class="pln">aDomElement</span><span class="contrast">).</span><span class="ang">scope</span><span class="contrast">()</span></code> method call.
 See the <a href="Angular_directives_dev-docs.html#isolating-the-scope-of-a-directive">directives guide</a> for more information about isolate scopes.</p>
 
 <h3 id="controllers-and-scopes" class="ng-scope">Controllers and Scopes</h3>
@@ -397,7 +397,7 @@ access on JavaScript object.</p>
 <p class="ng-scope">Dirty checking can be done with three strategies: By reference, by collection contents, and by value. The strategies differ in the kinds of changes they detect, and in their performance characteristics.</p>
     <ul class="ng-scope">
         <li>Watching <em>by reference</em> (<a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">scope.$watch</a> <code><span class="pun">(</span><span class="pln">watchExpression</span><span class="pun">,</span><span class="pln"> listener</span><span class="pun">)</span></code>) detects a change when the whole value returned by the watch expression switches to a new value. If the value is an array or an object, changes inside it are not detected. This is the most efficient stategy.</li>
-        <li>Watching <em>collection contents</em> (<a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watchCollection">scope.$watchCollection</a> <code><span class="pun">(</span><span class="pln">watchExpression</span><span class="pun">,</span><span class="pln"> listener</span><span class="pun">)</span></code>) detects changes that occur inside an array or an object: When items are added, removed, or reordered. The detection is shallow - it does not reach into nested collections. Watching collection contents is more expensive than watching by reference, because copies of the collection contents need to be maintained. However, the strategy attempts to minimize the amount of copying required.</li>
+        <li>Watching <em>collection contents</em> (<a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watchCollection">scope.$watchCollection</a> <code><span class="pun">(</span><span class="pln">watchExpression</span><span class="pun">,</span><span class="pln"> listener</span><span class="pun">)</span></code>) detects changes that occur inside an array or an object: When items are added, removed, or reordered. The detection is shallow — it does not reach into nested collections. Watching collection contents is more expensive than watching by reference, because copies of the collection contents need to be maintained. However, the strategy attempts to minimize the amount of copying required.</li>
         <li>Watching <em>by value</em> (<a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">scope.$watch</a> <code><span class="pun">(</span><span class="pln">watchExpression</span><span class="pun">,</span><span class="pln"> listener</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">)</span></code>) detects any change in an arbitrarily nested data structure. It is the most powerful change detection strategy, but also the most expensive. A full traversal of the nested data structure is needed on each digest, and a full copy of it needs to be held in memory.</li>
     </ul>
 
@@ -415,9 +415,9 @@ access on JavaScript object.</p>
 <p class="ng-scope">Angular modifies the normal JavaScript flow by providing its own event processing loop. This
 splits the JavaScript into classical and Angular execution context. Only operations which are
 applied in the Angular execution context will benefit from Angular data-binding, exception handling,
-property watching, etc... You can also use $apply() to enter the Angular execution context from JavaScript. Keep in
-mind that in most places (controllers, services) $apply has already been called for you by the
-directive which is handling the event. An explicit call to $apply is needed only when
+property watching, etc... You can also use <code><span class="ang">$apply()</span></code> to enter the Angular execution context from JavaScript. Keep in
+mind that in most places (controllers, services) <code><span class="ang">$apply</span></code> has already been called for you by the
+directive which is handling the event. An explicit call to <code><span class="ang">$apply</span></code> is needed only when
 implementing custom event callbacks, or when working with third-party library callbacks.</p>
     <ol class="ng-scope">
     <li>Enter the Angular execution context by calling <a href="./auxi/Angular_scopes_dev-docs.html">scope</a>.<a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">$apply</a><code><span class="pun">(</span><span class="pln">stimulusFn</span><span class="pun">)</span></code>, where <code><span class="pln">stimulusFn</span></code> is
@@ -432,7 +432,7 @@ implementing custom event callbacks, or when working with third-party library ca
     suffers from slowness and may cause view flickering since the browser renders the view after
     each event.</li>
     <li>The <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">$watch</a> list is a set of expressions
-    which may have changed since last iteration. If a change is detected then the <code><span class="pln">$watch</span></code>
+    which may have changed since last iteration. If a change is detected then the <code><span class="ang">$watch</span></code>
     function is called which typically updates the DOM with the new value.</li>
     <li>Once the Angular <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest">$digest</a> loop finishes
     the execution leaves the Angular and JavaScript context. This is followed by the browser
