@@ -19,6 +19,7 @@ pre .clss, code .clss { color: #e08bad; } /* css class name */
 pre .prop, code .prop { color: #CFC996; } /* css property name */
 pre .cons, code .cons { color: #31b9ab; } /* css constant */
 pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
+pre .test, code .test { color: #CFC996 } /* test key word - dirty pink */
   .lang-js { color: #f0f0f0; } /* default white */
   .lang-css { color: #f0f0f0; } /* default white */
   .opn { color: #333333; }
