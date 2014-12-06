@@ -20,61 +20,61 @@ pre .prop, code .prop { color: #CFC996; } /* css property name */
 pre .cons, code .cons { color: #31b9ab; } /* css constant */
 pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
 pre .test, code .test { color: #CFC996 } /* test key word - dirty pink */
-  .lang-js { color: #f0f0f0; } /* default white */
-  .lang-css { color: #f0f0f0; } /* default white */
-  .opn { color: #333333; }
-  .clo { color: #333333; }
-  .var { color: #0088FF; }  /*  mostly pure blue  */
-  .fun, pre code.language-javascript .function { color: #3387CC; }
-  .ang { color: #e25ea1; } /* cerise, for Angular reserved words   #de4894 #da3287 */
-  .contrast { color: #3183b9; }  /* turquoisey-blue #31b9ab, for punctuation in text uses of code  */
-  .token .style  { color: #f0f0f0; }
-  .token .selector { color: #d06; }
-  .token .property { color: #3387CC; }
-  pre code.language-javascript, pre code.language-markup  { color: #f0f0f0;  }
-  pre code.language-javascript .colon, pre code.language-javascript .bracket { color: #de4894; }
-  pre code.language-javascript .punctuation { color: #8B8970;  }
-  pre code.language-javascript .keyword { color: #ae8aff; }
-  pre code.language-javascript .operator, pre code.language-javascript .punctuation .colon { color: #de4894; }
-  pre code.language-javascript .string, pre code.language-markup .string { color: #fec243; }
-  pre code.language-javascript .number { color: #d06; }
-  pre code.language-markup .comment, pre code.language-javascript .comment { color: #32cd32; font-style: italic; }
-  pre code.language-markup .ang-attr-name { color: #43fec2; font-weight: normal;}
-  pre code.language-markup .attr-name { color: #31b9ab; font-weight: normal;}
-  pre code.language-markup .attr-value { color: #fecf6a; }
-  pre code.language-markup .number { color: #d06; }
-  pre code.language-markup .tag { color: #7b90f8 }
-  pre code.language-css .tag { color: #7b90f8 }
-  pre code.language-css .atn, pre code.language-css .prop { color: #CFC996; font-weight: normal;}  /*  css property name   see above:  .prop; */
-  pre code.language-css .atv { color: #fecf6a; }
-  pre code.language-css .clss { color: #e08bad !important; }
-  pre code.language-css .cnstant, .cnstant { color: #31b9ab;}  /* css constant such as "solid" or "red" or "none"  */
-  code span.pln {color: #ff8400; }
-  a {
-  text-decoration: none;
-  }
-  .prettyprint, pre.prettyprint, code.prettyprint {
-  font-family:Share-TechMono,'Droid Sans Mono','CPMono_v07 Bold','Droid Sans';
-  font-weight: normal;
-  font-size: 11pt;
-  background-color: #0f0f0f;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -o-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -khtml-border-radius: 8px;
-  border-radius: 8px;
+.lang-js { color: #f0f0f0; } /* default white */
+.lang-css { color: #f0f0f0; } /* default white */
+.opn { color: #333333; }
+.clo { color: #333333; }
+.var { color: #0088FF; }  /*  mostly pure blue  */
+.fun, pre code.language-javascript .function { color: #3387CC; }
+.ang { color: #e25ea1; } /* cerise, for Angular reserved words   #de4894 #da3287 */
+.contrast { color: #3183b9; }  /* turquoisey-blue #31b9ab, for punctuation in text uses of code  */
+.token .style  { color: #f0f0f0; }
+.token .selector { color: #d06; }
+.token .property { color: #3387CC; }
+pre code.language-javascript, pre code.language-markup  { color: #f0f0f0;  }
+pre code.language-javascript .colon, pre code.language-javascript .bracket { color: #de4894; }
+pre code.language-javascript .punctuation { color: #8B8970;  }
+pre code.language-javascript .keyword { color: #ae8aff; }
+pre code.language-javascript .operator, pre code.language-javascript .punctuation .colon { color: #de4894; }
+pre code.language-javascript .string, pre code.language-markup .string { color: #fec243; }
+pre code.language-javascript .number { color: #d06; }
+pre code.language-markup .comment, pre code.language-javascript .comment { color: #32cd32; font-style: italic; }
+pre code.language-markup .ang-attr-name { color: #43fec2; font-weight: normal;}
+pre code.language-markup .attr-name { color: #31b9ab; font-weight: normal;}
+pre code.language-markup .attr-value { color: #fecf6a; }
+pre code.language-markup .number { color: #d06; }
+pre code.language-markup .tag { color: #7b90f8 }
+pre code.language-css .tag { color: #7b90f8 }
+pre code.language-css .atn, pre code.language-css .prop { color: #CFC996; font-weight: normal;}  /*  css property name   see above:  .prop; */
+pre code.language-css .atv { color: #fecf6a; }
+pre code.language-css .clss { color: #e08bad !important; }
+pre code.language-css .cnstant, .cnstant { color: #31b9ab;}  /* css constant such as "solid" or "red" or "none"  */
+code span.pln {color: #ff8400; }
+a {
+    text-decoration: none;
+}
+.prettyprint, pre.prettyprint, code.prettyprint {
+    font-family:Share-TechMono,'Droid Sans Mono','CPMono_v07 Bold','Droid Sans';
+    font-weight: normal;
+    font-size: 11pt;
+    background-color: #0f0f0f;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
 }  /*  background is black (well, just a tad less dark )  */
 
 pre.prettyprint {
-  width: 95%;
-  margin: 0.5em auto !important;
-  padding: 0.5em;
-  white-space: pre-wrap;
+    width: 95%;
+    margin: 0.5em auto !important;
+    padding: 0.5em;
+    white-space: pre-wrap;
 }
 
 pre.prettyprint a, code.prettyprint a {
-   text-decoration:none;
+     text-decoration:none;
 }
 /* Specify class=linenums on a pre to get line numbering; line numbers themselves are the same color as punctuation */
 ol.linenums { margin-top: 0; margin-bottom: 0; color: #8B8970; } /* IE indents via margin-left */
@@ -98,52 +98,52 @@ pre .xsl, code .xsl { color: #d0a0d0; } /* xslt tag  light purply*/
 pre .atn, code .atn, .token .attr-name { color: #43fec2; font-weight: normal;} /* html/xml attribute name  - lt turquoise  #46eeee */
 pre .atv, code .atv, .token .attr-value { color: #fecf6a; } /* html/xml attribute value - rosy brown2  #EEB4B4 */
 pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
-  .opn { color: #333333; }
-  .clo { color: #333333; }
-  .var { color: #333333; }
-  .fun, pre code.language-javascript .function { color: #3387CC; }
-  .ang { color: #de4894; } /* cerise, for Angular reserved words   #da3287 */
-  .token .style  { color: #f0f0f0; }
-  .token .selector { color: #d06; }
-  .token .property { color: #3387CC; }
-  pre code.language-javascript, pre code.language-markup  { color: #f0f0f0;  }
-  pre code.language-javascript .colon, pre code.language-javascript .bracket { color: #de4894; }
-  pre code.language-javascript .punctuation { color: #8B8970;  }
-  pre code.language-javascript .keyword { color: #ae8aff; }
-  pre code.language-javascript .operator, pre code.language-javascript .punctuation .colon { color: #de4894; }
-  pre code.language-javascript .string, pre code.language-markup .string { color: #fec243; }
-  pre code.language-javascript .number { color: #d06; }
-  pre code.language-markup .comment, pre code.language-javascript .comment { color: #32cd32; font-style: italic; }
-  pre code.language-markup .attr-name { color: #43fec2; font-weight: normal;}
-  pre code.language-markup .attr-value { color: #fecf6a; }
-  pre code.language-markup .number { color: #d06; }
-  pre code.language-markup .tag { color: #7b90f8 }
-  code span.pln {color: #ff8400; }
-  a {
-  text-decoration: none;
-  }
-  .prettyprint, pre.prettyprint, code.prettyprint {
-  font-family:Share-TechMono,'Droid Sans Mono','CPMono_v07 Bold','Droid Sans';
-  font-weight: normal;
-  font-size: 11pt;
-  background-color: #0f0f0f;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -o-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -khtml-border-radius: 8px;
-  border-radius: 8px;
+.opn { color: #333333; }
+.clo { color: #333333; }
+.var { color: #333333; }
+.fun, pre code.language-javascript .function { color: #3387CC; }
+.ang { color: #de4894; } /* cerise, for Angular reserved words   #da3287 */
+.token .style  { color: #f0f0f0; }
+.token .selector { color: #d06; }
+.token .property { color: #3387CC; }
+pre code.language-javascript, pre code.language-markup  { color: #f0f0f0;  }
+pre code.language-javascript .colon, pre code.language-javascript .bracket { color: #de4894; }
+pre code.language-javascript .punctuation { color: #8B8970;  }
+pre code.language-javascript .keyword { color: #ae8aff; }
+pre code.language-javascript .operator, pre code.language-javascript .punctuation .colon { color: #de4894; }
+pre code.language-javascript .string, pre code.language-markup .string { color: #fec243; }
+pre code.language-javascript .number { color: #d06; }
+pre code.language-markup .comment, pre code.language-javascript .comment { color: #32cd32; font-style: italic; }
+pre code.language-markup .attr-name { color: #43fec2; font-weight: normal;}
+pre code.language-markup .attr-value { color: #fecf6a; }
+pre code.language-markup .number { color: #d06; }
+pre code.language-markup .tag { color: #7b90f8 }
+code span.pln {color: #ff8400; }
+a {
+    text-decoration: none;
+}
+.prettyprint, pre.prettyprint, code.prettyprint {
+    font-family:Share-TechMono,'Droid Sans Mono','CPMono_v07 Bold','Droid Sans';
+    font-weight: normal;
+    font-size: 11pt;
+    background-color: #0f0f0f;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
 }  /*  background is black (well, just a tad less dark )  */
 
 pre.prettyprint {
-  width: 95%;
-  margin: 0.5em auto !important;
-  padding: 0.5em;
-  white-space: pre-wrap;
+    width: 95%;
+    margin: 0.5em auto !important;
+    padding: 0.5em;
+    white-space: pre-wrap;
 }
 
 pre.prettyprint a, code.prettyprint a {
-   text-decoration:none;
+     text-decoration:none;
 }
 /* Specify class=linenums on a pre to get line numbering; line numbers themselves are the same color as punctuation */
 ol.linenums { margin-top: 0; margin-bottom: 0; color: #8B8970; } /* IE indents via margin-left */
@@ -152,9 +152,9 @@ li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
 li.L1,li.L3,li.L5,li.L7,li.L9 { }
 
 .lang-text * {
-  color: #333333!important;
+    color: #333333!important;
 }
 
 .pln {
-  color: #333333;
+    color: #333333;
 }
