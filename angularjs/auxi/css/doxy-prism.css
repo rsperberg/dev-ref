@@ -24,7 +24,7 @@ pre .test, code .test { color: #CFC996 } /* test key word - dirty pink */
   .lang-css { color: #f0f0f0; } /* default white */
   .opn { color: #333333; }
   .clo { color: #333333; }
-  .var { color: #333333; }
+  .var { color: #0088FF; }  /*  mostly pure blue  */
   .fun, pre code.language-javascript .function { color: #3387CC; }
   .ang { color: #e25ea1; } /* cerise, for Angular reserved words   #de4894 #da3287 */
   .contrast { color: #3183b9; }  /* turquoisey-blue #31b9ab, for punctuation in text uses of code  */
