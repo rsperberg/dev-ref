@@ -65,7 +65,7 @@
 <p class="ng-scope"><code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope">scope</a></span></code> is an object that refers to the application
 model. It is an execution context for <a href="Angular_expressions_dev-docs.html">expressions</a>. Scopes are
 arranged in hierarchical structure which mimic the DOM structure of the application. Scopes can
-watch <a href="Angular_expressions_dev-docs.html">expressions</a> and propagate events.</p>
+watch <a href="Angular_expressions_dev-docs.html">expressions</a> and propagate events. [<a href="https://docs.angularjs.org/guide/scope" title="link to scope info at docs.angularjs.org">Source document</a>.]</p>
 
 <h2 id="scope-characteristics" class="ng-scope">Scope characteristics</h2>
 <ul class="ng-scope">
@@ -347,7 +347,7 @@ the <code><span class="ang">$digest</span></code> phase. This delay is desirable
         </li>
         <li><p><strong>Scope destruction</strong></p>
         <p>When child scopes are no longer needed, it is the responsibility of the child scope creator
-        to destroy them via <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$destroy">scope.$destroy()</a>>/</span>
+        to destroy them via <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$destroy">scope.$destroy()</a></span></code>
         API. This will stop propagation of <code><span class="ang">$digest</span></code> calls into the child scope and allow for memory
         used by the child scope models to be reclaimed by the garbage collector.</p>
         </li>
