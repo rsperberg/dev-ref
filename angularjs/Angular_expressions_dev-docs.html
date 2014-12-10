@@ -34,7 +34,7 @@
 
 <h1 id="angular-expressions" class="ng-scope">Angular Expressions</h1>
 <p class="ng-scope">Angular expressions are JavaScript-like code snippets that are usually placed in bindings such as
-<code><span class="pun">{{</span><span class="pln"> expression </span><span class="pun">}}</span></code>.</p>
+<code><span class="pun">{{</span><span class="pln"> expression </span><span class="pun">}}</span></code>. [<a href="https://docs.angularjs.org/guide/expression" title="link to expression info at docs.angularjs.org">Source document</a>.]</p>
 <p class="ng-scope">For example, these are valid expressions in Angular:</p>
 
 <ul class="ng-scope">
@@ -281,10 +281,10 @@ keep dirty-checking the watch in the future digest loops by following the same
 algorithm starting from step 1</li>
 </ol>
 <h3 id="how-to-benefit-from-one-time-binding" class="ng-scope">How to benefit from one-time binding</h3>
-<p class="ng-scope">When interpolating text or attributes. If the expression, once set, will not change
-then it is a candidate for one-time expression.</p>
+<p>If the expression will not change once set, it is a candidate for one-time binding. Here are three example cases.</p>
+<p class="ng-scope">When interpolating text or attributes:</p>
 <pre class="ng-scope"><code class="lang-html"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"attr: {{::color}}"</span><span class="tag">&gt;</span><span class="pln">text: {{::name}}</span><span class="tag">&lt;/div&gt;</span></code></pre>
-<p class="ng-scope">When using a directive with bidirectional binding and the parameters will not change</p>
+<p class="ng-scope">When using a directive with bidirectional binding and the parameters will not change:</p>
 <pre class="ng-scope"><code class="lang-js"><span class="pln">someModule</span><span class="pun">.</span><span class="pln">directive</span><span class="pun">(</span><span class="str">'someDirective'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
 </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   scope</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
@@ -295,11 +295,12 @@ then it is a candidate for one-time expression.</p>
 </span><span class="pun">};</span><span class="pln">
 </span><span class="pun">});</span></code></pre>
 <pre class="ng-scope"><code class="lang-html"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">some-directive</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">“::myName”</span><span class="pln"> </span><span class="atn">color</span><span class="pun">=</span><span class="atv">“My</span><span class="pln"> </span><span class="atn">color</span><span class="pln"> </span><span class="atn">is</span><span class="pln"> {{::</span><span class="atn">myColor</span><span class="pln">}}”</span><span class="tag">&gt;&lt;/div&gt;</span></code></pre>
-<p class="ng-scope">When using a directive that takes an expression</p>
+<p class="ng-scope">When using a directive that takes an expression:</p>
 <pre class="ng-scope"><code class="lang-html"><span class="tag">&lt;ul&gt;</span><span class="pln">
 </span><span class="tag">&lt;li</span><span class="pln"> </span><span class="atn">ng-repeat</span><span class="pun">=</span><span class="atv">"item in ::items"</span><span class="tag">&gt;</span><span class="pln">{{item.name}};</span><span class="tag">&lt;/li&gt;</span><span class="pln">
 </span><span class="tag">&lt;/ul&gt;</span></code></pre>
 
+<p> &nbsp; </p>
 </section>
 </div>
 
