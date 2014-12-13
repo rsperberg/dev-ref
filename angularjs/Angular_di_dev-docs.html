@@ -162,7 +162,7 @@ your code, your service names will get renamed and break your app.
 <p class="ng-scope">The simplest way to get hold of the dependencies is to assume that the function parameter names
 are the names of the dependencies.</p>
 
-<pre class="ng-scope"><code class="lang-js"><span class="pln">someModule</span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'MyController'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">,</span><span class="pln"> greeter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+<pre class="ng-scope"><code class="lang-js"><span class="pln">someModule</span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'MyController'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">,</span><span class="pln"> greeter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   </span><span class="com">// ...</span><span class="pln">
 </span><span class="pun">});</span></code></pre>
 
@@ -182,9 +182,9 @@ If you decide to take this approach, you probably want to use <code><span class=
 <p class="ng-scope">You can add an <code><span class="ang">ng-strict-di</span></code> directive on the same element as <code><span class="ang">ng-app</span></code> to opt into strict DI mode:</p>
 
 <pre class="ng-scope"><code class="lang-html"><span class="dec">&lt;!doctype html&gt;</span><span class="pln">
-</span><span class="tag">&lt;html</span><span class="pln"> </span><span class="atn">ng-app</span><span class="pun">=</span><span class="atv">"myApp"</span><span class="pln"> </span><span class="atn">ng-strict-di</span><span class="tag">&gt;</span><span class="pln">
+</span><span class="tag">&lt;html</span><span class="pln"> </span><span class="aatn">ng-app</span><span class="pun">=</span><span class="atv">"myApp"</span><span class="pln"> </span><span class="aatn">ng-strict-di</span><span class="tag">&gt;</span><span class="pln">
 </span><span class="tag">&lt;body&gt;</span><span class="pln">
-  I can add: {{ 1 + 2 }}.
+  I can add: </span><span class="ang">{{</span><span class="pln"> 1 + 2 </span><span class="ang">}}</span><span class="pln">.
   </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"angular.js"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln">
 </span><span class="tag">&lt;/body&gt;</span><span class="pln">
 </span><span class="tag">&lt;/html&gt;</span></code></pre>
@@ -273,8 +273,8 @@ to be passed throughout the application. Passing the injector breaks the
 notation in our HTML templates, to hand the responsibility of creating components over to the
 injector, as in this example:</p>
 
-<pre class="ng-scope"><code class="lang-html"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"MyController"</span><span class="tag">&gt;</span><span class="pln">
-  </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"sayHello()"</span><span class="tag">&gt;</span><span class="pln">Hello</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+<pre class="ng-scope"><code class="lang-html"><span class="tag">&lt;div</span><span class="pln"> </span><span class="aatn">ng-controller</span><span class="pun">=</span><span class="atv">"MyController"</span><span class="tag">&gt;</span><span class="pln">
+  </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="aatn">ng-click</span><span class="pun">=</span><span class="atv">"sayHello()"</span><span class="tag">&gt;</span><span class="pln">Hello</span><span class="tag">&lt;/button&gt;</span><span class="pln">
 </span><span class="tag">&lt;/div&gt;</span></code></pre>
 <pre class="ng-scope"><code class="lang-js"><span class="kwd">function</span><span class="pln"> </span><span class="typ">MyController</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">,</span><span class="pln"> greeter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
   $scope</span><span class="pun">.</span><span class="pln">sayHello </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
