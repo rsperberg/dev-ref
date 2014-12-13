@@ -42,35 +42,37 @@ and providing them to other components as requested.</p>
 <p class="ng-scope">DI is pervasive throughout Angular. You can use it when defining components or when providing <code><span class="pln">run</span></code>
 and <code><span class="pln">config</span></code> blocks for a module.</p>
 <ul class="ng-scope">
-<li><p>Components such as services, directives, filters, and animations are defined by an injectable
-factory method or constructor function. These components can be injected with "service" and "value"
-components as dependencies.</p>
-</li>
-<li><p>Controllers are defined by a constructor function, which can be injected with any of the "service"
-and "value" components as dependencies, but they can also be provided with special dependencies. See
-<a href="#controllers">Controllers</a> below for a list of these special dependencies.</p>
-</li>
-<li><p>The <code><span class="pln">run</span></code> method accepts a function, which can be injected with "service", "value" and "constant"
-components as dependencies. Note that you cannot inject "providers" into <code><span class="pln">run</span></code> blocks.</p>
-</li>
-<li><p>The <code><span class="pln">config</span></code> method accepts a function, which can be injected with "provider" and "constant"
-components as dependencies. Note that you cannot inject "service" or "value" components into
-configuration.</p>
-</li>
+    <li><p>Components such as services, directives, filters, and animations are defined by an injectable
+    factory method or constructor function. These components can be injected with "service" and "value"
+    components as dependencies.</p>
+    </li>
+    <li><p>Controllers are defined by a constructor function, which can be injected with any of the "service"
+    and "value" components as dependencies, but they can also be provided with special dependencies. See
+    <a href="#controllers">Controllers</a> below for a list of these special dependencies.</p>
+    </li>
+    <li><p>The <code><span class="pln">run</span></code> method accepts a function, which can be injected with "service", "value" and "constant"
+    components as dependencies. Note that you cannot inject "providers" into <code><span class="pln">run</span></code> blocks.</p>
+    </li>
+    <li><p>The <code><span class="pln">config</span></code> method accepts a function, which can be injected with "provider" and "constant"
+    components as dependencies. Note that you cannot inject "service" or "value" components into
+    configuration.</p>
+    </li>
 </ul>
 <p class="ng-scope">See <a href="Angular_modules_dev-docs.html#module-loading-dependencies" title="link to local copy of module info">Modules</a> for more details about <code><span class="pln">run</span></code> and <code><span class="pln">config</span></code>
 blocks.</p>
+
 <h3 id="factory-methods" class="ng-scope">Factory Methods</h3>
 <p class="ng-scope">The way you define a directive, service, or filter is with a factory function.
 The factory methods are registered with modules. The recommended way of declaring factories is:</p>
-<pre class="ng-scope"><code class="lang-js"><span class="pln">angular</span><span class="pun">.</span><span class="pln">module</span><span class="pun">(</span><span class="str">'myModule'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
-</span><span class="pun">.</span><span class="pln">factory</span><span class="pun">(</span><span class="str">'serviceId'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'depService'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">depService</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+<pre class="ng-scope"><code class="lang-js"><span class="ang">angular</span><span class="pun">.</span><span class="pln">module</span><span class="pun">(</span><span class="str">'myModule'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
+</span><span class="pun">.</span><span class="ang">factory</span><span class="pun">(</span><span class="str">'serviceId'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'depService'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">depService</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   </span><span class="com">// ...</span><span class="pln">
 </span><span class="pun">}])</span><span class="pln">
-</span><span class="pun">.</span><span class="pln">directive</span><span class="pun">(</span><span class="str">'directiveName'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'depService'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">depService</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+</span><span class="pun">.</span><span class="ang">directive</span><span class="pun">(</span><span class="str">'directiveName'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'depService'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">depService</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   </span><span class="com">// ...</span><span class="pln">
 </span><span class="pun">}])</span><span class="pln">
-</span><span class="pun">.</span><span class="pln">filter</span><span class="pun">(</span><span class="str">'filterName'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'depService'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">depService</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+</span><span class="pun">.</span><span class="ang">filter</span><span class="pun">(</span><span class="str">'filterName'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'depService'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">depService</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   </span><span class="com">// ...</span><span class="pln">
 </span><span class="pun">}]);</span></code></pre>
 
@@ -78,7 +80,8 @@ The factory methods are registered with modules. The recommended way of declarin
 <p class="ng-scope">We can specify functions to run at configuration and run time for a module by calling the <code><span class="pln">config</span></code>
 and <code><span class="pln">run</span></code> methods. These functions are injectable with dependencies just like the factory functions
 above.</p>
-<pre class="ng-scope"><code class="lang-js"><span class="pln">angular</span><span class="pun">.</span><span class="pln">module</span><span class="pun">(</span><span class="str">'myModule'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
+
+<pre class="ng-scope"><code class="lang-js"><span class="ang">angular</span><span class="pun">.</span><span class="pln">module</span><span class="pun">(</span><span class="str">'myModule'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
 </span><span class="pun">.</span><span class="pln">config</span><span class="pun">([</span><span class="str">'depProvider'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">depProvider</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   </span><span class="com">// ...</span><span class="pln">
 </span><span class="pun">}])</span><span class="pln">
@@ -91,8 +94,8 @@ above.</p>
 application behavior that supports the declarative markup in the template. The recommended way of
 declaring Controllers is using the array notation:</p>
 
-<pre class="ng-scope"><code class="lang-js"><span class="pln">someModule</span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'MyController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'dep1'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'dep2'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$scope</span><span class="pun">,</span><span class="pln"> dep1</span><span class="pun">,</span><span class="pln"> dep2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-  </span><span class="pun">...</span><span class="pln">
+<pre class="ng-scope"><code class="lang-js"><span class="pln">someModule</span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'MyController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'dep1'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'dep2'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">,</span><span class="pln"> dep1</span><span class="pun">,</span><span class="pln"> dep2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="pun">...</span><span class="ang">
   $scope</span><span class="pun">.</span><span class="pln">aMethod </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="pun">...</span><span class="pln">
   </span><span class="pun">}</span><span class="pln">
@@ -102,20 +105,21 @@ declaring Controllers is using the array notation:</p>
 <p class="ng-scope">Unlike services, there can be many instances of the same type of controller in an application.</p>
 <p class="ng-scope">Moreover, additional dependencies are made available to Controllers:</p>
 <ul class="ng-scope">
-<li><a href="Angular_scopes_dev-docs.html" title="link to local copy of scope info"><code><span class="pln">$scope</span></code></a>: Controllers are associated with an element in the DOM and so are
-provided with access to the <a href="Angular_scopes_dev-docs.html" title="link to local copy of scope info">scope</a>. Other components (like services) only have
-access to the <a href="https://docs.angularjs.org/api/ng/service/$rootScope"><code><span class="pln">$rootScope</span></code></a> service.</li>
-<li><a href="https://docs.angularjs.org/api/ngRoute/provider/$routeProvider#when">resolves</a>: If a controller is instantiated as part of a route,
-then any values that are resolved as part of the route are made available for injection into the
-controller.</li>
+    <li><a href="Angular_scopes_dev-docs.html" title="link to local copy of scope info"><code><span class="pln">$scope</span></code></a>: Controllers are associated with an element in the DOM and so are
+    provided with access to the <a href="Angular_scopes_dev-docs.html" title="link to local copy of scope info">scope</a>. Other components (like services) only have
+    access to the <a href="https://docs.angularjs.org/api/ng/service/$rootScope" title="link to AngularJS api docs"><code><span class="ang">$rootScope</span></code></a> service.</li>
+    <li><a href="https://docs.angularjs.org/api/ngRoute/provider/$routeProvider#when" title="link to AngularJS api docs">resolves</a>: If a controller is instantiated as part of a route,
+    then any values that are resolved as part of the route are made available for injection into the
+    controller.</li>
 </ul>
+
 <h2 id="dependency-annotation" class="ng-scope">Dependency Annotation</h2>
 <p class="ng-scope">Angular invokes certain functions (like service factories and controllers) via the injector.
 You need to annotate these functions so that the injector knows what services to inject into
 the function. There are three ways of annotating your code with service name information:</p>
 <ul class="ng-scope">
 <li>Using the inline array annotation (preferred)</li>
-<li>Using the <code><span class="pln">$inject</span></code> property annotation</li>
+<li>Using the <code><span class="ang">$inject</span></code> property annotation</li>
 <li>Implicitly from the function parameter names (has caveats)</li>
 </ul>
 
@@ -124,7 +128,7 @@ the function. There are three ways of annotating your code with service name inf
 documentation are written.</p>
 <p class="ng-scope">For example:</p>
 
-<pre class="ng-scope"><code class="lang-js"><span class="pln">someModule</span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'MyController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'greeter'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$scope</span><span class="pun">,</span><span class="pln"> greeter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+<pre class="ng-scope"><code class="lang-js"><span class="pln">someModule</span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'MyController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'greeter'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">,</span><span class="pln"> greeter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   </span><span class="com">// ...</span><span class="pln">
 </span><span class="pun">}]);</span></code></pre>
 
@@ -135,35 +139,35 @@ parameters in the function declaration.</p>
 
 <h3 id="-inject-property-annotation" class="ng-scope"><code><span class="pln">$inject</span></code> Property Annotation</h3>
 <p class="ng-scope">To allow the minifiers to rename the function parameters and still be able to inject the right services,
-the function needs to be annotated with the <code><span class="pln">$inject</span></code> property. The <code><span class="pln">$inject</span></code> property is an array
+the function needs to be annotated with the <code><span class="ang">$inject</span></code> property. The <code><span class="ang">$inject</span></code> property is an array
 of service names to inject.</p>
 
-<pre class="ng-scope"><code class="lang-js"><span class="kwd">var</span><span class="pln"> </span><span class="typ">MyController</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$scope</span><span class="pun">,</span><span class="pln"> greeter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+<pre class="ng-scope"><code class="lang-js"><span class="kwd">var</span><span class="pln"> </span><span class="typ">MyController</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">,</span><span class="pln"> greeter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   </span><span class="com">// ...</span><span class="pln">
 </span><span class="pun">}</span><span class="pln">
-</span><span class="typ">MyController</span><span class="pun">.</span><span class="pln">$inject </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'greeter'</span><span class="pun">];</span><span class="pln">
-someModule</span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'MyController'</span><span class="pun">,</span><span class="pln"> </span><span class="typ">MyController</span><span class="pun">);</span></code></pre>
+</span><span class="typ">MyController</span><span class="pun">.</span><span class="ang">$inject </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'greeter'</span><span class="pun">];</span><span class="pln">
+someModule</span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'MyController'</span><span class="pun">,</span><span class="pln"> </span><span class="typ">MyController</span><span class="pun">);</span></code></pre>
 
-<p class="ng-scope">In this scenario the ordering of the values in the <code><span class="pln">$inject</span></code> array must match the ordering of the
+<p class="ng-scope">In this scenario the ordering of the values in the <code><span class="ang">$inject</span></code> array must match the ordering of the
 parameters in <code><span class="typ">MyController</span></code>.</p>
-<p class="ng-scope">Just like with the array annotation, you'll need to take care to keep the <code><span class="pln">$inject</span></code> in sync with
+<p class="ng-scope">Just like with the array annotation, you'll need to take care to keep the <code><span class="ang">$inject</span></code> in sync with
 the parameters in the function declaration.</p>
 
 <h3 id="implicit-annotation" class="ng-scope">Implicit Annotation</h3>
 <div class="alert alert-danger ng-scope">
-<strong>Careful:</strong> If you plan to <a href="http://en.wikipedia.org/wiki/Minification_(programming)">minify</a>
+<strong>Careful:</strong> If you plan to <a href="http://en.wikipedia.org/wiki/Minification_(programming)" title="link to 'minification' on Wikipedia">minify</a>
 your code, your service names will get renamed and break your app.
 </div>
 
 <p class="ng-scope">The simplest way to get hold of the dependencies is to assume that the function parameter names
 are the names of the dependencies.</p>
 
-<pre class="ng-scope"><code class="lang-js"><span class="pln">someModule</span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'MyController'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$scope</span><span class="pun">,</span><span class="pln"> greeter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+<pre class="ng-scope"><code class="lang-js"><span class="pln">someModule</span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'MyController'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">,</span><span class="pln"> greeter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   </span><span class="com">// ...</span><span class="pln">
 </span><span class="pun">});</span></code></pre>
 
 <p class="ng-scope">Given a function the injector can infer the names of the services to inject by examining the
-function declaration and extracting the parameter names. In the above example <code><span class="pln">$scope</span></code>, and
+function declaration and extracting the parameter names. In the above example <code><span class="ang">$scope</span></code>, and
 <code><span class="pln">greeter</span></code> are two services which need to be injected into the function.</p>
 <p class="ng-scope">One advantage of this approach is that there's no array of names to keep in sync with the
 function parameters. You can also freely reorder dependencies.</p>
@@ -171,11 +175,12 @@ function parameters. You can also freely reorder dependencies.</p>
 rename parameters.</p>
 <p class="ng-scope">Tools like <a href="https://github.com/olov/ng-annotate">ng-annotate</a> let you use implicit dependency
 annotations in your app and automatically add inline array annotations prior to minifying.
-If you decide to take this approach, you probably want to use <code><span class="pln">ng</span><span class="pun">-</span><span class="pln">strict</span><span class="pun">-</span><span class="pln">di</span></code>.</p>
+If you decide to take this approach, you probably want to use <code><span class="ang">ng-strict-di</span></code>.</p>
 <p class="ng-scope">Because of these caveats, we recommend avoiding this style of annotation.</p>
 
 <h2 id="using-strict-dependency-injection" class="ng-scope">Using Strict Dependency Injection</h2>
-<p class="ng-scope">You can add an <code><span class="pln">ng</span><span class="pun">-</span><span class="pln">strict</span><span class="pun">-</span><span class="pln">di</span></code> directive on the same element as <code><span class="pln">ng</span><span class="pun">-</span><span class="pln">app</span></code> to opt into strict DI mode:</p>
+<p class="ng-scope">You can add an <code><span class="ang">ng-strict-di</span></code> directive on the same element as <code><span class="ang">ng-app</span></code> to opt into strict DI mode:</p>
+
 <pre class="ng-scope"><code class="lang-html"><span class="dec">&lt;!doctype html&gt;</span><span class="pln">
 </span><span class="tag">&lt;html</span><span class="pln"> </span><span class="atn">ng-app</span><span class="pun">=</span><span class="atv">"myApp"</span><span class="pln"> </span><span class="atn">ng-strict-di</span><span class="tag">&gt;</span><span class="pln">
 </span><span class="tag">&lt;body&gt;</span><span class="pln">
@@ -187,8 +192,8 @@ If you decide to take this approach, you probably want to use <code><span class=
 <p class="ng-scope">Strict mode throws an error whenever a service tries to use implicit annotations.</p>
 <p class="ng-scope">Consider this module, which includes a <code><span class="pln">willBreak</span></code> service that uses implicit DI:</p>
 
-<pre class="ng-scope"><code class="lang-js"><span class="pln">angular</span><span class="pun">.</span><span class="pln">module</span><span class="pun">(</span><span class="str">'myApp'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
-</span><span class="pun">.</span><span class="pln">factory</span><span class="pun">(</span><span class="str">'willBreak'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$rootScope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+<pre class="ng-scope"><code class="lang-js"><span class="ang">angular</span><span class="pun">.</span><span class="pln">module</span><span class="pun">(</span><span class="str">'myApp'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
+</span><span class="pun">.</span><span class="ang">factory</span><span class="pun">(</span><span class="str">'willBreak'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$rootScope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   </span><span class="com">// $rootScope is implicitly injected</span><span class="pln">
 </span><span class="pun">})</span><span class="pln">
 </span><span class="pun">.</span><span class="pln">run</span><span class="pun">([</span><span class="str">'willBreak'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">willBreak</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
@@ -201,21 +206,21 @@ ensure that all of your application components have annotations.</p>
 <p class="ng-scope">If you're using manual bootstrapping, you can also use strict DI by providing <code><span class="pln">strictDi</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span></code> in
 the optional config argument:</p>
 
-<pre class="ng-scope"><code class="lang-js"><span class="pln">angular</span><span class="pun">.</span><span class="pln">bootstrap</span><span class="pun">(</span><span class="pln">document</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'myApp'</span><span class="pun">],</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+<pre class="ng-scope"><code class="lang-js"><span class="ang">angular</span><span class="pun">.</span><span class="pln">bootstrap</span><span class="pun">(</span><span class="pln">document</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'myApp'</span><span class="pun">],</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   strictDi</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pln">
 </span><span class="pun">});</span></code></pre>
 
 <h2 id="why-dependency-injection-" class="ng-scope">Why Dependency Injection?</h2>
 <p class="ng-scope">This section motivates and explains Angular's use of DI. For how to use DI, see above.</p>
 <p class="ng-scope">For in-depth discussion about DI, see
-<a href="http://en.wikipedia.org/wiki/Dependency_injection">Dependency Injection</a> at Wikipedia,
-<a href="http://martinfowler.com/articles/injection.html">Inversion of Control</a> by Martin Fowler,
+<a href="http://en.wikipedia.org/wiki/Dependency_injection" title="link to DI info on Wikipedia">Dependency Injection</a> at Wikipedia,
+<a href="http://martinfowler.com/articles/injection.html" title="link to source document">Inversion of Control</a> by Martin Fowler,
 or read about DI in your favorite software design pattern book.</p>
 <p class="ng-scope">There are only three ways a component (object or function) can get a hold of its dependencies:</p>
 <ol class="ng-scope">
-<li>The component can create the dependency, typically using the <code><span class="kwd">new</span></code> operator.</li>
-<li>The component can look up the dependency, by referring to a global variable.</li>
-<li>The component can have the dependency passed to it where it is needed.</li>
+    <li>The component can create the dependency, typically using the <code><span class="kwd">new</span></code> operator.</li>
+    <li>The component can look up the dependency, by referring to a global variable.</li>
+    <li>The component can have the dependency passed to it where it is needed.</li>
 </ol>
 <p class="ng-scope">The first two options of creating or looking up dependencies are not optimal because they hard
 code the dependency to the component. This makes it difficult, if not impossible, to modify the
@@ -236,50 +241,53 @@ dependency from the component. The dependency is simply handed to the component.
 dependency, it is simply handed the <code><span class="pln">greeter</span></code> when it is instantiated.</p>
 <p class="ng-scope">This is desirable, but it puts the responsibility of getting hold of the dependency on the
 code that constructs <code><span class="typ">SomeClass</span></code>.</p>
-<p class="ng-scope"><img class="pull-right" style="padding-left: 3em; padding-bottom: 1em;" src="./Angular_di_dev-docs_files/concepts-module-injector.png"></p>
-<p class="ng-scope">To manage the responsibility of dependency creation, each Angular application has an <a href="https://docs.angularjs.org/api/ng/function/angular.injector">injector</a>. The injector is a
-<a href="http://en.wikipedia.org/wiki/Service_locator_pattern">service locator</a> that is responsible for
+<p class="ng-scope"><img class="pull-right" style="padding-left: 3em; padding-bottom: 1em;" src="./auxi/pix/concepts-module-injector.png"></p>
+<p class="ng-scope">To manage the responsibility of dependency creation, each Angular application has an <a href="https://docs.angularjs.org/api/ng/function/angular.injector" title="link to AngularJS api docs on injectors">injector</a>. The injector is a
+<a href="http://en.wikipedia.org/wiki/Service_locator_pattern" title="link to info at Wikipedia on the service locator pattern">service locator</a> that is responsible for
 construction and lookup of dependencies.</p>
 <p class="ng-scope">Here is an example of using the injector service:</p>
 
 <pre class="ng-scope"><code class="lang-js"><span class="com">// Provide the wiring information in a module</span><span class="pln">
-</span><span class="kwd">var</span><span class="pln"> myModule </span><span class="pun">=</span><span class="pln"> angular</span><span class="pun">.</span><span class="pln">module</span><span class="pun">(</span><span class="str">'myModule'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[]);</span></code></pre>
+</span><span class="kwd">var</span><span class="pln"> myModule </span><span class="pun">=</span><span class="ang"> angular</span><span class="pun">.</span><span class="pln">module</span><span class="pun">(</span><span class="str">'myModule'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[]);</span></code></pre>
+
 <p class="ng-scope">Teach the injector how to build a <code><span class="pln">greeter</span></code> service. Notice that <code><span class="pln">greeter</span></code> is dependent on the
-<code><span class="pln">$window</span></code> service. The <code><span class="pln">greeter</span></code> service is an object that contains a <code><span class="pln">greet</span></code> method.</p>
-<pre class="ng-scope"><code class="lang-js"><span class="pln">myModule</span><span class="pun">.</span><span class="pln">factory</span><span class="pun">(</span><span class="str">'greeter'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$window</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+<code><span class="ang">$window</span></code> service. The <code><span class="pln">greeter</span></code> service is an object that contains a <code><span class="pln">greet</span></code> method.</p>
+
+<pre class="ng-scope"><code class="lang-js"><span class="pln">myModule</span><span class="pun">.</span><span class="ang">factory</span><span class="pun">(</span><span class="str">'greeter'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$window</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    greet</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">text</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-      $window</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">(</span><span class="pln">text</span><span class="pun">);</span><span class="pln">
+    greet</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">text</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+      $window</span><span class="pun">.</span><span class="kwd">alert</span><span class="pun">(</span><span class="pln">text</span><span class="pun">);</span><span class="pln">
     </span><span class="pun">}</span><span class="pln">
   </span><span class="pun">};</span><span class="pln">
 </span><span class="pun">});</span></code></pre>
-<p class="ng-scope">Create a new injector that can provide components defined in our <code><span class="pln">myModule</span></code> module and request our
-<code><span class="pln">greeter</span></code> service from the injector. (This is usually done automatically by angular bootstrap).</p>
 
-<pre class="ng-scope"><code class="lang-js"><span class="kwd">var</span><span class="pln"> injector </span><span class="pun">=</span><span class="pln"> angular</span><span class="pun">.</span><span class="pln">injector</span><span class="pun">([</span><span class="str">'myModule'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'ng'</span><span class="pun">]);</span><span class="pln">
-</span><span class="kwd">var</span><span class="pln"> greeter </span><span class="pun">=</span><span class="pln"> injector</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="str">'greeter'</span><span class="pun">);</span></code></pre>
+<p class="ng-scope">Create a new injector that can provide components defined in our <code><span class="pln">myModule</span></code> module and request our
+<code><span class="pln">greeter</span></code> service from the injector. (This is usually done automatically by Angular Bootstrap).</p>
+
+<pre class="ng-scope"><code class="lang-js"><span class="kwd">var</span><span class="pln"> injector </span><span class="pun">=</span><span class="ang"> angular</span><span class="pun">.</span><span class="ang">injector</span><span class="pun">([</span><span class="str">'myModule'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'ng'</span><span class="pun">]);</span><span class="pln">
+</span><span class="kwd">var</span><span class="pln"> greeter </span><span class="pun">=</span><span class="ang"> injector</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="str">'greeter'</span><span class="pun">);</span></code></pre>
 
 <p class="ng-scope">Asking for dependencies solves the issue of hard coding, but it also means that the injector needs
 to be passed throughout the application. Passing the injector breaks the
-<a href="http://en.wikipedia.org/wiki/Law_of_Demeter">Law of Demeter</a>. To remedy this, we use a declarative
+<a href="http://en.wikipedia.org/wiki/Law_of_Demeter" title="link to Wikipedia article on the Law of Demeter">Law of Demeter</a>. To remedy this, we use a declarative
 notation in our HTML templates, to hand the responsibility of creating components over to the
 injector, as in this example:</p>
 
 <pre class="ng-scope"><code class="lang-html"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"MyController"</span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"sayHello()"</span><span class="tag">&gt;</span><span class="pln">Hello</span><span class="tag">&lt;/button&gt;</span><span class="pln">
 </span><span class="tag">&lt;/div&gt;</span></code></pre>
-<pre class="ng-scope"><code class="lang-js"><span class="kwd">function</span><span class="pln"> </span><span class="typ">MyController</span><span class="pun">(</span><span class="pln">$scope</span><span class="pun">,</span><span class="pln"> greeter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+<pre class="ng-scope"><code class="lang-js"><span class="kwd">function</span><span class="pln"> </span><span class="typ">MyController</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">,</span><span class="pln"> greeter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
   $scope</span><span class="pun">.</span><span class="pln">sayHello </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     greeter</span><span class="pun">.</span><span class="pln">greet</span><span class="pun">(</span><span class="str">'Hello World'</span><span class="pun">);</span><span class="pln">
   </span><span class="pun">};</span><span class="pln">
 </span><span class="pun">}</span></code></pre>
 
-<p class="ng-scope">When Angular compiles the HTML, it processes the <code><span class="pln">ng</span><span class="pun">-</span><span class="pln">controller</span></code> directive, which in turn
+<p class="ng-scope">When Angular compiles the HTML, it processes the <code><span class="ang">ng-controller</span></code> directive, which in turn
 asks the injector to create an instance of the controller and its dependencies.</p>
 
-<pre class="ng-scope"><code class="lang-js"><span class="pln">injector</span><span class="pun">.</span><span class="pln">instantiate</span><span class="pun">(</span><span class="typ">MyController</span><span class="pun">);</span></code></pre>
+<pre class="ng-scope"><code class="lang-js"><span class="ang">injector</span><span class="pun">.</span><span class="pln">instantiate</span><span class="pun">(</span><span class="typ">MyController</span><span class="pun">);</span></code></pre>
 
-<p class="ng-scope">This is all done behind the scenes. Notice that by having the <code><span class="pln">ng</span><span class="pun">-</span><span class="pln">controller</span></code> ask the injector to
+<p class="ng-scope">This is all done behind the scenes. Notice that by having the <code><span class="ang">ng-controller</span></code> ask the injector to
 instantiate the class, it can satisfy all of the dependencies of <code><span class="typ">MyController</span></code> without the
 controller ever knowing about the injector.</p>
 <p class="ng-scope">This is the best outcome. The application code simply declares the dependencies it needs, without
