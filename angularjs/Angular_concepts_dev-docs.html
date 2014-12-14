@@ -14,7 +14,7 @@
   <!--  base href="https://docs.angularjs.org/" /  -->
   <link rel="stylesheet" href="auxi/css/bootstrap.nomin.css" type="text/css" />
   <link rel="stylesheet" href="auxi/css/open-sans.css" type="text/css" />
-  <link rel="stylesheet" href="auxi/css/doxy.css" type="text/css" />
+  <link rel="stylesheet" href="auxi/css/doxy-prism.css" type="text/css" />
   <!--  link rel="stylesheet" href="auxi/css/prettify-theme.css" type="text/css" /  -->
   <link rel="stylesheet" href="auxi/css/docs.css" type="text/css" />
   <link rel="shortcut icon" href="auxi/pix/angular.ico" type="image/x-icon" />
@@ -121,16 +121,16 @@ For a more in-depth explanation, see the <a href="docs.angularjs.org/tutorial/" 
 
 
     <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
-      <pre><code><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-app</span><span class="pln"> </span><span class="atn">ng-init</span><span class="pun">=</span><span class="atv">"qty=1;cost=2"</span><span class="tag">&gt;</span><span class="pln">
+      <pre><code><span class="tag">&lt;div</span><span class="pln"> </span><span class="aatn">ng-app</span><span class="pln"> </span><span class="aatn">ng-init</span><span class="pun">=</span><span class="atv">"qty=1;cost=2"</span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;b&gt;</span><span class="pln">Invoice:</span><span class="tag">&lt;/b&gt;</span><span class="pln">
   </span><span class="tag">&lt;div&gt;</span><span class="pln">
-    Quantity: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"qty"</span><span class="tag">&gt;</span><span class="pln">
+    Quantity: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="aatn">ng-model</span><span class="pun">=</span><span class="atv">"qty"</span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
   </span><span class="tag">&lt;div&gt;</span><span class="pln">
-    Costs: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"cost"</span><span class="tag">&gt;</span><span class="pln">
+    Costs: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="aatn">ng-model</span><span class="pun">=</span><span class="atv">"cost"</span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
   </span><span class="tag">&lt;div&gt;</span><span class="pln">
-    </span><span class="tag">&lt;b&gt;</span><span class="pln">Total:</span><span class="tag">&lt;/b&gt;</span><span class="pln"> {{qty * cost | currency}}
+    </span><span class="tag">&lt;b&gt;</span><span class="pln">Total:</span><span class="tag">&lt;/b&gt;</span><span class="ang"> {{</span><span class="pln">qty * cost | currency</span><span class="ang">}}
   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
 </span><span class="tag">&lt;/div&gt;</span></code></pre>
     </div>
@@ -161,7 +161,7 @@ stores/updates the value of the input field into/from a variable.</p>
  <a class="uriless" href="Angular_directives_dev-docs.html" title="link to local copy of directive info">directives guide</a> explains how to do this.
 </div>
 
-<p class="ng-scope">The second kind of new markup are the double curly braces <code><span class="pun">{{</span><span class="pln"> expression </span><span class="pun">|</span><span class="pln"> filter </span><span class="pun">}}</span></code>:
+<p class="ng-scope">The second kind of new markup are the double curly braces <code><span class="ang">{{</span><span class="pln"> expression </span><span class="pun">|</span><span class="pln"> filter </span><span class="ang">}}</span></code>:
 When the compiler encounters this markup, it will replace it with the evaluated value of the markup.
 An "<a class="uriless" name="expression" href="Angular_expressions_dev-docs.html" title="link to local copy of expression info">expression</a>" in a template is a JavaScript-like code snippet that allows
 to read and write variables. Note that those variables are not global variables.
@@ -185,20 +185,17 @@ The concept behind this is "<a class="uriless" name="databinding" href="Angular_
 <p class="ng-scope">Let's add some more logic to the example that allows us to enter and calculate the costs in
 different currencies and also pay the invoice.</p>
 <p class="ng-scope">
-
 </p>
 
 
 <div class="ng-scope">
-
-
   <div class="runnable-example ng-scope" path="examples/example-guide-concepts-2" name="guide-concepts-2" ng-app-included="true">
 
 
     <div class="runnable-example-file" name="invoice1.js" language="js" type="js" style="display: block;">
       <pre><code><span class="com">/* invoice1.js */</span>
-<span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'invoice1'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
-  </span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'InvoiceController'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+<span class="ang">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'invoice1'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
+  </span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'InvoiceController'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">qty </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">cost </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">inCurr </span><span class="pun">=</span><span class="pln"> </span><span class="str">'EUR'</span><span class="pun">;</span><span class="pln">
@@ -215,8 +212,8 @@ different currencies and also pay the invoice.</p>
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">convertCurrency </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> convertCurrency</span><span class="pun">(</span><span class="pln">amount</span><span class="pun">,</span><span class="pln"> inCurr</span><span class="pun">,</span><span class="pln"> outCurr</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
       </span><span class="kwd">return</span><span class="pln"> amount </span><span class="pun">*</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">usdToForeignRates</span><span class="pun">[</span><span class="pln">outCurr</span><span class="pun">]</span><span class="pln"> </span><span class="pun">/</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">usdToForeignRates</span><span class="pun">[</span><span class="pln">inCurr</span><span class="pun">];</span><span class="pln">
     </span><span class="pun">};</span><span class="pln">
-    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">pay </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> pay</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-      window</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">(</span><span class="str">"Thanks!"</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">pay </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> pay</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="kwd">
+      window</span><span class="pun">.</span><span class="kwd">alert</span><span class="pun">(</span><span class="str">"Thanks!"</span><span class="pun">);</span><span class="pln">
     </span><span class="pun">};</span><span class="pln">
   </span><span class="pun">});</span></code></pre>
     </div>
@@ -228,23 +225,23 @@ different currencies and also pay the invoice.</p>
 
     <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
       <pre><code><span class="com">&lt;!-- index.html  --></span>
-<span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-app</span><span class="pun">=</span><span class="atv">"invoice1"</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"InvoiceController as invoice"</span><span class="tag">&gt;</span><span class="pln">
+<span class="tag">&lt;div</span><span class="pln"> </span><span class="aatn">ng-app</span><span class="pun">=</span><span class="atv">"invoice1"</span><span class="pln"> </span><span class="aatn">ng-controller</span><span class="pun">=</span><span class="atv">"InvoiceController as invoice"</span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;b&gt;</span><span class="pln">Invoice:</span><span class="tag">&lt;/b&gt;</span><span class="pln">
   </span><span class="tag">&lt;div&gt;</span><span class="pln">
-    Quantity: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.qty"</span><span class="pln"> </span><span class="atn">required</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
+    Quantity: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="aatn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.qty"</span><span class="pln"> </span><span class="aatn">required</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
   </span><span class="tag">&lt;div&gt;</span><span class="pln">
-    Costs: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.cost"</span><span class="pln"> </span><span class="atn">required</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
-    </span><span class="tag">&lt;select</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.inCurr"</span><span class="tag">&gt;</span><span class="pln">
-      </span><span class="tag">&lt;option</span><span class="pln"> </span><span class="atn">ng-repeat</span><span class="pun">=</span><span class="atv">"c in invoice.currencies"</span><span class="tag">&gt;</span><span class="pln">{{c}}</span><span class="tag">&lt;/option&gt;</span><span class="pln">
+    Costs: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="aatn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.cost"</span><span class="pln"> </span><span class="aatn">required</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;select</span><span class="pln"> </span><span class="aatn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.inCurr"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;option</span><span class="pln"> </span><span class="aatn">ng-repeat</span><span class="pun">=</span><span class="atv">"c in invoice.currencies"</span><span class="tag">&gt;</span><span class="ang">{{</span><span class="pln">c</span><span class="ang">}}</span><span class="tag">&lt;/option&gt;</span><span class="pln">
     </span><span class="tag">&lt;/select&gt;</span><span class="pln">
   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
   </span><span class="tag">&lt;div&gt;</span><span class="pln">
     </span><span class="tag">&lt;b&gt;</span><span class="pln">Total:</span><span class="tag">&lt;/b&gt;</span><span class="pln">
-    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">ng-repeat</span><span class="pun">=</span><span class="atv">"c in invoice.currencies"</span><span class="tag">&gt;</span><span class="pln">
-      {{invoice.total(c) | currency:c}}
+    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="aatn">ng-repeat</span><span class="pun">=</span><span class="atv">"c in invoice.currencies"</span><span class="tag">&gt;</span>
+      <span class="ang">{{</span><span class="pln">invoice.total(c) | currency:c</span><span class="ang">}}
     </span><span class="tag">&lt;/span&gt;</span><span class="pln">
-    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"invoice.pay()"</span><span class="tag">&gt;</span><span class="pln">Pay</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="pln"> </span><span class="aatn">ng-click</span><span class="pun">=</span><span class="atv">"invoice.pay()"</span><span class="tag">&gt;</span><span class="pln">Pay</span><span class="tag">&lt;/button&gt;</span><span class="pln">
   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
 </span><span class="tag">&lt;/div&gt;</span></code></pre>
     </div>
@@ -273,7 +270,7 @@ As the controller contains a <code><span class="pln">total</span></code> functio
 we are also able to bind the result of that function to the DOM using <code><span class="pun">{{</span><span class="pln"> invoice</span><span class="pun">.</span><span class="pln">total</span><span class="pun">(...)</span><span class="pln"> </span><span class="pun">}}</span></code>.</p>
 <p class="ng-scope">Again, this binding is live, i.e., the DOM will be automatically updated
 whenever the result of the function changes.
-The button to pay the invoice uses the directive <a href="https://docs.angularjs.org/api/ng/directive/ngClick" title="link to AngularJS api docs"><code><span class="pln">ngClick</span></code></a>. This will evaluate the
+The button to pay the invoice uses the directive <a href="https://docs.angularjs.org/api/ng/directive/ngClick" title="link to AngularJS api docs"><code><span class="ang">ngClick</span></code></a>. This will evaluate the
 corresponding expression whenever the button is clicked.</p>
 <p class="ng-scope">In the new JavaScript file we are also creating a <a class="uriless" href="#module" title="link to module info in this document">module</a>
 at which we register the controller. We will talk about modules in the next section.</p>
@@ -299,8 +296,8 @@ from the web, e.g., by calling the Yahoo Finance API, without changing the contr
 
     <div class="runnable-example-file" name="finance2.js" language="js" type="js" style="display: block;">
       <pre><code><span class="com">/* finance2.js */</span>
-<span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'finance2'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
-  </span><span class="pun">.</span><span class="pln">factory</span><span class="pun">(</span><span class="str">'currencyConverter'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+<span class="ang">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'finance2'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
+  </span><span class="pun">.</span><span class="ang">factory</span><span class="pun">(</span><span class="str">'currencyConverter'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">var</span><span class="pln"> currencies </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="str">'USD'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'EUR'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'CNY'</span><span class="pun">];</span><span class="pln">
     </span><span class="kwd">var</span><span class="pln"> usdToForeignRates </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
       USD</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln">
@@ -320,8 +317,8 @@ from the web, e.g., by calling the Yahoo Finance API, without changing the contr
 
     <div class="runnable-example-file" name="invoice2.js" language="js" type="js" style="display: block;">
       <pre><code><span class="com">/* invoice2.js */</span>
-<span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'invoice2'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'finance2'</span><span class="pun">])</span><span class="pln">
-  </span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'InvoiceController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'currencyConverter'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">currencyConverter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+<span class="ang">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'invoice2'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'finance2'</span><span class="pun">])</span><span class="pln">
+  </span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'InvoiceController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'currencyConverter'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">currencyConverter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">qty </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">cost </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">inCurr </span><span class="pun">=</span><span class="pln"> </span><span class="str">'EUR'</span><span class="pun">;</span><span class="pln">
@@ -330,31 +327,31 @@ from the web, e.g., by calling the Yahoo Finance API, without changing the contr
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">total </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> total</span><span class="pun">(</span><span class="pln">outCurr</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
       </span><span class="kwd">return</span><span class="pln"> currencyConverter</span><span class="pun">.</span><span class="pln">convert</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">qty </span><span class="pun">*</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">cost</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">inCurr</span><span class="pun">,</span><span class="pln"> outCurr</span><span class="pun">);</span><span class="pln">
     </span><span class="pun">};</span><span class="pln">
-    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">pay </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> pay</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-      window</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">(</span><span class="str">"Thanks!"</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">pay </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> pay</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="kwd">
+      window</span><span class="pun">.</span><span class="kwd">alert</span><span class="pun">(</span><span class="str">"Thanks!"</span><span class="pun">);</span><span class="pln">
     </span><span class="pun">};</span><span class="pln">
   </span><span class="pun">}]);</span></code></pre>
     </div>
 
     <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
       <pre><code><span class="com">&lt;!-- index.html  --></span>
-<span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-app</span><span class="pun">=</span><span class="atv">"invoice2"</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"InvoiceController as invoice"</span><span class="tag">&gt;</span><span class="pln">
+<span class="tag">&lt;div</span><span class="pln"> </span><span class="aatn">ng-app</span><span class="pun">=</span><span class="atv">"invoice2"</span><span class="pln"> </span><span class="aatn">ng-controller</span><span class="pun">=</span><span class="atv">"InvoiceController as invoice"</span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;b&gt;</span><span class="pln">Invoice:</span><span class="tag">&lt;/b&gt;</span><span class="pln">
   </span><span class="tag">&lt;div&gt;</span><span class="pln">
-    Quantity: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.qty"</span><span class="pln"> </span><span class="atn">required</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
+    Quantity: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="aatn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.qty"</span><span class="pln"> </span><span class="aatn">required</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
   </span><span class="tag">&lt;div&gt;</span><span class="pln">
-    Costs: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.cost"</span><span class="pln"> </span><span class="atn">required</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
-    </span><span class="tag">&lt;select</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.inCurr"</span><span class="tag">&gt;</span><span class="pln">
-      </span><span class="tag">&lt;option</span><span class="pln"> </span><span class="atn">ng-repeat</span><span class="pun">=</span><span class="atv">"c in invoice.currencies"</span><span class="tag">&gt;</span><span class="pln">{{c}}</span><span class="tag">&lt;/option&gt;</span><span class="pln">
+    Costs: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="aatn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.cost"</span><span class="pln"> </span><span class="aatn">required</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;select</span><span class="pln"> </span><span class="aatn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.inCurr"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;option</span><span class="pln"> </span><span class="aatn">ng-repeat</span><span class="pun">=</span><span class="atv">"c in invoice.currencies"</span><span class="tag">&gt;</span><span class="ang">{{</span><span class="pln">c</span><span class="ang">}}</span><span class="tag">&lt;/option&gt;</span><span class="pln">
     </span><span class="tag">&lt;/select&gt;</span><span class="pln">
   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
   </span><span class="tag">&lt;div&gt;</span><span class="pln">
     </span><span class="tag">&lt;b&gt;</span><span class="pln">Total:</span><span class="tag">&lt;/b&gt;</span><span class="pln">
-    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">ng-repeat</span><span class="pun">=</span><span class="atv">"c in invoice.currencies"</span><span class="tag">&gt;</span><span class="pln">
-      {{invoice.total(c) | currency:c}}
+    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="aatn">ng-repeat</span><span class="pun">=</span><span class="atv">"c in invoice.currencies"</span><span class="tag">&gt;</span>
+      <span class="ang">{{</span><span class="pln">invoice.total(c) | currency:c</span><span class="ang">}}
     </span><span class="tag">&lt;/span&gt;</span><span class="pln">
-    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"invoice.pay()"</span><span class="tag">&gt;</span><span class="pln">Pay</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="pln"> </span><span class="aatn">ng-click</span><span class="pun">=</span><span class="atv">"invoice.pay()"</span><span class="tag">&gt;</span><span class="pln">Pay</span><span class="tag">&lt;/button&gt;</span><span class="pln">
   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
 </span><span class="tag">&lt;/div&gt;</span></code></pre>
     </div>
@@ -422,8 +419,8 @@ The following example shows how this is done with Angular:</p>
 
     <div class="runnable-example-file" name="invoice3.js" language="js" type="js" style="display: block;">
       <pre><code><span class="com">/* invoice3.js */</span>
-<span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'invoice3'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'finance3'</span><span class="pun">])</span><span class="pln">
-  </span><span class="pun">.</span><span class="pln">controller</span><span class="pun">(</span><span class="str">'InvoiceController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'currencyConverter'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">currencyConverter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+<span class="ang">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'invoice3'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'finance3'</span><span class="pun">])</span><span class="pln">
+  </span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'InvoiceController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'currencyConverter'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">currencyConverter</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">qty </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">cost </span><span class="pun">=</span><span class="pln"> </span><span class="lit">2</span><span class="pun">;</span><span class="pln">
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">inCurr </span><span class="pun">=</span><span class="pln"> </span><span class="str">'EUR'</span><span class="pun">;</span><span class="pln">
@@ -432,7 +429,7 @@ The following example shows how this is done with Angular:</p>
     </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">total </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> total</span><span class="pun">(</span><span class="pln">outCurr</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
       </span><span class="kwd">return</span><span class="pln"> currencyConverter</span><span class="pun">.</span><span class="pln">convert</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">qty </span><span class="pun">*</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">cost</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">inCurr</span><span class="pun">,</span><span class="pln"> outCurr</span><span class="pun">);</span><span class="pln">
     </span><span class="pun">};</span><span class="pln">
-    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">pay </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> pay</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">pay </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> pay</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="kwd">
       window</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">(</span><span class="str">"Thanks!"</span><span class="pun">);</span><span class="pln">
     </span><span class="pun">};</span><span class="pln">
   </span><span class="pun">}]);</span></code></pre>
@@ -440,8 +437,8 @@ The following example shows how this is done with Angular:</p>
 
     <div class="runnable-example-file" name="finance3.js" language="js" type="js" style="display: block;">
       <pre><code><span class="com">/* finance3.js */</span>
-<span class="pln">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'finance3'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
-  </span><span class="pun">.</span><span class="pln">factory</span><span class="pun">(</span><span class="str">'currencyConverter'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$http'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$http</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+<span class="ang">angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'finance3'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
+  </span><span class="pun">.</span><span class="ang">factory</span><span class="pun">(</span><span class="str">'currencyConverter'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$http'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$http</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">var</span><span class="pln"> YAHOO_FINANCE_URL_PATTERN </span><span class="pun">=</span><span class="pln">
           </span><span class="str">'//query.yahooapis.com/v1/public/yql?q=select * from '</span><span class="pun">+</span><span class="pln">
           </span><span class="str">'yahoo.finance.xchange where pair in ("PAIRS")&amp;format=json&amp;'</span><span class="pun">+</span><span class="pln">
@@ -456,8 +453,8 @@ The following example shows how this is done with Angular:</p>
     </span><span class="kwd">var</span><span class="pln"> refresh </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
       </span><span class="kwd">var</span><span class="pln"> url </span><span class="pun">=</span><span class="pln"> YAHOO_FINANCE_URL_PATTERN</span><span class="pun">.</span><span class="pln">
                  replace</span><span class="pun">(</span><span class="str">'PAIRS'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'USD'</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> currencies</span><span class="pun">.</span><span class="pln">join</span><span class="pun">(</span><span class="str">'","USD'</span><span class="pun">));</span><span class="pln">
-      </span><span class="kwd">return</span><span class="pln"> $http</span><span class="pun">.</span><span class="pln">jsonp</span><span class="pun">(</span><span class="pln">url</span><span class="pun">).</span><span class="pln">success</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-        </span><span class="kwd">var</span><span class="pln"> newUsdToForeignRates </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{};</span><span class="pln">
+      </span><span class="kwd">return</span><span class="ang"> $http</span><span class="pun">.</span><span class="pln">jsonp</span><span class="pun">(</span><span class="pln">url</span><span class="pun">).</span><span class="pln">success</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">var</span><span class="pln"> newUsdToForeignRates </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{};</span><span class="ang">
         angular</span><span class="pun">.</span><span class="pln">forEach</span><span class="pun">(</span><span class="pln">data</span><span class="pun">.</span><span class="pln">query</span><span class="pun">.</span><span class="pln">results</span><span class="pun">.</span><span class="pln">rate</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">rate</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
           </span><span class="kwd">var</span><span class="pln"> currency </span><span class="pun">=</span><span class="pln"> rate</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">substring</span><span class="pun">(</span><span class="lit">3</span><span class="pun">,</span><span class="lit">6</span><span class="pun">);</span><span class="pln">
           newUsdToForeignRates</span><span class="pun">[</span><span class="pln">currency</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> window</span><span class="pun">.</span><span class="pln">parseFloat</span><span class="pun">(</span><span class="pln">rate</span><span class="pun">.</span><span class="typ">Rate</span><span class="pun">);</span><span class="pln">
@@ -479,23 +476,23 @@ The following example shows how this is done with Angular:</p>
     <div class="runnable-example-file" name="index.html" language="html" type="html" style="display: block;">
 
       <pre><code><span class="com">&lt;!-- index.html  --></span>
-<span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ng-app</span><span class="pun">=</span><span class="atv">"invoice3"</span><span class="pln"> </span><span class="atn">ng-controller</span><span class="pun">=</span><span class="atv">"InvoiceController as invoice"</span><span class="tag">&gt;</span><span class="pln">
+<span class="tag">&lt;div</span><span class="pln"> </span><span class="aatn">ng-app</span><span class="pun">=</span><span class="atv">"invoice3"</span><span class="pln"> </span><span class="aatn">ng-controller</span><span class="pun">=</span><span class="atv">"InvoiceController as invoice"</span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;b&gt;</span><span class="pln">Invoice:</span><span class="tag">&lt;/b&gt;</span><span class="pln">
   </span><span class="tag">&lt;div&gt;</span><span class="pln">
-    Quantity: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.qty"</span><span class="pln"> </span><span class="atn">required</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
+    Quantity: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="aatn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.qty"</span><span class="pln"> </span><span class="aatn">required</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
   </span><span class="tag">&lt;div&gt;</span><span class="pln">
-    Costs: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.cost"</span><span class="pln"> </span><span class="atn">required</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
-    </span><span class="tag">&lt;select</span><span class="pln"> </span><span class="atn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.inCurr"</span><span class="tag">&gt;</span><span class="pln">
-      </span><span class="tag">&lt;option</span><span class="pln"> </span><span class="atn">ng-repeat</span><span class="pun">=</span><span class="atv">"c in invoice.currencies"</span><span class="tag">&gt;</span><span class="pln">{{c}}</span><span class="tag">&lt;/option&gt;</span><span class="pln">
+    Costs: </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"number"</span><span class="pln"> </span><span class="atn">min</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="aatn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.cost"</span><span class="pln"> </span><span class="aatn">required</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;select</span><span class="pln"> </span><span class="aatn">ng-model</span><span class="pun">=</span><span class="atv">"invoice.inCurr"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;option</span><span class="pln"> </span><span class="aatn">ng-repeat</span><span class="pun">=</span><span class="atv">"c in invoice.currencies"</span><span class="tag">&gt;</span><span class="ang">{{</span><span class="pln">c</span><span class="ang">}}</span><span class="tag">&lt;/option&gt;</span><span class="pln">
     </span><span class="tag">&lt;/select&gt;</span><span class="pln">
   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
   </span><span class="tag">&lt;div&gt;</span><span class="pln">
     </span><span class="tag">&lt;b&gt;</span><span class="pln">Total:</span><span class="tag">&lt;/b&gt;</span><span class="pln">
-    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="atn">ng-repeat</span><span class="pun">=</span><span class="atv">"c in invoice.currencies"</span><span class="tag">&gt;</span><span class="pln">
-      {{invoice.total(c) | currency:c}}
+    </span><span class="tag">&lt;span</span><span class="pln"> </span><span class="aatn">ng-repeat</span><span class="pun">=</span><span class="atv">"c in invoice.currencies"</span><span class="tag">&gt;</span>
+      <span class="ang">{{</span><span class="pln">invoice.total(c) | currency:c</span><span class="ang">}}
     </span><span class="tag">&lt;/span&gt;</span><span class="pln">
-    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="pln"> </span><span class="atn">ng-click</span><span class="pun">=</span><span class="atv">"invoice.pay()"</span><span class="tag">&gt;</span><span class="pln">Pay</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn"</span><span class="pln"> </span><span class="aatn">ng-click</span><span class="pun">=</span><span class="atv">"invoice.pay()"</span><span class="tag">&gt;</span><span class="pln">Pay</span><span class="tag">&lt;/button&gt;</span><span class="pln">
   </span><span class="tag">&lt;/div&gt;</span><span class="pln">
 </span><span class="tag">&lt;/div&gt;</span></code></pre>
     </div>
