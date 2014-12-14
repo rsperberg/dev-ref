@@ -40,11 +40,11 @@
 <p class="ng-scope">When a Controller is attached to the DOM via the <a href="https://docs.angularjs.org/api/ng/directive/ngController">ng-controller</a>
 directive, Angular will instantiate a new Controller object, using the specified Controller's
 <strong>constructor function</strong>. A new <strong>child scope</strong> will be available as an injectable parameter to the
-Controller's constructor function as <code><span class="pln">$scope</span></code>.</p>
+Controller's constructor function as <code><span class="ang">$scope</span></code>.</p>
 <p class="ng-scope">Use controllers to:</p>
 <ul class="ng-scope">
-<li>Set up the initial state of the <code><span class="pln">$scope</span></code> object.</li>
-<li>Add behavior to the <code><span class="pln">$scope</span></code> object.</li>
+<li>Set up the initial state of the <code><span class="ang">$scope</span></code> object.</li>
+<li>Add behavior to the <code><span class="ang">$scope</span></code> object.</li>
 </ul>
 <p class="ng-scope">Do not use controllers to:</p>
 <ul class="ng-scope">
@@ -111,8 +111,8 @@ expression in the template:</p>
 
 <p class="ng-scope">As discussed in the <a class="uriless" href="Angular_concepts_dev-docs.html" title="link to local copy of concepts info">Concepts</a> section of this guide, any
 objects (or primitives) assigned to the scope become model properties. Any methods assigned to
-the scope are available in the template/view, and can be invoked via angular expressions
-and <code><span class="pln">ng</span></code> event handler directives (e.g. <a href="https://docs.angularjs.org/api/ng/directive/ngClick">ngClick</a>).</p>
+the scope are available in the template/view, and can be invoked via Angular expressions
+and <code><span class="ang">ng</span></code> event handler directives (e.g. <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngClick" title="link to AngularJS api docs">ngClick</a></span></code>).</p>
 
 <h1 id="using-controllers-correctly" class="ng-scope">Using Controllers Correctly</h1>
 <p class="ng-scope">In general, a Controller shouldn't try to do too much. It should contain only the business logic
@@ -122,7 +122,7 @@ controllers into services and then using these services in Controllers via depen
 This is discussed in the <a class="uriless" href="Angular_di_dev-docs.html" title="link to local copy of info on dependency injection">Dependency Injection</a> <a class="uriless" href="Angular_services_dev-docs.html" title="link to local copy of services info">Services</a> sections of this guide.</p>
 
 <h1 id="associating-controllers-with-angular-scope-objects" class="ng-scope">Associating Controllers with Angular Scope Objects</h1>
-<p class="ng-scope">You can associate Controllers with scope objects implicitly via the <a href="https://docs.angularjs.org/api/ng/directive/ngController">ngController
+<p class="ng-scope">You can associate Controllers with scope objects implicitly via the <a href="https://docs.angularjs.org/api/ng/directive/ngController" title="link to AngularJS api docs">ngController
 directive</a> or <a href="https://docs.angularjs.org/api/ngRoute/service/$route">$route service</a>.</p>
 
 <h2 id="simple-spicy-controller-example" class="ng-scope">Simple Spicy Controller Example</h2>
@@ -234,10 +234,10 @@ input box) in the second button.</p>
 
 <h2 id="scope-inheritance-example" class="ng-scope">Scope Inheritance Example</h2>
 <p class="ng-scope">It is common to attach Controllers at different levels of the DOM hierarchy.  Since the
-<a href="https://docs.angularjs.org/api/ng/directive/ngController">ng-controller</a> directive creates a new child scope, we get a
+<a href="https://docs.angularjs.org/api/ng/directive/ngController" title="link to AngularJS api docs">ng-controller</a> directive creates a new child scope, we get a
 hierarchy of scopes that inherit from each other.  The <code><span class="ang">$scope</span></code> that each Controller receives will
 have access to properties and methods defined by Controllers higher up the hierarchy.
-See <a href="https://github.com/angular/angular.js/wiki/Understanding-Scopes">Understanding Scopes</a> for
+See <a href="https://github.com/angular/angular.js/wiki/Understanding-Scopes" title="link to info on scopes at AngularJS wiki">Understanding Scopes</a> for
 more information about scope inheritance.</p>
 <p class="ng-scope">
 
@@ -291,7 +291,7 @@ myApp</span><span class="pun">.</span><span class="ang">controller</span><span c
 
 
 <p class="ng-scope"></p>
-<p class="ng-scope">Notice how we nested three <code><span class="pln">ng-controller</span></code> directives in our template. This will result in four
+<p class="ng-scope">Notice how we nested three <code><span class="ang">ng-controller</span></code> directives in our template. This will result in four
 scopes being created for our view:</p>
 <ul class="ng-scope">
 <li>The root scope</li>
@@ -306,7 +306,7 @@ examples, all of the properties could be replaced with methods that return strin
 
 <h2 id="testing-controllers" class="ng-scope">Testing Controllers</h2>
 <p class="ng-scope">Although there are many ways to test a Controller, one of the best conventions, shown below,
-involves injecting the <a href="https://docs.angularjs.org/api/ng/service/$rootScope">$rootScope</a> and <a href="https://docs.angularjs.org/api/ng/service/$controller">$controller</a>:</p>
+involves injecting the <a href="https://docs.angularjs.org/api/ng/service/$rootScope" title="link to AngularJS api docs">$rootScope</a> and <a href="https://docs.angularjs.org/api/ng/service/$controller" title="link to AngularJS api docs">$controller</a>:</p>
 <p class="ng-scope"><strong>Controller Definition:</strong></p>
 
 <pre class="ng-scope"><code class="lang-js"><span class="kwd">var</span><span class="pln"> myApp </span><span class="pun">=</span><span class="ang"> angular</span><span class="pun">.</span><span class="kwd">module</span><span class="pun">(</span><span class="str">'myApp'</span><span class="pun">,[]);</span><span class="pln">
@@ -367,7 +367,7 @@ it</span><span class="pun">(</span><span class="str">'should have over and selec
     expect</span><span class="pun">(</span><span class="pln">grandChildScope</span><span class="pun">.</span><span class="pln">name</span><span class="pun">).</span><span class="test">toBe</span><span class="pun">(</span><span class="str">'Gingerbreak Baby'</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">});</span><span class="pln">
 </span><span class="pun">});</span></code></pre>
-
+<p> &nbsp; </p>
 
 </div>
         </div>
