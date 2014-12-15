@@ -36,8 +36,8 @@
 <h1 id="understanding-controllers" class="ng-scope">Understanding Controllers</h1>
 
 <p class="ng-scope">In Angular, a Controller is a JavaScript <strong>constructor function</strong> that is used to augment the
-<a class="uriless" name="scope" href="Angular_scopes_dev-docs.html">Angular Scope</a>. [<a href="https://docs.angularjs.org/guide/controller" title="link to controller info at docs.angularjs.org">Source document</a>.]</p>
-<p class="ng-scope">When a Controller is attached to the DOM via the <a href="https://docs.angularjs.org/api/ng/directive/ngController">ng-controller</a>
+<a class="uriless" name="scope" href="Angular_scopes_dev-docs.html" title="link to local copy of scope info">Angular scope</a>. [<a href="https://docs.angularjs.org/guide/controller" title="link to controller info at docs.angularjs.org">Source document</a>.]</p>
+<p class="ng-scope">When a Controller is attached to the DOM via the <a href="https://docs.angularjs.org/api/ng/directive/ngController" title="link to AngularJS api docs">ng-controller</a>
 directive, Angular will instantiate a new Controller object, using the specified Controller's
 <strong>constructor function</strong>. A new <strong>child scope</strong> will be available as an injectable parameter to the
 Controller's constructor function as <code><span class="ang">$scope</span></code>.</p>
@@ -52,14 +52,14 @@ Controller's constructor function as <code><span class="ang">$scope</span></code
 Putting any presentation logic into Controllers significantly affects its testability. Angular
 has <a class="uriless" name="databinding" href="Angular_databinding_dev-docs.html" title="link to local copy of info on data binding">data binding</a> for most cases and <a class="uriless" name="directive" href="Angular_directives_dev-docs.html" title="link to local copy of directive info">directives</a> to
 encapsulate manual DOM manipulation.</li>
-<li>Format input — Use <a class="uriless" href="Angular_forms_dev-docs.html" title="link to local copy of forms info">angular form controls</a> instead.</li>
-<li>Filter output — Use <a class="uriless" href="Angular_filters_dev-docs.html" title="link to local copy of filter info">angular filters</a> instead.</li>
-<li>Share code or state across controllers — Use <a class="uriless" href="Angular_services_dev-docs.html" title="link to local copy of services info">angular
+<li>Format input — Use <a class="uriless" href="Angular_forms_dev-docs.html" title="link to local copy of forms info">Angular form controls</a> instead.</li>
+<li>Filter output — Use <a class="uriless" href="Angular_filters_dev-docs.html" title="link to local copy of filter info">Angular filters</a> instead.</li>
+<li>Share code or state across controllers — Use <a class="uriless" href="Angular_services_dev-docs.html" title="link to local copy of services info">Angular
 services</a> instead.</li>
 <li>Manage the life-cycle of other components (for example, to create service instances).</li>
 </ul>
 
-<h1 id="setting-up-the-initial-state-of-a-scope-object" class="ng-scope">Setting up the initial state of a <code><span class="ang">$scope</span></code> object</h1>
+<h1 id="setting-up-the-initial-state-of-a-scope-object" class="ng-scope">Setting up the initial state of a <code><span class="ang" style="font-family:Share-Bold">$scope</span></code> object</h1>
 <p class="ng-scope">Typically, when you create an application you need to set up the initial state for the Angular
 <code><span class="ang">$scope</span></code>. You set up the initial state of a scope by attaching properties to the <code><span class="ang">$scope</span></code> object.
 The properties contain the <strong>view model</strong> (the model that will be presented by the view).  All the
@@ -123,7 +123,7 @@ This is discussed in the <a class="uriless" href="Angular_di_dev-docs.html" titl
 
 <h1 id="associating-controllers-with-angular-scope-objects" class="ng-scope">Associating Controllers with Angular Scope Objects</h1>
 <p class="ng-scope">You can associate Controllers with scope objects implicitly via the <a href="https://docs.angularjs.org/api/ng/directive/ngController" title="link to AngularJS api docs">ngController
-directive</a> or <a href="https://docs.angularjs.org/api/ngRoute/service/$route">$route service</a>.</p>
+directive</a> or <a href="https://docs.angularjs.org/api/ngRoute/service/$route" title="link to AngularJS api docs">$route service</a>.</p>
 
 <h2 id="simple-spicy-controller-example" class="ng-scope">Simple Spicy Controller Example</h2>
 <p class="ng-scope">To illustrate further how Controller components work in Angular, let's create a little app with the
