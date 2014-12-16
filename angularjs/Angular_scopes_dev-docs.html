@@ -63,7 +63,7 @@
 
 <h1 id="what-are-scopes-" class="ng-scope">What are Scopes?</h1>
 <p class="ng-scope"><code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope">scope</a></span></code> is an object that refers to the application
-model. It is an execution context for <a href="Angular_expressions_dev-docs.html">expressions</a>. Scopes are
+model. It is an execution context for <a href="Angular_expressions_dev-docs.html" title="link to local expressions doc">expressions</a>. Scopes are
 arranged in hierarchical structure which mimic the DOM structure of the application. Scopes can
 watch <a href="Angular_expressions_dev-docs.html">expressions</a> and propagate events. [<a href="https://docs.angularjs.org/guide/scope" title="link to scope info at docs.angularjs.org">Source document</a>.]</p>
 
@@ -79,10 +79,10 @@ realm" (controllers, services, Angular event handlers).</p>
 <li><p>Scopes can be nested to limit access to the properties of application components while providing
 access to shared model properties. Nested scopes are either "child scopes" or "isolate scopes."
 A "child scope" (prototypically) inherits properties from its parent scope. An "isolate scope"
-does not. See <a href="Angular_directives_dev-docs.html#isolating-the-scope-of-a-directive">isolated
+does not. See <a href="Angular_directives_dev-docs.html#isolating-the-scope-of-a-directive" title="link to local directives doc">isolated
 scopes</a> for more information.</p>
 </li>
-<li><p>Scopes provide context against which <a href="Angular_expressions_dev-docs.html">expressions</a> are evaluated. For
+<li><p>Scopes provide context against which <a href="Angular_expressions_dev-docs.html" title="link to local expressions doc">expressions</a> are evaluated. For
 example <code><span class="contrast">{{</span><span class="pln">username</span><span class="contrast">}}</span></code> expression is meaningless, unless it is evaluated against a specific
 scope which defines the <code><span class="pln">username</span></code> property.</p>
 </li>
@@ -148,7 +148,7 @@ automatically when they are bound to HTML input widgets.</p>
     In this example this is the same scope as the scope which was passed into <code><span class="typ">MyController</span></code>. (We
     will discuss scope hierarchies later.)</p>
     </li>
-    <li><p>Evaluate the <code><span class="pln">greeting</span></code> <a href="https://docs.angularjs.org/guide/expression">expression</a> against the scope retrieved above,
+    <li><p>Evaluate the <code><span class="pln">greeting</span></code> <a href="Angular_expressions_dev-docs.html" title="link to local expressions doc">expression</a> against the scope retrieved above,
     and assign the result to the text of the enclosing DOM element.</p>
     </li>
     </ul>
@@ -175,7 +175,7 @@ to test the behavior without being distracted by the rendering details.</p>
 <h2 id="scope-hierarchies" class="ng-scope">Scope Hierarchies</h2>
 <p class="ng-scope">Each Angular application has exactly one <a href="https://docs.angularjs.org/api/ng/service/$rootScope">root scope</a>, but
 may have several child scopes.</p>
-<p class="ng-scope">The application can have multiple scopes, because some <a href="Angular_directives_dev-docs.html">directives</a> create
+<p class="ng-scope">The application can have multiple scopes, because some <a href="Angular_directives_dev-docs.html" title="link to local directives doc">directives</a> create
 new child scopes (refer to directive documentation to see which directives create new scopes).
 When new scopes are created, they are added as children of their parent scope. This creates a tree
 structure which parallels the DOM where they're attached.</p>
@@ -365,7 +365,7 @@ usually fall into one of two categories:</p>
         executes the associated expression and updates the view using the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">$apply()</a></span></code> method.</p>
         </li>
     </ul>
-<p class="ng-scope">When an external event (such as a user action, timer or XHR) is received, the associated <code><span class="ang"><a href="Angular_expressions_dev-docs.html">expression</a></span></code> must be applied to the scope through the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">$apply()</a></span></code> method so that all listeners are updated
+<p class="ng-scope">When an external event (such as a user action, timer or XHR) is received, the associated <code><span class="ang"><a href="Angular_expressions_dev-docs.html" title="link to local expressions doc">expression</a></span></code> must be applied to the scope through the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">$apply()</a></span></code> method so that all listeners are updated
 correctly.</p>
 
 <h3 id="directives-that-create-scopes" class="ng-scope">Directives that Create Scopes</h3>
@@ -373,7 +373,7 @@ correctly.</p>
 but do not create new instances of scope. However, some directives, such as <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngController">ng-controller</a></span></code> and <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngRepeat">ng-repeat</a></span></code>, create new child scopes
 and attach the child scope to the corresponding DOM element. You can retrieve a scope for any DOM
 element by using an <code><span class="ang">angular</span><span class="pun">.</span><span class="pln">element</span><span class="contrast">(</span><span class="pln">aDomElement</span><span class="contrast">).</span><span class="ang">scope</span><span class="contrast">()</span></code> method call.
-See the <a href="Angular_directives_dev-docs.html#isolating-the-scope-of-a-directive">directives guide</a> for more information about isolate scopes.</p>
+See the <a href="Angular_directives_dev-docs.html#isolating-the-scope-of-a-directive" title="link to local directives doc">directives guide</a> for more information about isolate scopes.</p>
 
 <h3 id="controllers-and-scopes" class="ng-scope">Controllers and Scopes</h3>
 <p class="ng-scope">Scopes and controllers interact with each other in the following situations:</p>
@@ -422,7 +422,7 @@ mind that in most places (controllers, services) <code><span class="ang">$apply<
 directive which is handling the event. An explicit call to <code><span class="ang">$apply</span></code> is needed only when
 implementing custom event callbacks, or when working with third-party library callbacks.</p>
     <ol class="ng-scope">
-    <li>Enter the Angular execution context by calling <code><span class="ang"><a href="./auxi/Angular_scopes_dev-docs.html">scope</a></span>.<span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">$apply</a></span><span class="pun">(</span><span class="pln">stimulusFn</span><span class="pun">)</span></code>, where <code><span class="pln">stimulusFn</span></code> is
+    <li>Enter the Angular execution context by calling <code><span class="ang"><a href="./auxi/Angular_scopes_dev-docs.html" title="link to local scope doc">scope</a></span>.<span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">$apply</a></span><span class="pun">(</span><span class="pln">stimulusFn</span><span class="pun">)</span></code>, where <code><span class="pln">stimulusFn</span></code> is
     the work you wish to do in the Angular execution context.</li>
     <li>Angular executes the <code><span class="pln">stimulusFn</span><span class="pun">()</span></code>, which typically modifies application state.</li>
     <li>Angular enters the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest">$digest</a></span></code> loop. The
@@ -444,7 +444,7 @@ implementing custom event callbacks, or when working with third-party library ca
 user enters text into the text field.</p>
     <ol class="ng-scope">
     <li>During the compilation phase:<ol>
-    <li>the <a href="https://docs.angularjs.org/api/ng/directive/ngModel">ng-model</a> and <a href="https://docs.angularjs.org/api/ng/directive/input">input</a> <a href="Angular_directives_dev-docs.html">directive</a> set up a <code><span class="pln">keydown</span></code> listener on the <code><span class="tag">&lt;input&gt;</span></code> control.</li>
+    <li>the <a href="https://docs.angularjs.org/api/ng/directive/ngModel">ng-model</a> and <a href="https://docs.angularjs.org/api/ng/directive/input">input</a> <a href="Angular_directives_dev-docs.html" title="link to local directives doc">directive</a> set up a <code><span class="pln">keydown</span></code> listener on the <code><span class="tag">&lt;input&gt;</span></code> control.</li>
     <li>the <a href="https://docs.angularjs.org/api/ng/service/$interpolate">interpolation</a>
     sets up a <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">$watch</a></span></code> to be notified of
     <code><span class="pln">name</span></code> changes.</li>
