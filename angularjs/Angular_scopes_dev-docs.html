@@ -62,17 +62,17 @@
 -->
 
 <h1 id="what-are-scopes-" class="ng-scope">What are Scopes?</h1>
-<p class="ng-scope"><code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope">scope</a></span></code> is an object that refers to the application
+<p class="ng-scope"><code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope" title="link to AngularJS api docs for $rootScope.Scope">scope</a></span></code> is an object that refers to the application
 model. It is an execution context for <a href="Angular_expressions_dev-docs.html" title="link to local expressions doc">expressions</a>. Scopes are
 arranged in hierarchical structure which mimic the DOM structure of the application. Scopes can
-watch <a href="Angular_expressions_dev-docs.html">expressions</a> and propagate events. [<a href="https://docs.angularjs.org/guide/scope" title="link to scope info at docs.angularjs.org">Source document</a>.]</p>
+watch <a href="Angular_expressions_dev-docs.html" title="link to local expressions doc">expressions</a> and propagate events. [<a href="https://docs.angularjs.org/guide/scope" title="link to scope info at docs.angularjs.org">Source document</a>.]</p>
 
 <h2 id="scope-characteristics" class="ng-scope">Scope characteristics</h2>
 <ul class="ng-scope">
-<li><p>Scopes provide APIs (<code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">$watch</a></span></code>) to observe
+<li><p>Scopes provide APIs (<code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch" title="link to AngularJS api docs for $rootScope.Scope#$watch">$watch</a></span></code>) to observe
 model mutations.</p>
 </li>
-<li><p>Scopes provide APIs (<code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">$apply</a></span></code>) to
+<li><p>Scopes provide APIs (<code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply" title="link to AngularJS api docs for $rootScope.Scope#$apply">$apply</a></span></code>) to
 propagate any model changes through the system into the view from outside of the "Angular
 realm" (controllers, services, Angular event handlers).</p>
 </li>
@@ -90,8 +90,8 @@ scope which defines the <code><span class="pln">username</span></code> property.
 
 
 <h2 id="scope-as-data-model" class="ng-scope">Scope as Data-Model</h2>
-<p class="ng-scope">Scope is the glue between application controller and the view. During the template <a href="https://docs.angularjs.org/guide/compiler">linking</a> phase the <a href="https://docs.angularjs.org/api/ng/provider/$compileProvider#directive">directives</a> set up
-<code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">$watch</a></span></code> expressions on the scope. The
+<p class="ng-scope">Scope is the glue between application controller and the view. During the template <a href="https://docs.angularjs.org/guide/compiler" title="link to local compiler doc">linking</a> phase the <a href="https://docs.angularjs.org/api/ng/provider/$compileProvider#directive" title="link to AngularJS api docs for $compileProvider#directive">directives</a> set up
+<code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch" title="link to AngularJS api docs for $rootScope.Scope#$watch">$watch</a></span></code> expressions on the scope. The
 <code><span class="ang">$watch</span></code> allows the directives to be notified of property changes, which allows the directive to
 render the updated value to the DOM.</p>
 <p class="ng-scope">Both controllers and directives have reference to the scope, but not to each other. This
@@ -173,7 +173,7 @@ to test the behavior without being distracted by the rendering details.</p>
 
 
 <h2 id="scope-hierarchies" class="ng-scope">Scope Hierarchies</h2>
-<p class="ng-scope">Each Angular application has exactly one <a href="https://docs.angularjs.org/api/ng/service/$rootScope">root scope</a>, but
+<p class="ng-scope">Each Angular application has exactly one <a href="https://docs.angularjs.org/api/ng/service/$rootScope" title="link to AngularJS api docs for $rootScope">root scope</a>, but
 may have several child scopes.</p>
 <p class="ng-scope">The application can have multiple scopes, because some <a href="Angular_directives_dev-docs.html" title="link to local directives doc">directives</a> create
 new child scopes (refer to directive documentation to see which directives create new scopes).
@@ -245,7 +245,7 @@ where the <code><span class="pln">department</span></code> property is defined.<
 <p class="ng-scope">Scopes are attached to the DOM as <code><span class="ang">$scope</span></code> data property, and can be retrieved for debugging
 purposes. (It is unlikely that one would need to retrieve scopes in this way inside the
 application.) The location where the root scope is attached to the DOM is defined by the location
-of <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngApp">ng-app</a></span></code> directive. Typically
+of <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngApp" title="link to AngularJS api docs for ngApp">ng-app</a></span></code> directive. Typically
 <code><span class="ang">ng-app</span></code> is placed on the <code><span class="tag">&lt;html&gt;</span></code> element, but it can be placed on other elements as well, if,
 for example, only a portion of the view needs to be controlled by Angular.</p>
 <p class="ng-scope">To examine the scope in the debugger:</p>
@@ -262,7 +262,7 @@ variable.</p>
 
 
 <h2 id="scope-events-propagation" class="ng-scope">Scope Events Propagation</h2>
-<p class="ng-scope">Scopes can propagate events in similar fashion to DOM events. The event can be <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$broadcast">broadcasted</a> to the scope children or <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$emit">emitted</a> to scope parents.</p>
+<p class="ng-scope">Scopes can propagate events in similar fashion to DOM events. The event can be <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$broadcast" title="link to AngularJS api docs for $rootScope.Scope#$broadcast">broadcasted</a> to the scope children or <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$emit" title="link to AngularJS api docs for $rootScope.Scope#$emit">emitted</a> to scope parents.</p>
 <p class="ng-scope">
 
 </p><div class="ng-scope">
@@ -312,11 +312,11 @@ callback. Once the callback completes, the browser re-renders the DOM and return
 more events.</p>
 <p class="ng-scope">When the browser calls into JavaScript the code executes outside the Angular execution context,
 which means that Angular is unaware of model modifications. To properly process model
-modifications the execution has to enter the Angular execution context using the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">$apply</a></span></code> method. Only model modifications which
+modifications the execution has to enter the Angular execution context using the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply" title="link to AngularJS api docs for $rootScope.Scope#$apply">$apply</a></span></code> method. Only model modifications which
 execute inside the <code><span class="ang">$apply</span></code> method will be properly accounted for by Angular. For example if a
-directive listens on DOM events, such as <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click</a></span></code> it must evaluate the
+directive listens on DOM events, such as <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngClick" title="link to AngularJS api docs for ngClick">ng-click</a></span></code> it must evaluate the
 expression inside the <code><span class="ang">$apply</span></code> method.</p>
-<p class="ng-scope">After evaluating the expression, the <code><span class="ang">$apply</span></code> method performs a <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest">$digest</a></span></code>. In the <code><span class="ang">$digest</span></code> phase the scope examines all
+<p class="ng-scope">After evaluating the expression, the <code><span class="ang">$apply</span></code> method performs a <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest" title="link to AngularJS api docs for $rootScope.Scope#$digest">$digest</a></span></code>. In the <code><span class="ang">$digest</span></code> phase the scope examines all
 of the <code><span class="ang">$watch</span></code> expressions and compares them with the previous value. This dirty checking is done
 asynchronously. This means that assignment such as <code><span class="ang">$scope</span><span class="pun">.</span><span class="pln">username</span><span class="pun">=</span><span class="str">"angular"</span></code> will not
 immediately cause a <code><span class="ang">$watch</span></code> to be notified, instead the <code><span class="ang">$watch</span></code> notification is delayed until
@@ -326,51 +326,51 @@ the <code><span class="ang">$digest</span></code> phase. This delay is desirable
 <code><span class="ang">$digest</span></code> cycle.</p>
     <ol class="ng-scope">
         <li><p><strong>Creation</strong></p>
-        <p>The <a href="https://docs.angularjs.org/api/ng/service/$rootScope">root scope</a> is created during the application
-        bootstrap by the <code><span class="ang"><a href="https://docs.angularjs.org/api/auto/service/$injector">$injector</a></span></code>. During template
+        <p>The <a href="https://docs.angularjs.org/api/ng/service/$rootScope" title="link to AngularJS api docs for $rootScope">root scope</a> is created during the application
+        bootstrap by the <code><span class="ang"><a href="https://docs.angularjs.org/api/auto/service/$injector" title="link to AngularJS api docs for $injector">$injector</a></span></code>. During template
         linking, some directives create new child scopes.</p>
         </li>
         <li><p><strong>Watcher registration</strong></p>
-        <p>During template linking directives register <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">watches</a> on the scope. These watches will be
+        <p>During template linking directives register <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch" title="link to AngularJS api docs for $rootScope.Scope#$watch">watches</a> on the scope. These watches will be
         used to propagate model values to the DOM.</p>
         </li>
         <li><p><strong>Model mutation</strong></p>
-        <p>For mutations to be properly observed, you should make them only within the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">scope.$apply()</a></span></code>. (Angular APIs do this
+        <p>For mutations to be properly observed, you should make them only within the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply" title="link to AngularJS api docs for $rootScope.Scope#$apply">scope.$apply()</a></span></code>. (Angular APIs do this
         implicitly, so no extra <code><span class="ang">$apply</span></code> call is needed when doing synchronous work in controllers,
-        or asynchronous work with <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/service/$http">$http</a></span></code>, <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/service/$timeout">$timeout</a></span></code>
-        or <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/service/$interval">$interval</a></span></code> services.</p>
+        or asynchronous work with <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/service/$http" title="link to AngularJS api docs for $http">$http</a></span></code>, <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/service/$timeout" title="link to AngularJS api docs for $timeout">$timeout</a></span></code>
+        or <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/service/$interval" title="link to AngularJS api docs for $interval">$interval</a></span></code> services.</p>
         </li>
         <li><p><strong>Mutation observation</strong></p>
-        <p>At the end of <code><span class="ang">$apply</span></code>, Angular performs a <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest">$digest</a></span></code> cycle on the root scope, which then propagates throughout all child scopes. During
+        <p>At the end of <code><span class="ang">$apply</span></code>, Angular performs a <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest" title="link to AngularJS api docs for $rootScope.Scope#$digest">$digest</a></span></code> cycle on the root scope, which then propagates throughout all child scopes. During
         the <code><span class="ang">$digest</span></code> cycle, all <code><span class="ang">$watch</span></code>ed expressions or functions are checked for model mutation
         and if a mutation is detected, the <code><span class="ang">$watch</span></code> listener is called.</p>
         </li>
         <li><p><strong>Scope destruction</strong></p>
         <p>When child scopes are no longer needed, it is the responsibility of the child scope creator
-        to destroy them via <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$destroy">scope.$destroy()</a></span></code>
+        to destroy them via <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$destroy" title="link to AngularJS api docs for $rootScope.Scope#$destroy">scope.$destroy()</a></span></code>
         API. This will stop propagation of <code><span class="ang">$digest</span></code> calls into the child scope and allow for memory
         used by the child scope models to be reclaimed by the garbage collector.</p>
         </li>
     </ol>
 
 <h3 id="scopes-and-directives" class="ng-scope">Scopes and Directives</h3>
-<p class="ng-scope">During the compilation phase, the <a href="https://docs.angularjs.org/guide/compiler">compiler</a> matches <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/provider/$compileProvider#directive">directives</a></span></code> against the DOM template. The directives
+<p class="ng-scope">During the compilation phase, the <a href="https://docs.angularjs.org/guide/compiler" title="link to local compiler doc">compiler</a> matches <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/provider/$compileProvider#directive" title="link to AngularJS api docs for $compileProvider#directive">directives</a></span></code> against the DOM template. The directives
 usually fall into one of two categories:</p>
     <ul class="ng-scope">
-        <li><p>Observing <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/provider/$compileProvider#directive">directives</a></span></code>, such as
-        double-curly expressions <code><span class="contrast">{{</span><span class="pln">expression</span><span class="contrast">}}</span></code>, register listeners using the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">$watch()</a></span></code> method. This type of directive needs
+        <li><p>Observing <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/provider/$compileProvider#directive" title="link to AngularJS api docs for $compileProvider#directive">directives</a></span></code>, such as
+        double-curly expressions <code><span class="contrast">{{</span><span class="pln">expression</span><span class="contrast">}}</span></code>, register listeners using the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch" title="link to AngularJS api docs for $rootScope.Scope#$watch">$watch()</a></span></code> method. This type of directive needs
         to be notified whenever the expression changes so that it can update the view.</p>
         </li>
-        <li><p>Listener directives, such as <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click</a></span></code>, register a listener with the DOM. When the DOM listener fires, the directive
-        executes the associated expression and updates the view using the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">$apply()</a></span></code> method.</p>
+        <li><p>Listener directives, such as <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngClick" title="link to AngularJS api docs for ngClick">ng-click</a></span></code>, register a listener with the DOM. When the DOM listener fires, the directive
+        executes the associated expression and updates the view using the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply" title="link to AngularJS api docs for $rootScope.Scope#$apply">$apply()</a></span></code> method.</p>
         </li>
     </ul>
-<p class="ng-scope">When an external event (such as a user action, timer or XHR) is received, the associated <code><span class="ang"><a href="Angular_expressions_dev-docs.html" title="link to local expressions doc">expression</a></span></code> must be applied to the scope through the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">$apply()</a></span></code> method so that all listeners are updated
+<p class="ng-scope">When an external event (such as a user action, timer or XHR) is received, the associated <code><span class="ang"><a href="Angular_expressions_dev-docs.html" title="link to local expressions doc">expression</a></span></code> must be applied to the scope through the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply" title="link to AngularJS api docs for $rootScope.Scope#$apply">$apply()</a></span></code> method so that all listeners are updated
 correctly.</p>
 
 <h3 id="directives-that-create-scopes" class="ng-scope">Directives that Create Scopes</h3>
-<p class="ng-scope">In most cases, <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/provider/$compileProvider#directive">directives</a></span></code> and scopes interact
-but do not create new instances of scope. However, some directives, such as <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngController">ng-controller</a></span></code> and <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngRepeat">ng-repeat</a></span></code>, create new child scopes
+<p class="ng-scope">In most cases, <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/provider/$compileProvider#directive" title="link to AngularJS api docs for $compileProvider#directive">directives</a></span></code> and scopes interact
+but do not create new instances of scope. However, some directives, such as <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngController" title="link to AngularJS api docs for ngController">ng-controller</a></span></code> and <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngRepeat" title="link to AngularJS api docs for ngRepeat">ng-repeat</a></span></code>, create new child scopes
 and attach the child scope to the corresponding DOM element. You can retrieve a scope for any DOM
 element by using an <code><span class="ang">angular</span><span class="pun">.</span><span class="pln">element</span><span class="contrast">(</span><span class="pln">aDomElement</span><span class="contrast">).</span><span class="ang">scope</span><span class="contrast">()</span></code> method call.
 See the <a href="Angular_directives_dev-docs.html#isolating-the-scope-of-a-directive" title="link to local directives doc">directives guide</a> for more information about isolate scopes.</p>
@@ -378,15 +378,15 @@ See the <a href="Angular_directives_dev-docs.html#isolating-the-scope-of-a-direc
 <h3 id="controllers-and-scopes" class="ng-scope">Controllers and Scopes</h3>
 <p class="ng-scope">Scopes and controllers interact with each other in the following situations:</p>
     <ul class="ng-scope">
-        <li><p>Controllers use scopes to expose controller methods to templates (see <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngController">ng-controller</a></span></code>).</p>
+        <li><p>Controllers use scopes to expose controller methods to templates (see <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngController" title="link to AngularJS api docs for ngController">ng-controller</a></span></code>).</p>
         </li>
         <li><p>Controllers define methods (behavior) that can mutate the model (properties on the scope).</p>
         </li>
-        <li><p>Controllers may register <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">watches</a> on
+        <li><p>Controllers may register <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch" title="link to AngularJS api docs for $rootScope.Scope#$watch">watches</a> on
         the model. These watches execute immediately after the controller behavior executes.</p>
         </li>
     </ul>
-<p class="ng-scope">See the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngController">ng-controller</a></span></code> for more information.</p>
+<p class="ng-scope">See the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/directive/ngController" title="link to AngularJS api docs for ngController">ng-controller</a></span></code> for more information.</p>
 
 <h3 id="scope-watch-performance-considerations" class="ng-scope">Scope <code><span class="ang">$watch</span></code> Performance Considerations</h3>
 <p class="ng-scope">Dirty checking the scope for property changes is a common operation in Angular and for this reason
@@ -398,9 +398,9 @@ access on JavaScript object.</p>
 <p class="ng-scope"><img class="pull-right" style="padding-left: 3em; padding-bottom: 1em;" src="./auxi/pix/concepts-scope-watch-strategies.png" /></p>
 <p class="ng-scope">Dirty checking can be done with three strategies: By reference, by collection contents, and by value. The strategies differ in the kinds of changes they detect, and in their performance characteristics.</p>
     <ul class="ng-scope">
-        <li>Watching <em>by reference</em> (<code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">scope.$watch</a></span><span class="pun">(</span><span class="pln">watchExpression</span><span class="pun">,</span><span class="pln"> listener</span><span class="pun">)</span></code>) detects a change when the whole value returned by the watch expression switches to a new value. If the value is an array or an object, changes inside it are not detected. This is the most efficient stategy.</li>
-        <li>Watching <em>collection contents</em> (<code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watchCollection">scope.$watchCollection</a></span><span class="pun">(</span><span class="pln">watchExpression</span><span class="pun">,</span><span class="pln"> listener</span><span class="pun">)</span></code>) detects changes that occur inside an array or an object: When items are added, removed, or reordered. The detection is shallow — it does not reach into nested collections. Watching collection contents is more expensive than watching by reference, because copies of the collection contents need to be maintained. However, the strategy attempts to minimize the amount of copying required.</li>
-        <li>Watching <em>by value</em> (<code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">scope.$watch</a></span><span class="pun">(</span><span class="pln">watchExpression</span><span class="pun">,</span><span class="pln"> listener</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">)</span></code>) detects any change in an arbitrarily nested data structure. It is the most powerful change detection strategy, but also the most expensive. A full traversal of the nested data structure is needed on each digest, and a full copy of it needs to be held in memory.</li>
+        <li>Watching <em>by reference</em> (<code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch" title="link to AngularJS api docs for $rootScope.Scope#$watch">scope.$watch</a></span><span class="pun">(</span><span class="pln">watchExpression</span><span class="pun">,</span><span class="pln"> listener</span><span class="pun">)</span></code>) detects a change when the whole value returned by the watch expression switches to a new value. If the value is an array or an object, changes inside it are not detected. This is the most efficient stategy.</li>
+        <li>Watching <em>collection contents</em> (<code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watchCollection" title="link to AngularJS api docs for $rootScope.Scope#$watchCollection">scope.$watchCollection</a></span><span class="pun">(</span><span class="pln">watchExpression</span><span class="pun">,</span><span class="pln"> listener</span><span class="pun">)</span></code>) detects changes that occur inside an array or an object: When items are added, removed, or reordered. The detection is shallow — it does not reach into nested collections. Watching collection contents is more expensive than watching by reference, because copies of the collection contents need to be maintained. However, the strategy attempts to minimize the amount of copying required.</li>
+        <li>Watching <em>by value</em> (<code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch" title="link to AngularJS api docs for $rootScope.Scope#$watch">scope.$watch</a></span><span class="pun">(</span><span class="pln">watchExpression</span><span class="pun">,</span><span class="pln"> listener</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">)</span></code>) detects any change in an arbitrarily nested data structure. It is the most powerful change detection strategy, but also the most expensive. A full traversal of the nested data structure is needed on each digest, and a full copy of it needs to be held in memory.</li>
     </ul>
 
 <h2 id="integration-with-the-browser-event-loop" class="ng-scope">Integration with the browser event loop</h2>
@@ -422,21 +422,21 @@ mind that in most places (controllers, services) <code><span class="ang">$apply<
 directive which is handling the event. An explicit call to <code><span class="ang">$apply</span></code> is needed only when
 implementing custom event callbacks, or when working with third-party library callbacks.</p>
     <ol class="ng-scope">
-    <li>Enter the Angular execution context by calling <code><span class="ang"><a href="./auxi/Angular_scopes_dev-docs.html" title="link to local scope doc">scope</a></span>.<span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">$apply</a></span><span class="pun">(</span><span class="pln">stimulusFn</span><span class="pun">)</span></code>, where <code><span class="pln">stimulusFn</span></code> is
+    <li>Enter the Angular execution context by calling <code><span class="ang"><a href="./auxi/Angular_scopes_dev-docs.html" title="link to local scope doc">scope</a></span>.<span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply" title="link to AngularJS api docs for $rootScope.Scope#$apply">$apply</a></span><span class="pun">(</span><span class="pln">stimulusFn</span><span class="pun">)</span></code>, where <code><span class="pln">stimulusFn</span></code> is
     the work you wish to do in the Angular execution context.</li>
     <li>Angular executes the <code><span class="pln">stimulusFn</span><span class="pun">()</span></code>, which typically modifies application state.</li>
-    <li>Angular enters the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest">$digest</a></span></code> loop. The
-    loop is made up of two smaller loops which process <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$evalAsync">$evalAsync</a></span></code> queue and the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">$watch</a></span></code> list. The <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest">$digest</a></span></code> loop keeps iterating until the model
-    stabilizes, which means that the <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$evalAsync">$evalAsync</a> queue is empty and the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">$watch</a></span></code> list does not detect any changes.</li>
-    <li>The <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$evalAsync">$evalAsync</a></span></code> queue is used to
+    <li>Angular enters the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest" title="link to AngularJS api docs for $rootScope.Scope#$digest">$digest</a></span></code> loop. The
+    loop is made up of two smaller loops which process <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$evalAsync" title="link to AngularJS api docs for $rootScope.Scope#$evalAsync">$evalAsync</a></span></code> queue and the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch" title="link to AngularJS api docs for $rootScope.Scope#$watch">$watch</a></span></code> list. The <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest" title="link to AngularJS api docs for $rootScope.Scope#$digest">$digest</a></span></code> loop keeps iterating until the model
+    stabilizes, which means that the <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$evalAsync" title="link to AngularJS api docs for $rootScope.Scope#$evalAsync">$evalAsync</a> queue is empty and the <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch" title="link to AngularJS api docs for $rootScope.Scope#$watch">$watch</a></span></code> list does not detect any changes.</li>
+    <li>The <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$evalAsync" title="link to AngularJS api docs for $rootScope.Scope#$evalAsync">$evalAsync</a></span></code> queue is used to
     schedule work which needs to occur outside of current stack frame, but before the browser's
     view render. This is usually done with <code><span class="pln">setTimeout</span><span class="pun">(</span><span class="lit">0</span><span class="pun">)</span></code>, but the <code><span class="pln">setTimeout</span><span class="pun">(</span><span class="lit">0</span><span class="pun">)</span></code> approach
     suffers from slowness and may cause view flickering since the browser renders the view after
     each event.</li>
-    <li>The <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">$watch</a></span></code> list is a set of expressions
+    <li>The <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch" title="link to AngularJS api docs for $rootScope.Scope#$watch">$watch</a></span></code> list is a set of expressions
     which may have changed since last iteration. If a change is detected then the <code><span class="ang">$watch</span></code>
     function is called which typically updates the DOM with the new value.</li>
-    <li>Once the Angular <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest">$digest</a></span></code> loop finishes
+    <li>Once the Angular <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest" title="link to AngularJS api docs for $rootScope.Scope#$digest">$digest</a></span></code> loop finishes
     the execution leaves the Angular and JavaScript context. This is followed by the browser
     re-rendering the DOM to reflect any changes.</li>
     </ol>
@@ -444,21 +444,21 @@ implementing custom event callbacks, or when working with third-party library ca
 user enters text into the text field.</p>
     <ol class="ng-scope">
     <li>During the compilation phase:<ol>
-    <li>the <a href="https://docs.angularjs.org/api/ng/directive/ngModel">ng-model</a> and <a href="https://docs.angularjs.org/api/ng/directive/input">input</a> <a href="Angular_directives_dev-docs.html" title="link to local directives doc">directive</a> set up a <code><span class="pln">keydown</span></code> listener on the <code><span class="tag">&lt;input&gt;</span></code> control.</li>
-    <li>the <a href="https://docs.angularjs.org/api/ng/service/$interpolate">interpolation</a>
-    sets up a <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">$watch</a></span></code> to be notified of
+    <li>the <a href="https://docs.angularjs.org/api/ng/directive/ngModel" title="link to AngularJS api docs for ngModel">ng-model</a> and <a href="https://docs.angularjs.org/api/ng/directive/input" title="link to AngularJS api docs for input">input</a> <a href="Angular_directives_dev-docs.html" title="link to local directives doc">directive</a> set up a <code><span class="pln">keydown</span></code> listener on the <code><span class="tag">&lt;input&gt;</span></code> control.</li>
+    <li>the <a href="https://docs.angularjs.org/api/ng/service/$interpolate" title="link to AngularJS api docs for $interpolate">interpolation</a>
+    sets up a <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch" title="link to AngularJS api docs for $rootScope.Scope#$watch">$watch</a></span></code> to be notified of
     <code><span class="pln">name</span></code> changes.</li>
     </ol>
     </li>
     <li>During the runtime phase:<ol>
     <li>Pressing an '<code><span class="pln">X</span></code>' key causes the browser to emit a <code><span class="pln">keydown</span></code> event on the input control.</li>
     <li>The <a href="https://docs.angularjs.org/api/ng/directive/input">input</a> directive
-    captures the change to the input's value and calls <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply">$apply</a></span><span class="pun">(</span><span class="str">"name = 'X';"</span><span class="pun">)</span></code> to update the
+    captures the change to the input's value and calls <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply" title="link to AngularJS api docs for $rootScope.Scope#$apply">$apply</a></span><span class="pun">(</span><span class="str">"name = 'X';"</span><span class="pun">)</span></code> to update the
     application model inside the Angular execution context.</li>
     <li>Angular applies the <code><span class="pln">name </span><span class="pun">=</span><span class="pln"> </span><span class="str">'X'</span><span class="pun">;</span></code> to the model.</li>
-    <li>The <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest">$digest</a></span></code> loop begins</li>
-    <li>The <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">$watch</a></span></code> list detects a change
-    on the <code><span class="pln">name</span></code> property and notifies the <a href="https://docs.angularjs.org/api/ng/service/$interpolate">interpolation</a>,
+    <li>The <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$digest" title="link to AngularJS api docs for $rootScope.Scope#$digest">$digest</a></span></code> loop begins</li>
+    <li>The <code><span class="ang"><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch" title="link to AngularJS api docs for $rootScope.Scope#$watch">$watch</a></span></code> list detects a change
+    on the <code><span class="pln">name</span></code> property and notifies the <a href="https://docs.angularjs.org/api/ng/service/$interpolate" title="link to AngularJS api docs for $interpolate">interpolation</a>,
     which in turn updates the DOM.</li>
     <li>Angular exits the execution context, which in turn exits the <code><span class="pln">keydown</span></code> event and with it
     the JavaScript execution context.</li>
