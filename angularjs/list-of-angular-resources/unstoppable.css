@@ -11,7 +11,7 @@ input.email{font-size:1.6154rem;padding:8px;padding:.5rem;margin-top:16px;margin
 .email-form-box h2{padding:0;font-size:1rem;color:#3a99c7;}
 .email-form-box input.email{max-width:26rem;}
 .email-form{padding-top:1rem;}h2{font-family:Share-Bold, 'Archer A','Archer B',georgia,serif;font-weight:800;font-style:normal;padding:1rem 0;font-size:1.6154rem;}h2 a{color:#3a99c7;}
-.top{background-image:url("/images/old_mathematics.png");padding:3rem 0 2rem 0;border-top:1px solid #c7c8c9;}
+.top{background-image:url("./old_mathematics.png");padding:3rem 0 2rem 0;border-top:1px solid #c7c8c9;}
 .top h1,.top h2,.top form,.body form,.body .bbl_list{max-width:43rem;margin:0 auto;padding:0 .5rem;}
 h1{padding:0 0 2rem 0;font-size:4.2308rem;color:#3a99c7;font-family:'Tungsten A','Tungsten B',verdana,sans-serif;font-weight:300;text-transform:uppercase;}
 @media screen and (min-width: 700px) {h1{font-size:6.8462rem;}}
