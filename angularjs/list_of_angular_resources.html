@@ -1039,12 +1039,14 @@ digest loop. Start here. <i>By Jim Hoskins. Written December 17, 2012</i></div>
 <div class="bbl_item">
 <div class="bbl_title"><a href="http://csharperimage.jeremylikness.com/2014/07/angularjs-quick-tip-counting-watches.html">AngularJS Quick Tip: Counting Watches</a></div>
 <a href="http://csharperimage.jeremylikness.com/2014/07/angularjs-quick-tip-counting-watches.html"><img class="screen-cap" src="./list-of-angular-resources/03-angularjs-quick-tip-counting-watches.png" /></a>
-<div class="bbl_description">“Sometimes for troubleshooting purposes it is important to understand how many <tt>watch</tt>es exist in an Angular app. You may be surprised to find that in certain scenarios, you are generating many more <tt>watch</tt>es than you anticipate. For example, simply using <tt>ng-repeat</tt> on a long list will create a <tt>watch</tt> for every element ...” <i>By Jeremy Likness. Posted July 19, 2014, at C#er : IMage</div>
+<div class="bbl_description">“Sometimes for troubleshooting purposes it is important to understand how many <tt>watch</tt>es exist in an Angular app. You may be surprised to find that in certain scenarios, you are generating many more <tt>watch</tt>es than you anticipate. For example, simply using <tt>ng-repeat</tt> on a long list will create a <tt>watch</tt> for every element ...” <i>By Jeremy Likness. Posted July 19, 2014, at C#er : IMage</i></div>
 </div>
 <div class="bbl_item">
 <div class="bbl_title"><a href="http://www.codelord.net/2014/04/15/improving-ng-repeat-performance-with-track-by/">Improving <tt>ng-repeat</tt> Performance with ‘track by’</a></div>
-<a href="http://www.codelord.net/2014/04/15/improving-ng-repeat-performance-with-track-by/"><img class="screen-cap" src="./list-of-angular-resources/name.png" /></a>
-<div class="bbl_description">Use "track by" in your expressions to improve the performance of <tt>ng-repeat</tt>.</div>
+<a href="http://www.codelord.net/2014/04/15/improving-ng-repeat-performance-with-track-by/"><img class="screen-cap" src="./list-of-angular-resources/04-improving-ng-repeat-performance-with-track-by.png" /></a>
+<div class="bbl_description">Use “track by” in your expressions to improve the performance of <tt>ng-repeat</tt>. “The track by clause allows you to specify your own key for <tt>ngRepeat</tt> to identify objects by, instead of just generating unique IDs.<br />
+
+This means that you can change the above to be <span style="font-family: Share-TechMono">ng-repeat="task in tasks track by task.id"</span> and since the ID would be the same in both your original tasks and the updated ones from the server — <tt>ngRepeat</tt> will know not to re-create the DOM elements and [will] reuse them.” <i>By Aviv Ben-Yosef. Posted on April 15, 2014, at The Code Dump</i></div>
 </div>
 </div>
 
