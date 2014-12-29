@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://github.com/maxogden/art-of-node/#the-art-of-node -->
+<html lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Language" content="en" />
+
+
+    <title>maxogden/art-of-node</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub" />
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub" />
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-114.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-144.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144.png" />
+    <meta property="fb:app_id" content="1401488693436528" />
+
+    <meta content="@github" name="twitter:site" />
+    <meta content="summary" name="twitter:card" />
+    <meta content="maxogden/art-of-node" name="twitter:title" />
+    <meta content="art-of-node - a short introduction to node.js" name="twitter:description" />
+    <meta content="https://avatars1.githubusercontent.com/u/39759?v=3&amp;s=400" name="twitter:image:src" />
+    <meta content="GitHub" property="og:site_name" />
+    <meta content="object" property="og:type" />
+    <meta content="https://avatars1.githubusercontent.com/u/39759?v=3&amp;s=400" property="og:image" />
+    <meta content="maxogden/art-of-node" property="og:title" />
+    <meta content="https://github.com/maxogden/art-of-node" property="og:url" />
+    <meta content="art-of-node - a short introduction to node.js" property="og:description" />
+
+    <meta name="browser-stats-url" content="/_stats" />
+    <link rel="assets" href="https://assets-cdn.github.com/" />
+    <link rel="conduit-xhr" href="https://ghconduit.com:25035/" />
+    <link rel="xhr-socket" href="https://github.com/_sockets" />
+    <meta name="pjax-timeout" content="1000" />
+    <link rel="sudo-modal" href="https://github.com/sessions/sudo_modal" />
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="selected-link" value="repo_source" data-pjax-transient="" />
+    <meta name="google-analytics" content="UA-3769691-2" />
+
+    <meta content="collector.githubapp.com" name="octolytics-host" />
+    <meta content="collector-cdn.github.com" name="octolytics-script-host" />
+    <meta content="github" name="octolytics-app-id" />
+    <meta content="6401080C:3912:1016D57D:54A0A8E5" name="octolytics-dimension-request_id" />
+    <meta content="56674" name="octolytics-actor-id" />
+    <meta content="rsperberg" name="octolytics-actor-login" />
+    <meta content="ac15fe7d687e9d156bed3247ebfa7dc159b4f91594d4ce280bca0dbbd251d004" name="octolytics-actor-hash" />
+
+    <meta content="Rails, view, files#disambiguate" name="analytics-event" />
+
+    <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico" />
+
+
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="jpJygx/m6yQsCpmpK0QjDuhOaP27dPCxiOG0/LwmvvodbvorczD0ikK4qclOP8LY6FHJR20TQSdGlPzBDa9APw==" name="csrf-token" />
+    <link href="./auxi/css/github-9b.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="./auxi/css/github2-98.css" media="all" rel="stylesheet" type="text/css" />
+
+    <meta http-equiv="x-pjax-version" content="8adfdb5fdc7bd044b4c0142729d0410c" />
+
+    <meta name="description" content="art-of-node — a short introduction to node.js" />
+    <meta name="go-import" content="github.com/maxogden/art-of-node git https://github.com/maxogden/art-of-node.git" />
+
+    <meta content="39759" name="octolytics-dimension-user_id" />
+    <meta content="maxogden" name="octolytics-dimension-user_login" />
+    <meta content="8936633" name="octolytics-dimension-repository_id" />
+    <meta content="maxogden/art-of-node" name="octolytics-dimension-repository_nwo" />
+    <meta content="true" name="octolytics-dimension-repository_public" />
+    <meta content="false" name="octolytics-dimension-repository_is_fork" />
+    <meta content="8936633" name="octolytics-dimension-repository_network_root_id" />
+    <meta content="maxogden/art-of-node" name="octolytics-dimension-repository_network_root_nwo">
+    <link href="https://github.com/maxogden/art-of-node/commits/master.atom" rel="alternate" title="Recent Commits to art-of-node:master" type="application/atom+xml" />
+
+    <style type="text/css"></style>
+    <script type="text/javascript" async="" src="./auxi/js/api.js"></script>
+</head>
+
+
+  <body class="logged_in  env-production macintosh vis-public">
+    <a href="https://github.com/maxogden/art-of-node/#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+    <div class="wrapper">
+
+
+
+
+
+
+      <div class="header header-logged-in true" role="banner">
+  <div class="container clearfix">
+
+    <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" ga-data-click="Header, go to dashboard, icon:logo">
+  <span class="mega-octicon octicon-mark-github"></span>
+</a>
+
+
+      <div class="site-search repo-scope js-site-search" role="search">
+          <form accept-charset="UTF-8" action="https://github.com/maxogden/art-of-node/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/maxogden/art-of-node/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+  <input type="text" class="js-site-search-field is-clearable" data-hotkey="s" name="q" placeholder="Search" data-global-scope-placeholder="Search GitHub" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off">
+  <div class="scope-badge">This repository</div>
+</form>
+      </div>
+      <ul class="header-nav left" role="navigation">
+        <li class="header-nav-item explore">
+          <a class="header-nav-link" href="https://github.com/explore" data-ga-click="Header, go to explore, text:explore">Explore</a>
+        </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://gist.github.com/" data-ga-click="Header, go to gist, text:gist">Gist</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://github.com/blog" data-ga-click="Header, go to blog, text:blog">Blog</a>
+          </li>
+        <li class="header-nav-item">
+          <a class="header-nav-link" href="https://help.github.com/" data-ga-click="Header, go to help, text:help">Help</a>
+        </li>
+      </ul>
+
+
+<ul class="header-nav user-nav right" id="user-links">
+
+
+  <li class="header-nav-item dropdown js-menu-container">
+    <a class="header-nav-link js-menu-target tooltipped tooltipped-s" href="https://github.com/maxogden/art-of-node/#" aria-label="Create new..." data-ga-click="Header, create new, icon:add">
+      <span class="octicon octicon-plus"></span>
+      <span class="dropdown-caret"></span>
+    </a>
+
+    <div class="dropdown-menu-content js-menu-content">
+    </div>
+  </li>
+
+  <li class="header-nav-item">
+        <a href="https://github.com/notifications" aria-label="You have unread notifications" class="header-nav-link notification-indicator tooltipped tooltipped-s" data-ga-click="Header, go to notifications, icon:unread" data-hotkey="g n">
+        <span class="mail-status unread"></span>
+        <span class="octicon octicon-inbox"></span>
+</a>
+  </li>
+
+  <li class="header-nav-item">
+    <a class="header-nav-link tooltipped tooltipped-s" href="https://github.com/settings/profile" id="account_settings" aria-label="Settings" data-ga-click="Header, go to settings, icon:settings">
+      <span class="octicon octicon-gear"></span>
+    </a>
+  </li>
+
+  <li class="header-nav-item">
+    <form accept-charset="UTF-8" action="https://github.com/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="5EXwHtavwAhC4iInLOTHtY/IKAN7DaulchpC/UF6jQWBpDnxg/T4Ls+BFaXRCCd87JPx6cFvAObjsLWWU6VFAg=="></div>
+      <button class="header-nav-link sign-out-button tooltipped tooltipped-s" aria-label="Sign out" data-ga-click="Header, sign out, icon:logout">
+        <span class="octicon octicon-sign-out"></span>
+      </button>
+</form>  </li>
+
+</ul>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+      <div id="start-of-content" class="accessibility-aid"></div>
+          <div class="site" itemscope="" itemtype="http://schema.org/WebPage">
+    <div id="js-flash-container">
+
+    </div>
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+
+<ul class="pagehead-actions">
+
+    <li class="subscription">
+      <form accept-charset="UTF-8" action="https://github.com/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="ow3zfRB1XVE4neW66dlPyLnb0i64GTcpJKCiTkSUW3ljHmI9+VdgHZQ3L4n5I0f12ZmTM1rGsMFReZXqbegjYw=="></div>  <input id="repository_id" name="repository_id" type="hidden" value="8936633">
+
+    <div class="select-menu js-menu-container js-select-menu">
+      <a class="social-count js-social-count" href="https://github.com/maxogden/art-of-node/watchers">
+      </a>
+      <a href="https://github.com/maxogden/art-of-node/subscription" class="minibutton select-menu-button with-count js-menu-target" role="button" tabindex="0" aria-haspopup="true">
+        <span class="js-select-button">
+          <span class="octicon octicon-eye"></span>
+        </span>
+      </a>
+
+      <div class="select-menu-modal-holder">
+        <div class="select-menu-modal subscription-menu-modal js-menu-content" aria-hidden="true">
+          <div class="select-menu-header">
+            <span class="select-menu-title"></span>
+            <span class="octicon octicon-x js-menu-close" role="button" aria-label="Close"></span>
+          </div> <!-- /.select-menu-header -->
+
+          <div class="select-menu-list js-navigation-container" role="menu">
+
+            <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input checked="checked" id="do_included" name="do" type="radio" value="included">
+                <h4></h4>
+                <span class="description"></span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-eye"></span>
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+            <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+              <span class="select-menu-item-icon octicon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input id="do_subscribed" name="do" type="radio" value="subscribed">
+                <h4></h4>
+                <span class="description"></span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-eye"></span>
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+            <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input id="do_ignore" name="do" type="radio" value="ignore">
+                <h4></h4>
+                <span class="description"></span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-mute"></span>
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+          </div> <!-- /.select-menu-list -->
+
+        </div> <!-- /.select-menu-modal -->
+      </div> <!-- /.select-menu-modal-holder -->
+    </div> <!-- /.select-menu -->
+
+</form>
+    </li>
+
+  <li>
+
+  <div class="js-toggler-container js-social-container starring-container ">
+
+    <form accept-charset="UTF-8" action="https://github.com/maxogden/art-of-node/unstar" class="js-toggler-form starred js-unstar-button" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="pqgjY6jhLlwlHlBcjeO59Yn4Bcs3aDXopE3fO36pTt35Mast1NNtf93Z7WJiN92aM0UJ7EQW5tO9l1ER3GYXNg=="></div>
+      <button class="minibutton with-count js-toggler-target star-button" aria-label="Unstar this repository" title="Unstar maxogden/art-of-node">
+        <span class="octicon octicon-star"></span>
+      </button>
+        <a class="social-count js-social-count" href="https://github.com/maxogden/art-of-node/stargazers">
+        </a>
+</form>
+    <form accept-charset="UTF-8" action="https://github.com/maxogden/art-of-node/star" class="js-toggler-form unstarred js-star-button" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="BEi78hND2FKZ4fYkSyY/CJUKln2SRSfFqJtVA0N8yzlElVX25DgGI9ky05fRwZ0xTjnPcGThUnAg+T0LUkyjlg=="></div>
+      <button class="minibutton with-count js-toggler-target star-button" aria-label="Star this repository" title="Star maxogden/art-of-node">
+        <span class="octicon octicon-star"></span>
+      </button>
+        <a class="social-count js-social-count" href="https://github.com/maxogden/art-of-node/stargazers">
+        </a>
+</form>  </div>
+
+  </li>
+
+
+        <li>
+          <a href="https://github.com/maxogden/art-of-node/fork" class="minibutton with-count js-toggler-target fork-button tooltipped-n" title="Fork your own copy of maxogden/art-of-node to your account" aria-label="Fork your own copy of maxogden/art-of-node to your account" rel="facebox nofollow">
+            <span class="octicon octicon-repo-forked"></span>
+          </a>
+          <a href="https://github.com/maxogden/art-of-node/network" class="social-count"></a>
+        </li>
+
+</ul>
+
+        <h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author"><a href="https://github.com/maxogden" class="url fn" itemprop="url" rel="author"><span itemprop="title">maxogden</span></a></span><!--
+       --><span class="path-divider">/</span><!--
+       --><strong><a href="https://github.com/maxogden/art-of-node" class="js-current-repository" data-pjax="#js-repo-pjax-container">art-of-node</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+      <div class="repository-with-sidebar repo-container new-discussion-timeline with-full-navigation">
+        <div class="repository-sidebar clearfix">
+
+<nav class="sunken-menu repo-nav js-repo-nav js-sidenav-container-pjax js-octicon-loaders" role="navigation" data-pjax="#js-repo-pjax-container" data-issue-count-url="/maxogden/art-of-node/issues/counts">
+  <ul class="sunken-menu-group">
+    <li class="tooltipped tooltipped-w" aria-label="Code">
+      <a href="https://github.com/maxogden/art-of-node" aria-label="Code" class="selected js-selected-navigation-item sunken-menu-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /maxogden/art-of-node">
+        <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+        <img alt="" class="mini-loader" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+</a>    </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Issues">
+        <a href="https://github.com/maxogden/art-of-node/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /maxogden/art-of-node/issues">
+          <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+          <span class="counter">3</span>
+
+          <img alt="" class="mini-loader" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Pull Requests">
+      <a href="https://github.com/maxogden/art-of-node/pulls" aria-label="Pull Requests" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g p" data-selected-links="repo_pulls /maxogden/art-of-node/pulls">
+          <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull Requests</span>
+          <span class="counter">7</span>
+
+          <img alt="" class="mini-loader" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+</a>    </li>
+
+
+      <li class="tooltipped tooltipped-w" aria-label="Wiki">
+        <a href="https://github.com/maxogden/art-of-node/wiki" aria-label="Wiki" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g w" data-selected-links="repo_wiki /maxogden/art-of-node/wiki">
+          <span class="octicon octicon-book"></span> <span class="full-word">Wiki</span>
+          <img alt="" class="mini-loader" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+</a>      </li>
+  </ul>
+  <div class="sunken-menu-separator"></div>
+  <ul class="sunken-menu-group">
+
+    <li class="tooltipped tooltipped-w" aria-label="Pulse">
+      <a href="https://github.com/maxogden/art-of-node/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-selected-links="pulse /maxogden/art-of-node/pulse">
+        <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+        <img alt="" class="mini-loader" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+</a>    </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Graphs">
+      <a href="https://github.com/maxogden/art-of-node/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-selected-links="repo_graphs repo_contributors /maxogden/art-of-node/graphs">
+        <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+        <img alt="" class="mini-loader" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+</a>    </li>
+  </ul>
+
+
+</nav>
+
+              <div class="only-with-full-nav">
+
+
+<div class="clone-url open" data-protocol-type="http" data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone">
+  <h3><span class="text-emphasized">HTTPS</span> clone URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target" value="https://github.com/maxogden/art-of-node.git" readonly="readonly">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+
+<div class="clone-url " data-protocol-type="ssh" data-url="/users/set_protocol?protocol_selector=ssh&amp;protocol_type=clone">
+  <h3><span class="text-emphasized">SSH</span> clone URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target" value="git@github.com:maxogden/art-of-node.git" readonly="readonly">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+
+<div class="clone-url " data-protocol-type="subversion" data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone">
+  <h3><span class="text-emphasized">Subversion</span> checkout URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target" value="https://github.com/maxogden/art-of-node" readonly="readonly">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+
+
+<p class="clone-options">You can clone with
+  <a href="https://github.com/maxogden/art-of-node/#" class="js-clone-selector" data-protocol="http">HTTPS</a>, <a href="https://github.com/maxogden/art-of-node/#" class="js-clone-selector" data-protocol="ssh">SSH</a>, or <a href="https://github.com/maxogden/art-of-node/#" class="js-clone-selector" data-protocol="subversion">Subversion</a>.
+  <a href="https://help.github.com/articles/which-remote-url-should-i-use" class="help tooltipped tooltipped-n" aria-label="Get help on which URL is right for you.">
+    <span class="octicon octicon-question"></span>
+  </a>
+</p>
+
+  <a href="http://mac.github.com/" data-url="github-mac://openRepo/https://github.com/maxogden/art-of-node" class="minibutton sidebar-button js-conduit-rewrite-url" title="Save maxogden/art-of-node to your computer and use it in GitHub Desktop." aria-label="Save maxogden/art-of-node to your computer and use it in GitHub Desktop.">
+    <span class="octicon octicon-device-desktop"></span>
+    Clone in Desktop
+  </a>
+
+
+                <a href="https://github.com/maxogden/art-of-node/archive/master.zip" class="minibutton sidebar-button" aria-label="Download the contents of maxogden/art-of-node as a zip file" title="Download the contents of maxogden/art-of-node as a zip file" rel="nofollow">
+                  <span class="octicon octicon-cloud-download"></span>
+                  Download ZIP
+                </a>
+              </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container="">
+
+<span id="js-show-full-navigation"></span>
+
+<div class="repository-meta js-details-container ">
+    <div class="repository-description">
+      a short introduction to node.js
+    </div>
+
+    <div class="repository-website">
+      <p><a href="https://github.com/maxogden/art-of-node#the-art-of-node" rel="nofollow">https://github.com/maxogden/art-of-node#the-art-of-node</a></p>
+    </div>
+
+
+</div>
+
+<div class="overall-summary overall-summary-bottomless">
+
+  <div class="stats-switcher-viewport js-stats-switcher-viewport">
+    <div class="stats-switcher-wrapper">
+    <ul class="numbers-summary">
+      <li class="commits">
+        <a data-pjax="" href="https://github.com/maxogden/art-of-node/commits/master">
+            <span class="octicon octicon-history"></span>
+            <span class="num text-emphasized">
+              108
+            </span>
+            commits
+        </a>
+      </li>
+      <li>
+        <a data-pjax="" href="https://github.com/maxogden/art-of-node/branches">
+          <span class="octicon octicon-git-branch"></span>
+          <span class="num text-emphasized">
+            1
+          </span>
+          branch
+        </a>
+      </li>
+
+      <li>
+        <a data-pjax="" href="https://github.com/maxogden/art-of-node/releases">
+          <span class="octicon octicon-tag"></span>
+          <span class="num text-emphasized">
+            0
+          </span>
+          releases
+        </a>
+      </li>
+
+      <li>
+
+  <a href="https://github.com/maxogden/art-of-node/graphs/contributors">
+    <span class="octicon octicon-organization"></span>
+    <span class="num text-emphasized">
+      18
+    </span>
+    contributors
+  </a>
+      </li>
+    </ul>
+
+      <div class="repository-lang-stats">
+        <ol class="repository-lang-stats-numbers">
+          <li>
+              <a href="https://github.com/maxogden/art-of-node/search?l=javascript">
+                <span class="color-block language-color" style="background-color:#f1e05a;"></span>
+                <span class="lang">JavaScript</span>
+                <span class="percent">100%</span>
+              </a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <div class="tooltipped tooltipped-s" aria-label="Show language statistics">
+    <a href="https://github.com/maxogden/art-of-node/#" class="repository-lang-stats-graph js-toggle-lang-stats" style="background-color:#f1e05a">
+  <span class="language-color" style="width:100%; background-color:#f1e05a;" itemprop="keywords">JavaScript</span>
+    </a>
+  </div>
+
+
+
+<div class="file-navigation in-mid-page">
+  <a href="https://github.com/maxogden/art-of-node/find/master" class="js-show-file-finder minibutton empty-icon tooltipped tooltipped-s right" data-pjax="" data-hotkey="t" aria-label="Quickly jump between files">
+    <span class="octicon octicon-list-unordered"></span>
+  </a>
+    <a href="https://github.com/maxogden/art-of-node/compare" aria-label="Compare, review, create a pull request" class="minibutton primary tooltipped tooltipped-s left compare-button" data-pjax="">
+      <span class="octicon octicon-git-compare"></span>
+    </a>
+
+
+<div class="select-menu js-menu-container js-select-menu left">
+  <span class="minibutton select-menu-button js-menu-target css-truncate" data-hotkey="w" data-master-branch="master" data-ref="master" title="master" role="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <span class="octicon octicon-git-branch"></span>
+    <i>branch:</i>
+    <span class="js-select-button css-truncate-target">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="" aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-x js-menu-close" role="button" aria-label="Close"></span>
+      </div> <!-- /.select-menu-header -->
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="https://github.com/maxogden/art-of-node/#" data-tab-filter="branches" class="js-select-menu-tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="https://github.com/maxogden/art-of-node/#" data-tab-filter="tags" class="js-select-menu-tab">Tags</a>
+            </li>
+          </ul>
+        </div><!-- /.select-menu-tabs -->
+      </div><!-- /.select-menu-filters -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item selected">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/maxogden/art-of-node/tree/master" data-name="master" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="master">master</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+    </div> <!-- /.select-menu-modal -->
+  </div> <!-- /.select-menu-modal-holder -->
+</div> <!-- /.select-menu -->
+
+
+
+  <div class="breadcrumb"><span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/maxogden/art-of-node" class="" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">art-of-node</span></a></span></span><span class="separator">/</span><form action="https://github.com/maxogden/art-of-node/new/master" aria-label="Fork this project and create a new file" class="js-new-blob-form tooltipped tooltipped-e new-file-link" method="post"><span aria-label="Fork this project and create a new file" class="js-new-blob-submit octicon octicon-plus" data-test-id="create-new-git-file" role="button"></span></form></div>
+</div>
+
+
+
+
+  <div class="commit commit-tease js-details-container">
+    <p class="commit-title ">
+        <a href="https://github.com/maxogden/art-of-node/commit/fbdb446755f73b35276aedcf3824f386a5ad457e" class="message" data-pjax="true" title="Update readme.md">Update readme.md</a>
+
+    </p>
+    <div class="commit-meta">
+      <button aria-label="Copy SHA" class="js-zeroclipboard zeroclipboard-link" data-clipboard-text="fbdb446755f73b35276aedcf3824f386a5ad457e" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+      <a href="https://github.com/maxogden/art-of-node/commit/fbdb446755f73b35276aedcf3824f386a5ad457e" class="sha-block" data-pjax="">latest commit <span class="sha">fbdb446755</span></a>
+
+      <div class="authorship">
+        <img alt="Max Ogden" class="avatar" data-user="39759" height="20" src="./auxi/pix/maxogden" width="20">
+        <span class="author-name"><a href="https://github.com/maxogden" rel="author">maxogden</a></span>
+        authored <time class="updated" datetime="2014-03-28T22:33:18Z" is="relative-time" title="Mar 28, 2014, 6:33 PM EDT">on Mar 28</time>
+
+      </div>
+    </div>
+  </div>
+
+
+<div class="file-wrap">
+
+  <table class="files" data-pjax="">
+
+
+    <tbody>
+      <tr class="warning include-fragment-error">
+        <td class="icon"><span class="octicon octicon-alert"></span></td>
+        <td class="content" colspan="3">Failed to load latest commit information.</td>
+      </tr>
+
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/tree/master/code" class="js-directory-link" id="c13367945d5d4c91047b3b50234aa7ab-fa75d08295dcc667c69a3f0d5045c2a476593196" title="code">code</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/832299123766bac68bcd71132c5f395b58392423" class="message" data-pjax="true" title="add code examples">add code examples</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-03-21T19:52:31Z" is="time-ago" title="Mar 21, 2013, 3:52 PM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/CCBY.png" class="js-directory-link" id="a76d9c5359f07c0115e4ac84ab31f07c-c8473a24786ab016d9c3e717a380910f7cbb0fff" title="CCBY.png">CCBY.png</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/49335937524a5ecfb644002dd58372c0c8c0b44d" class="message" data-pjax="true" title="switch to CCBY">switch to CCBY</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-04-01T23:26:31Z" is="time-ago" title="Apr 1, 2013, 7:26 PM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/LICENSE.md" class="js-directory-link" id="37854d19817c792316d481f5beb93cc7-55121a5a4211221b8a1df3b846d7410f052be771" title="LICENSE.md">LICENSE.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/d0e71ef755eee042d816d8f05246a45578c831fa" class="message" data-pjax="true" title="add license">add license</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-03-22T18:01:45Z" is="time-ago" title="Mar 22, 2013, 2:01 PM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/donate.png" class="js-directory-link" id="ee5faa5a6c51cc3888e9be7dca09d24e-74a8e0d527281c3c95622783642cac64d174a784" title="donate.png">donate.png</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/c6ed638384dba0c6f8fbaf4702f83ec2f53b0a83" class="message" data-pjax="true" title="add some icons">add some icons</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-03-24T06:31:22Z" is="time-ago" title="Mar 24, 2013, 2:31 AM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/mod-diagram-01.png" class="js-directory-link" id="2907161f61c6ab68c063da25c24d0722-a4d727cf49aa208458e55cd25d1f47a3340513a7" title="mod-diagram-01.png">mod-diagram-01.png</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/08df939ad32b227236d3d87a0d863d5a505a3350" class="message" data-pjax="true" title="update images again">update images again</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-07-04T23:39:00Z" is="time-ago" title="Jul 4, 2013, 7:39 PM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/mod-diagram-02.png" class="js-directory-link" id="a22e5da88e1e7bee9065c47de27b943b-ee3071c3634ced95fb2464ffc65cf42d27b6845b" title="mod-diagram-02.png">mod-diagram-02.png</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/08df939ad32b227236d3d87a0d863d5a505a3350" class="message" data-pjax="true" title="update images again">update images again</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-07-04T23:39:00Z" is="time-ago" title="Jul 4, 2013, 7:39 PM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/npm-search.png" class="js-directory-link" id="fcb3c2f09702e354298a7598c84c0474-52a6249a5d609f10b32fb5a92e86edd76c7f9bbd" title="npm-search.png">npm-search.png</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/3e0ecda4c182a89c6f6d69675b749724c210226a" class="message" data-pjax="true" title="add how to find modules section">add how to find modules section</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-07-02T20:45:48Z" is="time-ago" title="Jul 2, 2013, 4:45 PM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/pdf-code.png" class="js-directory-link" id="5dfff2082ef032584cf586c91878b4c6-aaada252a57f244609ee4a65c2e5db01e09ac013" title="pdf-code.png">pdf-code.png</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/3e0ecda4c182a89c6f6d69675b749724c210226a" class="message" data-pjax="true" title="add how to find modules section">add how to find modules section</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-07-02T20:45:48Z" is="time-ago" title="Jul 2, 2013, 4:45 PM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/pdf-modules.png" class="js-directory-link" id="b748baa3485cb206c28787001b1e9dd6-ba72e9f54df0d4daa0b7a72bc71fb6c85fa643b9" title="pdf-modules.png">pdf-modules.png</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/3e0ecda4c182a89c6f6d69675b749724c210226a" class="message" data-pjax="true" title="add how to find modules section">add how to find modules section</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-07-02T20:45:48Z" is="time-ago" title="Jul 2, 2013, 4:45 PM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/pdf-readmes.png" class="js-directory-link" id="630761ed172ab26817fdad9356370841-def8451b77267e1ea9b885b076625742862ba33a" title="pdf-readmes.png">pdf-readmes.png</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/3e0ecda4c182a89c6f6d69675b749724c210226a" class="message" data-pjax="true" title="add how to find modules section">add how to find modules section</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-07-02T20:45:48Z" is="time-ago" title="Jul 2, 2013, 4:45 PM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/readme.es.md" class="js-directory-link" id="e2c52fa2679754a5f802037b9eece3e0-8f9d7301a60180468d09448c359f636e0fe0882f" title="readme.es.md">readme.es.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/8c9ad7e6d2c0c016d4b3b6218b8355c70845a2f0" class="message" data-pjax="true" title="Update readme.es.md">Update readme.es.md</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-04-26T04:22:13Z" is="time-ago" title="Apr 26, 2013, 12:22 AM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/readme.md" class="js-directory-link" id="0730bb7c2e8f9ea2438b52e419dd86c9-da77a536e260efa34dfa0dd423f7096e0f388e5c" title="readme.md">readme.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/fbdb446755f73b35276aedcf3824f386a5ad457e" class="message" data-pjax="true" title="Update readme.md">Update readme.md</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-03-28T22:33:18Z" is="time-ago" title="Mar 28, 2014, 6:33 PM EDT">9 months ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/readme.pt-br.md" class="js-directory-link" id="d6b90cc637791304890599cc7ee10660-c3c4a51912bbc0b625ba28ebc0f50e0388ac9a9e" title="readme.pt-br.md">readme.pt-br.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/11cca5c37ab560a464aefd1c7bcd71baa906dfcf" class="message" data-pjax="true" title="New fixes">New fixes</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-02-02T22:41:30Z" is="time-ago" title="Feb 2, 2014, 5:41 PM EST">11 months ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/readme.zh-cn.md" class="js-directory-link" id="d77439bdd1241b5f4e85788b1c7eeaa8-236e0ed9bccea5bc965a2af8832e6b0aa63ac786" title="readme.zh-cn.md">readme.zh-cn.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/82ca43874592002024288de44237505ccc420f4e" class="message" data-pjax="true" title="modify some error Chinese characters.">modify some error Chinese characters.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-11-15T08:39:27Z" is="time-ago" title="Nov 15, 2013, 3:39 AM EST">a year ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/readme.zh-tw.md" class="js-directory-link" id="43127e9cdc5fa1803e95d8728616217f-7b5578b9a8e45fdf1879e871a5042a8e8c8f71af" title="readme.zh-tw.md">readme.zh-tw.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/9f13439ebda062e9086e5855fc4d362805afd151" class="message" data-pjax="true" title="Refine some traditional Chinese sentences.">Refine some traditional Chinese sentences.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-07-10T11:09:49Z" is="time-ago" title="Jul 10, 2013, 7:09 AM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/requirebin.png" class="js-directory-link" id="b4b465eaf33e5fce225c97cf872a6908-28c7da26ba120985524b7dc1db75668a61ea7c9d" title="requirebin.png">requirebin.png</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/6ade409c25d21d4ce1792f19c3dd3785e9d22ad6" class="message" data-pjax="true" title="add section on client side usage">add section on client side usage</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-07-18T17:47:39Z" is="time-ago" title="Jul 18, 2013, 1:47 PM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/server-diagram.png" class="js-directory-link" id="a8aa101e95d6802140df03fd7514de55-5c2840c4c826975addc88b82525063a932346f05" title="server-diagram.png">server-diagram.png</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/ff4730f7f91be8dea2959ad2fe093552babad1e2" class="message" data-pjax="true" title="import from gist">import from gist</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-03-21T19:22:42Z" is="time-ago" title="Mar 21, 2013, 3:22 PM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/simple-module.png" class="js-directory-link" id="6e43c24637ecfb4e66f63898330d494a-403c199e64d0a8fa32ef213633fb6dab619fdfb9" title="simple-module.png">simple-module.png</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/aa265d0389a06293646193847c6250390249f5fc" class="message" data-pjax="true" title="creating a new module">creating a new module</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-07-05T20:57:04Z" is="time-ago" title="Jul 5, 2013, 4:57 PM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/stream-adventure.png" class="js-directory-link" id="621bbc880b8277e41ef0c60fe169c47b-137e2d80e41e146613aadf2d6f86c52433b100b1" title="stream-adventure.png">stream-adventure.png</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/3e0ecda4c182a89c6f6d69675b749724c210226a" class="message" data-pjax="true" title="add how to find modules section">add how to find modules section</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-07-02T20:45:48Z" is="time-ago" title="Jul 2, 2013, 4:45 PM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./auxi/pix/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/maxogden/art-of-node/blob/master/stream-handbook.png" class="js-directory-link" id="42ea5f224fd0ef3a9f4baf2e6c5aa367-d4a30aca26c43b018e80fe6e619e910e98297005" title="stream-handbook.png">stream-handbook.png</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/maxogden/art-of-node/commit/3e0ecda4c182a89c6f6d69675b749724c210226a" class="message" data-pjax="true" title="add how to find modules section">add how to find modules section</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-07-02T20:45:48Z" is="time-ago" title="Jul 2, 2013, 4:45 PM EDT">2 years ago</time></span>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<!--  =========================================================================  -->
+  <div id="readme" class="boxed-group flush clearfix announce instapaper_body md">
+    <h3>
+      <span class="octicon octicon-book"></span>
+      readme.md
+    </h3>
+
+    <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
+<a id="user-content-the-art-of-node" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Art of Node</h1>
+
+<h2>
+<a id="user-content-an-introduction-to-nodejs" class="anchor" href="https://github.com/maxogden/art-of-node/#an-introduction-to-nodejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>An introduction to Node.js</h2>
+
+<p>This document is intended for readers who know at least a little bit of a couple of things:</p>
+
+<ul class="task-list">
+<li>a scripting language like JavaScript, Ruby, Python, Perl, etc. If you aren't a programmer yet then it is probably easier to start by reading <a href="http://jsforcats.com/">JavaScript for Cats</a>. :cat2:</li>
+<li>git and github. These are the open source collaboration tools that people in the node community use to share modules. You just need to know the basics. Here are three great intro tutorials: <a href="http://skli.se/2012/09/22/introduction-to-git/">1</a>, <a href="http://zachbruggeman.me/github-for-cats/">2</a>, <a href="http://opensourcerer.diy.org/">3</a>
+</li>
+</ul>
+
+<p>This short book is a work in progress. If you like it then please <strong>give me a dollar</strong> via <a href="https://www.gittip.com/maxogden/">gittip</a> so that I can justify taking the time to write more!</p>
+
+<p><a href="https://www.gittip.com/maxogden/"><img src="./auxi/pix/donate.png" alt="donate" style="max-width:100%;"></a></p>
+
+<h2>
+<a id="user-content-table-of-contents" class="anchor" href="https://github.com/maxogden/art-of-node/#table-of-contents" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table of contents</h2>
+
+<ul class="task-list">
+<li><a href="https://github.com/maxogden/art-of-node/#learn-node-interactively">Learn node interactively</a></li>
+<li><a href="https://github.com/maxogden/art-of-node/#understanding-node">Understanding node</a></li>
+<li><a href="https://github.com/maxogden/art-of-node/#core-modules">Core modules</a></li>
+<li><a href="https://github.com/maxogden/art-of-node/#callbacks">Callbacks</a></li>
+<li><a href="https://github.com/maxogden/art-of-node/#events">Events</a></li>
+<li><a href="https://github.com/maxogden/art-of-node/#streams">Streams</a></li>
+<li><a href="https://github.com/maxogden/art-of-node/#modules">Modules and npm</a></li>
+<li><a href="https://github.com/maxogden/art-of-node/#client-side-development-with-npm">Client side development with npm</a></li>
+<li><a href="https://github.com/maxogden/art-of-node/#going-with-the-grain">Going with the grain</a></li>
+</ul>
+
+<h2>
+<a id="user-content-learn-node-interactively" class="anchor" href="https://github.com/maxogden/art-of-node/#learn-node-interactively" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learn node interactively</h2>
+
+<p>In addition to reading this guide it's super important to also bust out your favorite text editor and actually write some node code. I always find that when I just read some code in a book it never really clicks, but learning by writing code is a good way to grasp new programming concepts.</p>
+
+<h3>
+<a id="user-content-nodeschoolio" class="anchor" href="https://github.com/maxogden/art-of-node/#nodeschoolio" aria-hidden="true"><span class="octicon octicon-link"></span></a>NodeSchool.io</h3>
+
+<p><a href="http://nodeschool.io/">NodeSchool.io</a> is a series of free + open source interactive workshops that teach you the principles of Node.js and beyond.</p>
+
+<p><a href="https://github.com/rvagg/learnyounode#learn-you-the-nodejs-for-much-win">Learn You The Node.js</a> is the introductory NodeSchool.io workshop. It's a set of programming problems that introduce you to common node patterns. It comes packaged as a command line program.</p>
+
+<p><a href="https://github.com/rvagg/learnyounode#learn-you-the-nodejs-for-much-win"><img src="./auxi/pix/learnyounode.png" alt="learnyounode" style="max-width:100%;"></a></p>
+
+<p>You can install it with npm:</p>
+
+<pre><code># install
+npm install learnyounode -g
+
+# start the menu
+learnyounode
+</code></pre>
+
+<h2>
+<a id="user-content-understanding-node" class="anchor" href="https://github.com/maxogden/art-of-node/#understanding-node" aria-hidden="true"><span class="octicon octicon-link"></span></a>Understanding node</h2>
+
+<p>Node.js is an open source project designed to help you write JavaScript programs that talk to networks, file systems or other I/O (input/output, reading/writing) sources. That's it! It is just a simple and stable I/O platform that you are encouraged to build modules on top of.</p>
+
+<p>What are some examples of I/O? Here is a diagram of an application that I made with node that shows many I/O sources:</p>
+
+<p><a href="https://github.com/maxogden/art-of-node/blob/master/server-diagram.png" target="_blank"><img src="./auxi/pix/server-diagram.png" alt="server diagram" style="max-width:100%;"></a></p>
+
+<p>If you don't understand all of the different things in the diagram it is completely okay. The point is to show that a single node process (the hexagon in the middle) can act as the broker between all of the different I/O endpoints (orange and purple represent I/O).</p>
+
+<p>Usually building these kinds of systems is either:</p>
+
+<ul class="task-list">
+<li>difficult to code but yields super fast results (like writing your web servers from scratch in C)</li>
+<li>easy to code but not very speedy/robust (like when someone tries to upload a 5GB file and your server crashes)</li>
+</ul>
+
+<p>Node's goal is to strike a balance between these two: relatively easy to understand and use and fast enough for most use cases.</p>
+
+<p>Node isn't either of the following:</p>
+
+<ul class="task-list">
+<li>A web framework (like Rails or Django, though it can be used to make such things)</li>
+<li>A programming language (it uses JavaScript but node isn't its own language)</li>
+</ul>
+
+<p>Instead, node is somewhere in the middle. It is:</p>
+
+<ul class="task-list">
+<li>Designed to be simple and therefore relatively easy to understand and use</li>
+<li>Useful for I/O based programs that need to be fast and/or handle lots of connections</li>
+</ul>
+
+<p>At a lower level, node can be described as a tool for writing two major types of programs: </p>
+
+<ul class="task-list">
+<li>Network programs using the protocols of the web: HTTP, TCP, UDP, DNS and SSL</li>
+<li>Programs that read and write data to the filesystem or local processes/memory</li>
+</ul>
+
+<p>What is an "I/O based program"? Here are some common I/O sources:</p>
+
+<ul class="task-list">
+<li>Databases (e.g. MySQL, PostgreSQL, MongoDB, Redis, CouchDB)</li>
+<li>APIs (e.g. Twitter, Facebook, Apple Push Notifications)</li>
+<li>HTTP/WebSocket connections (from users of a web app)</li>
+<li>Files (image resizer, video editor, internet radio)</li>
+</ul>
+
+<p>Node does I/O in a way that is <a href="http://en.wikipedia.org/wiki/Asynchronous_I/O">asynchronous</a> which lets it handle lots of different things simultaneously. For example, if you go down to a fast food joint and order a cheeseburger they will immediately take your order and then make you wait around until the cheeseburger is ready. In the meantime they can take other orders and start cooking cheeseburgers for other people. Imagine if you had to wait at the register for your cheeseburger, blocking all other people in line from ordering while they cooked your burger! This is called <strong>blocking I/O</strong> because all I/O (cooking cheeseburgers) happens one at a time. Node, on the other hand, is <strong>non-blocking</strong>, which means it can cook many cheeseburgers at once.</p>
+
+<p>Here are some fun things made easy with node thanks to its non-blocking nature:</p>
+
+<ul class="task-list">
+<li>Control <a href="http://nodecopter.com/">flying quadcopters</a>
+</li>
+<li>Write IRC chat bots</li>
+<li>Create <a href="http://www.youtube.com/watch?v=jf-cEB3U2UQ">walking biped robots</a>
+</li>
+</ul>
+
+<h2>
+<a id="user-content-core-modules" class="anchor" href="https://github.com/maxogden/art-of-node/#core-modules" aria-hidden="true"><span class="octicon octicon-link"></span></a>Core modules</h2>
+
+<p>Firstly I would recommend that you get node installed on your computer. The easiest way is to visit <a href="http://nodejs.org/">nodejs.org</a> and click <code>Install</code>.</p>
+
+<p>Node has a small core group of modules (commonly referred to as 'node core') that are presented as the public API that you are intended to write programs with. For working with file systems there is the <code>fs</code> module and for networks there are modules like <code>net</code> (TCP), <code>http</code>, <code>dgram</code> (UDP).</p>
+
+<p>In addition to <code>fs</code> and network modules there are a number of other base modules in node core. There is a module for asynchronously resolving DNS queries called <code>dns</code>, a module for getting OS specific information like the tmpdir location called <code>os</code>, a module for allocating binary chunks of memory called <code>buffer</code>, some modules for parsing urls and paths (<code>url</code>, <code>querystring</code>, <code>path</code>), etc. Most if not all of the modules in node core are there to support node's main use case: writing fast programs that talk to file systems or networks.</p>
+
+<p>Node handles I/O with: callbacks, events, streams and modules. If you learn how these four things work then you will be able to go into any module in node core and have a basic understanding about how to interface with it.</p>
+
+<h2>
+<a id="user-content-callbacks" class="anchor" href="https://github.com/maxogden/art-of-node/#callbacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Callbacks</h2>
+
+<p>This is the most important topic to understand if you want to understand how to use node. Nearly everything in node uses callbacks. They weren't invented by node, they are just part of the JavaScript language.</p>
+
+<p>Callbacks are functions that are executed asynchronously, or at a later time. Instead of the code reading top to bottom procedurally, async programs may execute different functions at different times based on the order and speed that earlier functions like http requests or file system reads happen.</p>
+
+<p>The difference can be confusing since determining if a function is asynchronous or not depends a lot on context. Here is a simple synchronous example, meaning you can read the code top to bottom just like a book:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-s">var</span> myNumber <span class="pl-k">=</span> <span class="pl-c1">1</span>
+<span class="pl-st">function</span> <span class="pl-en">addOne</span>() { myNumber<span class="pl-k">++</span> } <span class="pl-c">// define the function</span>
+addOne() <span class="pl-c">// run the function</span>
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(myNumber) <span class="pl-c">// logs out 2</span></pre></div>
+
+<p>The code here defines a function and then on the next line calls that function, without waiting for anything. When the function is called it immediately adds 1 to the number, so we can expect that after we call the function the number should be 2. This is the expectation of synchronous code - it sequentially runs top to bottom.</p>
+
+<p>Node, however, uses mostly asynchronous code. Let's use node to read our number from a file called <code>number.txt</code>:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-s">var</span> fs <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>fs<span class="pl-pds">'</span></span>) <span class="pl-c">// require is a special function provided by node</span>
+<span class="pl-s">var</span> myNumber <span class="pl-k">=</span> <span class="pl-c1">undefined</span> <span class="pl-c">// we don't know what the number is yet since it is stored in a file</span>
+
+<span class="pl-st">function</span> <span class="pl-en">addOne</span>() {
+  fs.readFile(<span class="pl-s1"><span class="pl-pds">'</span>number.txt<span class="pl-pds">'</span></span>, <span class="pl-st">function</span> <span class="pl-en">doneReading</span>(<span class="pl-vpf">err</span>, <span class="pl-vpf">fileContents</span>) {
+    myNumber <span class="pl-k">=</span> <span class="pl-s3">parseInt</span>(fileContents)
+    myNumber<span class="pl-k">++</span>
+  })
+}
+
+addOne()
+
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(myNumber) <span class="pl-c">// logs out undefined -- this line gets run before readFile is done</span></pre></div>
+
+<p>Why do we get <code>undefined</code> when we log out the number this time? In this code we use the <code>fs.readFile</code> method, which happens to be an asynchronous method. Usually things that have to talk to hard drives or networks will be asynchronous. If they just have to access things in memory or do some work on the CPU they will be synchronous. The reason for this is that I/O is reallyyy reallyyy sloowwww. A ballpark figure would be that talking to a hard drive is about 100,000 times slower than talking to memory (e.g. RAM).</p>
+
+<p>When we run this program all of the functions are immediately defined, but they don't all execute immediately. This is a fundamental thing to understand about async programming. When <code>addOne</code> is called it kicks off a <code>readFile</code> and then moves on to the next thing that is ready to execute. If there is nothing to execute node will either wait for pending fs/network operations to finish or it will stop running and exit to the command line.</p>
+
+<p>When <code>readFile</code> is done reading the file (this may take anywhere from milliseconds to seconds to minutes depending on how fast the hard drive is) it will run the <code>doneReading</code> function and give it an error (if there was an error) and the file contents.</p>
+
+<p>The reason we got <code>undefined</code> above is that nowhere in our code exists logic that tells the <code>console.log</code> statement to wait until the <code>readFile</code> statement finishes before it prints out the number.</p>
+
+<p>If you have some code that you want to be able to execute over and over again or at a later time the first step is to put that code inside a function. Then you can call the function whenever you want to run your code. It helps to give your functions descriptive names.</p>
+
+<p>Callbacks are just functions that get executed at some later time. The key to understanding callbacks is to realize that they are used when you don't know <strong>when</strong> some async operation will complete, but you do know <strong>where</strong> the operation will complete — the last line of the async function! The top-to-bottom order that you declare callbacks does not necessarily matter, only the logical/hierarchical nesting of them. First you split your code up into functions, and then use callbacks to declare if one function depends on another function finishing.</p>
+
+<p>The <code>fs.readFile</code> method is provided by node, is asynchronous and happens to take a long time to finish. Consider what it does: it has to go to the operating system, which in turn has to go to the file system, which lives on a hard drive that may or may not be spinning at thousands of revolutions per minute. Then it has to use a laser to read data and send it back up through the layers back into your javascript program. You give <code>readFile</code> a function (known as a callback) that it will call after it has retrieved the data from the file system. It puts the data it retrieved into a javascript variable and calls your function (callback) with that variable, in this case the variable is called <code>fileContents</code> because it contains the contents of the file that was read.</p>
+
+<p>Think of the restaurant example at the beginning of this tutorial. At many restaurants you get a number to put on your table while you wait for your food. These are a lot like callbacks. They tell the server what to do after your cheeseburger is done.</p>
+
+<p>Let's put our <code>console.log</code> statement into a function and pass it in as a callback.</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-s">var</span> fs <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>fs<span class="pl-pds">'</span></span>)
+<span class="pl-s">var</span> myNumber <span class="pl-k">=</span> <span class="pl-c1">undefined</span>
+
+<span class="pl-st">function</span> <span class="pl-en">addOne</span>(<span class="pl-vpf">callback</span>) {
+  fs.readFile(<span class="pl-s1"><span class="pl-pds">'</span>number.txt<span class="pl-pds">'</span></span>, <span class="pl-st">function</span> <span class="pl-en">doneReading</span>(<span class="pl-vpf">err</span>, <span class="pl-vpf">fileContents</span>) {
+    myNumber <span class="pl-k">=</span> <span class="pl-s3">parseInt</span>(fileContents)
+    myNumber<span class="pl-k">++</span>
+    callback()
+  })
+}
+
+<span class="pl-st">function</span> <span class="pl-en">logMyNumber</span>() {
+  <span class="pl-en">console</span><span class="pl-s3">.log</span>(myNumber)
+}
+
+addOne(logMyNumber)</pre></div>
+
+<p>Now the <code>logMyNumber</code> function can get passed in an argument that will become the <code>callback</code> variable inside the <code>addOne</code> function. After <code>readFile</code> is done the <code>callback</code> variable will be invoked (<code>callback()</code>). Only functions can be invoked, so if you pass in anything other than a function it will cause an error.</p>
+
+<p>When a function gets invoked in javascript the code inside that function will immediately get executed. In this case our log statement will execute since <code>callback</code> is actually <code>logMyNumber</code>. Remember, just because you <em>define</em> a function it doesn't mean it will execute. You have to <em>invoke</em> a function for that to happen.</p>
+
+<p>To break down this example even more, here is a timeline of events that happen when we run this program:</p>
+
+<ul class="task-list">
+<li>1: the code is parsed, which means if there are any syntax errors they would make the program break. During this initial phase there are 4 things that get defined: <code>fs</code>, <code>myNumber</code>, <code>addOne</code>, and <code>logMyNumber</code>. Note that these are just being defined, no functions have been called/invoked yet.</li>
+<li>2: When the last line of our program gets executed <code>addOne</code> gets invoked, getting passed in the <code>logMyNumber</code> function as <code>callback</code>, which is what we want to be called when <code>addOne</code> is complete. This immediately causes the asynchronous <code>fs.readFile</code> function to kick off. This part of the program takes a while to finish.</li>
+<li>3: with nothing to do, node idles for a bit as it waits for <code>readFile</code> to finish. If there was anything else to do during this time, node would be available for work.</li>
+<li>4: <code>readFile</code> finishes and calls its callback, <code>doneReading</code>, which then in turn increments the number and then immediately invokes the function that <code>addOne</code> passed in (its callback), <code>logMyNumber</code>.</li>
+</ul>
+
+<p>Perhaps the most confusing part of programming with callbacks is how functions are just objects that can be stored in variables and passed around with different names. Giving simple and descriptive names to your variables is important in making your code readable by others. Generally speaking in node programs when you see a variable like <code>callback</code> or <code>cb</code> you can assume it is a function.</p>
+
+<p>You may have heard the terms 'evented programming' or 'event loop'. They refer to the way that <code>readFile</code> is implemented. Node first dispatches the <code>readFile</code> operation and then waits for <code>readFile</code> to send it an event that it has completed. While it is waiting node can go check on other things. Inside node there is a list of things that are dispatched but haven't reported back yet, so node loops over the list again and again checking to see if they are finished. After they finished they get 'processed', e.g. any callbacks that depended on them finishing will get invoked.</p>
+
+<p>Here is a pseudocode version of the above example:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-st">function</span> <span class="pl-en">addOne</span>(<span class="pl-vpf">thenRunThisFunction</span>) {
+  waitAMinute(<span class="pl-st">function</span> <span class="pl-en">waitedAMinute</span>() {
+    thenRunThisFunction()
+  })
+}
+
+addOne(<span class="pl-st">function</span> <span class="pl-en">thisGetsRunAfterAddOneFinishes</span>() {})</pre></div>
+
+<p>Imagine you had 3 async functions <code>a</code>, <code>b</code> and <code>c</code>. Each one takes 1 minute to run and after it finishes it calls a callback (that gets passed in the first argument). If you wanted to tell node 'start running a, then run b after a finishes, and then run c after b finishes' it would look like this:</p>
+
+<div class="highlight highlight-js"><pre>a(<span class="pl-st">function</span>() {
+  b(<span class="pl-st">function</span>() {
+    c()
+  })
+})</pre></div>
+
+<p>When this code gets executed, <code>a</code> will immediately start running, then a minute later it will finish and call <code>b</code>, then a minute later it will finish and call <code>c</code> and finally 3 minutes later node will stop running since there would be nothing more to do. There are definitely more elegant ways to write the above example, but the point is that if you have code that has to wait for some other async code to finish then you express that dependency by putting your code in functions that get passed around as callbacks.</p>
+
+<p>The design of node requires you to think non-linearly. Consider this list of operations:</p>
+
+<pre><code>read a file
+process that file
+</code></pre>
+
+<p>If you were to turn this into pseudocode you would end up with this:</p>
+
+<pre><code>var file = readFile()
+processFile(file)
+</code></pre>
+
+<p>This kind of linear (step-by-step, in order) code isn't the way that node works. If this code were to get executed then <code>readFile</code> and <code>processFile</code> would both get executed at the same exact time. This doesn't make sense since <code>readFile</code> will take a while to complete. Instead you need to express that <code>processFile</code> depends on <code>readFile</code> finishing. This is exactly what callbacks are for! And because of the way that JavaScript works you can write this dependency many different ways:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-s">var</span> fs <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>fs<span class="pl-pds">'</span></span>)
+fs.readFile(<span class="pl-s1"><span class="pl-pds">'</span>movie.mp4<span class="pl-pds">'</span></span>, finishedReading)
+
+<span class="pl-st">function</span> <span class="pl-en">finishedReading</span>(<span class="pl-vpf">error</span>, <span class="pl-vpf">movieData</span>) {
+  <span class="pl-k">if</span> (error) <span class="pl-k">return</span> <span class="pl-en">console</span><span class="pl-s3">.error</span>(error)
+  <span class="pl-c">// do something with the movieData</span>
+}</pre></div>
+
+<p>But you could also structure your code like this and it would still work:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-s">var</span> fs <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>fs<span class="pl-pds">'</span></span>)
+
+<span class="pl-st">function</span> <span class="pl-en">finishedReading</span>(<span class="pl-vpf">error</span>, <span class="pl-vpf">movieData</span>) {
+  <span class="pl-k">if</span> (error) <span class="pl-k">return</span> <span class="pl-en">console</span><span class="pl-s3">.error</span>(error)
+  <span class="pl-c">// do something with the movieData</span>
+}
+
+fs.readFile(<span class="pl-s1"><span class="pl-pds">'</span>movie.mp4<span class="pl-pds">'</span></span>, finishedReading)</pre></div>
+
+<p>Or even like this:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-s">var</span> fs <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>fs<span class="pl-pds">'</span></span>)
+
+fs.readFile(<span class="pl-s1"><span class="pl-pds">'</span>movie.mp4<span class="pl-pds">'</span></span>, <span class="pl-st">function</span> <span class="pl-en">finishedReading</span>(<span class="pl-vpf">error</span>, <span class="pl-vpf">movieData</span>) {
+  <span class="pl-k">if</span> (error) <span class="pl-k">return</span> <span class="pl-en">console</span><span class="pl-s3">.error</span>(error)
+  <span class="pl-c">// do something with the movieData</span>
+})</pre></div>
+
+<h2>
+<a id="user-content-events" class="anchor" href="https://github.com/maxogden/art-of-node/#events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events</h2>
+
+<p>In node if you require the <a href="http://nodejs.org/api/events.html">events</a> module you can use the so-called 'event emitter' that node itself uses for all of its APIs that emit things.</p>
+
+<p>Events are a common pattern in programming, known more widely as the <a href="http://en.wikipedia.org/wiki/Observer_pattern">'observer pattern'</a> or 'pub/sub' (publish/subscribe). Whereas callbacks are a one-to-one relationship between the thing waiting for the callback and the thing calling the callback, events are the same exact pattern except with a many-to-many API.</p>
+
+<p>The easiest way to think about events is that they let you subscribe to things. You can say 'when X do Y', whereas with plain callbacks it is 'do X then Y'.</p>
+
+<p>Here are few common use cases for using events instead of plain callbacks:</p>
+
+<ul class="task-list">
+<li>Chat room where you want to broadcast messages to many listeners</li>
+<li>Game server that needs to know when new players connect, disconnect, move, shoot and jump</li>
+<li>Game engine where you want to let game developers subscribe to events like <code>.on('jump', function() {})</code>
+</li>
+<li>A low level web server that wants to expose an API to easily hook into events that happen like <code>.on('incomingRequest')</code> or <code>.on('serverError')</code>
+</li>
+</ul>
+
+<p>If we were trying to write a module that connects to a chat server using only callbacks it would look like this:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-s">var</span> chatClient <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>my-chat-client<span class="pl-pds">'</span></span>)
+
+<span class="pl-st">function</span> <span class="pl-en">onConnect</span>() {
+  <span class="pl-c">// have the UI show we are connected</span>
+}
+
+<span class="pl-st">function</span> <span class="pl-en">onConnectionError</span>(<span class="pl-vpf">error</span>) {
+  <span class="pl-c">// show error to the user</span>
+}
+
+<span class="pl-st">function</span> <span class="pl-en">onDisconnect</span>() {
+ <span class="pl-c">// tell user that they have been disconnected</span>
+}
+
+<span class="pl-st">function</span> <span class="pl-en">onMessage</span>(<span class="pl-vpf">message</span>) {
+ <span class="pl-c">// show the chat room message in the UI</span>
+}
+
+chatClient.connect(
+  <span class="pl-s1"><span class="pl-pds">'</span>http://mychatserver.com<span class="pl-pds">'</span></span>,
+  onConnect,
+  onConnectionError,
+  onDisconnect,
+  onMessage
+)</pre></div>
+
+<p>As you can see this is really cumbersome because of all of the functions that you have to pass in a specific order to the <code>.connect</code> function. Writing this with events would look like this:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-s">var</span> chatClient <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>my-chat-client<span class="pl-pds">'</span></span>).connect()
+
+chatClient.on(<span class="pl-s1"><span class="pl-pds">'</span>connect<span class="pl-pds">'</span></span>, <span class="pl-st">function</span>() {
+  <span class="pl-c">// have the UI show we are connected</span>
+})
+
+chatClient.on(<span class="pl-s1"><span class="pl-pds">'</span>connectionError<span class="pl-pds">'</span></span>, <span class="pl-st">function</span>() {
+  <span class="pl-c">// show error to the user</span>
+})
+
+chatClient.on(<span class="pl-s1"><span class="pl-pds">'</span>disconnect<span class="pl-pds">'</span></span>, <span class="pl-st">function</span>() {
+  <span class="pl-c">// tell user that they have been disconnected</span>
+})
+
+chatClient.on(<span class="pl-s1"><span class="pl-pds">'</span>message<span class="pl-pds">'</span></span>, <span class="pl-st">function</span>() {
+  <span class="pl-c">// show the chat room message in the UI</span>
+})</pre></div>
+
+<p>This approach is similar to the pure-callback approach but introduces the <code>.on</code> method, which subscribes a callback to an event. This means you can choose which events you want to subscribe to from the <code>chatClient</code>. You can also subscribe to the same event multiple times with different callbacks:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-s">var</span> chatClient <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>my-chat-client<span class="pl-pds">'</span></span>).connect()
+chatClient.on(<span class="pl-s1"><span class="pl-pds">'</span>message<span class="pl-pds">'</span></span>, logMessage)
+chatClient.on(<span class="pl-s1"><span class="pl-pds">'</span>message<span class="pl-pds">'</span></span>, storeMessage)
+
+<span class="pl-st">function</span> <span class="pl-en">logMessage</span>(<span class="pl-vpf">message</span>) {
+  <span class="pl-en">console</span><span class="pl-s3">.log</span>(message)
+}
+
+<span class="pl-st">function</span> <span class="pl-en">storeMessage</span>(<span class="pl-vpf">message</span>) {
+  myDatabase.save(message)
+}</pre></div>
+
+<h2>
+<a id="user-content-streams" class="anchor" href="https://github.com/maxogden/art-of-node/#streams" aria-hidden="true"><span class="octicon octicon-link"></span></a>Streams</h2>
+
+<p>Early on in the node project the file system and network APIs had their own separate patterns for dealing with streaming I/O. For example, files in a file system have things called 'file descriptors' so the <code>fs</code> module had to have extra logic to keep track of these things whereas the network modules didn't have such a concept. Despite minor differences in semantics like these, at a fundamental level both groups of code were duplicating a lot of functionality when it came to reading data in and out. The team working on node realized that it would be confusing to have to learn two sets of semantics to essentially do the same thing so they made a new API called the <code>Stream</code> and made all the network and file system code use it. </p>
+
+<p>The whole point of node is to make it easy to deal with file systems and networks so it made sense to have one pattern that was used everywhere. The good news is that most of the patterns like these (there are only a few anyway) have been figured out at this point and it is very unlikely that node will change that much in the future.</p>
+
+<p>There are already two great resources that you can use to learn about node streams. One is the stream-adventure (see the Learn Node Interactively section) and the other is a reference called the Stream Handbook.</p>
+
+<h3>
+<a id="user-content-stream-handbook" class="anchor" href="https://github.com/maxogden/art-of-node/#stream-handbook" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stream Handbook</h3>
+
+<p><a href="https://github.com/substack/stream-handbook#introduction">stream-handbook</a> is a guide, similar to this one, that contains a reference for everything you could possibly need to know about streams.</p>
+
+<p><a href="https://github.com/substack/stream-handbook"><img src="./auxi/pix/stream-handbook.png" alt="stream-handbook" style="max-width:100%;"></a></p>
+
+<h2>
+<a id="user-content-modules" class="anchor" href="https://github.com/maxogden/art-of-node/#modules" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modules</h2>
+
+<p>Node core is made up of about two dozen modules, some lower level ones like <code>events</code> and <code>stream</code> some higher level ones like <code>http</code> and <code>crypto</code>.</p>
+
+<p>This design is intentional. Node core is supposed to be small, and the modules in core should be focused on providing tools for working with common I/O protocols and formats in a way that is cross-platform.</p>
+
+<p>For everything else there is <a href="https://npmjs.org/">npm</a>. Anyone can create a new node module that adds some functionality and publish it to npm. As of the time of this writing there are 34,000 modules on npm.</p>
+
+<h3>
+<a id="user-content-how-to-find-a-module" class="anchor" href="https://github.com/maxogden/art-of-node/#how-to-find-a-module" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to find a module</h3>
+
+<p>Imagine you are trying to convert PDF files into TXT files. The best place to start is by doing <code>npm search pdf</code>:</p>
+
+<p><a href="https://github.com/maxogden/art-of-node/blob/master/npm-search.png" target="_blank"><img src="./auxi/pix/npm-search.png" alt="pdfsearch" style="max-width:100%;"></a></p>
+
+<p>There are a ton of results! npm is quite popular and you will usually be able to find multiple potential solutions. If you go through each module and whittle down the results into a more narrow set (filtering out things like PDF generation modules) you'll end up with these:</p>
+
+<ul class="task-list">
+<li>
+<a href="https://github.com/galkahana/HummusJS/wiki/Features">hummus</a> - c++ pdf manipulator</li>
+<li>
+<a href="https://github.com/steelThread/mimeograph">mimeograph</a> - api on a conglomeration of tools (poppler, tesseract, imagemagick etc)</li>
+<li>
+<a href="https://npmjs.org/package/pdftotextjs">pdftotextjs</a> - wrapper around <a href="https://en.wikipedia.org/wiki/Pdftotext">pdftotext</a>
+</li>
+<li>
+<a href="https://npmjs.org/package/pdf-text-extract">pdf-text-extract</a> - another wrapper around pdftotext</li>
+<li>
+<a href="https://npmjs.org/package/pdf-extract">pdf-extract</a> - wrapper around pdftotext, pdftk, tesseract, ghostscript</li>
+<li>
+<a href="https://npmjs.org/package/pdfutils">pdfutils</a> - poppler wrapper</li>
+<li>
+<a href="https://npmjs.org/package/scissors">scissors</a> - pdftk, ghostscript wrapper w/ high level api</li>
+<li>
+<a href="https://npmjs.org/package/textract">textract</a> - pdftotext wrapper</li>
+<li>
+<a href="https://github.com/fagbokforlaget/pdfiijs">pdfiijs</a> - pdf to inverted index using textiijs and poppler</li>
+<li>
+<a href="https://github.com/modesty/pdf2json/blob/master/readme.md">pdf2json</a> - pure js pdf to json</li>
+</ul>
+
+<p>A lot of the modules have overlapping functionality but present alternate APIs and most of them require external dependencies (like <code>apt-get install poppler</code>).</p>
+
+<p>Here are some different ways to interpret the modules:</p>
+
+<ul class="task-list">
+<li>
+<code>pdf2json</code> is the only one that is written in pure JavaScript, which means it is the easiest to install, especially on low power devices like the raspberry pi or on Windows where native code might not be cross platform.</li>
+<li>modules like <code>mimeograph</code>, <code>hummus</code> and <code>pdf-extract</code> each combine multiple lower level modules to expose a high level API</li>
+<li>a lot of modules seem to sit on top of the <code>pdftotext</code>/<code>poppler</code> unix command line tools</li>
+</ul>
+
+<p>Lets compare the differences between <code>pdftotextjs</code> and <code>pdf-text-extract</code>, both of which are are wrappers around the <code>pdftotext</code> utility.</p>
+
+<p><a href="https://github.com/maxogden/art-of-node/blob/master/pdf-modules.png" target="_blank"><img src="./auxi/pix/pdf-modules.png" alt="pdf-modules" style="max-width:100%;"></a></p>
+
+<p>Both of these:</p>
+
+<ul class="task-list">
+<li>were updated relatively recently</li>
+<li>have github repositories linked (this is very important!)</li>
+<li>have READMEs</li>
+<li>have at least some number of people installing them every week</li>
+<li>are liberally licensed (anyone can use them)</li>
+</ul>
+
+<p>Just looking at the <code>package.json</code> + module statistics it's hard to get a feeling about which one might be the right choice. Let's compare the READMEs:</p>
+
+<p><a href="https://github.com/maxogden/art-of-node/blob/master/pdf-readmes.png" target="_blank"><img src="./auxi/pix/pdf-readmes.png" alt="pdf-readmes" style="max-width:100%;"></a></p>
+
+<p>Both have simple descriptions, CI badges, installation instructions, clear examples and instructions for running the tests. Great! But which one do we use? Let's compare the code:</p>
+
+<p><a href="https://github.com/maxogden/art-of-node/blob/master/pdf-code.png" target="_blank"><img src="./auxi/pix/pdf-code.png" alt="pdf-code" style="max-width:100%;"></a></p>
+
+<p><code>pdftotextjs</code> is around 110 lines of code, and <code>pdf-text-extract</code> is around 40, but both essentially boil down to this line:</p>
+
+<pre><code>var child = shell.exec('pdftotext ' + self.options.additional.join(' '));
+</code></pre>
+
+<p>Does this make one any better than the other? Hard to say! It's important to actually <em>read</em> the code and make your own conclusions. If you find a module you like, use <code>npm star modulename</code> to give npm feedback about modules that you had a positive experience with.</p>
+
+<h3>
+<a id="user-content-modular-development-workflow" class="anchor" href="https://github.com/maxogden/art-of-node/#modular-development-workflow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modular development workflow</h3>
+
+<p>npm is different from most package managers in that it installs modules into a folder inside of other existing modules. The previous sentence might not make sense right now but it is the key to npm's success.</p>
+
+<p>Many package managers install things globally. For instance, if you <code>apt-get install couchdb</code> on Debian Linux it will try to install the latest stable version of CouchDB. If you are trying to install CouchDB as a dependency of some other piece of software and that software needs an older version of CouchDB, you have to uninstall the newer version of CouchDB and then install the older version. You can't have two versions of CouchDB installed because Debian only knows how to install things into one place.</p>
+
+<p>It's not just Debian that does this. Most programming language package managers work this way too. To address the global dependencies problem described above there have been virtual environment developed like <a href="http://docs.python-guide.org/en/latest/dev/virtualenvs.html">virtualenv</a> for Python or <a href="http://bundler.io/">bundler</a> for Ruby. These just split your environment up in to many virtual environments, one for each project, but inside each environment dependencies are still globally installed. Virtual environments don't always solve the problem, sometimes they just multiply it by adding additional layers of complexity.</p>
+
+<p>With npm installing global modules is an anti-pattern. Just like how you shouldn't use global variables in your JavaScript programs you also shouldn't install global modules (unless you need a module with an executable binary to show up in your global <code>PATH</code>, but you don't always need to do this -- more on this later).</p>
+
+<h4>
+<a id="user-content-how-require-works" class="anchor" href="https://github.com/maxogden/art-of-node/#how-require-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How <code>require</code> works</h4>
+
+<p>When you call <code>require('some_module')</code> in node here is what happens:</p>
+
+<ol class="task-list">
+<li>if a file called <code>some_module.js</code> exists in the current folder node will load that, otherwise:</li>
+<li>node looks in the current folder for a <code>node_modules</code> folder with a <code>some_module</code> folder in it</li>
+<li>if it doesn't find it, it will go up one folder and repeat step 2</li>
+</ol>
+
+<p>This cycle repeats until node reaches the root folder of the filesystem, at which point it will then check any global module folders (e.g. <code>/usr/local/node_modules</code> on Mac OS) and if it still doesn't find <code>some_module</code> it will throw an exception.</p>
+
+<p>Here's a visual example:</p>
+
+<p><a href="https://github.com/maxogden/art-of-node/blob/master/mod-diagram-01.png" target="_blank"><img src="./auxi/pix/mod-diagram-01.png" alt="mod-diagram-01" style="max-width:100%;"></a></p>
+
+<p>When the current working directory is <code>subsubfolder</code> and <code>require('foo')</code> is called, node will look for the folder called <code>subsubsubfolder/node_modules</code>. In this case it won't find it -- the folder there is mistakenly called <code>my_modules</code>. Then node will go up one folder and try again, meaning it then looks for <code>subfolder_B/node_modules</code>, which also doesn't exist. Third try is a charm, though, as <code>folder/node_modules</code> does exist <em>and</em> has a folder called <code>foo</code> inside of it. If <code>foo</code> wasn't in there node would continue its search up the directory tree.</p>
+
+<p>Note that if called from <code>subfolder_B</code> node will never find <code>subfolder_A/node_modules</code>, it can only see <code>folder/node_modules</code> on its way up the tree.</p>
+
+<p>One of the benefits of npm's approach is that modules can install their dependent modules at specific known working versions. In this case the module <code>foo</code> is quite popular - there are three copies of it, each one inside its parent module folder. The reasoning for this could be that each parent module needed a different version of <code>foo</code>, e.g. 'folder' needs <code>foo@0.0.1</code>, <code>subfolder_A</code> needs <code>foo@0.2.1</code> etc.</p>
+
+<p>Here's what happens when we fix the folder naming error by changing <code>my_modules</code> to the correct name <code>node_modules</code>:</p>
+
+<p><a href="https://github.com/maxogden/art-of-node/blob/master/mod-diagram-02.png" target="_blank"><img src="./auxi/pix/mod-diagram-02.png" alt="mod-diagram-02" style="max-width:100%;"></a></p>
+
+<p>To test out which module actually gets loaded by node, you can use the <code>require.resolve('some_module')</code> command, which will show you the path to the module that node finds as a result of the tree climbing process. <code>require.resolve</code> can be useful when double-checking that the module that you <em>think</em> is getting loaded is <em>actually</em> getting loaded -- sometimes there is another version of the same module closer to your current working directory than the one you intend to load.</p>
+
+<h3>
+<a id="user-content-how-to-write-a-module" class="anchor" href="https://github.com/maxogden/art-of-node/#how-to-write-a-module" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to write a module</h3>
+
+<p>Now that you know how to find modules and require them you can start writing your own modules.</p>
+
+<h4>
+<a id="user-content-the-simplest-possible-module" class="anchor" href="https://github.com/maxogden/art-of-node/#the-simplest-possible-module" aria-hidden="true"><span class="octicon octicon-link"></span></a>The simplest possible module</h4>
+
+<p>Node modules are radically lightweight. Here is one of the simplest possible node modules:</p>
+
+<p><code>package.json</code>:</p>
+
+<div class="highlight highlight-js"><pre>{
+  <span class="pl-s1"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">"</span>number-one<span class="pl-pds">"</span></span>,
+  <span class="pl-s1"><span class="pl-pds">"</span>version<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">"</span>1.0.0<span class="pl-pds">"</span></span>
+}</pre></div>
+
+<p><code>index.js</code>:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-sv">module</span>.exports <span class="pl-k">=</span> <span class="pl-c1">1</span></pre></div>
+
+<p>By default node tries to load <code>module/index.js</code> when you <code>require('module')</code>, any other file name won't work unless you set the <code>main</code> field of <code>package.json</code> to point to it.</p>
+
+<p>Put both of those files in a folder called <code>number-one</code> (the <code>id</code> in <code>package.json</code> must match the folder name) and you'll have a working node module.</p>
+
+<p>Calling the function <code>require('number-one')</code> returns the value of whatever <code>module.exports</code> is set to inside the module:</p>
+
+<p><a href="https://github.com/maxogden/art-of-node/blob/master/simple-module.png" target="_blank"><img src="./auxi/pix/simple-module.png" alt="simple-module" style="max-width:100%;"></a></p>
+
+<p>An even quicker way to create a module is to run these commands:</p>
+
+<div class="highlight highlight-sh"><pre>mkdir my_module
+<span class="pl-s3">cd</span> my_module
+git init
+git remote add git@github.com:yourusername/my_module.git
+npm init</pre></div>
+
+<p>Running <code>npm init</code> will create a valid <code>package.json</code> for you and if you run it in an existing <code>git</code> repo it will set the <code>repositories</code> field inside <code>package.json</code> automatically as well!</p>
+
+<h4>
+<a id="user-content-adding-dependencies" class="anchor" href="https://github.com/maxogden/art-of-node/#adding-dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding dependencies</h4>
+
+<p>A module can list any other modules from npm or GitHub in the <code>dependencies</code> field of <code>package.json</code>. To install the <code>request</code> module as a new dependency and automatically add it to <code>package.json</code> run this from your module root directory:</p>
+
+<div class="highlight highlight-sh"><pre>npm install --save request</pre></div>
+
+<p>This installs a copy of <code>request</code> into the closest <code>node_modules</code> folder and makes our <code>package.json</code> look something like this:</p>
+
+<pre><code>{
+  "id": "number-one",
+  "version": "1.0.0",
+  "dependencies": {
+    "request": "~2.22.0"
+  }
+}
+</code></pre>
+
+<p>By default <code>npm install</code> will grab the latest published version of a module.</p>
+
+<h2>
+<a id="user-content-client-side-development-with-npm" class="anchor" href="https://github.com/maxogden/art-of-node/#client-side-development-with-npm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Client side development with npm</h2>
+
+<p>A common misconception about npm is that since it has 'Node' in the name that it must only be used for server side JS modules. This is completely untrue! npm actually stands for Node Packaged Modules, e.g. modules that Node packages together for you. The modules themselves can be whatever you want -- they are just a folder of files wrapped up in a .tar.gz, and a file called <code>package.json</code> that declares the module version and a list of all modules that are dependencies of the module (as well as their version numbers so the working versions get installed automatically). It's turtles all the way down - module dependencies are just modules, and those modules can have dependencies etc. etc. etc.</p>
+
+<p><a href="http://browserify.org/">browserify</a> is a utility written in Node that tries to convert any node module into code that can be run in browsers. Not all modules work (browsers can't do things like host an HTTP server), but a lot of modules on NPM <em>will</em> work.</p>
+
+<p>To try out npm in the browser you can use <a href="http://requirebin.com/">RequireBin</a>, an app I made that takes advantage of <a href="https://github.com/jesusabdullah/browserify-cdn">Browserify-CDN</a>, which internally uses browserify but returns the output through HTTP (instead of the command line -- which is how browserify is usually used).</p>
+
+<p>Try putting this code into RequireBin and then hit the preview button:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-s">var</span> reverse <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>ascii-art-reverse<span class="pl-pds">'</span></span>)
+
+<span class="pl-c">// makes a visible HTML console</span>
+<span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>console-log<span class="pl-pds">'</span></span>).show(<span class="pl-c1">true</span>)
+
+<span class="pl-s">var</span> coolbear <span class="pl-k">=</span>
+  <span class="pl-s1"><span class="pl-pds">"</span>    ('-^-/')  <span class="pl-cce">\n</span><span class="pl-pds">"</span></span> <span class="pl-k">+</span>
+  <span class="pl-s1"><span class="pl-pds">"</span>    `o__o' ]  <span class="pl-cce">\n</span><span class="pl-pds">"</span></span> <span class="pl-k">+</span>
+  <span class="pl-s1"><span class="pl-pds">"</span>    (_Y_) _/  <span class="pl-cce">\n</span><span class="pl-pds">"</span></span> <span class="pl-k">+</span>
+  <span class="pl-s1"><span class="pl-pds">"</span>  _..`--'-.`, <span class="pl-cce">\n</span><span class="pl-pds">"</span></span> <span class="pl-k">+</span>
+  <span class="pl-s1"><span class="pl-pds">"</span> (__)_,--(__) <span class="pl-cce">\n</span><span class="pl-pds">"</span></span> <span class="pl-k">+</span>
+  <span class="pl-s1"><span class="pl-pds">"</span>     7:   ; 1 <span class="pl-cce">\n</span><span class="pl-pds">"</span></span> <span class="pl-k">+</span>
+  <span class="pl-s1"><span class="pl-pds">"</span>   _/,`-.-' : <span class="pl-cce">\n</span><span class="pl-pds">"</span></span> <span class="pl-k">+</span>
+  <span class="pl-s1"><span class="pl-pds">"</span>  (_,)-~~(_,) <span class="pl-cce">\n</span><span class="pl-pds">"</span></span>
+
+<span class="pl-s3">setInterval</span>(<span class="pl-st">function</span>() { <span class="pl-en">console</span><span class="pl-s3">.log</span>(coolbear) }, <span class="pl-c1">1000</span>)
+
+<span class="pl-s3">setTimeout</span>(<span class="pl-st">function</span>() {
+  <span class="pl-s3">setInterval</span>(<span class="pl-st">function</span>() { <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s3">reverse</span>(coolbear)) }, <span class="pl-c1">1000</span>)
+}, <span class="pl-c1">500</span>)</pre></div>
+
+<p>Or check out a <a href="http://requirebin.com/?gist=6031068">more complicated example</a> (feel free to change the code and see what happens):</p>
+
+<p><a href="http://requirebin.com/embed?gist=6031068"><img src="./auxi/pix/requirebin.png" alt="requirebin" style="max-width:100%;"></a></p>
+
+<h2>
+<a id="user-content-going-with-the-grain" class="anchor" href="https://github.com/maxogden/art-of-node/#going-with-the-grain" aria-hidden="true"><span class="octicon octicon-link"></span></a>Going with the grain</h2>
+
+<p>Like any good tool, node is best suited for a certain set of use cases. For example: Rails, the popular web framework, is great for modeling complex <a href="http://en.wikipedia.org/wiki/Business_logic">business logic</a>, e.g. using code to represent real life business objects like accounts, loan, itineraries, and inventories. While it is technically possible to do the same type of thing using node, there would be definite drawbacks since node is designed for solving I/O problems and it doesn't know much about 'business logic'. Each tool focuses on different problems. Hopefully this guide will help you gain an intuitive understanding of the strengths of node so that you know when it can be useful to you.</p>
+
+<h3>
+<a id="user-content-what-is-outside-of-nodes-scope" class="anchor" href="https://github.com/maxogden/art-of-node/#what-is-outside-of-nodes-scope" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is outside of node's scope?</h3>
+
+<p>Fundamentally node is just a tool used for managing I/O across file systems and networks, and it leaves other more fancy functionality up to third party modules. Here are some things that are outside the scope of node:</p>
+
+<h4>
+<a id="user-content-web-frameworks" class="anchor" href="https://github.com/maxogden/art-of-node/#web-frameworks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Web frameworks</h4>
+
+<p>There are a number of web frameworks built on top of node (framework meaning a bundle of solutions that attempts to address some high level problem like modeling business logic), but node is not a web framework. Web frameworks that are written using node don't always make the same kind of decisions about adding complexity, abstractions and tradeoffs that node does and may have other priorities.</p>
+
+<h4>
+<a id="user-content-language-syntax" class="anchor" href="https://github.com/maxogden/art-of-node/#language-syntax" aria-hidden="true"><span class="octicon octicon-link"></span></a>Language syntax</h4>
+
+<p>Node uses JavaScript and doesn't change anything about it. Felix Geisendörfer has a pretty good write-up of the 'node style' <a href="https://github.com/felixge/node-style-guide">here</a>.</p>
+
+<h4>
+<a id="user-content-language-abstraction" class="anchor" href="https://github.com/maxogden/art-of-node/#language-abstraction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Language abstraction</h4>
+
+<p>When possible node will use the simplest possible way of accomplishing something. The 'fancier' you make your JavaScript the more complexity and tradeoffs you introduce. Programming is hard, especially in JS where there are 1000 solutions to every problem! It is for this reason that node tries to always pick the simplest, most universal option. If you are solving a problem that calls for a complex solution and you are unsatisfied with the 'vanilla JS solutions' that node implements, you are free to solve it inside your app or module using whichever abstractions you prefer.</p>
+
+<p>A great example of this is node's use of callbacks. Early on node experimented with a feature called 'promises' that added a number of features to make async code appear more linear. It was taken out of node core for a few reasons:</p>
+
+<ul class="task-list">
+<li>they are more complex than callbacks</li>
+<li>they can be implemented in userland (distributed on npm as third party modules)</li>
+</ul>
+
+<p>Consider one of the most universal and basic things that node does: reading a file. When you read a file you want to know when errors happen, like when your hard drive dies in the middle of your read. If node had promises everyone would have to branch their code like this:</p>
+
+<div class="highlight highlight-js"><pre>fs.readFile(<span class="pl-s1"><span class="pl-pds">'</span>movie.mp4<span class="pl-pds">'</span></span>)
+  .then(<span class="pl-st">function</span>(<span class="pl-vpf">data</span>) {
+    <span class="pl-c">// do stuff with data</span>
+  })
+  <span class="pl-s3">.error</span>(<span class="pl-st">function</span>(<span class="pl-vpf">error</span>) {
+    <span class="pl-c">// handle error</span>
+  })</pre></div>
+
+<p>This adds complexity, and not everyone wants that. Instead of two separate functions node just uses a single callback function. Here are the rules:</p>
+
+<ul class="task-list">
+<li>When there is no error pass null as the first argument</li>
+<li>When there is an error, pass it as the first argument</li>
+<li>The rest of the arguments can be used for anything (usually data or responses since most stuff in node is reading or writing things)</li>
+</ul>
+
+<p>Hence, the node callback style:</p>
+
+<div class="highlight highlight-js"><pre>fs.readFile(<span class="pl-s1"><span class="pl-pds">'</span>movie.mp4<span class="pl-pds">'</span></span>, <span class="pl-st">function</span>(<span class="pl-vpf">err</span>, <span class="pl-vpf">data</span>) {
+  <span class="pl-c">// handle error, do stuff with data</span>
+})</pre></div>
+
+<h4>
+<a id="user-content-threadsfibersnon-event-based-concurrency-solutions" class="anchor" href="https://github.com/maxogden/art-of-node/#threadsfibersnon-event-based-concurrency-solutions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Threads/fibers/non-event-based concurrency solutions</h4>
+
+<p>Note: If you don't know what these things mean then you will likely have an easier time learning node, since unlearning things is just as much work as learning things.</p>
+
+<p>Node uses threads internally to make things fast but doesn't expose them to the user. If you are a technical user wondering why node is designed this way then you should 100% read about <a href="http://nikhilm.github.com/uvbook/">the design of libuv</a>, the C++ I/O layer that node is built on top of.</p>
+
+<h2>
+<a id="user-content-license" class="anchor" href="https://github.com/maxogden/art-of-node/#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p><a href="https://github.com/maxogden/art-of-node/blob/master/CCBY.png" target="_blank"><img src="./auxi/pix/CCBY.png" alt="CCBY" style="max-width:100%;"></a></p>
+
+<p>Creative Commons Attribution License (do whatever, just attribute me)
+<a href="http://creativecommons.org/licenses/by/2.0/">http://creativecommons.org/licenses/by/2.0/</a></p>
+
+<p>Donate icon is from the <a href="https://github.com/maxogden/art-of-node/blob/master/Noun%20Project">http://thenounproject.com/noun/donate/#icon-No285</a></p>
+</article>
+  </div>
+
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+<div class="container">
+</div><!-- /.container -->
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-suggester-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder=""></textarea>
+      <div class="suggester-container">
+        <div class="suggester fullscreen-suggester js-suggester js-navigation-container"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="https://github.com/maxogden/art-of-node/#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="https://github.com/maxogden/art-of-node/#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w" aria-label="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="https://github.com/maxogden/art-of-node/#" class="octicon octicon-x flash-close js-ajax-error-dismiss" aria-label="Dismiss error"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      <script crossorigin="anonymous" src="./auxi/js/frameworks-fc.js" type="text/javascript"></script>
+      <script async="async" crossorigin="anonymous" src="./auxi/js/github-56.js" type="text/javascript"></script>
+
+
+
+
+
+<div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" style="position: absolute; left: 0px; top: -9999px; width: 1px; height: 1px; z-index: 999999999;">
+<object id="global-zeroclipboard-flash-bridge" name="global-zeroclipboard-flash-bridge" width="100%" height="100%" type="application/x-shockwave-flash" data="https://assets-cdn.github.com/flash/ZeroClipboard.v2.1.6.swf">
+<param name="allowScriptAccess" value="always">
+<param name="allowNetworking" value="all">
+<param name="menu" value="false">
+<param name="wmode" value="transparent">
+<param name="flashvars" value="trustedOrigins=github.com%2C%2F%2Fgithub.com%2Chttps%3A%2F%2Fgithub.com&amp;swfObjectId=global-zeroclipboard-flash-bridge">
+</object>
+</div>
+<div class="facebox" id="facebox" style="display:none;">
+<div class="facebox-popup">
+<div class="facebox-content">
+</div>
+<button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+<span class="octicon octicon-remove-close"></span>
+</button>
+</div>
+</div>
+<iframe id="rdbIndicator" width="100%" height="270" border="0" src="./the-art-of-node_files/indicator.html" style="display: none; border: 0; position: fixed; left: 0; top: 0; z-index: 2147483647">
+</iframe>
+</body>
+</html>
