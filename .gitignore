@@ -2,3 +2,4 @@ angularjs/*.pdf
 angularjs/Angular*dev-docs_files
 angularjs/*ngdoc.md
 *orig.*
+node/*_files
