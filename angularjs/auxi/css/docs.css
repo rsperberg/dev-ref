@@ -108,8 +108,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .nav-index-section a {
-  font-weight:bold;
-  font-family: Share, Share-Regular,"Open Sans";
+  font-weight:normal;
+  font-family: Share-Bold,"Open Sans";
   color:black!important;
   margin-top:10px;
   display:block;
