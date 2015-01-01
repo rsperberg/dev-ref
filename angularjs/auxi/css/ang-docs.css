@@ -45,7 +45,9 @@ html, body {
 }
 */
 h1,h2,h3,h4,h5,h6 {
-  font-family: "Open Sans";
+  font-family: Share-Bold,"Open Sans";
+  font-weight:normal;
+  color: #3387CC;
 }
 
 .subnav-body {
@@ -107,8 +109,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .nav-index-section a {
-  font-weight:bold;
-  font-family: "Open Sans";
+  font-weight:normal;
+  font-family: Share-Bold, "Open Sans";
   color:black!important;
   margin-top:10px;
   display:block;
@@ -134,7 +136,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .nav-breadcrumb-entry {
-  font-family: "Open Sans";
+  font-family: Share, Share-Regular,"Open Sans";
   padding:0;
   margin:0;
   font-size:18px;
@@ -172,8 +174,8 @@ h1,h2,h3,h4,h5,h6 {
 
 .api-profile-header-structure,
 .api-profile-header-structure a {
-  font-family: "Open Sans";
-  font-weight:bold;
+  font-family: Share-Bold,"Open Sans";
+  font-weight:normal;
   color:#999;
 }
 
@@ -232,8 +234,8 @@ ul + p {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
-  font-family: "Open Sans";
-  font-weight: 600;
+  font-family: Share-Bold,"Open Sans";
+  font-weight: normal;
   height: auto;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f2f2f2));
   background-image: -webkit-linear-gradient(#ffffff, #f2f2f2);
@@ -306,7 +308,7 @@ iframe.example {
 }
 
 .search-results-group-heading {
-  font-family: "Open Sans";
+  font-family: Share, Share-Regular,"Open Sans";
   padding-left:10px;
   color:white;
 }
@@ -484,6 +486,12 @@ iframe.example {
   border: 1px solid #ddd;
   border-radius:5px;
 }
+.runnable-example-frame-150 {
+  width:100%;
+  height:150px;
+  border: 1px solid #ddd;
+  border-radius:5px;
+}
 
 .runnable-example-tabs {
   margin-top:10px;
@@ -528,8 +536,8 @@ h4 {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
-  font-family: "Open Sans";
-  font-weight: 600;
+  font-family: Share-Bold,"Open Sans";
+  font-weight: normal;
   height: auto;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f2f2f2));
   background-image: -webkit-linear-gradient(#ffffff, #f2f2f2);
@@ -690,3 +698,15 @@ ul.events > li {
     padding-bottom:0px;
   }
 }
+/* added styles to prevent user agent stylesheet from futzing up things */
+thead tr th { font-family: Share-Bold; font-weight: normal; }
+
+.ng-scope b, .ng-scope strong {
+  font-family: Share-Bold;
+  font-weight: normal;
+}
+iframe html body div.ng-scope b {
+  font-family: Share-Bold;
+  font-weight: normal;
+}
+
