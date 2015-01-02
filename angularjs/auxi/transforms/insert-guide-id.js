@@ -48,17 +48,30 @@ var idNames = {
 }
 
 var sectionName = /<div class="document-section"><span class="guide-doc">([A-Za-z128$-]*)</;
+//search for:
+//<div class="document-section"><span class="guide-doc">idNames[i]<
+//
+//replace with
+//<div id="{idName[i]}" class="document-section"><span class="guide-doc">idNames[i]<
+
+var searchPrefix = /class="document-section"><span class="guide-doc">/;
+// var searchTitle = idNames[i];
 
 var aFile = fs.readFile(pathAndFile, 'utf8', function (err,data) {
     if (err) {
         return console.log(err);
     }
     console.log(data);
-    console.log('aFile is an array T/F: ' + Array.isArray(data));
-    console.log('the type of data is ',typeof data);
+    for (var i = idNames.length - 1; i >= 0; i--) {
+        var searchPrefix = 'class="document-section"><span class="guide-doc">';
+        var searchTitle = idNames[i];
+        var searchCombo = searchPrefix + searchTitle;
+        var searchRegex = /searchCombo/;
+        // probably searchRegex isn't properly defined
 
+    };
     var sectionNameRegex = /<div class="document-section"><span class="guide-doc">([A-Za-z128$-]*)</;
-    var result = sortOrderRegex.exec(data);
+    var result = sectionNameRegex.exec(data);
     console.log('matched line is ', result[0]);
     var orderNumber =result[0].substring(11, 14);
     console.log('extracted order number is', orderNumber);
