@@ -11,10 +11,13 @@
 
 var fs = require("fs");
 // var allTogether = '/Users/sperberx/dev/dev-ref/angularjs/ng-guide-all3.html';
-var combinedFilesPath = '/Users/sperberx/dev/dev-ref/angularjs/';
-var  combinedFiles = 'ng-guide-all3';
+// var combinedFilesPath = '/Users/sperberx/dev/dev-ref/angularjs/';  // desktop version
+var combinedFilesPath = '/Users/rsperberg/dev/dev-ref/angularjs/';   // laptop version
+var combinedFiles = 'ng-guide-all3';
+var combinedFilesMod = 'ng-guide-all3-mod';
 var extension = '.html';
 var pathAndFile = combinedFilesPath + combinedFiles + extension;   // Users/sperberx/dev/dev-ref/angularjs/ng-guide-all3.html
+var pathAndFileMod = combinedFilesPath + combinedFilesMod + extension;
 
 var idNames = {
 'Introduction' : 'introduction',
@@ -57,8 +60,8 @@ var idNames = {
 // var searchTitle = idNames[i];
 
 var allKeysArray = Object.keys(idNames);
-Object.keys(idNames).forEach(function(key) {
-});
+// Object.keys(idNames).forEach(function(key) {
+// });
 //Object.keys(idNames).forEach(function(key) {
  //   console.log('The key is ' + key + ' and the value is ' + idNames[key]);
  //   console.log(idNames[key]);
@@ -68,21 +71,31 @@ var aFile = fs.readFile(pathAndFile, 'utf8', function (err,data) {
     if (err) {
         return console.log(err);
     }
+    for (var i = allKeysArray.length - 1; i >= 0; i--) {
+        thisTitle = allKeysArray[i];
+        titleSearch = 'class="document-section"><span class="guide-doc">' + thisTitle;
+        idAdd = 'id="' + idNames[thisTitle] + '" ' +titleSearch;
+        data = data.replace(titleSearch, idAdd);
+    };
+    // write the file
+fs.writeFile(pathAndFileMod, data, function (err) {
+  if (err) throw err;
+  console.log('It\'s saved!');
+});
 
-
-//    console.log(data);
-        var searchPrefix = 'class="document-section"><span class="guide-doc">';
+ //   console.log(data);
+//        var searchPrefix = 'class="document-section"><span class="guide-doc">';
 //        var searchTitle = idNames[i];
 //        var searchCombo = searchPrefix + searchTitle;
 //        var searchRegex = /searchCombo/;
  //       var searchRegex = sectionName;
 
-    var sectionNameRegex = /<div class="document-section"><span class="guide-doc">([A-Za-z128$-]*)</;
-    var result = sectionNameRegex.exec(data);
-    console.log('match is ', result[0]);
-    console.log('parenthetical match is ', result[1]);
-    console.log('index of located match is ', result.index);
-    console.log('lastIndex of located match is ', result.lastIndex);
+    // var sectionNameRegex = /<div class="document-section"><span class="guide-doc">([A-Za-z128$-]*)</;
+    // var result = sectionNameRegex.exec(data);
+    // console.log('match is ', result[0]);
+    // console.log('parenthetical match is ', result[1]);
+    // console.log('index of located match is ', result.index);
+    // console.log('lastIndex of located match is ', result.lastIndex);
 
 
 
