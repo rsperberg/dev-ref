@@ -1,4 +1,5 @@
 angularjs/*.pdf
+angularjs/*.log
 angularjs/Angular*dev-docs_files
 angularjs/*ngdoc.md
 *orig.*
