@@ -709,4 +709,13 @@ iframe html body div.ng-scope b {
   font-family: Share-Bold;
   font-weight: normal;
 }
+/* adding print styles so as to create tablet-sized pdf
+@media print {
 
+@page {
+  margin: 0.5cm;
+  size:7.5in 10.5in;
+}
+}
+   …
+}
