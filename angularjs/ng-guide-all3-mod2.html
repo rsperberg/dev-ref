@@ -851,8 +851,8 @@ different currencies and also pay the invoice.</p>
   </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">convertCurrency </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> convertCurrency</span><span class="pun">(</span><span class="pln">amount</span><span class="pun">,</span><span class="pln"> inCurr</span><span class="pun">,</span><span class="pln"> outCurr</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">return</span><span class="pln"> amount </span><span class="pun">*</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">usdToForeignRates</span><span class="pun">[</span><span class="pln">outCurr</span><span class="pun">]</span><span class="pln"> </span><span class="pun">/</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">usdToForeignRates</span><span class="pun">[</span><span class="pln">inCurr</span><span class="pun">];</span><span class="pln">
   </span><span class="pun">};</span><span class="pln">
-  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">pay </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> pay</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    window</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">(</span><span class="str">"Thanks!"</span><span class="pun">);</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">pay </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> pay</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="kwd">
+  window</span><span class="pun">.</span><span class="kwd">alert</span><span class="pun">(</span><span class="str">"Thanks!"</span><span class="pun">);</span><span class="pln">
   </span><span class="pun">};</span><span class="pln">
 </span><span class="pun">});</span></code></pre>
     </div>
@@ -957,8 +957,8 @@ from the web, e.g. by calling the Yahoo Finance API, without changing the contro
   </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">total </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> total</span><span class="pun">(</span><span class="pln">outCurr</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">return</span><span class="pln"> currencyConverter</span><span class="pun">.</span><span class="pln">convert</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">qty </span><span class="pun">*</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">cost</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">inCurr</span><span class="pun">,</span><span class="pln"> outCurr</span><span class="pun">);</span><span class="pln">
   </span><span class="pun">};</span><span class="pln">
-  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">pay </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> pay</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    window</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">(</span><span class="str">"Thanks!"</span><span class="pun">);</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">pay </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> pay</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="kwd">
+  window</span><span class="pun">.</span><span class="kwd">alert</span><span class="pun">(</span><span class="str">"Thanks!"</span><span class="pun">);</span><span class="pln">
   </span><span class="pun">};</span><span class="pln">
 </span><span class="pun">}]);</span></code></pre>
     </div>
@@ -986,7 +986,7 @@ from the web, e.g. by calling the Yahoo Finance API, without changing the contro
     </div>
 
 
-    <iframe class="runnable-example-frame" src="./ng-guide-all3_files/index(47).html" name="example-guide-concepts-21"></iframe>
+    <iframe class="runnable-example-frame-150" src="./ng-guide-all3_files/index(47).html" name="example-guide-concepts-21"></iframe>
   </div>
 </div>
 
@@ -1055,15 +1055,15 @@ The following example shows how this is done with Angular:</p>
   </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">total </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> total</span><span class="pun">(</span><span class="pln">outCurr</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">return</span><span class="pln"> currencyConverter</span><span class="pun">.</span><span class="pln">convert</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">.</span><span class="pln">qty </span><span class="pun">*</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">cost</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">inCurr</span><span class="pun">,</span><span class="pln"> outCurr</span><span class="pun">);</span><span class="pln">
   </span><span class="pun">};</span><span class="pln">
-  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">pay </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> pay</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    window</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">(</span><span class="str">"Thanks!"</span><span class="pun">);</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">pay </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> pay</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="kwd">
+  window</span><span class="pun">.</span><span class="kwd">alert</span><span class="pun">(</span><span class="str">"Thanks!"</span><span class="pun">);</span><span class="pln">
   </span><span class="pun">};</span><span class="pln">
 </span><span class="pun">}]);</span></code></pre>
     </div>
 
     <div class="runnable-example-file" name="finance3.js" language="js" type="js" style=""><span style="font-size: 22px; font-family: Share-Bold;">finance3.js</span>
       <pre><code><span class="ang">angular</span><span class="pun">.</span><span class="ang">module</span><span class="pun">(</span><span class="str">'finance3'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[])</span><span class="pln">
-</span><span class="pun">.</span><span class="ang">factory</span><span class="pun">(</span><span class="str">'currencyConverter'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$http'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$http</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+</span><span class="pun">.</span><span class="ang">factory</span><span class="pun">(</span><span class="str">'currencyConverter'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$http'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$http</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   </span><span class="kwd">var</span><span class="pln"> YAHOO_FINANCE_URL_PATTERN </span><span class="pun">=</span><span class="pln">
         </span><span class="str">'//query.yahooapis.com/v1/public/yql?q=select * from '</span><span class="pun">+</span><span class="pln">
         </span><span class="str">'yahoo.finance.xchange where pair in ("PAIRS")&amp;format=json&amp;'</span><span class="pun">+</span><span class="pln">
@@ -1078,9 +1078,9 @@ The following example shows how this is done with Angular:</p>
   </span><span class="kwd">var</span><span class="pln"> refresh </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">var</span><span class="pln"> url </span><span class="pun">=</span><span class="pln"> YAHOO_FINANCE_URL_PATTERN</span><span class="pun">.</span><span class="pln">
                replace</span><span class="pun">(</span><span class="str">'PAIRS'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'USD'</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> currencies</span><span class="pun">.</span><span class="pln">join</span><span class="pun">(</span><span class="str">'","USD'</span><span class="pun">));</span><span class="pln">
-    </span><span class="kwd">return</span><span class="pln"> $http</span><span class="pun">.</span><span class="pln">jsonp</span><span class="pun">(</span><span class="pln">url</span><span class="pun">).</span><span class="pln">success</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="ang"> $http.jsonp</span><span class="pun">(</span><span class="pln">url</span><span class="pun">).</span><span class="pln">success</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
       </span><span class="kwd">var</span><span class="pln"> newUsdToForeignRates </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{};</span><span class="ang">
-      angular</span><span class="pun">.</span><span class="pln">forEach</span><span class="pun">(</span><span class="pln">data</span><span class="pun">.</span><span class="pln">query</span><span class="pun">.</span><span class="pln">results</span><span class="pun">.</span><span class="pln">rate</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">rate</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      angular.forEach</span><span class="pun">(</span><span class="pln">data</span><span class="pun">.</span><span class="pln">query</span><span class="pun">.</span><span class="pln">results</span><span class="pun">.</span><span class="pln">rate</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">rate</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
         </span><span class="kwd">var</span><span class="pln"> currency </span><span class="pun">=</span><span class="pln"> rate</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">substring</span><span class="pun">(</span><span class="lit">3</span><span class="pun">,</span><span class="lit">6</span><span class="pun">);</span><span class="pln">
         newUsdToForeignRates</span><span class="pun">[</span><span class="pln">currency</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> window</span><span class="pun">.</span><span class="pln">parseFloat</span><span class="pun">(</span><span class="pln">rate</span><span class="pun">.</span><span class="typ">Rate</span><span class="pun">);</span><span class="pln">
       </span><span class="pun">});</span><span class="pln">
@@ -1128,8 +1128,8 @@ The following example shows how this is done with Angular:</p>
 
 <p class="ng-scope"></p>
 <p class="ng-scope">What changed?
-Our <code><span class="pln">currencyConverter</span></code> service of the <code><span class="pln">finance</span></code> module now uses the <a href="https://docs.angularjs.org/api/ng/service/$http"><code><span class="pln">$http</span></code></a>, a
-built-in service provided by Angular for accessing a server backend. <code><span class="pln">$http</span></code> is a wrapper around
+Our <code><span class="pln">currencyConverter</span></code> service of the <code><span class="pln">finance</span></code> module now uses the <a href="https://docs.angularjs.org/api/ng/service/$http"><code><span class="ang">$http</span></code></a>, a
+built-in service provided by Angular for accessing a server backend. <code><span class="ang">$http</span></code> is a wrapper around
 <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest"><code><span class="typ">XMLHttpRequest</span></code></a>
 and <a href="http://en.wikipedia.org/wiki/JSONP">JSONP</a> transports.</p>
 
@@ -1819,11 +1819,11 @@ on it.</li>
 <li>Singletons – Each component dependent on a service gets a reference to the single instance
 generated by the service factory.</li>
 </ul>
-<p class="ng-scope">Angular offers several useful services (like <a href="https://docs.angularjs.org/api/ng/service/$http"><code><span class="pln">$http</span></code></a>), but for most applications
+<p class="ng-scope">Angular offers several useful services (like <a href="https://docs.angularjs.org/api/ng/service/$http"><code><span class="ang">$http</span></code></a>), but for most applications
 you'll also want to <a href="#services#creating-services">create your own</a>.</p>
 <div class="alert alert-info ng-scope">
 <strong>Note:</strong> Like other core Angular identifiers, built-in services always start with <code><span class="pln">$</span></code>
-(e.g. <code><span class="pln">$http</span></code>).
+(e.g. <code><span class="ang">$http</span></code>).
 </div>
 
 
@@ -1985,7 +1985,7 @@ it</span><span class="pun">(</span><span class="str">'should not alert first two
   notify</span><span class="pun">(</span><span class="str">'one'</span><span class="pun">);</span><span class="pln">
   notify</span><span class="pun">(</span><span class="str">'two'</span><span class="pun">);</span><span class="pln">
 
-  expect</span><span class="pun">(</span><span class="pln">mock</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">).</span><span class="pln">not</span><span class="pun">.</span><span class="pln">toHaveBeenCalled</span><span class="pun">();</span><span class="pln">
+  expect</span><span class="pun">(</span><span class="pln">mock</span><span class="pun">.</span><span class="kwd">alert</span><span class="pun">).</span><span class="pln">not</span><span class="pun">.</span><span class="pln">toHaveBeenCalled</span><span class="pun">();</span><span class="pln">
 </span><span class="pun">});</span><span class="pln">
 
 it</span><span class="pun">(</span><span class="str">'should alert all after third notification'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
@@ -1993,7 +1993,7 @@ it</span><span class="pun">(</span><span class="str">'should alert all after thi
   notify</span><span class="pun">(</span><span class="str">'two'</span><span class="pun">);</span><span class="pln">
   notify</span><span class="pun">(</span><span class="str">'three'</span><span class="pun">);</span><span class="pln">
 
-  expect</span><span class="pun">(</span><span class="pln">mock</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">).</span><span class="pln">toHaveBeenCalledWith</span><span class="pun">(</span><span class="str">"one\ntwo\nthree"</span><span class="pun">);</span><span class="pln">
+  expect</span><span class="pun">(</span><span class="pln">mock</span><span class="pun">.</span><span class="kwd">alert</span><span class="pun">).</span><span class="pln">toHaveBeenCalledWith</span><span class="pun">(</span><span class="str">"one\ntwo\nthree"</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">});</span><span class="pln">
 
 it</span><span class="pun">(</span><span class="str">'should clear messages after alert'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
@@ -2004,8 +2004,8 @@ it</span><span class="pun">(</span><span class="str">'should clear messages afte
   notify</span><span class="pun">(</span><span class="str">'two'</span><span class="pun">);</span><span class="pln">
   notify</span><span class="pun">(</span><span class="str">'third'</span><span class="pun">);</span><span class="pln">
 
-  expect</span><span class="pun">(</span><span class="pln">mock</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">.</span><span class="pln">callCount</span><span class="pun">).</span><span class="pln">toEqual</span><span class="pun">(</span><span class="lit">2</span><span class="pun">);</span><span class="pln">
-  expect</span><span class="pun">(</span><span class="pln">mock</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">.</span><span class="pln">mostRecentCall</span><span class="pun">.</span><span class="pln">args</span><span class="pun">).</span><span class="pln">toEqual</span><span class="pun">([</span><span class="str">"more\ntwo\nthird"</span><span class="pun">]);</span><span class="pln">
+  expect</span><span class="pun">(</span><span class="pln">mock</span><span class="pun">.</span><span class="kwd">alert</span><span class="pun">.</span><span class="pln">callCount</span><span class="pun">).</span><span class="pln">toEqual</span><span class="pun">(</span><span class="lit">2</span><span class="pun">);</span><span class="pln">
+  expect</span><span class="pun">(</span><span class="pln">mock</span><span class="pun">.</span><span class="kwd">alert</span><span class="pun">.</span><span class="pln">mostRecentCall</span><span class="pun">.</span><span class="pln">args</span><span class="pun">).</span><span class="pln">toEqual</span><span class="pun">([</span><span class="str">"more\ntwo\nthird"</span><span class="pun">]);</span><span class="pln">
 </span><span class="pun">});</span></code></pre>
 <h2 id="related-topics" class="ng-scope">Related Topics</h2>
 <ul class="ng-scope">
@@ -2822,8 +2822,8 @@ construction and lookup of dependencies.</p>
 <code><span class="pln">$window</span></code> service. The <code><span class="pln">greeter</span></code> service is an object that contains a <code><span class="pln">greet</span></code> method.</p>
 <pre class="ng-scope"><code class="lang-js"><span class="pln">myModule</span><span class="pun">.</span><span class="ang">factory</span><span class="pun">(</span><span class="str">'greeter'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$window</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    greet</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">text</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-      $window</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">(</span><span class="pln">text</span><span class="pun">);</span><span class="pln">
+    greet</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">text</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+      $window</span><span class="pun">.</span><span class="kwd">alert</span><span class="pun">(</span><span class="pln">text</span><span class="pun">);</span><span class="pln">
     </span><span class="pun">}</span><span class="pln">
   </span><span class="pun">};</span><span class="pln">
 </span><span class="pun">});</span></code></pre>
@@ -3267,8 +3267,8 @@ provide mockable access to globals.</p>
 </span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">'ExampleController'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'$window'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'$scope'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$window</span><span class="pun">,</span><span class="pln"> $scope</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
   $scope</span><span class="pun">.</span><span class="pln">name </span><span class="pun">=</span><span class="pln"> </span><span class="str">'World'</span><span class="pun">;</span><span class="ang">
 
-  $scope</span><span class="pun">.</span><span class="pln">greet </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    $window</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">(</span><span class="str">'Hello '</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> $scope</span><span class="pun">.</span><span class="pln">name</span><span class="pun">);</span><span class="pln">
+  $scope</span><span class="pun">.</span><span class="pln">greet </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+    $window</span><span class="pun">.</span><span class="kwd">alert</span><span class="pun">(</span><span class="str">'Hello '</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> $scope</span><span class="pun">.</span><span class="pln">name</span><span class="pun">);</span><span class="pln">
   </span><span class="pun">};</span><span class="pln">
 </span><span class="pun">}]);</span></code></pre>
     </div>
@@ -4232,7 +4232,7 @@ Validation happens after successfully running <code><span class="pln">$parsers</
 Failed validators are stored by key in
 <a href="https://docs.angularjs.org/api/ng/type/ngModel.NgModelController#$error"><code><span class="pln">ngModelController</span><span class="pun">.</span><span class="pln">$error</span></code></a>.</p>
 <p class="ng-scope">Additionally, there is the <code><span class="pln">$asyncValidators</span></code> object which handles asynchronous validation,
-such as making an <code><span class="pln">$http</span></code> request to the backend. Functions added to the object must return
+such as making an <code><span class="ang">$http</span></code> request to the backend. Functions added to the object must return
 a promise that must be <code><span class="pln">resolved</span></code> when valid or <code><span class="pln">rejected</span></code> when invalid.
 In-progress async validations are stored by key in
 <a href="https://docs.angularjs.org/api/ng/type/ngModel.NgModelController#$pending"><code><span class="pln">ngModelController</span><span class="pun">.</span><span class="pln">$pending</span></code></a>.</p>
@@ -5565,7 +5565,7 @@ to which tab is active.</p>
       </span><span class="kwd">var</span><span class="pln"> panes </span><span class="pun">=</span><span class="pln"> $scope</span><span class="pun">.</span><span class="pln">panes </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[];</span><span class="ang">
 
       $scope</span><span class="pun">.</span><span class="kwd">select</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">pane</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
-        angular</span><span class="pun">.</span><span class="pln">forEach</span><span class="pun">(</span><span class="pln">panes</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">pane</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        angular.forEach</span><span class="pun">(</span><span class="pln">panes</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">pane</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
           pane</span><span class="pun">.</span><span class="pln">selected </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
         </span><span class="pun">});</span><span class="pln">
         pane</span><span class="pun">.</span><span class="pln">selected </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
@@ -6440,8 +6440,8 @@ Each test has its own injector and modules are loaded multiple times.
 <pre class="ng-scope"><code class="lang-js"><span class="ang">angular</span><span class="pun">.</span><span class="ang">module</span><span class="pun">(</span><span class="str">'greetMod'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[]).</span><span class="ang">
 
 factory</span><span class="pun">(</span><span class="str">'alert'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">$window</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-  </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">text</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    $window</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">(</span><span class="pln">text</span><span class="pun">);</span><span class="pln">
+  </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">text</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
+    $window</span><span class="pun">.</span><span class="kwd">alert</span><span class="pun">(</span><span class="pln">text</span><span class="pun">);</span><span class="pln">
   </span><span class="pun">}</span><span class="pln">
 </span><span class="pun">}).</span><span class="pln">
 
@@ -6468,7 +6468,7 @@ factory</span><span class="pun">(</span><span class="str">'greet'</span><span cl
   </span><span class="com">// `$window` into the tests.</span><span class="pln">
   it</span><span class="pun">(</span><span class="str">'should alert on $window'</span><span class="pun">,</span><span class="pln"> inject</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">greet</span><span class="pun">,</span><span class="pln"> $window</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     greet</span><span class="pun">(</span><span class="str">'World'</span><span class="pun">);</span><span class="pln">
-    expect</span><span class="pun">(</span><span class="pln">$window</span><span class="pun">.</span><span class="pln">alert</span><span class="pun">).</span><span class="pln">toHaveBeenCalledWith</span><span class="pun">(</span><span class="str">'Hello World!'</span><span class="pun">);</span><span class="pln">
+    expect</span><span class="pun">(</span><span class="pln">$window</span><span class="pun">.</span><span class="kwd">alert</span><span class="pun">).</span><span class="pln">toHaveBeenCalledWith</span><span class="pun">(</span><span class="str">'Hello World!'</span><span class="pun">);</span><span class="pln">
   </span><span class="pun">}));</span><span class="pln">
 
   </span><span class="com">// this is another way of overriding configuration in the</span><span class="pln">
@@ -7731,7 +7731,7 @@ what they are. To use Jasmine with Karma, we use the
 <p class="ng-scope">Angular also provides the <a href="https://docs.angularjs.org/api/ngMock"><code><span class="pln">ngMock</span></code></a> module, which provides mocking for your tests. This is used
 to inject and mock Angular services within unit tests. In addition, it is able to extend other
 modules so they are synchronous. Having tests synchronous keeps them much cleaner and easier to work
-with. One of the most useful parts of ngMock is <a href="https://docs.angularjs.org/api/ngMock/service/$httpBackend"><code><span class="pln">$httpBackend</span></code></a>, which lets us mock XHR
+with. One of the most useful parts of ngMock is <a href="https://docs.angularjs.org/api/ngMock/service/$httpBackend"><code><span class="ang">$httpBackend</span></code></a>, which lets us mock XHR
 requests in tests, and return sample data instead.</p>
 <h2 id="testing-a-controller" class="ng-scope">Testing a Controller</h2>
 <p class="ng-scope">Because Angular separates logic from the view layer, it keeps controllers easy to test. Let's take a
@@ -8601,7 +8601,7 @@ redirect to regular / hashbang url, as this conversion happens only during parsi
 
 </span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">"LocationController"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">,</span><span class="pln"> $location</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
   $scope</span><span class="pun">.</span><span class="pln">$location </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{};</span><span class="ang">
-  angular</span><span class="pun">.</span><span class="pln">forEach</span><span class="pun">(</span><span class="str">"protocol host port path search hash"</span><span class="pun">.</span><span class="pln">split</span><span class="pun">(</span><span class="str">" "</span><span class="pun">),</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">method</span><span class="pun">){</span><span class="ang">
+  angular.forEach</span><span class="pun">(</span><span class="str">"protocol host port path search hash"</span><span class="pun">.</span><span class="pln">split</span><span class="pun">(</span><span class="str">" "</span><span class="pun">),</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">method</span><span class="pun">){</span><span class="ang">
    $scope</span><span class="pun">.</span><span class="pln">$location</span><span class="pun">[</span><span class="pln">method</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(){</span><span class="pln">
      </span><span class="kwd">var</span><span class="pln"> result </span><span class="pun">=</span><span class="pln"> $location</span><span class="pun">[</span><span class="pln">method</span><span class="pun">].</span><span class="pln">call</span><span class="pun">(</span><span class="pln">$location</span><span class="pun">);</span><span class="pln">
      </span><span class="kwd">return</span><span class="ang"> angular</span><span class="pun">.</span><span class="pln">isObject</span><span class="pun">(</span><span class="pln">result</span><span class="pun">)</span><span class="pln"> </span><span class="pun">?</span><span class="ang"> angular</span><span class="pun">.</span><span class="pln">toJson</span><span class="pun">(</span><span class="pln">result</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> result</span><span class="pun">;</span><span class="pln">
@@ -8767,7 +8767,7 @@ it</span><span class="pun">(</span><span class="str">"should change $location ac
 
 </span><span class="pun">.</span><span class="ang">controller</span><span class="pun">(</span><span class="str">"LocationController"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="ang">$scope</span><span class="pun">,</span><span class="pln"> $location</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
   $scope</span><span class="pun">.</span><span class="pln">$location </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{};</span><span class="ang">
-  angular</span><span class="pun">.</span><span class="pln">forEach</span><span class="pun">(</span><span class="str">"protocol host port path search hash"</span><span class="pun">.</span><span class="pln">split</span><span class="pun">(</span><span class="str">" "</span><span class="pun">),</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">method</span><span class="pun">){</span><span class="ang">
+  angular.forEach</span><span class="pun">(</span><span class="str">"protocol host port path search hash"</span><span class="pun">.</span><span class="pln">split</span><span class="pun">(</span><span class="str">" "</span><span class="pun">),</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">method</span><span class="pun">){</span><span class="ang">
     $scope</span><span class="pun">.</span><span class="pln">$location</span><span class="pun">[</span><span class="pln">method</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(){</span><span class="pln">
       </span><span class="kwd">var</span><span class="pln"> result </span><span class="pun">=</span><span class="pln"> $location</span><span class="pun">[</span><span class="pln">method</span><span class="pun">].</span><span class="pln">call</span><span class="pun">(</span><span class="pln">$location</span><span class="pun">);</span><span class="pln">
       </span><span class="kwd">return</span><span class="ang"> angular</span><span class="pun">.</span><span class="pln">isObject</span><span class="pun">(</span><span class="pln">result</span><span class="pun">)</span><span class="pln"> </span><span class="pun">?</span><span class="ang"> angular</span><span class="pun">.</span><span class="pln">toJson</span><span class="pun">(</span><span class="pln">result</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> result</span><span class="pun">;</span><span class="pln">
@@ -10626,7 +10626,7 @@ null once the event finished propagating. If any code depends on asynchronously 
 <code><span class="pln">currentScope</span></code> property, it should be migrated to use <code><span class="pln">targetScope</span></code> instead. All of these cases
 should be considered programming bugs.</li>
 </ul>
-<h2 id="server-requests-http-resource-" class="ng-scope">Server Requests (<code><span class="pln">$http</span></code>, <code><span class="pln">$resource</span></code>)</h2>
+<h2 id="server-requests-http-resource-" class="ng-scope">Server Requests (<code><span class="ang">$http</span></code>, <code><span class="pln">$resource</span></code>)</h2>
 <ul class="ng-scope">
 <li><strong>$http:</strong> due to <a href="https://github.com/angular/angular.js/commit/ad4336f9359a073e272930f8f9bcd36587a8648f">ad4336f9</a>,</li>
 </ul>
@@ -10835,10 +10835,10 @@ below should still apply, but you may want to consult the
 <h2 id="templates-no-longer-automatically-unwrap-promises" class="ng-scope">Templates no longer automatically unwrap promises</h2>
 <p class="ng-scope"><code><span class="pln">$parse</span></code> and templates in general will no longer automatically unwrap promises.</p>
 <p class="ng-scope">Before:</p>
-<pre class="ng-scope"><code class="lang-javascript" style="font-weight: bold; color: black;"><span class="ang">$scope</span><span class="pun">.</span><span class="pln">foo </span><span class="pun">=</span><span class="pln"> $http</span><span class="pun">({</span><span class="pln">method</span><span class="pun">:</span><span class="pln"> </span><span class="str">'GET'</span><span class="pun">,</span><span class="pln"> url</span><span class="pun">:</span><span class="pln"> </span><span class="str">'/someUrl'</span><span class="pun">});</span></code></pre>
+<pre class="ng-scope"><code class="lang-javascript" style="font-weight: bold; color: black;"><span class="ang">$scope</span><span class="pun">.</span><span class="pln">foo </span><span class="pun">=</span><span class="ang"> $http</span><span class="pun">({</span><span class="pln">method</span><span class="pun">:</span><span class="pln"> </span><span class="str">'GET'</span><span class="pun">,</span><span class="pln"> url</span><span class="pun">:</span><span class="pln"> </span><span class="str">'/someUrl'</span><span class="pun">});</span></code></pre>
 <pre class="ng-scope"><code class="lang-html" style="font-weight: bold; color: black;"><span class="tag">&lt;p&gt;</span><span class="ang">{{</span><span class="pln">foo</span><span class="ang">}}</span><span class="tag">&lt;/p&gt;</span></code></pre>
 <p class="ng-scope">After:</p>
-<pre class="ng-scope"><code class="lang-javascript" style="font-weight: bold; color: black;"><span class="pln">$http</span><span class="pun">({</span><span class="pln">method</span><span class="pun">:</span><span class="pln"> </span><span class="str">'GET'</span><span class="pun">,</span><span class="pln"> url</span><span class="pun">:</span><span class="pln"> </span><span class="str">'/someUrl'</span><span class="pun">})</span><span class="pln">
+<pre class="ng-scope"><code class="lang-javascript" style="font-weight: bold; color: black;"><span class="ang">$http</span><span class="pun">({</span><span class="pln">method</span><span class="pun">:</span><span class="pln"> </span><span class="str">'GET'</span><span class="pun">,</span><span class="pln"> url</span><span class="pun">:</span><span class="pln"> </span><span class="str">'/someUrl'</span><span class="pun">})</span><span class="pln">
 </span><span class="pun">.</span><span class="pln">success</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="ang">
   $scope</span><span class="pun">.</span><span class="pln">foo </span><span class="pun">=</span><span class="pln"> data</span><span class="pun">;</span><span class="pln">
 </span><span class="pun">});</span></code></pre>
@@ -10936,11 +10936,11 @@ to use with non-ES5 browsers, like IE8.</p>
 of the <a href="http://dom.spec.whatwg.org/">DOM promises standard</a>.</p>
 <p class="ng-scope">To migrate the code follow the example below.</p>
 <p class="ng-scope">Before:</p>
-<pre class="ng-scope"><code class="lang-javascript" style="font-weight: bold; color: black;"><span class="pln">$http</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="str">'/foo'</span><span class="pun">).</span><span class="pln">always</span><span class="pun">(</span><span class="pln">doSomething</span><span class="pun">);</span></code></pre>
+<pre class="ng-scope"><code class="lang-javascript" style="font-weight: bold; color: black;"><span class="ang">$http.get</span><span class="pun">(</span><span class="str">'/foo'</span><span class="pun">).</span><span class="pln">always</span><span class="pun">(</span><span class="pln">doSomething</span><span class="pun">);</span></code></pre>
 <p class="ng-scope">After:</p>
-<pre class="ng-scope"><code class="lang-javascript" style="font-weight: bold; color: black;"><span class="pln">$http</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="str">'/foo'</span><span class="pun">).</span><span class="kwd">finally</span><span class="pun">(</span><span class="pln">doSomething</span><span class="pun">);</span></code></pre>
+<pre class="ng-scope"><code class="lang-javascript" style="font-weight: bold; color: black;"><span class="ang">$http.get</span><span class="pun">(</span><span class="str">'/foo'</span><span class="pun">).</span><span class="kwd">finally</span><span class="pun">(</span><span class="pln">doSomething</span><span class="pun">);</span></code></pre>
 <p class="ng-scope">Or for IE8-compatible code:</p>
-<pre class="ng-scope"><code class="lang-javascript" style="font-weight: bold; color: black;"><span class="pln">$http</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="str">'/foo'</span><span class="pun">)[</span><span class="str">'finally'</span><span class="pun">](</span><span class="pln">doSomething</span><span class="pun">);</span></code></pre>
+<pre class="ng-scope"><code class="lang-javascript" style="font-weight: bold; color: black;"><span class="ang">$http.get</span><span class="pun">(</span><span class="str">'/foo'</span><span class="pun">)[</span><span class="str">'finally'</span><span class="pun">](</span><span class="pln">doSomething</span><span class="pun">);</span></code></pre>
 <p class="ng-scope">See <a href="https://github.com/angular/angular.js/commit/f078762d48d0d5d9796dcdf2cb0241198677582c">f078762d</a>.</p>
 <h2 id="ngmobile-is-now-ngtouch" class="ng-scope">ngMobile is now ngTouch</h2>
 <p class="ng-scope">Many touch-enabled devices are not mobile devices, so we decided to rename this module to better
