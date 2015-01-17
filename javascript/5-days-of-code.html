@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://torusoft.com/blog/5-days-of-code-curriculum-day-1 -->
+<html xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+
+
+<meta name="keywords" content="programming, javascript, nova scotia, ivany commission, ivany report, nova scotia startups, torusoft, ari najarian, learn programming, learn javascript, programming curriculum"/>
+<meta name="description" content="All the instalsments in a series of articles describing a computer programming curriculum for Nova Scotia."/>
+
+<meta property="og:title" content="5 Days of Code Curriculum: Days 1 - 5"/>
+<meta property="og:description" content="Every day from March 3 to March 7, Ari Najarian will be outlining his vision for a computer programming curriculum for beginners in Nova Scotia. Read the first instalment now!"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="http://www.torusoft.com/blog/5-days-of-code-curriculum-day-1"/>
+<meta property="og:image" content="./auxi/pix/Torusoft-Logo-White.jpg"/>
+<meta property="og:site_name" content="Torusoft"/>
+<meta property="fb:admins" content="505287365"/>
+
+
+<!--<base href="http://torusoft.com/news/">-->
+
+<title>A JavaScript Curriculum</title>
+<link rel="shortcut icon" href="auxi/pix/torusoft/favicon.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="auxi/css/reset.css" media="screen"/>
+<link rel="stylesheet" href="auxi/css/int-common.css" media="screen"/>
+<link rel="stylesheet" href="auxi/css/specific-common.css" media="screen"/>
+<link rel="stylesheet" href="auxi/css/specific-article.css" media="screen"/>
+<!--[if lte IE 8]>
+	<link rel="stylesheet" type="text/css" href="css/ie.css" />
+<![endif]-->
+<link href="./auxi/css/5days.css" rel="stylesheet" type="text/css"/>
+
+<!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+
+<!--  script id="twitter-wjs" src="./5-days-of-code-1_files/widgets.js"></script  -->
+<!--  script id="facebook-jssdk" src="./5-days-of-code-1_files/all.js"></script  -->
+<!--  script type="text/javascript" async="" src="./5-days-of-code-1_files/ga.js"></script  -->
+<script type="text/javascript" src="./5-days-of-code-1_files/jquery.min.js"></script>
+<style type="text/css"></style>
+<script type="text/javascript" src="./5-days-of-code-1_files/scripts.js"></script>
+
+<!--  script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15709207-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script  -->
+
+<script src="./5-days-of-code-1_files/secureAnonymousFramework"></script>
+<script type="text/javascript" async="" src="./5-days-of-code-1_files/embed.js"></script>
+<script type="text/javascript" src="chrome-extension://aadgmnobpdmgmigaicncghmmoeflnamj/ng-inspector.js"></script>
+<style type="text/css">
+* html #li_gen_0 a#li_gen_0-link{height:1% !important;}#li_gen_0{position:relative !important;overflow:visible !important;display:block !important;}#li_gen_0 span{-webkit-box-sizing:content-box !important;-moz-box-sizing:content-box !important;box-sizing:content-box !important;}#li_gen_0 a#li_gen_0-link{border:0 !important;height:20px !important;text-decoration:none !important;padding:0 !important;margin:0 !important;display:inline-block !important;}#li_gen_0 a#li_gen_0-link:link, #li_gen_0 a#li_gen_0-link:visited, #li_gen_0 a#li_gen_0-link:hover, #li_gen_0 a#li_gen_0-link:active{border:0 !important;text-decoration:none !important;}#li_gen_0 a#li_gen_0-link:after{content:"." !important;display:block !important;clear:both !important;visibility:hidden !important;line-height:0 !important;height:0 !important;}
+#li_gen_0 #li_gen_0-logo{background-image:url(auxi/pix/sprite_connect_v14.png) !important;background-position:0px -276px !important;background-repeat:no-repeat !important;background-size:initial !important;cursor:pointer !important;border:0 !important;text-indent:-9999em !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:absolute !important;left:0px !important;top:0px !important;display:block !important;width:20px !important;height:20px !important;float:right !important;border-radius:0 !important;-webkit-border-radius:0 !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;}#li_gen_0.hovered #li_gen_0-logo{background-position:-20px -276px !important;}#li_gen_0.clicked #li_gen_0-logo, #li_gen_0.down #li_gen_0-logo{background-position:-40px -276px !important;}.IN-shadowed #li_gen_0 #li_gen_0-logo{}#li_gen_0 #li_gen_0-title{color:#333 !important;cursor:pointer !important;display:block !important;white-space:nowrap !important;float:left !important;margin-left:1px !important;vertical-align:top !important;overflow:hidden !important;text-align:center !important;height:18px !important;padding:0 4px 0 23px !important;border:1px solid #000 !important;border-top-color:#E2E2E2 !important;border-right-color:#BFBFBF !important;border-bottom-color:#B9B9B9 !important;border-left-color:#E2E2E2 !important;border-left:0 !important;text-shadow:#FFFFFF -1px 1px 0 !important;line-height:20px !important;border-radius:0 !important;-webkit-border-radius:0 !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;background-color:#ECECEC !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#FEFEFE), color-stop(100%,#ECECEC)) !important; background-image: -webkit-linear-gradient(top, #FEFEFE 0%, #ECECEC 100%) !important;}
+#li_gen_0.hovered #li_gen_0-title{border:1px solid #000 !important;border-top-color:#ABABAB !important;border-right-color:#9A9A9A !important;border-bottom-color:#787878 !important;border-left-color:#04568B !important;border-left:0 !important;background-color:#EDEDED !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#EDEDED), color-stop(100%,#DEDEDE)) !important; background-image: -webkit-linear-gradient(top, #EDEDED 0%, #DEDEDE 100%) !important;}#li_gen_0.clicked #li_gen_0-title, #li_gen_0.down #li_gen_0-title{color:#666 !important;border:1px solid #000 !important;border-top-color:#B6B6B6 !important;border-right-color:#B3B3B3 !important;border-bottom-color:#9D9D9D !important;border-left-color:#49627B !important;border-left:0 !important;background-color:#DEDEDE !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#E3E3E3), color-stop(100%,#EDEDED)) !important; background-image: -webkit-linear-gradient(top, #E3E3E3 0%, #EDEDED 100%) !important;}.IN-shadowed #li_gen_0 #li_gen_0-title{}.IN-shadowed #li_gen_0.hovered #li_gen_0-title{}.IN-shadowed #li_gen_0.clicked #li_gen_0-title, .IN-shadowed #li_gen_0.down #li_gen_0-title{}
+#li_gen_0 #li_gen_0-title-text, #li_gen_0 #li_gen_0-title-text *{color:#333 !important;font-size:11px !important;font-family:Arial, sans-serif !important;font-weight:bold !important;font-style:normal !important;-webkit-font-smoothing:antialiased !important;display:inline-block !important;background:transparent none !important;vertical-align:top !important;height:18px !important;line-height:20px !important;float:none !important;}#li_gen_0 #li_gen_0-title-text strong{font-weight:bold !important;}#li_gen_0 #li_gen_0-title-text em{font-style:italic !important;}#li_gen_0.hovered #li_gen_0-title-text, #li_gen_0.hovered #li_gen_0-title-text *{color:#000 !important;}#li_gen_0.clicked #li_gen_0-title-text, #li_gen_0.down #li_gen_0-title-text, #li_gen_0.clicked #li_gen_0-title-text *, #li_gen_0.down #li_gen_0-title-text *{color:#666 !important;}#li_gen_0 #li_gen_0-title #li_gen_0-mark{display:inline-block !important;width:0px !important;overflow:hidden !important;}
+.success #li_gen_0 #li_gen_0-title{color:#333 !important;border-top-color:#E2E2E2 !important;border-right-color:#BFBFBF !important;border-bottom-color:#B9B9B9 !important;border-left-color:#E2E2E2 !important;background-color:#ECECEC !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#FEFEFE), color-stop(100%,#ECECEC)) !important; background-image: -webkit-linear-gradient(top, #FEFEFE 0%, #ECECEC 100%) !important;}.success #li_gen_0 #li_gen_0-title-text, .success #li_gen_0 #li_gen_0-title-text *{color:#333 !important;}.IN-shadowed .success #li_gen_0 #li_gen_0-title{}.success #li_gen_0.hovered #li_gen_0-title{color:#000 !important;border-top-color:#ABABAB !important;border-right-color:#9A9A9A !important;border-bottom-color:#787878 !important;border-left-color:#04568B !important;background-color:#EDEDED !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#EDEDED), color-stop(100%,#DEDEDE)) !important; background-image: -webkit-linear-gradient(top, #EDEDED 0%, #DEDEDE 100%) !important;}.success #li_gen_0.hovered #li_gen_0-title-text, .success #li_gen_0.hovered #li_gen_0-title-text *{color:#000 !important;}
+.success #li_gen_0.clicked #li_gen_0-title, .success #li_gen_0.down #li_gen_0-title{color:#666 !important;border-top-color:#B6B6B6 !important;border-right-color:#B3B3B3 !important;border-bottom-color:#9D9D9D !important;border-left-color:#49627B !important;background-color:#DEDEDE !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#E3E3E3), color-stop(100%,#EDEDED)) !important; background-image: -webkit-linear-gradient(top, #E3E3E3 0%, #EDEDED 100%) !important;}.success #li_gen_0.clicked #li_gen_0-title-text, .success #li_gen_0.down #li_gen_0-title-text, .success #li_gen_0.clicked #li_gen_0-title-text *, .success #li_gen_0.down #li_gen_0-title-text *{color:#666 !important;}.IN-shadowed .success #li_gen_0.clicked #li_gen_0-title, .IN-shadowed .success #li_gen_0.down #li_gen_0-title{}#li_gen_1-container.IN-right {display:inline-block !important;float:left !important;overflow:visible !important;position:relative !important;height:18px !important;padding-left:2px !important;line-height:1px !important;cursor:pointer !important;}#li_gen_1.IN-right {display:block !important;float:left !important;height:18px !important;margin-right:4px !important;padding-right:4px !important;background-image:url(auxi/pix/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:right -100px !important;}#li_gen_1-inner.IN-right {display:block !important;float:left !important;padding-left:8px !important;text-align:center !important;background-image:url(auxi/pix/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:0px -60px !important;}#li_gen_1-content.IN-right {display:inline !important;font-size:11px !important;color:#04558B !important;font-weight:bold !important;font-family:Arial, sans-serif !important;line-height:18px !important;padding:0 5px 0 5px !important;}
+#li_gen_1-container.IN-empty {display:none !important;}#li_gen_1-container.IN-hidden #li_gen_1 {display:none !important;}* html #li_gen_2 a#li_gen_2-link{height:1% !important;}#li_gen_2{position:relative !important;overflow:visible !important;display:block !important;}#li_gen_2 span{-webkit-box-sizing:content-box !important;-moz-box-sizing:content-box !important;box-sizing:content-box !important;}#li_gen_2 a#li_gen_2-link{border:0 !important;height:20px !important;text-decoration:none !important;padding:0 !important;margin:0 !important;display:inline-block !important;}#li_gen_2 a#li_gen_2-link:link, #li_gen_2 a#li_gen_2-link:visited, #li_gen_2 a#li_gen_2-link:hover, #li_gen_2 a#li_gen_2-link:active{border:0 !important;text-decoration:none !important;}#li_gen_2 a#li_gen_2-link:after{content:"." !important;display:block !important;clear:both !important;visibility:hidden !important;line-height:0 !important;height:0 !important;}#li_gen_2 #li_gen_2-logo{background-image:url(auxi/pix/sprite_connect_v14.png) !important;background-position:0px -276px !important;background-repeat:no-repeat !important;background-size:initial !important;cursor:pointer !important;border:0 !important;text-indent:-9999em !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:absolute !important;left:0px !important;top:0px !important;display:block !important;width:20px !important;height:20px !important;float:right !important;border-radius:0 !important;-webkit-border-radius:0 !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;}#li_gen_2.hovered #li_gen_2-logo{background-position:-20px -276px !important;}#li_gen_2.clicked #li_gen_2-logo, #li_gen_2.down #li_gen_2-logo{background-position:-40px -276px !important;}
+.IN-shadowed #li_gen_2 #li_gen_2-logo{}#li_gen_2 #li_gen_2-title{color:#333 !important;cursor:pointer !important;display:block !important;white-space:nowrap !important;float:left !important;margin-left:1px !important;vertical-align:top !important;overflow:hidden !important;text-align:center !important;height:18px !important;padding:0 4px 0 23px !important;border:1px solid #000 !important;border-top-color:#E2E2E2 !important;border-right-color:#BFBFBF !important;border-bottom-color:#B9B9B9 !important;border-left-color:#E2E2E2 !important;border-left:0 !important;text-shadow:#FFFFFF -1px 1px 0 !important;line-height:20px !important;border-radius:0 !important;-webkit-border-radius:0 !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;background-color:#ECECEC !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#FEFEFE), color-stop(100%,#ECECEC)) !important; background-image: -webkit-linear-gradient(top, #FEFEFE 0%, #ECECEC 100%) !important;}#li_gen_2.hovered #li_gen_2-title{border:1px solid #000 !important;border-top-color:#ABABAB !important;border-right-color:#9A9A9A !important;border-bottom-color:#787878 !important;border-left-color:#04568B !important;border-left:0 !important;background-color:#EDEDED !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#EDEDED), color-stop(100%,#DEDEDE)) !important; background-image: -webkit-linear-gradient(top, #EDEDED 0%, #DEDEDE 100%) !important;}
+#li_gen_2.clicked #li_gen_2-title, #li_gen_2.down #li_gen_2-title{color:#666 !important;border:1px solid #000 !important;border-top-color:#B6B6B6 !important;border-right-color:#B3B3B3 !important;border-bottom-color:#9D9D9D !important;border-left-color:#49627B !important;border-left:0 !important;background-color:#DEDEDE !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#E3E3E3), color-stop(100%,#EDEDED)) !important; background-image: -webkit-linear-gradient(top, #E3E3E3 0%, #EDEDED 100%) !important;}.IN-shadowed #li_gen_2 #li_gen_2-title{}.IN-shadowed #li_gen_2.hovered #li_gen_2-title{}.IN-shadowed #li_gen_2.clicked #li_gen_2-title, .IN-shadowed #li_gen_2.down #li_gen_2-title{}#li_gen_2 #li_gen_2-title-text, #li_gen_2 #li_gen_2-title-text *{color:#333 !important;font-size:11px !important;font-family:Arial, sans-serif !important;font-weight:bold !important;font-style:normal !important;-webkit-font-smoothing:antialiased !important;display:inline-block !important;background:transparent none !important;vertical-align:top !important;height:18px !important;line-height:20px !important;float:none !important;}#li_gen_2 #li_gen_2-title-text strong{font-weight:bold !important;}#li_gen_2 #li_gen_2-title-text em{font-style:italic !important;}
+#li_gen_2.hovered #li_gen_2-title-text, #li_gen_2.hovered #li_gen_2-title-text *{color:#000 !important;}#li_gen_2.clicked #li_gen_2-title-text, #li_gen_2.down #li_gen_2-title-text, #li_gen_2.clicked #li_gen_2-title-text *, #li_gen_2.down #li_gen_2-title-text *{color:#666 !important;}#li_gen_2 #li_gen_2-title #li_gen_2-mark{display:inline-block !important;width:0px !important;overflow:hidden !important;}.success #li_gen_2 #li_gen_2-title{color:#333 !important;border-top-color:#E2E2E2 !important;border-right-color:#BFBFBF !important;border-bottom-color:#B9B9B9 !important;border-left-color:#E2E2E2 !important;background-color:#ECECEC !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#FEFEFE), color-stop(100%,#ECECEC)) !important; background-image: -webkit-linear-gradient(top, #FEFEFE 0%, #ECECEC 100%) !important;}.success #li_gen_2 #li_gen_2-title-text, .success #li_gen_2 #li_gen_2-title-text *{color:#333 !important;}.IN-shadowed .success #li_gen_2 #li_gen_2-title{}
+.success #li_gen_2.hovered #li_gen_2-title{color:#000 !important;border-top-color:#ABABAB !important;border-right-color:#9A9A9A !important;border-bottom-color:#787878 !important;border-left-color:#04568B !important;background-color:#EDEDED !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#EDEDED), color-stop(100%,#DEDEDE)) !important; background-image: -webkit-linear-gradient(top, #EDEDED 0%, #DEDEDE 100%) !important;}.success #li_gen_2.hovered #li_gen_2-title-text, .success #li_gen_2.hovered #li_gen_2-title-text *{color:#000 !important;}.success #li_gen_2.clicked #li_gen_2-title, .success #li_gen_2.down #li_gen_2-title{color:#666 !important;border-top-color:#B6B6B6 !important;border-right-color:#B3B3B3 !important;border-bottom-color:#9D9D9D !important;border-left-color:#49627B !important;background-color:#DEDEDE !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#E3E3E3), color-stop(100%,#EDEDED)) !important; background-image: -webkit-linear-gradient(top, #E3E3E3 0%, #EDEDED 100%) !important;}
+.success #li_gen_2.clicked #li_gen_2-title-text, .success #li_gen_2.down #li_gen_2-title-text, .success #li_gen_2.clicked #li_gen_2-title-text *, .success #li_gen_2.down #li_gen_2-title-text *{color:#666 !important;}.IN-shadowed .success #li_gen_2.clicked #li_gen_2-title, .IN-shadowed .success #li_gen_2.down #li_gen_2-title{}#li_gen_3-container.IN-right {display:inline-block !important;float:left !important;overflow:visible !important;position:relative !important;height:18px !important;padding-left:2px !important;line-height:1px !important;cursor:pointer !important;}#li_gen_3.IN-right {display:block !important;float:left !important;height:18px !important;margin-right:4px !important;padding-right:4px !important;background-image:url(auxi/pix/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:right -100px !important;}#li_gen_3-inner.IN-right {display:block !important;float:left !important;padding-left:8px !important;text-align:center !important;background-image:url(auxi/pix/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:0px -60px !important;}#li_gen_3-content.IN-right {display:inline !important;font-size:11px !important;color:#04558B !important;font-weight:bold !important;font-family:Arial, sans-serif !important;line-height:18px !important;padding:0 5px 0 5px !important;}#li_gen_3-container.IN-empty {display:none !important;}#li_gen_3-container.IN-hidden #li_gen_3 {display:none !important;}</style>
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}
+.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(auxi/pix/close-x.png) no-repeat scroll 0 0 transparent;_background-image:url(auxi/pix/close-x.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(auxi/pix/close-x.png) no-repeat scroll 0 -15px transparent;_background-image:url(auxi/pix/close-x.gif)}.fb_dialog_close_icon:active{background:url(auxi/pix/close-x.png) no-repeat scroll 0 -30px transparent;_background-image:url(auxi/pix/close-x.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(auxi/pix/corners.png) no-repeat 0 0;left:-10px;top:-10px}
+.fb_dialog_top_right{background:url(auxi/pix/corners.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(auxi/pix/corners.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(auxi/pix/corners.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(auxi/pix/fb.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(auxi/pix/spinner.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}
+#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}
+.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(auxi/pix/wait-bars.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(auxi/pix/wait-bars.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style>
+</head>
+
+<body data-twttr-rendered="true">
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./5-days-of-code-1_files/7r8gQb8MIqE.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./5-days-of-code-1_files/7r8gQb8MIqE(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+
+<!--  script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=153739538011630";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script  -->
+
+
+<div class="wrapper">
+    <div class="bodyPadding">
+        <div class="innerWrapper">
+            <div class="navigation-container">
+                <ul class="navigation">
+                    <li class="first-cell"><a class="torusoft" href="http://www.torusoft.com/" target="_self"><img class="mobile-logo" src="./auxi/pix/torusoft_36px.png" width="51" height="36">Torusoft</a></li>
+                    <li class="topnavbg"></li>
+                    <li class="third-cell"><a class="whoweare" href="http://torusoft.com/news/who-we-are">Who we are</a></li>
+                    <li class="fourth-cell"><a class="contactus">Contact us</a></li>
+                </ul>
+            </div>
+             <div id="contactForm" class="hidden">
+                <div class="hiddenInner">
+                    <form id="backstageForm">
+                        <div class="formPanel">
+                            <label for="name">Name</label>
+                            <input id="name" name="Name" label="name" value="">
+                            <label for="email">Email</label>
+                            <input id="email" name="Email" type="email" value="">
+                            <label for="phone">Phone</label>
+                            <input id="phone" name="Phone" value="">
+                        </div>
+                        <!--  div class="formPanel">
+                            <label for="message">Message</label>
+                            <textarea id="message" required="" name="message"></textarea>
+                            <input type="button" value="SUBMIT"><div class="check" style="display: none;">Sent!</div><div class="fail" style="display: none;">*Sorry, that didn't work. Please try again.</div>
+                        </div  -->
+                    </form>
+                    <br />
+                    <div class="contactinfo" align="center">
+                     <p><a class="phone disable-link">902.442.9330</a><br /><a class="mail" href="mailto:info@torusoft.com">info@torusoft.com</a></p>
+                     <p><a class="phone disable-link">902.442.9331</a><br /><a class="mail" href="mailto:support@torusoft.com">support@torusoft.com</a></p>
+                     <a href="https://twitter.com/#!/torusoft" target="_blank" class="followLink"><strong>Follow @Torusoft</strong></a>
+                    </div>
+                </div>
+             </div>
+
+            <div class="bodyContainerPadding">
+           		<div class="bodyContainer">
+	           		 <div class="bgMid clearfix">
+				   		<div class="bodyBlock">
+						   	 <div class="imageHeader">
+
+						   		 <img src="./auxi/pix/header_image-day1.jpg" alt="." style="width: 100%;-webkit-border-top-left-radius: 4px; -webkit-border-top-left-radius: 4px; -moz-border-radius-topleft: 4px; -moz-border-radius-topright: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px;" />
+
+						   	 </div>
+
+						 	 <div class="contentBodyHeader">
+		            	 		<h2>Day 1: The hard questions.</h2>
+
+		            	 		<span>March&nbsp;3,&nbsp;2014 [<a href="http://torusoft.com/blog/5-days-of-code-curriculum-day-1">Source</a>]</span>
+
+
+		            	 		<div class="sharingContainer top">
+		            	 			<!--  script src="./5-days-of-code-1_files/in.js" type="text/javascript">
+									 lang: en_US
+									</script  -->
+								<!--  span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_gen_0"><a id="li_gen_0-link" href="javascript:void(0);"><span id="li_gen_0-logo">in</span><span id="li_gen_0-title"><span id="li_gen_0-mark"></span><span id="li_gen_0-title-text">Share</span></span></a></span></span><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_gen_1-container" class="IN-right"><span id="li_gen_1" class="IN-right"><span id="li_gen_1-inner" class="IN-right"><span id="li_gen_1-content" class="IN-right">3</span></span></span></span></span></span  -->
+                  <!--  script type="IN/Share+init" data-counter="right" data-showzero="true"></script  -->
+			<!--  fb:like href="http://www.torusoft.com/blog/5-days-of-code-curriculum-day-1" send="true" layout="button_count" show_faces="false" action="recommend" style="vertical-align: baseline;" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=recommend&amp;app_id=153739538011630&amp;href=http%3A%2F%2Fwww.torusoft.com%2Fblog%2F5-days-of-code-curriculum-day-1&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=true&amp;show_faces=false"><span style="vertical-align: bottom; width: 166px; height: 20px;">
+                  <iframe name="f1e773bc7c" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./5-days-of-code-1_files/like.html" style="border: none; visibility: visible; width: 166px; height: 20px;" class=""></iframe></span></fb:like  -->
+			<!--  iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./5-days-of-code-1_files/tweet_button.214e3d3b0c5437701f749bab582597f0.en.html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 109px; height: 20px;"></iframe  -->
+									<!--  script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script  -->
+						 		</div>
+
+		            	 	</div>
+
+
+							<div class="contentBody">
+								<div class="articleContent">
+										<h2>Preamble</h2>
+
+<p>A while back, I <a href="http://torusoft.com/blog/cultivate-dont-harvest" target="_blank">wrote about</a> the shortage of technical talent in our region, and critiqued its effect on our community and economy. I exhorted local businesses to invest in the next generation of talent, and to recognize that human capital is the real engine of prosperity.</p>
+
+<p>This sentiment is echoed by a year-long, provincially-commissioned study on the 'new economy', that presented its findings just last month. The <a href="http://noworneverns.ca/" target="_blank">Ivany Commission</a> identifies several economic 'game changers', and proposes recommendations designed to invest in human capital across all areas of the economy.</p>
+
+<p>Unfortunately, it stops short of any detailed recommendations where I feel they are most needed. I was disappointed to see a fleeting mention of the need for technology education in the report (literally a single line under <em>Excellence in Education and Training</em>, and a vague recommendation under <em>Startup Nova Scotia</em>). One wonders how the commissioners could celebrate companies like GoInstant and LeadSift, without recognizing technical talent as the <em>sine-qua-non</em> of our fledgling digital economy.</p>
+
+<p>What I would have liked to see was a detailed action plan to implement a computer programming curriculum in secondary schools, and perhaps a call to review the computer science &amp; technology programs at the post-secondary level. The former is basically non-existent, and I would argue the latter is misaligned with the priorities of the report.</p>
+
+<h3>Be the change you want to see</h3>
+
+<p>Rather than <a href="http://storify.com/torusoft/on-technology-education-and-the-ivany-report" target="_blank">complain bitterly</a>, I've decided to do something about it. Over the next five days, I'll be outlining my (unsolicited) vision for an integrated computer programming curriculum, that could be taught on its own in high schools, while also supplementing current offerings at NSCC and the universities.</p>
+
+<h3>A curriculum? Really?</h3>
+
+<p>Yes. This isn't just a random collection of haphazard notes by a delusional programmer. I've thought a great deal about outcomes. I've paid attention to scope and sequence. I've made decisions based on research-backed best practices in pedagogy. I've considered classroom requirements. I've drawn from my practical teaching experience in the public system, the private system, the military and the private sector. It's all here, ready to be mapped to a year plan, unit plans and assessment plans.</p>
+
+<p>My goal is to produce a document that can be used by educators to create a full-fledged course, or by beginners as a guide to learn programming on their own. Ultimately, I contend that a grasp of the skills and specific technologies I outline will expose students to the broadest possible base of skills, and ready them for the widest variety of entry-level positions with local employers - including us at Torusoft.</p>
+
+<hr />
+
+<h2 id="contentBodyHeader-day1">Day 1: Choosing a platform and a language.</h2>
+
+<p>When one sets out to teach programming, the following two questions are the most difficult, and the most important: "Programming on what platform?" and "Programming in what language?"</p>
+
+<p>Let's answer the first question. The term "platform" describes the environment you're programming on. Some platforms only support certain languages; so, it's important to make a choice that's widely compatible, widely supported, accessible to beginners, and relevant to local businesses.</p>
+
+<p>The platform I'm choosing is the <strong>world's most advanced, widely-distributed application runtime</strong>: the <a href="http://tomdale.net/2013/09/progressive-enhancement-is-dead/" target="_blank">web browser</a>.</p>
+
+<p>This curriculum will focus on programming for <strong>web technologies</strong>, from the browser to the server, with a focus on web applications, mobile devices and data science. Web developers, whether they work on websites, software, machine learning, data analytics, or any other field, are at the core of our fledgling digital economy. They connect and enable everything else. And, more importantly, they're in demand.</p>
+
+<h3>Down the rabbit hole.</h3>
+
+<p>But how does one learn how to become a web developer? The field is so vast that it's difficult to figure out where to start. For example, to build a web application from scratch, you would need a good knowledge of HTML, CSS, Javascript, SQL, at least one server-side language, and a rudimentary understanding of how to configure a web server and a database. This is no simple undertaking.</p>
+
+
+<p>Which language? PHP? Python? Ruby? Node? VB.NET? C#? Erlang? Go?</p>
+
+<p>What about databases? Relational or non-relational? MySQL? PostGres? SQLite? LevelDB? CouchDB? MongoDB? Redis?</p>
+
+<p>What about the server? Apache? IIS? Tomcat? Nginx? Lighttpd?</p>
+
+<p>Oh, and consider choosing a server side framework to make development "easier". You've got your choice of Wordpress, Drupal, Joomla, CodeIgniter, Laravel, Expression Engine, Django, Pyramid, Rails, Sinatra, Express, and on and on.</p>
+
+<p>These are just some of the choices you can expect to make as you begin to learn how to develop for the web. How can we expect newcomers to navigate this jungle? What confidence do they have that they're making the best choices? The right choices? Are they limiting themselves by choosing the wrong language? What about learning curves and sequencing? Should they learn client-side stuff first? How much time should they spend learning HTML and CSS? How about media queries and responsive design? What about jQuery or any of the various client-side frameworks (Meteor, Backbone, Ember, Angular, Polymer...)?</p>
+
+<p>No wonder this is daunting. No wonder web development communities are so fragmented and tribal. Every choice closes off dozens of paths and insulates us further from our peers. </p>
+
+<h3>The way forward.</h3>
+
+<p>We're here to learn programming, and we need to choose a language. Our requirements: we need a language that supports multiple platforms, runs in a web browser, on a web server, and can communicate directly with a database.</p>
+
+<p>This language is Javascript.</p>
+
+<p>In fact, Javascript is the <em>only</em> language that meets all our requirements. Any other choice would limit the topics we could cover. Before you disagree, consider this: would you be able to build an interactive, browser-based application or game using only Python, PHP or Ruby? Of course not, because these languages aren't available in the browser. And we're not going to ask a novice to learn two different languages at once.</p>
+
+<p>There are <a href="http://www.youtube.com/watch?v=2Hc7DBihkh4" target="_blank">lots of reasons</a> why Javascript is the best choice for teaching a novice about programming. Here are some of the best:</p>
+<ul style="list-style-type: disc;">
+  <li>
+     <b>It's widely available, with no installation required.</b><br />
+     If your computer has a web browser, you can begin programming in Javascript. You don't need to download a compiler, or rely on a network administrator to install one on your machine for you.<br /><br />
+  </li>
+  <li>
+     <b>You can see results immediately.</b><br />
+     It's a simple as launching your console and typing <b>alert("Hello!");</b><br /><br />
+  </li>
+  <li>
+     <b>It's an interpreted language.</b><br />
+     Some languages require you to compile your code before running it. This build step is time consuming and breaks the flow of work, so it takes longer to make a change and observe the effect. Javascript is interpreted on-the-fly, so all you need to do is save a change and reload your browser.<br /><br />
+  </li>
+  <li>
+     <b>It's weakly-typed and has a simple, forgiving syntax.</b><br />
+     Compared to other languages, basic Javascript syntax is extremely simple and readable. There aren't a lot of strange characters cluttering up your code. There's no requirement to indent it perfectly. You don't need to declare your variable types at the beginning. The interpreter massages many of these rookie oversights, so beginners aren't discouraged by too much rigid structure.<br /><br />
+  </li>
+  <li><b>It's part of all the emerging fields.</b><br />
+     You can use Javascript to write applications that run on iOS and Android with projects like <a href="https://cordova.apache.org/" target="_blank">Cordova</a>. You can use all manner of game engines to write interactive games. If you want to run analytics on large data sets, you can write distributed map-reduce queries for engines like <a href="http://www.zdnet.com/blog/big-data/microsoft-does-hadoop-and-javascripts-the-glue/240" target="_blank">Hadoop</a> using Javascript. You can even <a href="http://www.youtube.com/watch?v=bVUxwEA52nc" target="_blank">communicate with micro-controllers</a> and <a href="http://www.youtube.com/watch?v=D-HEaGI71eU" target="_blank">program robots</a> in Javascript now.<br /><br />
+  </li>
+  <li>
+     <b>You can use Javascript as a full-stack solution.</b><br />
+     This is perhaps the most important consideration. Thanks to NodeJS, the same language you use in the browser can be used on the server-side as well. Additionally, there are various database solutions that can be queried and indexed using plain Javascript, rather than some SQL variant. So, really, you can write a full-stack application using only one programming language.<br />
+  </li>
+</ul>
+
+<p>Given all the considerations I've listed above, I hope you'll agree that a focus on web technologies and Javascript is the right choice for those beginning to learn programming today. Personal preferences aside (I'm a Lasso programmer myself), I am convinced that this focus will prepare newcomers for the industry we're trying to grow, and the jobs we'll need over the next 10 years.</p>
+
+<h2>Recommended reading and resources.</h2>
+
+<p>At the end of each day, I'll provide a curated list of resources that are appropriate for beginners and novice programmers. I highly recommend the following for a basic introduction to Javascript:</p>
+
+
+<ul style="list-style-type: disc;">
+  <li><a href="http://jsforcats.com/" target="_blank">Javascript for Cats</a></li>
+  <li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Codecademy</a></li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">
+  </a><li><a href="http://www.codecademy.com/tracks/javascript" target="_blank"></a><a href="https://www.codeschool.com/paths/javascript" target="_blank">Codeschool</a></li>
+</ul>
+
+<p>I've also <a href="https://twitter.com/stickbyatlas/lists/javascript" target="_blank">created a list</a> of Twitter personalities that you should consider following.</p>
+
+<h3>Up next:</h3>
+
+<p>We spent the first day establishing the context, platform and language for this programming curriculum. With this foundation in place, tomorrow we can dive into the actual material, scope, sequencing, and pedagogy. Here are the outcomes we'll cover over the next four days:</p>
+
+<h3>Up Next:</h3>
+<ul style="list-style-type: disc;">
+  <li><a href="#contentBodyHeader-day2" title="link to start of day 2">Day 2: Client-side, front-end development</a></li>
+  <li><a href="#contentBodyHeader-day3" title="link to start of day 3">Day 3: Database servers and REST APIs</a></li>
+  <li><a href="#contentBodyHeader-day4" title="link to start of day 4">Day 4: Object-oriented programming and MVC frameworks</a></li>
+  <li><a href="#contentBodyHeader-day5" title="link to start of day 5">Day 5: Server-side programming and future directions</a></li>
+</ul>
+
+
+<h3>Back to:</h3>
+<ul style="list-style-type: disc;">
+  <li><a href="#contentBodyHeader-day1" title="link to day 1 intro">Day 1: Choosing a platform and a language</a></li>
+</ul>
+
+
+<p>Stop by each day this week for a new instalment. I'd also like to hear your thoughts on what I'm covering. Is there something missing that you'd like to see included? Are these topics the right priorities for our industry? What would you like to see emphasized, and why?</p>
+</div>
+
+</div> <!-- class="bodyBlock"  -->
+
+<!--  ==================================================  -->
+
+
+
+
+
+
+
+
+<!--  ==================================================  -->
+ <div class="bodyBlock">
+                 <div class="imageHeader">
+
+                   <img src="./auxi/pix/header_image-day2.jpg" alt="." style="width: 100%;-webkit-border-top-left-radius: 4px; -webkit-border-top-left-radius: 4px; -moz-border-radius-topleft: 4px; -moz-border-radius-topright: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px;" />
+
+                 </div>
+<div id="contentBodyHeader-day2" class="contentBodyHeader">
+    <h2>Day 2: Front-end development and interface design</h2>
+
+    <span>March&nbsp;4,&nbsp;2014</span>
+</div>
+
+<div id="day2" class="contentBody">
+  <div class="articleContent">
+    <p><em>This article is the second in a 5-day series about teaching beginners how to program. <a href="#contentBodyHeader-day1" title="link to day 1 intro">Read the introduction</a>.</em></p>
+
+    <p>Yesterday, we established that focusing on web technologies and Javascript was the best approach when teaching a novice about programming. Today, we'll go over the first unit of study that learners should tackle... and it barely has anything to do with Javascript at all.</p>
+
+    <p>On Day 2, we're going to look at HTML and CSS in the browser.</p>
+
+    <div style="margin: 8px; background-color: #e0ffff; padding 4px; ">
+      <h2 style="margin-left: 4px;">A note about pedagogy:</h2>
+
+      <p style="margin-left: 4px;"><small>You can <a href="http://torusoft.com/blog/5-days-of-code-curriculum-day-2#embrace-magic">skip this section</a> if you're not an educator.</small></p>
+    </div>
+
+    <p>There's a mantra that I'm going to keep invoking again and again throughout this series. I've applied it throughout my time as an educator, and it's always served me well. It's important to remember, easy to forget, and flies in the face of logic:</p>
+
+    <h3>It's more important for a learner to achieve results, than it is to grasp the underlying concepts behind those results.</h3>
+
+    <p>This is as counter-intuitive a claim as it gets, but it's true. We've all heard the saying "You need to learn how to walk before you can run." But in actual fact, starting out with basics and moving on to more complicated things isn't always the best way to sequence instruction.</p>
+
+    <p>The most effective way to ensure that a learner achieves an outcome is to connect the material to his or her personal experiences and interests. <b>As learners, we are interested in ends, not means.</b> This is the fundamental premise behind <a href="http://en.wikipedia.org/wiki/Constructivism_(philosophy_of_education)" target="_blank">constructivism</a>, which is at the core of my educational philosophy.</p>
+
+    <p>The general constructivist claim behind my mantra is this: as learners, we are engaged when we're able to apply the material in our own ways. As we continue to explore and engage with the subject matter by doing, the fundamental concepts behind our actions become clear to us. <b>As we gain experience, the basics fall into place.</b></p>
+
+    <h3>How does this apply here?</h3>
+
+    <p>As educators, we must always look for ways to get students to see meaningful results as soon as possible, whenever possible. This has traditionally been difficult in programming, because courses are structured to make you slog through basic command-line exercises before moving on to anything fun. <small>(Prove me wrong, Dal C.S.)</small></p>
+
+    <p>The reason we're putting front-end development (HTML and CSS) at the start of our course of studies is because it quickly allows students to build something they <em>want to build</em>, and see it come together visually right before their eyes. In order to help them achieve this goal as soon as possible, we're going to skip over the "basics," like teaching what tags and selectors are, or why we abstract the document structure from the presentation layer. We're going to skip over the stuff that bored us to tears as students 10 years ago. <em>We're going to start by doing</em>.</p>
+
+    <h2 id="embrace-magic">Embrace magic.</h2>
+
+    <p>HTML and CSS have become quite elaborate and complex over the past decade. If we started with the basics of tags and selectors, it would take our students weeks to learn enough to make something that actually looked good. This is a colossal waste of time, and we can do better.</p>
+
+    <p>I recommend that students begin building websites and interfaces immediately using a front-end framework. And, due to its widespread deployment all over the internet, I recommend that we focus on <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>.</p>
+
+    <p>Bootstrap is a front-end framework (originally developed by Twitter) that makes it easier to put together a website or application layout with less code. The Bootstrap site has plenty of example code, most of it quite simple, that explains how you can add different components (like buttons, sidebars, fancy icons, etc.) into your project. It even has <a href="http://getbootstrap.com/getting-started/#examples" target="_blank">starter projects</a> that you can download and begin building upon. What's more, it's <a href="http://bootswatch.com/" target="_blank">easy to theme</a>, so each student can inject a bit of personality into their project without getting caught up in the minutiae of CSS.</p><p>
+
+    </p><p><strong>To beginners, Bootstrap is basically magic.</strong> They don't have to write a single line of CSS, or define a single media query on their own, and yet they can use it to create complicated, interactive interfaces that are <em>even responsive</em>. More advanced students can even rope in the Javascript components (which don't even require a knowledge of Javascript, yet) to make their document do all kinds of neat things. What's more, as learners gain experience, they'll invariably want to do something that Bootstrap can't help them with. At this point, they'll already have a working knowledge of HTML and CSS to build on. <em>Embrace magic until you don't need it anymore</em>.</p>
+
+    <h3>But… this isn't programming!</h3>
+
+    <p>No, it's not programming yet. But that's okay. We're setting out to excite learners about possibilities. This is <em>really hard to do</em> when you start by writing pure programming code. But, if a novice can put together the interface for an app idea they had in less than two weeks, they're going to be hooked. They're going to want to know how to make that interface <em>actually do things</em>.</p>
+
+    <p>And that's when we'll introduce Javascript as the means to the end.</p>
+
+    <h2>Unit overview</h2>
+
+    <p>This unit should be at the beginning of your course of study. No Javascript knowledge is required, but you might want to do a <a href="http://jsforcats.com/" target="_blank">quick overview</a> so you know what to expect once you're ready to hook up your interfaces.</p>
+
+    <p>I would recommend you begin by reading the <a href="http://getbootstrap.com/getting-started" target="_blank">Getting Started</a> and <a href="http://getbootstrap.com/css" target="_blank">CSS</a> sections on the Bootstrap site. These two sections alone will give you everything you need to know to make a simple, static website. A <u>beginner's assignment</u> would be to take a report, or an essay, or any document with tables, lists, callouts and images, and reproduce it in HTML with Bootstrap.</p>
+
+    <p>Next, check out the <a href="http://getbootstrap.com/components" target="_blank">Components</a> section, which gives you more advanced interface elements like navigation bars, badges, button groups, input forms, etc. To try and apply these components, an <u>intermediate assignment</u> could be to choose a website with a complex layout (or even a desktop application like iTunes), and reproduce it in Bootstrap. More advanced students could attempt to make their layouts responsive, so they shrink nicely to smartphone or tablet screen sizes.</p>
+
+    <p>Finally, head over to the <a href="http://getbootstrap.com/javascript" target="_blank">Javascript</a> section to get some advanced components, like collapsible sections, modals, drop-down menus popovers, slideshow carousels, and so on.  These components can make your projects a little more dynamic, as they use Javascript under the hood to animate interactions and react to clicks. An <u>advanced assignment</u>, after learning how to integrate these components, would be to build an application interface from scratch. This could be a simple fitness tracker, a music player, a unit converter, a calculator, a chat client, an Instagram photo viewer, etc. Different application states can be displayed by linking to other HTML files, so you can even show how different sections of your application link together.</p>
+
+    <p>At this point, learners should see some of the possibilities that are open to them, and will undoubtedly have found <em>something</em> of interest. Some might find that they really enjoy design (maybe from theming Bootstrap), and want to explore CSS in more depth on their own time. Some might want to build a simple personal website. Others might really want to see their application interfaces come to life, and be chomping at the bit to learn jQuery (a browser-based Javascript framework that simplifies making webpages interactive). There's all kinds of opportunities for collaboration and <a href="http://en.wikipedia.org/wiki/Differentiated_instruction" target="_blank">differentiated instruction</a> here, depending on how much time you want to spend on front-end development.</p>
+
+    <h2>Enter Javascript. Well, jQuery anyway.</h2>
+
+    <p>Once we're ready to move on from static HTML + Bootstrap, it's time to introduce some basic Javascript programming into the mix, to show what front-end development is really about.</p>
+
+    <p>There will be plenty of time to learn pure Javascript programming down the line. Remember, we want to <b>embrace magic</b> so we can see results quickly. For this reason, I recommend that learners start with the <a href="http://jquery.com/" target="_blank">jQuery library</a>. jQuery is a browser-based Javascript toolkit that simplifies working with HTML, takes care of compatibility quirks between web browsers, and facilitates pulling data from other websites (like Facebook, Twitter, Instagram, Tumblr, etc.).</p>
+
+    <p>jQuery is another rabbit-hole, with its own way of doing things, and it's easy for someone to blur the lines between jQuery and Javascript. For this reason, I wouldn't suggest dwelling on jQuery for too long. However, there are some specific features of jQuery that help unlock a whole world of possibilities for programmers, and I highly recommend you spend some time learning them. These two features are <a href="https://api.jquery.com/category/ajax/" target="_blank">AJAX calls</a> and <a href="https://api.jquery.com/category/manipulation/" target="_blank">DOM manipulation</a>.</p>
+
+    <p><a href="http://en.wikipedia.org/wiki/Ajax_(programming)" target="_blank">AJAX</a> calls enable you to communicate with other web servers in real time. This allows you to do things like fetch a list of photos from Instagram, or retrieve the most recent posts from a Tumblr blog, or search for videos on YouTube, and then do something with the results on your website. More importantly (for us), it lets us communicate with a database over the web, so that we can store our own information, and retrieve it later.</p>
+
+    <p><strong>DOM manipulation</strong> means being able to modify parts of a website using Javascript. You can hide a section and show another, replace text and add new elements, either one-by-one or in bulk. It's a very powerful capability, and there's lots you can do with it.</p>
+
+    <p>Together, these two jQuery features enable us to fetch some data from a database and display it on a website or in an application. This is the core of web development. Once we learn how to work with databases, we'll be able to build simple applications that fetch information, and even allow us to modify and save this information.</p>
+
+    <p>As a <strong>capstone assignment</strong> for this unit, consider setting up an Instagram account or Tumblr blog (or get your students to use their own - I guarantee they all have at least one). Provide students with some guidance (for example, API keys and URL endpoints), and challenge them to build a simple application that fetches and displays photos. If you're a student yourself, you'll need to sign up for, and familiarize yourself with, these websites' APIs. Here's <a href="http://instagram.com/developer/" target="_blank">Instagram</a>, and here's <a href="http://www.tumblr.com/docs/en/api/v2" target="_blank">Tumblr</a>. Most social media sites (YouTube, Facebook, etc.) have APIs you can use to work with their data.</p>
+
+    <hr />
+
+    <p>At the end of this unit, learners should have a working knowledge of HTML, so they can build layouts and interfaces for websites and web apps. They'll also know enough jQuery to work with social media APIs and interact with the DOM. This will give them a solid foundation in front-end development, and provide them with the skills they'll need for the next unit.</p>
+
+    <p>Tomorrow, we'll cover databases servers and REST APIs. This will enable students to set up a database, store data, and use it in their own front-end applications. This is where web-development gets rewarding, empowering and exciting.</p>
+
+    <h2>Recommended reading and resources</h2>
+
+    <p><a href="http://jsforcats.com/" target="_blank">Javascript for Cats</a><br />
+    A tutorial by Max Ogden that introduces Javascript for absolute beginners. Highly recommended reading before starting any jQuery tutorials, as it provides a great foundation.</p>
+
+    <p><a href="http://www.impressivewebs.com/jquery-tutorial-for-beginners/" target="_blank">jQuery for Beginners</a><br />
+
+    A quick introductory reference to jQuery, with plenty of basic example code illustrating how to accomplish various tasks. This tutorial falls short of introducing AJAX in any depth, but covers everything else very well.</p>
+
+    <p><a href="http://try.jquery.com/" target="_blank">Try jQuery</a> (Codeschool)<br />
+    A tutorial created by Codeschool to introduce beginners to jQuery. More advanced and interactive than the above tutorial, but also much longer.</p>
+
+
+    <p><a href="http://www.codecademy.com/courses/javascript-beginner-en-g7vdk/0/1" target="_blank">jQuery and AJAX</a> (Codecademy)<br />
+    An interactive tutorial that focuses on just the AJAX features of jQuery, in depth.</p>
+
+
+    <p><a href="http://www.tomroyal.com/blog/2012/03/28/how-to-read-flickr-api-json-via-jquery/" target="_blank">How to: Read Flickr API JSON via jQuery</a><br />
+    A simple tutorial that explains how you might use jQuery to interact with Flickr.</p>
+
+
+    <p><a href="http://learn.shayhowe.com/html-css/" target="_blank">A beginner's guide to HTML &amp; CSS</a><br />
+    An excellent course and reference for learning HTML and CSS without Bootstrap. This website will provide all the fundamentals for more advanced topics. Plenty of practical example code to refer to.</p>
+
+
+    <p><a href="http://learnlayout.com/" target="_blank">Learn CSS Layout</a><br />
+    Tutorial on layout in CSS. This tutorial assumes some knowledge of HTML and CSS already.</p>
+
+    <p><a href="http://www.adamkaplan.me/grid/" target="_blank">Grid</a><br />
+    A quick overview of responsive design for learners who are interested in CSS and want to move beyond Bootstrap.</p>
+
+
+    <h3>Up next:</h3>
+
+    <ul style="list-style-type: disc;">
+      <li><a href="#contentBodyHeader-day3" title="link to start of day 3">Day 3: Database servers and REST APIs</a></li>
+      <li><a href="#contentBodyHeader-day4" title="link to start of day 4">Day 4: Object-oriented programming and MVC frameworks</a></li>
+      <li><a href="#contentBodyHeader-day5" title="link to start of day 5">Day 5: Server-side programming and future directions</a></li>
+    </ul>
+
+
+<h3>Back to:</h3>
+<ul style="list-style-type: disc;">
+  <li><a href="#contentBodyHeader-day1" title="link to day 1 intro">Day 1: Choosing a platform and a language</a></li>
+  <li><a href="#contentBodyHeader-day2" title="link to start of day 2">Day 2: Client-side, front-end development</a></li>
+</ul>
+
+
+  </div>
+</div> <!--  id="day2"  -->
+</div>
+<!--  ==================================================  -->
+
+
+
+
+
+<!--  ==================================================  -->
+ <div class="bodyBlock">
+                 <div class="imageHeader">
+
+                   <img src="./auxi/pix/header_image-day3.jpg" alt="." style="width: 100%;-webkit-border-top-left-radius: 4px; -webkit-border-top-left-radius: 4px; -moz-border-radius-topleft: 4px; -moz-border-radius-topright: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px;" />
+
+                 </div>
+<div id="contentBodyHeader-day3" class="contentBodyHeader">
+    <h2>Day 3: Databases and REST APIs</h2>
+
+    <span>March&nbsp;5,&nbsp;2014</span>
+</div>
+
+<div id="day3" class="contentBody">
+
+<div class="articleContent">
+                    <p><em>This article is the third in a 5-day series about teaching beginners how to program. <a href="#contentBodyHeader-day1" title="link to day 1 intro">Read the introduction</a>.</em></p>
+
+<p>Yesterday, we outlined our first full unit of study, <a href="#contentBodyHeader-day2" title="link to start of day 2" target="_blank">front-end development</a>. This unit gives us the basic skills needed to create websites and web application interfaces using HTML and Bootstrap. It also introduces DOM manipulation and AJAX requests through jQuery, so we can retrieve data from external sources and display it in our own projects.</p>
+
+<p>Today, we'll learn how to create, modify and save data to our own database. This will allow us to begin building full-featured, interactive web applications. Along the way, we'll learn some really important concepts about web development, such as <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol" target="_blank">HTTP</a> and <a href="http://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a>, <a href="http://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a>, and the difference between a server and a client.</p>
+
+<p>After careful consideration and a lot of thought (remember how many databases I listed on Day 1?), I decided to go with <a href="http://couchdb.apache.org/" target="_blank">Apache CouchDB</a> for this unit of study. I've outlined my reasoning below.</p>
+
+<h2>Why CouchDB?</h2>
+
+<p>There are many reasons why I am convinced Apache CouchDB is the ideal database for this curriculum:</p>
+
+
+<h3>It's a top-level Apache open source project</h3>
+
+<p>This is important for many reasons. CouchDB doesn't seek to make a profit. There's no vendor lock-in. It's maintained by a vibrant, growing community of volunteers, and is being improved at a staggering pace. In 2013, CouchDB saw 5 major stable version releases (1.0.x to 1.5.x) that added all kinds of new features, and the roadmap for 2014 is no less promising.</p>
+
+<h3>The community is second-to-none.</h3>
+
+<p>The personalities and voices in the CouchDB community are, hands down, the most helpful, generous, welcoming, insightful, ethical, principled, future-minded group of developers I've ever encountered in one place. As far as online communities go, you can't find a safer, more encouraging group of advocates. These people are role models that will help beginners to understand what "open-source" can really be about: social justice, diversity, inclusion, and collaboration. </p>
+
+<h3>It's free and easy to install.</h3>
+
+<p>Apache CouchDB doesn't require complex configuration, and is very approachable out-of-the-box. There are installers for Windows and Mac OS X, and as soon as you launch the application, you can start creating databases and adding documents. It even has a built-in, friendly web-based administration console (called Futon) to make this easier for you. And, in situations where you can't install it on a machine, there are <a href="http://cloudant.com/" target="_blank">hosted</a> <a href="http://iriscouch.com/" target="_blank">solutions</a> you can sign up with for free.</p>
+
+<h3>You can interact with it using a browser.</h3>
+
+<p><u>CouchDB has an HTTP interface</u>. This means that every database, collection of documents, and individual document can be referenced by a specific URL, right in your browser. This makes it <em>extremely</em> easy to retrieve data using jQuery's AJAX features, without <em>any</em> additional configuration necessary. You also create, change and delete documents via URLs, so you can use familiar AJAX calls to manage the data in your database.</p>
+
+<h3>It's skating to where the puck will be.</h3>
+
+<p>The people behind CouchDB have a <a href="https://mail-archives.apache.org/mod_mbox/couchdb-dev/201307.mbox/%3C3CD8BEDD-EEE0-4C39-8DCA-81D92C226831%40apache.org%3E" target="_blank">vision</a> for the future of the web, and they're actively involved in building towards this vision today. You can see some examples of this vision <a href="http://offlinefirst.org/" target="_blank">here</a>, <a href="http://hood.ie/" target="_blank">here</a>, <a href="http://www.replication.io/" target="_blank">here</a>, and <a href="http://pouchdb.com/" target="_blank">here</a>.</p>
+
+<h3>It promotes a decentralized, federated web.</h3>
+
+<p>Over the past decade, we've seen a rise in walled-garden social networking sites. Your personal data is siloed in Facebook, Twitter, Tumblr, Google+, etc. This isn't a good norm for people to grow up with. And CouchDB can help us reclaim the notion that <em>our personal data should belong to us</em>.</p>
+
+<p>At the heart of CouchDB is its unique <a href="http://guide.couchdb.org/draft/replication.html" target="_blank">replication capability</a>, which allows us to copy or sync a database with other computer(s) and mobile devices on an ongoing basis. The CouchDB community is also working on offline-capable tools, so that periodic loss of connectivity doesn't affect our access to data. With CouchDB alone, we can easily build systems that put us in control of our own data. The sense of empowerment this can give someone is priceless.</p>
+
+<h3>It uses Javascript and delivers JSON.</h3>
+
+<p>Data in CouchDB is stored and retrieved primarily in JSON format, which means Javascript can work with it directly. Additionally, all your database views (collections of structured data) are generated using instructions in Javascript. There's a <em>very</em> gentle learning curve here, so learners will see results quickly (remember our mantra).</p>
+
+
+<h3>It's relevant to big data.</h3>
+
+<p>Data science has become a growing field in our region over the past few years. Several businesses in the Maritimes (Radian6, LeadSift, Affin.io &amp; Tactics Cloud, IntroHive, UserEvents, etc.) were launched with data analytics at their core. There's such a demand that our universities are <a href="http://www.newswire.ca/en/story/1268997/ibm-awards-multi-million-dollar-cloud-computing-platform-to-seven-nova-scotia-schools" target="_blank">working with the private sector</a> to accommodate it.</p>
+
+<p>How does CouchDB fit in? It's massively concurrent (built with Erlang, which has concurrency at its heart). It encourages append-only storage, and can store and collect massive amounts of data (<a href="http://readwrite.com/2010/08/26/lhc-couchdb" target="_blank">just ask CERN</a>). It can easily be clustered. It's queried using the familiar <a href="http://en.wikipedia.org/wiki/MapReduce" target="_blank">map / reduce</a> pattern that analytics engines like Hadoop use to run massive calculations. Learning how to use CouchDB will expose learners to concepts and architectures that they'll see again if they ever decide to pursue data science.</p>
+
+
+
+<h3>It's a great fit pedagogically.</h3>
+
+<p>CouchDB has many unique features that distinguish it among databases. Many of these features also make it an ideal fit for our course of study. For example: CouchDB acts as both a database and a web server, so it gives us our first exposure to a client-server setup. Normally, we'd need to set up a web server independently of our database, and use a language on the server to interact with (and serve) our data.</p>
+
+<p>CouchDB also uses an HTTP interface, and using it requires you to gain a deep understanding of the protocol. So, in addition to learning about databases, we get to pick up concepts like HTTP headers, content-types, verbs like GET, POST, PUT and DELETE, and status codes (you know, like 200, 302, 404, etc). While HTTP and REST are essential concepts to web development, many programming environments try to hide them from developers. Lucky for us, CouchDB doesn't.</p>
+
+<p>Finally, CouchDB has a flexible schema, which means you aren't required to think in abstract terms like columns, fields, data-types, primary keys and relationships. You can add fields to your documents as you go without affecting performance, and you don't need to specify what information you're going to store ahead-of-time. For beginners, this flexible, forgiving quality is a huge asset.</p>
+
+<hr>
+
+<h2>Unit overview</h2>
+
+<p>This unit picks up very nicely from where the <a href="#contentBodyHeader-day2" title="link to start of day 2">last unit</a> left off. Armed with a basic knowledge of front-end development, and the ability to pull data from an external source using AJAX, we're ready to build something that talks to a database.</p>
+
+<p>The beginner's exercise is really simple: once students have downloaded and installed CouchDB (or signed up with a free hosting provider), get them to create a database and add some documents to it. This could be a list of record albums, recent meals, friends' contact information, etc. Once they have some documents in a database, challenge them to display a list of their documents on a website, using an AJAX request. On a basic configuration, this should be as simple as:  </p><pre style="font-family: &#39;Share-TechMono&#39;, monospace; font-size: 10pt; line-height: 14pt;">$.getJSON("http://127.0.0.1:5984/database_name/_all_docs?include_docs=true",
+          function(data){…});</pre><p></p>
+
+<p>This should be enough to get students to see the benefits of a database. Using Futon, they could manage all their data directly in CouchDB if they wanted to, and those changes would appear in their documents when they reload.</p>
+
+<p>Next, you might want to begin learning how to send data <em>to</em> CouchDB, so that you can create new documents from your own website or application. You can do this using HTTP POST requests. A simple example:
+
+
+</p><pre style="font-family: &#39;Share-TechMono&#39;, monospace; font-size: 10pt; line-height: 14pt;">$.post("http://127.0.0.1:5984/database_name/",
+       {"name": "Ari", "surname": "Najarian"},
+       function(data){…});</pre> <p></p>
+
+<p>A good way to teach this would be to create a simple form to collect data, which is submitted to CouchDB via AJAX. Students can, for example, create questionnaires and share them with their peers (which in my experience is a great way to engage them).</p>
+
+<p>From here, there are all kinds of directions you can take. I recommend spending some time learning how to use <a href="https://github.com/couchapp/couchapp" target="_blank">CouchApp</a> (<a href="https://github.com/downloads/couchapp/couchapp/couchapp-0.8.1-win.zip" target="_blank">Windows</a>, <a href="https://github.com/downloads/couchapp/couchapp/couchapp-0.8.1-macosx.zip" target="_blank">Mac</a>), so you can begin creating design documents without having to use Futon. Design documents will allow you to define special URLs for fetching organized collections of documents (views), formatting and delivering individual documents (show functions), formatting groups of documents (list functions), and updating documents on-the-fly (update handlers). You define these URLs on your CouchDB database using pure Javascript, so it's also a great chance to practice programming.</p>
+
+<p>Since you can communicate with CouchDB over HTTP, working with it introduces learners to the concept of a server (as opposed to a client), and familiarizes them with the notion of a REST API (unique URLs for fetching and modifying documents). The beauty of this is that we never even had to choose or set up a web server (remember all those choices from Day 1?) - CouchDB acts as a database <em>and</em> a web server with a REST API built-in! So again, we've made an investment in a technology that give us quick results without introducing unnecessary complexity. It helps us focus on what we're trying to learn (Javascript and web technologies), and offers very few distractions from this goal.</p>
+
+<p>CouchDB's many unique features make it possible to stay on this unit for a long time. With just CouchDB and your front-end development skills from the previous unit, you actually have everything you need to develop a fully-featured web application. CouchDB can serve websites as well as JSON (you can attach HTML, CSS and Javascript files to documents directly), so you can bundle your front-end into a design document and access it via a URL. You can even set up users &amp; passwords, so people can log into your application and see their data. The possibilities are endless.</p>
+
+<p>However, depending on time constraints, you'll likely want to move on to subsequent units so you can expose students to as many different topics as possible. The <strong>bare minimum</strong> that I recommend students learn before moving onto Day 4 is how to define views and update handlers in a design document, and how to interact with CouchDB via the HTTP REST interface. This will prepare them for the next unit, which introduces more advanced programming patterns that can help them build ambitious, database-backed web applications.</p>
+
+<p>But that's a topic for tomorrow.</p>
+
+<h2>Recommended reading and resources</h2>
+
+<p>I've assembled the most visible members of the CouchDB community into a <a href="https://twitter.com/stickbyatlas/lists/couchdb" target="_blank">Twitter list</a>, that I highly recommend you follow. If you know how to use IRC, some of these folks lurk on the #couchdb channel on the <a href="http://webchat.freenode.net/" target="_blank">Freenode</a> server. The people there are very helpful.</p>
+
+<p>
+  <a href="http://guide.couchdb.org/" target="_blank">CouchDB: The Definitive Guide</a><br>
+  This free online book is an amazing introduction to CouchDB. It was the first resource I used when I was learning how to use it, and it gave me a great foundation to build upon. It is an excellent resource for beginners.
+</p>
+
+
+<p>
+  <a href="https://cloudant.com/" target="_blank">Cloudant</a><br>
+  Hosted CouchDB with a great administrative interface and additional features. Recently acquired by IBM. Free for light usage.
+</p>
+
+
+<p>
+  <a href="http://couchapp.org/" target="_blank">CouchApp</a><br>
+  Cross-platform tool that allows you to create design documents for CouchDB in the comfort of your own file system. This tool is essential when working with design documents, as the alternative is writing really complex JSON objects in Futon.
+</p>
+
+
+<p>
+  <a href="http://pouchdb.com/" target="_blank">PouchDB</a><br>
+  PouchDB is a project started by Dale Harvey (Mozilla) to implement CouchDB in the browser using Javascript and local storage. This allows you to build offline-capable applications with their own standalone database, but also allows you to replicate to and from CouchDB.
+</p>
+
+
+<p>
+  <a href="http://replication.io/" target="_blank">Replication.io</a><br>
+  This website (again administered by a CouchDB committer) collects information about the family of CouchDB-compatible services that can all replicate with each other. A great resource if you're looking for a technical overview of CouchDB replication.
+</p>
+
+
+<p>
+  <a href="http://hood.ie/" target="_blank">Hoodie</a><br>
+  Started by a bunch of CouchDB developers, this project seeks to help you build web applications that don't require a backend.
+</p>
+
+
+
+<h3>Up next:</h3>
+
+<ul style="list-style-type: disc;">
+  <li><a href="#contentBodyHeader-day4" title="link to start of day 4">Day 4: Object-oriented programming and MVC frameworks</a></li>
+  <li><a href="#contentBodyHeader-day5" title="link to start of day 5">Day 5: Server-side programming and future directions</a></li>
+</ul>
+
+
+<h3>Back to:</h3>
+<ul style="list-style-type: disc;">
+  <li><a href="#contentBodyHeader-day1" title="link to day 1 intro">Day 1: Choosing a platform and a language</a></li>
+  <li><a href="#contentBodyHeader-day2" title="link to start of day 2">Day 2: Client-side, front-end development</a></li>
+  <li><a href="#contentBodyHeader-day3" title="link to start of day 3">Day 3: Database servers and REST APIs</a></li>
+</ul>
+
+                  </div>
+                  </div>
+</div><!--  bodyBlock  -->
+<!--  ==================================================  -->
+
+
+
+
+
+
+
+<!--  ==================================================  -->
+
+
+<div class="bodyBlock">
+                 <div class="imageHeader">
+
+                   <img src="./auxi/pix/header_image-day4.jpg" alt="." style="width: 100%;-webkit-border-top-left-radius: 4px; -webkit-border-top-left-radius: 4px; -moz-border-radius-topleft: 4px; -moz-border-radius-topright: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px;" />
+
+                 </div>
+<div id="contentBodyHeader-day4" class="contentBodyHeader">
+    <h2>Day 4: Object-oriented programming and MVC</h2>
+
+    <span>March&nbsp;6,&nbsp;2014</span>
+</div>
+
+<div id="contentBody4" class="contentBody">
+
+<div class="articleContent">
+
+
+      <p><em>This article is the fourth in a 5-day series about teaching beginners how to program. <a href="#contentBodyHeader-day1" title="link to day 1 intro">Read the introduction</a>.</em></p>
+
+<p>If you've been <a href="http://torusoft.com/blog/5-days-of-code-curriculum-day-1" target="_blank">following</a> <a href="#contentBodyHeader-day2" title="link to start of day 2" target="_blank">this</a> <a href="#contentBodyHeader-day3" title="link to start of day 3" target="_blank">series</a>, by this point you'll have learned enough about web development to create a database-backed website or web application, using <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>, <a href="http://jquery.com/" target="_blank">jQuery</a>, <a href="http://couchdb.apache.org/" target="_blank">Apache CouchDB</a> and Javascript.</p>
+
+<p>This is an impressive, well-rounded set of skills. But there's much, much more to learn about Javascript, web technologies, and computer programming in general. Today, we begin moving into some advanced concepts.</p>
+
+<h2>Object-oriented programming</h2>
+
+<p>Many popular languages you may go on to learn after Javascript are object-oriented languages. This means that they emphasize code reusability by organizing code around abstract concepts (like 'person', or 'blog post'). As you write more complex applications with lots of moving parts, it makes more sense to group code under general 'building-blocks' (objects) like these. Without giving structure your code somehow, it can quickly become unmanageable. The more complicated the interface you build, the more complicated the dependencies between different moving parts.</p>
+
+<p>Javascript is an object-oriented language, but we haven't really had a need to explore the implications of this in depth yet. jQuery has taken care of most of the heavy lifting on the front-end, and the Javascript you've had to write for CouchDB is limited to a few view functions, update handlers and so on.</p>
+
+<p>In order to introduce learners to object-oriented programming (which can be a difficult concept), we're going to rely on a front-end Javascript framework to give us some real-world context.</p>
+
+<h2>Why a framework?</h2>
+
+<p>We're using a framework for the same reason we learned Bootstrap: it helps us achieve meaningful results quickly by embracing magic (for a more detailed rationale, check out the note on pedagogy from <a href="#contentBodyHeader-day2" title="link to start of day 2">Day 2</a>).</p>
+
+<p>There are other reasons to learn a framework as well: web development languages (Javascript, PHP, Python, Ruby, etc.) use frameworks to simplify things, by reducing the amount of boilerplate, repetitive code that you'll need to write. Frameworks take care of lots of basic configuration, so you don't need to reinvent the wheel. Learning a Javascript framework will give you a 'frame' <small>(sorry)</small> of reference for what you'll encounter down the road. Incidentally, there's a partial list of popular frameworks used by different languages back on <a href="#contentBodyHeader-day1" title="link to day 1 intro">Day 1</a>.</p>
+
+<p>Frameworks are also, in a way, inevitable. The most experienced a programmer you become, the more good habits you develop, to save time and automate as many repetitive tasks as you can. Ultimately, you'll either invent your own framework and tools (which requires lots of time and mastery), or you'll start using the ones developed by your peers. It's a simple, logical progression.</p>
+
+<p>There are lots of strong opinions among Javascript developers about which front-end framework is the best one to use. After plenty of deliberation, I've decided to go with <a href="http://emberjs.com/" target="_blank">EmberJS</a> as our front-end framework. Ember is a mature MVC (model-view-controller) framework for client-side development. What this means is that Ember forces you to organize your code in a way that defines information (model), interfaces (view) and application logic (controller) separately (believe me, it's really easy to mix the three of them up, which makes it much harder to change anything later). Programmers who follow MVC end up with very flexible, maintainable code. This is why so many application frameworks are designed to encourage it.</p>
+
+<h2>Why Ember?</h2>
+
+<p>Front-end Javascript frameworks are a dime a dozen. There's Meteor, Angular, Ember, Backbone, Sencha / ExtJS, Knockout &amp; React, and a smattering of other lesser-known frameworks that all claim to do more-or-less the same thing. I chose Ember for the following reasons:</p>
+
+<h3>It gets you quick results with minimal effort.</h3>
+
+<p>Ember has so much automation built into it that a basic application can be developed with very little actual code. The framework makes intelligent guesses about the things you've left out, and if you follow the default path, a great deal of the work is done for you. This is in line with our mantra: <em>getting results is more important than understanding how</em>. Embrace magic.</p>
+
+<h3>It's all about URLs.</h3>
+
+<p>One of the big reasons I endorsed CouchDB was because of its emphasis on HTTP and REST. I believe it's extremely important for web developers to understand these concepts, and URLs are at the core of both. Ember was built with URLs at its centre, so  every state of your application can be represented by a <a href="http://tomdale.net/2012/05/ember-routing/" target="_blank">unique URL</a>. In fact, the first thing you do when building an application is defining all these URLs, which is a great exercise to help you map out your project.</p>
+
+<p>This focus on URLs reinforces the importance of REST (Representational State Transfer) in web development, and makes Ember that much more closely aligned with the various server-side frameworks (Rails, Django, CodeIgniter, etc.) you might encounter in the future.</p>
+
+<h3>It introduces object-oriented concepts clearly.</h3>
+
+<p>Ember, for better or for worse, redefines certain data types that are built-in to Javascript in order to enhance their behaviour. As a result, each time you create a new object, you're extending an aspect of the framework. By doing this again and again, you become familiar with the concept of <u>inheritance</u> (making a specific thing by customizing a more general thing). It also demonstrates <u>polymorphism</u> (see Mixins), <u>encapsulation</u> (or 'data hiding'), and <u>abstraction</u> (simple code that hides more complicated code). </p>
+
+<p>These four concepts are the fundamental building blocks of object oriented programming, that you'll encounter in C++, Java, PHP, and pretty much all the well-known contemporary languages. Ember provides a framework that helps demonstrate and explain these concepts while building cool stuff quickly.</p>
+
+<p><strong>Important note</strong>: <u>NEVER</u> use the terms 'inheritance', 'polymorphism', 'encapsulation' or 'abstraction' with students. You'll scare them off, and they don't need to know about them explicitly. Let them do their thing, and get comfortable applying these concepts without knowing that they are. It'll be our little secret.</p>
+
+
+<h3>It's forward-thinking.</h3>
+
+<p>Ember's core team has prolific open-source developers with a diverse range of experience behind them. This experience is reflected in the decisions they are making today, and the direction that Ember is <a href="https://gist.github.com/wycats/9144666b0c606d1838be" target="_blank">headed</a>. As the web continues to evolve, it's important to know that your framework is being steered by people who are actively involved in this evolution. Like CouchDB, Ember is skating to where the puck will be.</p>
+
+<hr>
+
+<h2>Unit overview</h2>
+
+<p>The goal of this unit of study is to introduce learners to more advanced programming techniques, using an object-oriented approach and an MVC framework. At this point, students should know how to build a front-end interface and link it to a database using AJAX. This is a pretty good skill-set for basic websites and web applications, but it quickly becomes unmanageable when you want to build something more complex. The more "states" your application can have, the more carefully you need to plan so that the right controls are available at the right time. Once students come up against these limitations, it's time to graduate to a framework.</p>
+
+<p>To find a hook into this unit, consider finding some samples of really polished web applications, and speculate about how they might have been built. What would the database fields have to look like for each kind of item? How do the buttons respond when clicked? How does everything happen so quickly, without reloading the page? When do AJAX calls happen? As you ask these questions, you'll help students articulate and define the limitations of what they can currently build.</p>
+
+<p>Now, show them how to overcome these limitations.</p>
+
+<p>A <u>beginner's exercise</u> to introduce some basic features of Ember would be to create a simple, three-page website. Nothing special, no forms or database interactions yet. Just a simple, static website with 3 links to different sections. Have students model this website using Ember's approach: define the application, define the 3 routes, the application template, and the 3 corresponding page templates.</p>
+
+<p>Students should immediately begin to see one of Ember's value propositions: instead of creating 3 HTML files and linking them all together by copying and pasting a navigation bar, they can write the entire website on a single page, and rely on Ember to respond to clicks, load new content instantly, and even change the URL. They may also notice that they only needed to write the navigation bar once, in the application template. As the page contents change with each new section, the navigation bar stays the same, and the page never needs to refresh.</p>
+
+<p>For an <u>intermediate exercise</u>, students might try and re-create one of their previous web applications from Day 2, but using the Ember framework to reduce the amount of code they need to write. This will reveal the areas where they still need to grow, like action handlers, Handlebars templates, model hooks and state management. Students may need to remain at this stage for a while, and it's a good opportunity for group-work, as many students will find that they're trying to solve similar problems. That's okay - there should always be time for collaboration and exchanging ideas. Vygotsky might even call these opportunities <a href="http://en.wikipedia.org/wiki/Zone_of_proximal_development" target="_blank">zones of proximal development</a>.</p>
+
+<p>Finally, as an <u>advanced exercise</u>, challenge students to create an Ember application that can list items from a database, display those items individually, and edit &amp; save them back to the database. This will require learners to define nested routes (e.g. /posts , /post/hello , /post/hello/edit), initiate a model with data from a database (using AJAX inside Ember controllers), and create interface templates that can trigger actions when buttons are clicked.</p>
+
+<h3>Where to go from here?</h3>
+
+<p>Like CouchDB and pretty much every other technology we've covered, Ember is a rabbit hole unto itself. You could spend months on this one topic and still learn how to do new things, and it's entirely up to you how in-depth you care to go. However, the <strong>bare minimum</strong> that students should learn before moving on to Day 5 is how to create an Ember application that can fetch data from a database, display it, edit it, and save it back to the database. If they've mastered the skills required to meet this outcome, they have an excellent foundation in front-end development, databases, and object-oriented programming.</p>
+
+
+<p>Congratulations, your students are now highly employable. But, there's still plenty more to learn about programming. We'll catch a glimpse of this tomorrow.</p>
+
+<h2>Recommended reading and resources</h2>
+
+
+<p>
+  <a href="http://2013.cascadiajs.com/speakers/tom-dale" target="_blank">Stop breaking the web</a><br>
+  This video features one of the EmberJS founders, Tom Dale, speaking about what the is trying to accomplish. It provides some great insights into the project's values and priorities, and highlights many of the framework's strengths.
+</p>
+
+
+<p>
+  <a href="http://emberwatch.com/" target="_blank">Emberwatch</a><br>
+  Emberwatch is an excellent collection of resources, from screencasts and tutorials to full-fledged example code complete with annotations. They also have a <a href="http://twitter.com/emberwatch" target="_blank">Twitter account</a>.
+</p>
+
+
+<p>
+  <a href="http://www.toptal.com/javascript/a-step-by-step-guide-to-building-your-first-ember-js-app" target="_blank">A step-by-step guide to building your first EmberJS app</a><br>
+  A good introduction for intermediate programmers. This tutorial, along with some other screencasts, tutorials, articles and example code, will help learners understand how to structure their Ember projects.
+</p>
+
+
+<p>
+  <a href="http://emberjs.com/guides/" target="_blank">Ember Guides</a><br>
+  The official guides on the Ember website, which start by taking you through building an example ToDo application. Consider assigning this tutorial to students to follow along. The Ember website also has a great introductory video screencast for newcomers, featuring Tom Dale (again).
+</p>
+
+
+<p>
+  <a href="http://frontside.io/blog/2014/02/24/ember-and-the-future-of-the-web.html" target="_blank">Ember and the future of the web</a><br>
+  Brandon Hays expands on some of the reasons behind why I've selected Ember for this course of study. He makes some excellent, insightful observations about client side frameworks versus server-side frameworks. He also explains how the Ember team is skating to where the puck will be.
+</p>
+
+
+<p>
+  <a href="https://www.codeschool.com/courses/warming-up-with-emberjs" target="_blank">Warming Up With Ember (Codeschool)</a><br>
+  While the entire course isn't free, students can try out the first part of this course without paying. Codeschool courses feature great screencasts and interactive practical assignments that give very good feedback.
+</p>
+
+
+
+<h3>Up next:</h3>
+
+<ul style="list-style-type: disc;">
+  <li><a href="#contentBodyHeader-day5" title="link to start of day 5">Day 5: Server-side programming and future directions</a></li>
+</ul>
+
+<h3>Back to:</h3>
+<ul style="list-style-type: disc;">
+  <li><a href="#contentBodyHeader-day1" title="link to day 1 intro">Day 1: Choosing a platform and a language</a></li>
+  <li><a href="#contentBodyHeader-day2" title="link to start of day 2">Day 2: Client-side, front-end development</a></li>
+  <li><a href="#contentBodyHeader-day3" title="link to start of day 3">Day 3: Database servers and REST APIs</a></li>
+  <li><a href="#contentBodyHeader-day4" title="link to start of day 4">Day 4: Object-oriented programming and MVC frameworks</a></li>
+</ul>
+
+                  </div>
+                  </div>
+                  </div><!--  bodyBlock  -->
+<!--      ===============================================  -->
+
+
+
+
+
+
+
+
+<!--      ===============================================  -->
+
+
+<div class="bodyBlock">
+                 <div class="imageHeader">
+
+                   <img src="./auxi/pix/header_image-day5.jpg" alt="." style="width: 100%;-webkit-border-top-left-radius: 4px; -webkit-border-top-left-radius: 4px; -moz-border-radius-topleft: 4px; -moz-border-radius-topright: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px;" />
+
+                 </div>
+<div id="contentBodyHeader-day5" class="contentBodyHeader">
+    <h2>Day 5: Server-side programming and future directions</h2>
+
+    <span>March&nbsp;7,&nbsp;2014</span>
+</div>
+
+<div id="contentBody5" class="contentBody">
+
+<div class="articleContent">
+
+<p><em>This article is the fifth (and final) in a 5-day series about teaching beginners how to program. <a href="#contentBodyHeader-day1" title="link to day 1 intro">Read the introduction</a>.</em></p>
+
+<p>If you've <a href="#contentBodyHeader-day1" title="link to day 1 intro">made</a> <a href="#contentBodyHeader-day2" title="link to start of day 2">it</a> <a href="#contentBodyHeader-day3" title="link to start of day 3">this</a> <a href="#contentBodyHeader-day4" title="link to start of day 4">far</a>, then you've learned enough to be an effective Javascript web developer already. You can put together interfaces on the front end, hook them up into an interactive web application using a framework, and load and save data to a database. You also understand the basics of HTTP, REST, and object-oriented programming.</p>
+
+<p>Guess what? There's even more to learn if you want to round out your knowledge of web technologies more fully. The one major topic that's missing from this list is <strong>server-side programming</strong>. You'll recall we touched on the idea of client-server interaction when we covered CouchDB (which is a database <em>and</em> an HTTP server). So, you should have some understanding of HTTP headers, requests and responses, etc. Today, we'll build on this knowledge by creating our own web servers and server applications, using <a href="http://nodejs.org/" target="_blank">Node.js</a>. We'll also conclude our curriculum with a look at some of the directions students can go from here.</p>
+
+<h2>Node.js : walk before you run.</h2>
+
+<p>We're introducing learners to a few genuinely new concepts and tools today: the command line, modules, and programming without a graphic interface. It might be necessary to pause and get our bearings, before pushing on with the rest of this unit. We'll return to our mantra of quick results soon enough.</p>
+
+<h3>The command-line</h3>
+
+<p>You may have some familiarity with the command-line already, having used CouchApp to send design documents to a CouchDB server. However, this is still a newish concept that requires some explanation. Since we'll be dealing with the command-line a <em>lot</em> with Node, it's important that we feel comfortable in it. Once you have Node installed, have learners type the following into the command line: <strong>node -e "console.log(1 + 1)"</strong></p>
+
+<p>This tells Node to add 1 + 1 and log the response to the terminal. Next step: have students create a Javascript file with some log statements in it, and get Node to execute the file: <strong>node filename.js</strong>. If they can accomplish these tasks, then they know enough about the console (navigate the file system, list files, etc.) to move on. They'll also understand that you test a Node application by re-executing it in the terminal, just like you test a web application by refreshing the browser.</p>
+
+<h3>Modules! So many modules...</h3>
+
+<p>Node.js has an extremely rich collection of <a href="http://npmjs.org/" target="_blank">modules</a> that extend its capabilities. You can download and install modules to <a href="https://www.npmjs.org/package/nano" target="_blank">connect</a> <a href="https://www.npmjs.org/package/mysql" target="_blank">to</a> <a href="https://www.npmjs.org/package/mongoose" target="_blank">databases</a>, <a href="http://www.momentjs.com/docs/" target="_blank">format dates</a>, and even <a href="https://www.npmjs.org/package/nodemailer" target="_blank">send emails</a>.
+
+</p><p>You can obtain these modules, and thousands more, using a command-line tool called Node Package Manager (npm). This should be installed right after Node itself. Students must become familiar with finding and installing modules, and including them in their applications. As a simple exercise to confirm they can do this, choose a module that has a unique capability and have students write a simple application that uses it. You could have them send emails using <a href="https://www.npmjs.org/package/nodemailer" target="_blank">node mailer</a>, fetch their Facebook profile info using <a href="https://www.npmjs.org/package/facebook-graph" target="_blank">facebook-graph</a>, or retrieve data from a CouchDB database using <a href="https://www.npmjs.org/package/nano" target="_blank">nano</a>, <a href="https://www.npmjs.org/package/cradle" target="_blank">cradle</a> or <a href="https://www.npmjs.org/package/couch-client" target="_blank">couch-client</a>. If they can successfully write a script to leverage a node module, then we're ready to rock and roll.</p>
+
+<h2>Welcome to the server side.</h2>
+
+<p>Now that we're familiar with the new tools, resources and workflows required to write programs in Node, let's look at how we can use it to build a web application. Learners will need to understand that Node is not a server, and so they'll need to build an application that bundles a server with it. To illustrate this point, demonstrate the famous, simple <a href="http://nodejs.org/api/synopsis.html" target="_blank">Hello world!</a> server application.</p>
+
+<p>Based on everything we've learned to date (which is a lot), students ought to be able to understand everything that's going on in that example, and even recognize that we're setting HTTP header information like status codes and content-types manually. Now, we can pick up the pace.</p>
+
+<h3>A note on scaffolding.</h3>
+
+<p>As I've stressed again and again throughout the past 5 days, <em>getting meaningful results quickly is more important than understanding how</em>. This is why I recommended using Bootstrap instead of learning HTML and CSS from scratch. It's also why I recommended using the Ember framework for building complex web applications. These tools act as <a href="http://en.wikipedia.org/wiki/Instructional_scaffolding" target="_blank">scaffolds</a> to support learners and help them achieve more than they could on their own. As learners grow more confident and experienced, this scaffolding slowly falls away as they learn to support themselves.</p>
+
+<p>As educators, our job is to provide guidance and support to learners when they need it, and pull back when they don't. We do this by sequencing instruction, choosing appropriate tools, prescribing meaningful challenges and tasks, and filling in the blanks when necessary. This is why we slowed down to explain the basics of Node.</p>
+
+<p>Now it's time to speed up again!</p>
+
+<h2>High-speed development with the Express framework</h2>
+
+<p>Just like we leaned on Bootstrap and Ember so students could do more faster, we're going to use a server-side web application framework called <a href="http://expressjs.com/" target="_blank">Express</a> to blaze ahead with this unit of study.</p>
+
+<p>Express is another <a href="https://www.npmjs.org/package/express" target="_blank">NPM module</a> that extends the capability of Node. Once you include the Express module in your Javascript application, you unlock the ability to easily create a web-server, define URLs that it responds to, describe custom behaviour for every URL (like receiving form data, or retrieving a record from a database, etc.), and use templates to easily format the responses that are served. It can also be <a href="http://timstermatic.github.io/blog/2013/08/17/a-simple-mvc-framework-with-node-and-express/" target="_blank">easily adapted</a> to behave like an MVC framework, which learners should already be familiar with from <a href="http://torusoft.com/blog/5-days-of-code-curriculum-day-4">Day 4</a>.</p>
+
+<p>Undoubtedly, we'll need to familiarize ourselves with this framework just as we did with Ember yesterday. A <u>simple</u> challenge to focus students would be to get them to create a simple, 3-page application, just like they did with Ember. This will give them an opportunity to try out the URL routing, templates and views in Express. These all ought to be familiar concepts from Ember.</p>
+
+<p>An <u>intermediate</u> challenge might be to create an application that reads data from a database and displays it on screen, optionally with the ability to edit and save items back to the database. This will require learners to set up both GET and POST URL routes, and define dynamic URL routes just like they did with Ember. It also requires them to rope in a database client and get their application to perform a set of actions before sending a response.</p>
+
+<p>At this point, we're pretty advanced programmers with plenty of diverse experiences. <em>If you haven't given learners the chance to work together yet</em>, I suggest giving them the opportunity now with an <u>advanced</u> challenge. Working in groups of 2-3, ask students to come up with idea for a web application, and try to implement it together. They'll need to organize themselves as a team, and break out roles and responsibilities like designing the interface, building the front end, managing the database and writing the server-side code to serve the application. Sensible division of labour and collaboration are essential programming skills, and a complex application is the perfect opportunity to develop them.</p>
+
+<p>As an added benefit, requiring students to work together on a project will force them to evaluate and compare their workflows, and try to find a way to contribute to the same codebase. This is the perfect way to introduce a distributed version control tool like <a href="http://git-scm.com/" target="_blank">Git</a>, and perhaps get students to sign up for a free <a href="http://github.com/" target="_blank">Github</a> account. No time like the present to discover a worldwide community of open-source developers.</p>
+
+<h2>Climbing up the ladder</h2>
+
+<p>When developing a curriculum, it's important to be mindful that your learning objectives and outcomes span a range of complexity. <a href="http://en.wikipedia.org/wiki/Bloom's_taxonomy" target="_blank">Bloom's taxonomy</a> is a good yardstick to determine whether your learning activities are sufficiently diverse. Bloom identifies a cognitive (and affective and psychomotor) hierarchy for classifying learning objectives: <strong>knowledge, comprehension and application</strong> on the low end, and <strong>analysis, synthesis and evaluation</strong> on the high end. It's easy to remember a set of facts (knowledge). It's harder to 'understand' a fact than it is to recall it (comprehension). It's more difficult to 'apply' knowledge than it is to comprehend it (application). It's more challenging still to critically reflect on something than it is to apply it (analysis). Producing something new by pulling together everything you've learned is even more difficult (synthesis). And finally, the most challenging cognitive task is to assess the value of what you've learned (evaluation).</p>
+
+<p>The wonderful thing about programming is that we're consistently building new things by applying what we've learned about various technologies. Throughout this course, we've had to know, understand, and apply different programming concepts, analyze both documentation and our own code, and synthesize our learning to build applications.</p>
+
+<p>But what about evaluation? The ability to evaluate and assess the value of knowledge only comes after substantial learning and experience. After everything we've learned over the past 5 days, we're at a point where we have enough knowledge and experience to begin determining what's valuable and what's not. For example, after having compared Ember to Express, some students may decide that they prefer building single-page applications to using server-side frameworks. Individual preferences may lead some students to choose one NPM module over another. As students collaborate, they'll compare their coding habits to their peers, and determine which habits are better than others.</p>
+
+<p>In other words, we've transitioned from complete novices to experienced developers, able to reflect critically on tooling, processes and technologies.</p>
+
+<h3>Where do we go from here?</h3>
+
+<p>My mission was to produce a course of study that would prepare newcomers for the industry we're trying to grow, and the jobs we'll need over the next decade. Our focus was on Javascript and web technologies, as this provided the broadest foundation of skills, and exposed learners to the widest array of specializations possible.</p>
+
+<p>Over the past 5 days, we've learned about front-end development, databases, HTTP and REST, object-oriented programming, MVC architectures, client and server-side frameworks, modules and version control. This is about as broad a foundation as it gets. Now, it's time to pick a path.</p>
+
+<p>Did you enjoy the unit on front-end development? Perhaps you want to pursue HTML and CSS in greater depth, and become a great designer. Did you like databases? Consider looking into data science some more. Are you interested in making games? There's plenty of <a href="http://www.jstherightway.org/#game-engines" target="_blank">game engines</a> available for Javascript. Maybe you want to build a robot? You can <a href="http://nodebots.io/" target="_blank">program robots</a> using Javascript. Do you want to build a mobile app for an iPhone or Android device? Javascript <a href="http://phonegap.com/" target="_blank">has you covered</a>.</p>
+
+<p>You have the foundation you need to learn all kinds of programming languages and technologies now. You can stay with Javascript, or you can branch out. Revisit <a href="http://torusoft.com/blog/5-days-of-code-curriculum-day-1">Day 1</a> and look at that intimidating list of servers, databases, programming languages and frameworks. That's a list of challenges waiting to be conquered.</p>
+
+<p>Good luck, and stay in touch.</p>
+
+<h2>Recommended reading and resources</h2>
+
+<p>
+
+  <a href="http://www.jstherightway.org/" target="_blank">Javascript the Right Way</a><br>
+  This is by far the best collection of resources on learning best-practices in Javascript. It provides links to authoritative overviews of important advanced concepts, collects all the tools and frameworks (and even game engines) in one place, links to learning resources, and offers recommendations on who to follow in the Javascript community. An excellent starting-point for a well-rounded Javascript developer (that's you).
+</p>
+
+
+<p>
+
+  <a href="http://try.github.io/levels/1/challenges/1" target="_blank">Try Git : Codeschool</a><br>
+  This tutorial will teach learners how to use Git as a version control system to collaborate with their peers. It's put together by the excellent teachers at Codeschool, and flows very well from one topic to another.
+</p>
+
+
+<p>
+
+  <a href="http://nodeschool.io/" target="_blank">Nodeschool.io</a><br>
+  This website provides command-line-based tutorials designed to bring beginners up to speed on all aspects of Node programming. There are core concepts and electives, one of which is a <a href="http://nodeschool.io/#expressworks" target="_blank">tutorial on Express</a>, which might be a great way for students to learn the ins and outs of the framework. And, if they're looking to use version control to collaborate with their peers, there's also a course on <a href="http://nodeschool.io/#git-it" target="_blank">Git</a>.
+</p>
+
+
+<hr>
+
+<p><em>Thank you</em> for following this series. If you're an educator, I hope you consider implementing aspects of this curriculum in your classrooms and schools. If you were following along because you're interested in learning how to program, I hope I've given you sufficient guidance to proceed with confidence. If you're an industry stakeholder or an employer, I hope you'll consider endorsing this curriculum to your professional network.</p>
+
+<p>Let's work together to ensure the next generation has the right skills to achieve prosperity for us all.</p>
+
+
+<h3>Back to:</h3>
+<ul style="list-style-type: disc;">
+  <li><a href="#contentBodyHeader-day1" title="link to day 1 intro">Day 1: Choosing a platform and a language</a></li>
+  <li><a href="#contentBodyHeader-day2" title="link to start of day 2">Day 2: Client-side, front-end development</a></li>
+  <li><a href="#contentBodyHeader-day3" title="link to start of day 3">Day 3: Database servers and REST APIs</a></li>
+  <li><a href="#contentBodyHeader-day4" title="link to start of day 4">Day 4: Object-oriented programming and MVC frameworks</a></li>
+  <li><a href="#contentBodyHeader-day5" title="link to start of day 5">Day 5: Server-side programming and future directions</a></li>
+</ul>
+
+
+</div>
+
+
+</div>
+</div>
+<!--      ===============================================  -->
+
+									<div id="author_block" class="authorBlock">
+										<img src="./auxi/pix/Ari_Najarian.png" width="75px;">
+
+										<p>
+											<strong>Ari Najarian</strong>
+											<!--  iframe id="twitter-widget-2" scrolling="no" frameborder="0" allowtransparency="true" src="./5-days-of-code-1_files/follow_button.331904cc91ddebde387d36578bfb9deb.en.html" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 134px; height: 20px;"></iframe  -->
+										</p>
+
+
+									</div>
+
+									<!--  div class="sharingContainer bottom">
+										<script src="./5-days-of-code-1_files/in.js" type="text/javascript">
+										 lang: en_US
+										</script>
+										<span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_gen_2"><a id="li_gen_2-link" href="javascript:void(0);"><span id="li_gen_2-logo">in</span><span id="li_gen_2-title"><span id="li_gen_2-mark"></span><span id="li_gen_2-title-text">Share</span></span></a></span></span><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_gen_3-container" class="IN-right"><span id="li_gen_3" class="IN-right"><span id="li_gen_3-inner" class="IN-right"><span id="li_gen_3-content" class="IN-right">3</span></span></span></span></span></span><script type="IN/Share+init" data-counter="right" data-showzero="true"></script>
+										<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+										<fb:like href="http://www.torusoft.com/blog/5-days-of-code-curriculum-day-1" layout="button_count" show_faces="false" style="vertical-align: top;" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=153739538011630&amp;href=http%3A%2F%2Fwww.torusoft.com%2Fblog%2F5-days-of-code-curriculum-day-1&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;show_faces=false"><span style="vertical-align: bottom; width: 76px; height: 20px;"><iframe name="f3212bd934" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./5-days-of-code-1_files/like(1).html" class="" style="border: none; visibility: visible; width: 76px; height: 20px;"></iframe></span></fb:like>
+										<iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" src="./5-days-of-code-1_files/tweet_button.214e3d3b0c5437701f749bab582597f0.en(1).html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 109px; height: 20px;"></iframe>
+									</div  -->
+
+							</div>
+
+							 <!--  div class="aside">
+								<h2>Other blog posts</h2>
+									<ul>
+										<li><a href="http://torusoft.com/blog/why-coding-why-now">Why coding? Why now?</a></li><li><a href="http://torusoft.com/blog/peerless">Peerless.</a></li><li><a href="http://torusoft.com/blog/nova-scotia-digital-bridge-scholarship-proposal">Proposal: The Nova Scotia Digital Bridge Scholarship</a></li><li><a href="http://torusoft.com/blog/5-days-of-code-curriculum-day-5">Day 5: Server-side programming and future directions</a></li><li><a href="http://torusoft.com/blog/5-days-of-code-curriculum-day-4">Day 4: Object-oriented programming and MVC</a></li><li><a href="http://torusoft.com/blog/5-days-of-code-curriculum-day-3">Day 3: Databases and REST APIs</a></li><li><a href="http://torusoft.com/blog/5-days-of-code-curriculum-day-2">Day 2: Front-end development and interface design</a></li><li><a href="./5-days-of-code-1_files/5-days-of-code-1.html">Day 1: The hard questions.</a></li><li><a href="http://torusoft.com/blog/how-to-recognize-a-super-company">How to recognize a super-company when you see one.</a></li><li><a href="http://torusoft.com/blog/offline-first-any-takers">Podcamp session idea : offline-first development</a></li><li><a href="http://torusoft.com/blog/cultivate-dont-harvest">Don't Just Harvest. Cultivate.</a></li><li><a href="http://torusoft.com/blog/ridership-requires-relevance">Dear Mr. Savage: Heed Our Call For Relevant Public Transit.</a></li><li><a href="http://torusoft.com/blog/curation-isnt-just-for-museums">Curation Isn't Just for Museums</a></li><li><a href="http://torusoft.com/blog/chinks-in-the-armour">Chinks in the Armour</a></li><li><a href="http://torusoft.com/blog/the-pc-is-dead-long-live-the-pc">The PC is Dead! Long Live the PC!</a></li>
+									</ul>
+
+							</div  -->
+
+						</div>
+
+
+
+						 <!--  div id="disqus_thread" class="disqusContainer"><iframe id="dsq-2" data-disqus-uid="2" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./5-days-of-code-1_files/saved_resource.html" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 676px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div  -->
+						    <!--  script type="text/javascript">
+						        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+						        var disqus_shortname = 'torusoft'; // required: replace example with your forum shortname
+
+						        /* * * DON'T EDIT BELOW THIS LINE * * */
+						        (function() {
+						            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+						            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						        })();
+						    </script  -->
+						    <noscript>Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+
+
+
+			            </div>
+
+						<div class="bgBottom"></div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--  iframe id="rdbIndicator" width="100%" height="270" border="0" src="./5-days-of-code-1_files/indicator.html" style="display: none; border: 0; position: fixed; left: 0; top: 0; z-index: 2147483647"></iframe  -->
+
+</body></html>
