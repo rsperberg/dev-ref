@@ -156,7 +156,7 @@
 <!--code lang=javascript linenums=true-->
 
 <pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript">angular<span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>You'll notice the <code>[]</code> as the second argument to the <code>module</code> method, this Array contains (or will contain) all other module dependencies we wish to include in this module. Modules can have other modules as dependencies, which have modules that pull in other dependencies. For now, we'll leave it empty.</p>
 <p><strong>3.2 Getters</strong></p>
@@ -164,7 +164,7 @@
 <!--code lang=javascript linenums=true-->
 
 <pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript">angular<span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p><strong>3.3 Module practices</strong></p>
 <p>Modules can be stored and referenced by using a variable, but best practice is to use the chaining method provided by the AngularJS team.</p>
@@ -243,7 +243,7 @@
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">controller<span class="token punctuation">(</span></span><span class="token string">'MainCtrl'</span><span class="token punctuation">,</span> MainCtrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>This makes things look a lot clearer in terms of visibility and readability, it's important not to get hooked up in Angular's syntax and just focus on writing JavaScript. We can then pass Angular the pieces we need, just like above.</p>
 <p>You'll see I've named a function <code>MainCtrl</code>, this also helps us with stack traces when debugging, something an anonymous function can't provide us unless we name them - but it's often less clear and easily forgotten.</p>
@@ -272,7 +272,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">controller<span class="token punctuation">(</span></span><span class="token string">'MainCtrl'</span><span class="token punctuation">,</span> MainCtrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Using the <code>$scope</code> Object we bind an <code>Array</code>. This <code>Array</code> is then available in the DOM, where we can pass it off to one of Angular's built-in Directives, <code>ng-repeat</code> to loop over the data and create DOM based on the template and data.</p>
 <!--code lang=markup linenums=true-->
@@ -284,7 +284,7 @@ angular
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Check the <a href="http://jsfiddle.net/toddmotto/xW4HM">live example</a>.</p>
 <p><strong>5.2 New "controllerAs" syntax</strong></p>
@@ -311,7 +311,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">controller<span class="token punctuation">(</span></span><span class="token string">'MainCtrl'</span><span class="token punctuation">,</span> MainCtrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>The next change is adding the <code>as</code> part to where we instantiate the Controller in the DOM, let's use <code>MainCtrl as main</code> to create a <code>main</code> variable.</p>
 <p>This means any data we reference inside the Controller sits under the <code>main</code> variable, so <code>items</code> in the previous example becomes <code>main.items</code>.</p>
@@ -324,9 +324,7 @@ angular
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code>
-
-<footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>This greatly helps us in identifying which Controller a property belongs to, if we were to have multiple or nested Controllers, before <code>controllerAs</code> was introduced the variables are free in the scope, whereas under a variable they belong to a particular instance, for example we could have <code>main.items</code> and <code>sub.items</code> in the same DOM scope. Previously there may have been conflicting names with variables overwriting each other.</p>
 <p>Each <code>$scope</code> created has a <code>$parent</code> Object as scopes prototypically inherit, without <code>controllerAs</code> we would need to use <code>$parent</code> references to use any methods in the parent scope, and <code>$parent.$parent</code> for another child, and so on. This led to "magic number" style code which <code>controllerAs</code> fixes brilliantly - we just reference the variable instance.</p>
@@ -360,7 +358,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">service<span class="token punctuation">(</span></span><span class="token string">'UserService'</span><span class="token punctuation">,</span> UserService<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>We could then inject the Service into a Controller to use it.</p>
 <!--code lang=javascript linenums=true-->
@@ -374,7 +372,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">controller<span class="token punctuation">(</span></span><span class="token string">'MainCtrl'</span><span class="token punctuation">,</span> MainCtrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>A Service means we can't run any code before it as all methods are the Object instantiated. Things are different when it comes to a Factory.</p>
 <p><strong>6.2 Factory method</strong></p>
@@ -396,7 +394,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">factory<span class="token punctuation">(</span></span><span class="token string">'UserService'</span><span class="token punctuation">,</span> UserService<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>I've split the <code>greeting</code> function out to show how we can emulate private scope through closures. We could have done something similar inside the <code>service</code> method <code>constructor</code>, but this shows what gets returned and what stays inside the Service scope. We could create private functions such as helpers that remain in the scope after the function has returned, but are still available for use by the public methods. We use Services created by the <code>factory</code> method in the exact same way inside a Controller.</p>
 <!--code lang=javascript linenums=true-->
@@ -410,7 +408,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">controller<span class="token punctuation">(</span></span><span class="token string">'MainCtrl'</span><span class="token punctuation">,</span> MainCtrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Services are generally used for non-presentational logic, which we call the business logic layer. This tends to be things like communicating with a backend via REST endpoints over Ajax (HTTP).</p>
 <blockquote>
@@ -456,7 +454,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">controller<span class="token punctuation">(</span></span><span class="token string">'MainCtrl'</span><span class="token punctuation">,</span> MainCtrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>We can then retrieve the length of the Array by declaring an expression that makes use of the <code>length</code> property of an Array. This might indicate to the user how many items are in stock.</p>
 <!--code lang=markup linenums=true-->
@@ -464,7 +462,7 @@ angular
 <pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-controller</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MainCtrl as main<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   {{ main.items.length }} in stock
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Angular will render out the length property, so we'll see "4 items in stock" in the DOM.</p>
 <p><strong>7.2 Using Angular core Directives</strong></p>
@@ -482,7 +480,7 @@ angular
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>If you take a close look at the above, I'm binding an <code>ng-click</code> attribute with a function inside called <code>main.removeFromStock()</code>. I'm passing in the <code>item</code>, which is the current iterated Object from <code>item in main.items</code>, and passing in <code>$index</code>. The <code>$index</code> property is extremely handy for removing items from an Array without us manually calculating the index of the element.</p>
 <p>Now the function is setup, we can add it to the Controller, I'll keep the <code>items</code> Array brief for visibility. I pass in the <code>$index</code> and the item, and on the <code>removeFromStock</code> method</p>
@@ -498,7 +496,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">controller<span class="token punctuation">(</span></span><span class="token string">'MainCtrl'</span><span class="token punctuation">,</span> MainCtrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>As we create methods, the <code>this</code> value may change depending on how we use it due to the function's execution context. With the Controller being a glorified <code>ViewModel</code>, I usually create a reference to the Controller using a variable <code>var vm = this;</code>, with "vm" standing for "ViewModel". This way we don't lose any lexical <code>this</code> references and avoid using <code>Function.prototype.bind</code> to keep changing context, or Angular's own <code>angular.bind</code>.</p>
 <p>Our reworked Controller would look like this:</p>
@@ -515,7 +513,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">controller<span class="token punctuation">(</span></span><span class="token string">'MainCtrl'</span><span class="token punctuation">,</span> MainCtrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>These methods help us build up the presentational logic that handles our application's UI layer. We are missing a step, however, and that step is updated the Model. Typically before we remove an item from the <code>vm.items</code> Array, we would make a <code>DELETE</code> request to the backend and then on successful callback remove it from the Array. This way we only update the DOM upon success so the user doesn't think it's succeeded. The above gives a simple glimpse at how you can create templates with Angular, with plain HTML and sprinkles of Angular syntax.</p>
 <p>Templates we create inside Angular, however simple, are generally encapsulated functionality that we might want to reuse elsewhere in the application or in future applications. We should always build with reuse in mind, and this is where Directives come in very nicely.</p>
@@ -537,7 +535,7 @@ angular
     {{ item }}
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>The ng-repeat copies an element and duplicates it whilst dynamically filling it with each Object's data in an Array, which means the amount of HTML created in your repeat mirrors the Object's it's repeated with. If an item is removed from the source Array, Angular will update the DOM automatically, adjusting all <code>index</code> values accordingly.</p>
 <p><strong>8.2 ng-model</strong></p>
@@ -546,7 +544,7 @@ angular
 
 <pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.message<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Message: {{ main.message }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>If the <code>$scope</code> property <code>main.message</code> holds a value, the input's <code>value</code> attribute and property are both set to that value. If <code>main.message</code> doesn't exist inside your <code>$scope</code>, Angular will just initialise it. We might pass these values to other Angular Directives, such as <code>ng-click</code>.</p>
 <p><strong>8.3 ng-click</strong></p>
@@ -555,7 +553,7 @@ angular
 
 <pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.message<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span> ng-click<span class="token punctuation">=</span><span class="token punctuation">"</span></span><span class="token attr-name">main</span>.<span class="token attr-name">showMessage</span>(<span class="token attr-name">main</span>.<span class="token attr-name">message</span>);"<span class="token punctuation">&gt;</span></span>Show my message<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>You can see here I'm passing in <code>main.message</code> into the <code>main.showMessage</code> method, this passes a plain JavaScript Object into Angular for evaluation. This is the beauty of working with Angular, all DOM data-binding corresponds with an Object, we can just parse it, manipulate it, parse to JSON and send off to the backend. Methods such as <code>main.showMessage</code> will live inside the Controller that's powering the view, in this case I'm assuming it's <code>MainCtrl as main</code>.</p>
 <p><strong>8.4 ng-href/ng-src</strong></p>
@@ -564,7 +562,7 @@ angular
 
 <pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">ng-href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{ main.someValue }}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Go<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">ng-src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{ main.anotherValue}}<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p><strong>8.5 ng-class</strong></p>
 <p>The <code>ng-class</code> Directive has a somewhat stranger syntax to other Directives, it takes on the form of an Object with properties and values. Instead of doing the traditional <code>elem.addClass(className)</code> and <code>elem.removeClass(className)</code>, Angular will add and remove classes based on the expression you provide it, along with a <code>className</code>.</p>
@@ -576,7 +574,7 @@ angular
 }<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   {{ main.responseMsg }}
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>It's often clearer to see what's happening inside the <code>ng-class</code> Directive if we indent it like a proper Object, like above. You can see how Angular will keep evaluating <code>main.response</code> to see if the status returned is <code>error</code> or <code>success</code>, the class it will add it the Object's property name, in these cases <code>warning</code> and <code>ok</code>. If <code>main.response == 'error'</code> evalutes to <code>true</code>, Angular will add a <code>warning</code> class.</p>
 <p><strong>8.6 ng-show/ng-hide</strong></p>
@@ -590,7 +588,7 @@ angular
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Depending on the semantics of the immediate content, should it be hidden or visible initially, you may choose <code>ng-show</code> or <code>ng-hide</code>. There is no other difference apart from they do the opposite of eachother. Angular adds and removes an <code>ng-hide</code> class when toggling between show and hide states, it assumes without the <code>ng-hide</code> class the element will be displayed.</p>
 <p><strong>8.7 ng-if</strong></p>
@@ -600,7 +598,7 @@ angular
 <pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.userExists<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   Please log in
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p><strong>8.8 ng-switch</strong></p>
 <p>Think a typical <code>switch</code> case, but in the DOM or better yet, an <code>ng-if</code> on steroids. Provide Angular multiple chunks of HTML for it to swap in and out based on a single <code>$scope</code> value. This allows us to provide different HTML for different users for example, </p>
@@ -617,7 +615,7 @@ angular
     <span class="token comment" spellcheck="true">&lt;!-- code for authors --&gt;</span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p><strong>8.9 ng-bind</strong></p>
 <p>We're using to rendering values in the DOM using <code>{{ value }}</code> bindings, but there is another alternative called <code>ng-bind</code> which you can see the difference in syntax here.</p>
@@ -625,7 +623,7 @@ angular
 
 <pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{ main.name }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">ng-bind</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>We would use <code>ng-bind</code> when we don't want to see any flicker whilst Angular is loading and parsing data. Angular automatically shields any content that's dynamically created with Directives or inside a dynamic view (<code>ng-view</code>). If your bindings are outside of these, we might see <code>{{</code> and <code>}}</code> text in the document, which is bad. To get around this, we use <code>ng-bind</code> which is invisible as Angular resolves the value once it's ready and removes the need for <code>{{ }}</code> bindings.</p>
 <p><strong>8.10 ng-view</strong></p>
@@ -652,7 +650,7 @@ angular
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">my-element</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>my-element<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token comment" spellcheck="true">&lt;!-- directive: my-element --&gt;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Angular Directives provide us with a <code>restrict</code> property, so we can tie down the usage to a particular implementation. By default, all Directives are set to <code>'EA'</code> which means <code>Element, Attribute</code>. The other options are <code>C</code> for class name and <code>M</code> for comment.</p>
 <p><strong>9.2 Shadow DOM</strong></p>
@@ -663,7 +661,7 @@ angular
 <pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-element</span><span class="token punctuation">&gt;</span></span>
   Hi there!
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-element</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>And the <code>Hi there!</code> text could be made available in the Shadow DOM. Angular has an option called <code>transclude</code>, which allows us to pull through existing content into Directive templates before being compiled and sent back to the DOM. It acts in a similar fashion to Shadow DOM, but doesn't provide the powerful scoping.</p>
 <p><strong>9.3 Templating and HTML Imports</strong></p>
@@ -683,7 +681,7 @@ is the <code>String</code> formatted template that Angular then compiles into li
     <span class="token string">'&lt;/ul&gt;'</span> <span class="token operator">+</span>
   <span class="token string">'&lt;/div&gt;'</span>
 <span class="token punctuation">}</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>If I'm using this setup (which can be nice as we can write JavaScript logic in between the Strings), I use <code>[].join('')</code> to make the template clearer to read and easier to indent, comma separation is also much nicer to look at.</p>
 <!--code lang=javascript linenums=true-->
@@ -699,7 +697,7 @@ is the <code>String</code> formatted template that Angular then compiles into li
     <span class="token string">'&lt;/div&gt;'</span>
   <span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">join<span class="token punctuation">(</span></span><span class="token string">''</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p><strong>9.3.2 templateUrl property</strong></p>
 <p>The templateUrl property allows us to point to either an external resource or a <code>&lt;script&gt;</code> element with our template inside.</p>
@@ -709,7 +707,7 @@ is the <code>String</code> formatted template that Angular then compiles into li
 <pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token punctuation">{</span>
   templateUrl<span class="token punctuation">:</span> <span class="token string">'items.html'</span>
 <span class="token punctuation">}</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Angular would first scan the DOM for a <code>&lt;script&gt;</code> element with the <code>id</code> that matches, if it doesn't exist it'll attempt a <code>HTTP GET</code>.</p>
 <p>Let's look at how the <code>&lt;script&gt;</code> implementation works.</p>
@@ -724,7 +722,7 @@ is the <code>String</code> formatted template that Angular then compiles into li
     <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>First, we specify the <code>type</code> as <code>text/ng-template</code>, changing the MIME type for the JavaScript engine, which makes the compiler ignore it to prevent a tonne of JavaScript errors thrown from inserting HTML. The <code>id</code> is the important piece, which pretends to be the <code>*.html</code> file, meaning we can use an inline <code>&lt;script&gt;</code> tag instead of making a <code>GET</code> request for each template file - a performance benefit.</p>
 <p>The performance benefit also lives in the <code>template</code> property, whereby the template is stored as a <code>String</code>, this also means no <code>GET</code> request. Once a Directive's template has been loaded, Angular stores it internally so the template can be used by <code>ng-include</code> and <code>ng-view</code> as well.</p>
@@ -743,7 +741,7 @@ is the <code>String</code> formatted template that Angular then compiles into li
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">controller<span class="token punctuation">(</span></span><span class="token string">'someDirective'</span><span class="token punctuation">,</span> someDirective<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Let's look at some of the most commonly used Object properties for Directives. We've covered the <code>restrict</code> property, next we'll add <code>replace</code>, <code>controllerAs</code>, <code>controller</code>, <code>link</code> and <code>template</code>, this will give us an idea of how things hang together.</p>
 <!--code lang=javascript linenums=true-->
@@ -771,7 +769,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">controller<span class="token punctuation">(</span></span><span class="token string">'someDirective'</span><span class="token punctuation">,</span> someDirective<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p><strong>9.4.1 restrict</strong></p>
 <p>We've already covered the <code>restrict</code> property, but to recap - it allows you to restrict the Directive's usage for developers. If the Directive needs to be as an attribute, often when we want to bolt into an existing element and not have root template control, we can restrict to <code>'A'</code>. To restrict to just an element we use <code>'E'</code>, for comments we use <code>'M'</code> and for class names we use <code>'C'</code>. </p>
@@ -816,7 +814,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">controller<span class="token punctuation">(</span></span><span class="token string">'composeEmail'</span><span class="token punctuation">,</span> composeEmail<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>We can now use the <code>composeEmail</code> Directive in multiple places without having to create the same markup each time, Angular will cleverly inject it where we declare it. It’s important to remember that Angular will parse the name of your Directive, and anywhere that an uppercase character exists Angular will hyphenate it. This means that <code>composeEmail</code> will become <code>&lt;compose-email&gt;&lt;/compose-email&gt;</code> when used as a custom element in our HTML templates.</p>
 <blockquote>
@@ -841,13 +839,13 @@ angular
 <!--code lang=markup linenums=true-->
 
 <pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup">{{ filter_expression | filter : expression : comparator }}
-<span class="line-numbers-rows"><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>JavaScript syntax.</p>
 <!--code lang=javascript linenums=true-->
 
 <pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript">$<span class="token function">filter<span class="token punctuation">(</span></span><span class="token string">'filter'</span><span class="token punctuation">)</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> expression<span class="token punctuation">,</span> comparator<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Usually, we'll use the HTML style expression as it's easy and concise. Let's look at a few of Angular's built-in filters.</p>
 <p><strong>10.1 Date filters</strong></p>
@@ -857,7 +855,7 @@ angular
 <pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
   Today's date: {{ timeNow | date:'dd-MM-yyyy' }}
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>The above would render out as today's date, in <code>dd-MM-yyyy</code> format, for instance <code>19-08-2014</code>.</p>
 <p><strong>10.2 JSON filter</strong></p>
@@ -867,7 +865,7 @@ angular
 <pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">&gt;</span></span>
 {{ myObject | json }}
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pre</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p><strong>10.3 limitTo and orderBy</strong></p>
 <p>The previous Filter examples were rather basic, we pass one value in, and get one out. How does Angular handle sets of data? Using <code>limitTo</code> and <code>orderBy</code> are two fantastic Filters that have many common use cases in our applications.</p>
@@ -879,7 +877,7 @@ angular
     {{ user.name }}
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>This would render out a maximum of <code>10</code> users, note how we use <code>| limitTo: 10</code> alongside the <code>ng-repeat</code>.</p>
 <p>Using <code>orderBy</code> allows us to specify which order our Array will render based on a property inside one of the Objects. For instance, if we had a user Object:</p>
@@ -888,7 +886,7 @@ angular
 <pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token punctuation">{</span>
   name<span class="token punctuation">:</span> <span class="token string">'Todd Motto'</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>We might want to render the list alphabetically, this is where the Filter comes in handy.</p>
 <!--code lang=markup linenums=true-->
@@ -898,7 +896,7 @@ angular
     {{ user.name }}
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>These are just some of the basics when using Angular's internal Filters, the real power comes from using their API to create our own.</p>
 
@@ -924,7 +922,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">filter<span class="token punctuation">(</span></span><span class="token string">'myFilter'</span><span class="token punctuation">,</span> myFilter<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>The Filter API uses a function closure which gets returned and called each time Angular needs to run the Filter. Angular automatically passes the arguments we need into Filters, which makes our life a lot easier when it comes to using them - it's the exact same as Angular's built-in Filters.</p>
 <p>Let's pass in an argument and create a basic Filter. Angular already has a "make lowercase" Filter, but it makes for a really simple example so we'll create our own too but call it something different.</p>
@@ -938,14 +936,14 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">filter<span class="token punctuation">(</span></span><span class="token string">'toLowercase'</span><span class="token punctuation">,</span> toLowercase<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>You see I pass in <code>item</code> as a local variable to the Filter, this isn't dependency injected, it's just the data Angular passes to us. Inside this Filter closure, I then <code>return item.toLowerCase();</code> which Angular sets as the updated value instead of the initial value.</p>
 <p>Usage is the exact same as any other Filter in Angular.</p>
 <!--code lang=markup linenums=true-->
 
 <pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{ user.name | toLowercase }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p><strong>11.2 Data set Filters</strong></p>
 <p>We often need to iterate over a set of data and return a Filtered set of that data, whatever it may be. Let's take a real world example, our application might want to filter names in an address book by the first letter of their name.</p>
@@ -962,7 +960,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">filter<span class="token punctuation">(</span></span><span class="token string">'namesStartingWithA'</span><span class="token punctuation">,</span> namesStartingWithA<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Usage would be inside an <code>ng-repeat</code>.</p>
 <!--code lang=markup linenums=true-->
@@ -972,7 +970,7 @@ angular
     {{ item }}
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>We can also pass items into Filters, which become available as further arguments in the closure. This would allow us to pass a specific letter into a Filter function to make it dynamic. The syntax for passing in arguments is separated with a colon <code>:</code>.</p>
 <!--code lang=markup linenums=true-->
@@ -982,7 +980,7 @@ angular
     {{ item }}
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>The <code>something</code>, be it a Model value or variable, can be passed in and accessed in the Filter closure.</p>
 <!--code lang=javascript linenums=true-->
@@ -995,7 +993,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">filter<span class="token punctuation">(</span></span><span class="token string">'namesStartingWithA'</span><span class="token punctuation">,</span> namesStartingWithA<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p><strong>11.3 Controller ($scope) Filters</strong></p>
 <p>We can create Filters outside of the <code>.filter()</code> method, and just pass in a function inside a Controller that acts as a Filter. This function inside the <code>$scope</code> acts as the closure we're used to.</p>
@@ -1010,7 +1008,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">controller<span class="token punctuation">(</span></span><span class="token string">'SomeCtrl'</span><span class="token punctuation">,</span> SomeCtrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>There's a slight difference in syntax when using it in the DOM as an Angular expression, we need to use <code>filter</code> as the first argument to our Filter.</p>
 <!--code lang=markup linenums=true-->
@@ -1020,7 +1018,7 @@ angular
     {{ item }}
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Remember, these Filters we create using functions are scoped to the Controller they were created in. Typically, we'd create all Filters using the <code>.filter()</code> method, but it's great to know what other methods we can use if the use case is there.</p>
 <blockquote>
@@ -1048,7 +1046,7 @@ angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
     <span class="token string">'ngRoute'</span>
   <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Now the <code>ngRoute</code> module is available in our application, we can configure the routes by injecting <code>$routeProvider</code> and setting it up inside Angular's <code>.config()</code> method.</p>
 <p>After injecting <code>$routeProvider</code>, we then get access to the <code>.when()</code> method which allows us to setup our router. Let's assume I've got an email inbox, we might want our application to hit <code>/inbox</code> and show us all our emails. The first argument we pass the <code>.when()</code> method is a String, which describes the "URL" that the application can hit, and once it does we can tell it to do something. The second argument to <code>.when()</code> is an Object, which specifies all our extras. We also get an <code>.otherwise()</code> method which will redirect people to a specific route should a route they're attempting to reach doesn't exist.</p>
@@ -1065,7 +1063,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">config<span class="token punctuation">(</span></span>router<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Let's populate our first route to see how easy it is to configure. The first choice we need to make is typically the template we want to use with a particular view, let's assume we want the <code>inbox.html</code> template, whatever it may look like. We can use the standard <code>template</code> property we get with Directives, but this would be insane for full pages of view templates, so we'll use the <code>templateUrl</code> property and decouple our template from router config.</p>
 <!--code lang=javascript linenums=true-->
@@ -1077,7 +1075,7 @@ angular
 <span class="token punctuation">.</span><span class="token function">otherwise<span class="token punctuation">(</span></span><span class="token punctuation">{</span>
   redirectTo<span class="token punctuation">:</span> <span class="token string">'/inbox'</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>All views need a Controller, Angular provides us a <code>controller</code> property and <code>controllerAs</code> to alias it.</p>
 <!--code lang=javascript linenums=true-->
@@ -1091,7 +1089,7 @@ angular
 <span class="token punctuation">.</span><span class="token function">otherwise<span class="token punctuation">(</span></span><span class="token punctuation">{</span>
   redirectTo<span class="token punctuation">:</span> <span class="token string">'/inbox'</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>This is great for setting up a simple and single route, but what about if we were to click and read an email in our pseudo email app? We need dynamic routing as all our emails and associated IDs will be different, and thankfully Angular's router provides us this out of the box. Dynamic routing is where we can pass in a particular property that is dynamic, such as the aforementioned email ID. We do this by using a colon <code>:</code> before the dynamic groups name. We can set this up to use <code>'/inbox/email/:id'</code> as the route, which might be something like <code>/inbox/email/173921938</code> in our app.</p>
 <p>If our application then points to <code>/inbox/email/173921938</code>, Angular will load the same view template and Controller as if it pointed to <code>/inbox/email/902827312</code>, allowing us to reuse templates for core functionality.</p>
@@ -1118,14 +1116,14 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">config<span class="token punctuation">(</span></span>router<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>This is the basis of what you need to get routes for a single page application up and running with Angular, but there is one more thing, <code>ng-view</code>. We've touched on it before, but now we need to connect the router with the <code>ng-view</code> container to let Angular know where to inject our View templates.</p>
 <p>Typically we'll have something like this.</p>
 <!--code lang=markup linenums=true-->
 
 <pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-view</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>The <code>ng-view</code> attribute sits in the "middle" of our app, and any changes to the window's location, Angular will reference the router to see if it needs to inject a new template. This is really all there is to getting Ajax views working.</p>
 <p><strong>12.1 $routeParams</strong></p>
@@ -1144,7 +1142,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token string">'EmailCtrl'</span><span class="token punctuation">,</span> EmailCtrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <blockquote>
 <p>Further Reading:</p>
@@ -1167,7 +1165,7 @@ angular
 <!--code lang=markup linenums=true-->
 
 <pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>myForm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Angular will recognise this as soon as the page has rendered and check things as the user fills them out, constantly watching the state and any rules we give inputs, such as <code>required</code> attributes to ensure users fill them in.</p>
 <p><strong>13.1 HTML5 features</strong></p>
@@ -1189,7 +1187,7 @@ angular
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">ng-disabled</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>!user.name.length<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   Update name
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>If the <code>user.name.length</code> is truthy, the button becomes enabled. This state will be constantly watched as the user interacts with the form.</p>
 <blockquote>
@@ -1224,7 +1222,7 @@ angular
 <span class="token punctuation">.</span><span class="token function">error<span class="token punctuation">(</span></span><span class="token keyword">function</span> <span class="token punctuation">(</span>data<span class="token punctuation">,</span> status<span class="token punctuation">,</span> headers<span class="token punctuation">,</span> config<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Success and error callbacks are invoked asynchronously, and Angular also passes us <code>data, status, headers, config</code> back in the response. We don't usually need all of them, so we could always aim for something a little simpler:</p>
 <!--code lang=javascript linenums=true-->
@@ -1236,7 +1234,7 @@ angular
 <span class="token punctuation">.</span><span class="token function">error<span class="token punctuation">(</span></span><span class="token keyword">function</span> <span class="token punctuation">(</span>reason<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>I like to adopt a more native Promise like pattern using the <code>.then()</code> method, which Angular supports:</p>
 <!--code lang=javascript linenums=true-->
@@ -1247,7 +1245,7 @@ angular
 </span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>reason<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">// error
 </span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>Unlike Ajax libraries such as jQuery's <code>$.ajax</code>, Angular wraps its <code>$http</code> calls inside a <code>$scope.$apply()</code>, which forces a digest cycle and our bindings will update.</p>
 <p><strong>14.2 $resource</strong></p>
@@ -1266,7 +1264,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">factory<span class="token punctuation">(</span></span><span class="token string">'MovieService'</span><span class="token punctuation">,</span> MovieService<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <p>We could dependency inject this simple Factory called <code>Movies</code> into our Controllers to obtain the data we need.</p>
 <!--code lang=javascript linenums=true-->
@@ -1279,7 +1277,7 @@ angular
 angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">controller<span class="token punctuation">(</span></span><span class="token string">'MovieCtrl'</span><span class="token punctuation">,</span> MovieCtrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre>
+<span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><!--  <footer>Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a></footer>  --></pre>
 
 <blockquote>
 <p>Further Reading:</p>
