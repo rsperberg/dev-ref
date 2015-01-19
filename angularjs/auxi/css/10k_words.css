@@ -131,7 +131,7 @@ input::-moz-focus-inner {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent;
+/*   -webkit-tap-highlight-color: transparent;  */
 }
 
 body {
@@ -242,6 +242,7 @@ code {
   font-size: 90%;
   color: #c7254e;
   background-color: #f9f2f4;
+/*  background-color: #0f0f0f;  */
   border-radius: 4px;
 }
 
@@ -254,7 +255,8 @@ pre {
   color: #333;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #f5f5f5;
+/*  background-color: #f5f5f5;  */
+  background-color: #0f0f0f;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -264,7 +266,7 @@ pre code {
   font-size: inherit;
   color: inherit;
   white-space: pre-wrap;
-  background-color: transparent;
+  background-color: #0f0f0f;
   border-radius: 0;
 }
 
@@ -302,7 +304,7 @@ pre code {
 code[class*=language-],
 pre[class*=language-] {
   color: #000;
-  text-shadow: 0 1px #fff;
+/*  text-shadow: 0 1px #fff;  */
   font-family: Share-TechMono, Consolas,Monaco,'Andale Mono',monospace;
   direction: ltr;
   text-align: left;
@@ -324,7 +326,8 @@ code[class*=language-]::-moz-selection,
 pre[class*=language-] ::-moz-selection,
 pre[class*=language-]::-moz-selection {
   text-shadow: none;
-  background: #b3d4fc;
+/*  background: #b3d4fc;  */
+  background-color: #0f0f0f;
 }
 
 code[class*=language-] ::selection,
@@ -332,7 +335,8 @@ code[class*=language-]::selection,
 pre[class*=language-] ::selection,
 pre[class*=language-]::selection {
   text-shadow: none;
-  background: #b3d4fc;
+/*  background: #b3d4fc;  */
+  background-color: #0f0f0f;
 }
 
 @media print {
@@ -345,29 +349,33 @@ pre[class*=language-]::selection {
 pre[class*=language-] {
   padding: 1em;
   margin: .5em 0;
-  overflow: auto;
+/*  overflow: auto;  */
 }
 
 pre[class*=language-] {
-  background: #f5f2f0;
+/*  background: #f5f2f0;  */
+  background-color: #0f0f0f;
 }
 
 .token.comment {
-  color: #708090;
+  color: #32cd32; font-style: italic;  /* comment - green */
 }
 
 .token.punctuation {
-  color: #999;
+  color: #8B8970;   /* punctuation - lemon chiffon4  */
 }
 
-.token.number,
-.token.tag {
+.token.number{
   color: #905;
+}
+.token.tag {
+color: #7b90f8  /* html/xml tag  (soft blue)  */
 }
 
 .token.attr-name,
 .token.string {
-  color: #690;
+  color: #31b9ab; font-weight: normal; /* html/xml attribute name  - dasrkerturquoise  #46eeee */
+  /* color: #690;  */
 }
 
 .token.operator {
@@ -432,7 +440,7 @@ pre[class*=language-] {
 }
 
 pre[class*=language-]>code[data-language] {
-  overflow: scroll;
+/*  overflow: scroll;  */
   max-height: 28em;
   display: block;
 }
@@ -440,7 +448,8 @@ pre[class*=language-]>code[data-language] {
 pre[class*=language-]>code[data-language]::before {
   content: attr(data-language);
   color: #000;
-  background-color: #CFCFCF;
+/*  background-color: #CFCFCF;  */
+  background-color: #0f0f0f;
   display: inline-block;
   position: absolute;
   top: 0;
@@ -737,7 +746,7 @@ main#home section#join form input:-ms-input-placeholder {
 
 .blogpost pre footer {
   text-align: right;
-  border-top: solid 1px #d3d3d3;
+  border-top: solid 1px #0f0f0f; /*  #d3d3d3;  */
   margin-top: 4px;
   padding-top: 3px;
 }
