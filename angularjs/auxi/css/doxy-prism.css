@@ -1,6 +1,6 @@
 /* Doxy pretty-printing styles. Used with prettify.js.  */
 
-pre .str, code .str { color: #fec243; } /* string  - eggyolk gold */
+pre .str, code .str, .token .string { color: #fec243; } /* string  - eggyolk gold */
 li code .str, p code .str { color: #3183b9; } /* string in code in text  - same as contrast */
 pre .kwd, code .kwd, .token .keyword { color:#a4adff; } /* keyword - pale blue  #a4b5ff ; very light blue #8aa0ff;  light slate blue #8470FF #ae8aff  */
 pre .com, code .com, .token .comment { color: #32cd32; font-style: italic; } /* comment - green */
@@ -25,16 +25,21 @@ pre .test, code .test { color: #CFC996 } /* test key word - dirty pink */
 .opn { color: #333333; }
 .clo { color: #333333; }
 .var { color: #0088FF; }  /*  mostly pure blue  */
-.fun, pre code.language-javascript .function { color: #3387CC; }
+.fun, pre code.language-javascript .function { color: #3387CC; }  /* Strong blue  */
 .ang { color: #e25ea1; } /* cerise, for Angular reserved words   #de4894 #da3287 */
 .contrast { color: #3183b9; }  /* turquoisey-blue #31b9ab, for punctuation in text uses of code  */
 .token .style  { color: #f0f0f0; }
 .token .selector { color: #d06; }
 .token .property { color: #3387CC; }
+.token .regex { color: #e90; }  /* Pure (or mostly pure) orange  */
+pre code.language-javascript .style { color: #f0f0f0; }
+pre code.language-javascript .selector { color: #d06; }
+pre code.language-javascript .property { color: #3387CC;; }
+pre code.language-javascript .regex { color: #e90; }   /* Pure (or mostly pure) orange  */
 pre code.language-javascript, pre code.language-markup  { color: #f0f0f0;  }
 pre code.language-javascript .colon, pre code.language-javascript .bracket { color: #de4894; }
 pre code.language-javascript .punctuation { color: #8B8970;  }
-pre code.language-javascript .keyword { color: #ae8aff; }
+pre code.language-javascript .keyword { color: #a4adff; }  /*  Pale blue  */
 pre code.language-javascript .operator, pre code.language-javascript .punctuation .colon { color: #de4894; }
 pre code.language-javascript .string, pre code.language-markup .string { color: #fec243; }
 pre code.language-javascript .number { color: #d06; }
