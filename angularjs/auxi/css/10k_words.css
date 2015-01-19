@@ -57,9 +57,11 @@ hr {
   box-sizing: content-box;
 }
 
+/*
 pre {
   overflow: auto;
 }
+*/
 
 code,
 pre {
@@ -263,7 +265,7 @@ pre {
 
 pre code {
   padding: 0;
-  font-size: inherit;
+  font-size: 10.5pt;
   color: inherit;
   white-space: pre-wrap;
   background-color: #0f0f0f;
@@ -372,24 +374,30 @@ pre[class*=language-] {
 color: #7b90f8  /* html/xml tag  (soft blue)  */
 }
 
-.token.attr-name,
-.token.string {
+.token.attr-name {
   color: #31b9ab; font-weight: normal; /* html/xml attribute name  - dasrkerturquoise  #46eeee */
   /* color: #690;  */
 }
 
-.token.operator {
-  color: #a67f59;
-  background: hsla(0,0%,100%,.5);
+.token.string  {
+  color: #fec243;  /* string  - eggyolk gold */
 }
 
-.token.attr-value,
+.token.operator {
+  color: #de4894;
+/* background: hsla(0,0%,100%,.5);  */
+}
+
+.token.attr-value {
+  color: #fecf6a;  /* html/xml attribute value - rosy brown2  #EEB4B4 */
+}
+
 .token.keyword {
-  color: #07a;
+  color: #ae8aff;
 }
 
 .token.function {
-  color: #DD4A68;
+  color: #3387CC; }
 }
 
 .token.regex {
@@ -441,13 +449,13 @@ pre[class*=language-] {
 
 pre[class*=language-]>code[data-language] {
 /*  overflow: scroll;  */
-  max-height: 28em;
+/*  max-height: 28em;  */
   display: block;
 }
 
 pre[class*=language-]>code[data-language]::before {
   content: attr(data-language);
-  color: #000;
+  color: #fofofo;
 /*  background-color: #CFCFCF;  */
   background-color: #0f0f0f;
   display: inline-block;
