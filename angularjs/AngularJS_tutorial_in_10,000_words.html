@@ -140,25 +140,25 @@
 <p>Our application will always have a single app module as we can import other modules, so we'll call the main module <code>app</code> when we set it (create it).</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript">angular<span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript">angular<span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="line-numbers-rows"><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>You'll notice the <code>[]</code> as the second argument to the <code>module</code> method, this Array contains (or will contain) all other module dependencies we wish to include in this module. Modules can have other modules as dependencies, which have modules that pull in other dependencies. For now, we'll leave it empty.</p>
 <p><strong>3.2 Getters</strong></p>
 <p>For creating Controllers, Directives, Services and other Angular features, we need to reference an existing module. It's a simple but subtle difference in syntax, in which we omit the second argument.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript">angular<span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript">angular<span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="line-numbers-rows"><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p><strong>3.3 Module practices</strong></p>
 <p>Modules can be stored and referenced by using a variable, but best practice is to use the chaining method provided by the AngularJS team.</p>
 <p>Here's an example of storing the module as a variable.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">var</span> app <span class="token operator">=</span> angular<span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">var</span> app <span class="token operator">=</span> angular<span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="line-numbers-rows"><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>From here we could reference the <code>app</code> variable to add methods to build the rest of our app, however we should stick to the previously seen chaining methods.</p>
 <p><strong>3.4 HTML bootstrapping</strong></p>
 <p>To declare where our application sits in the DOM, typically the <code>&lt;html&gt;</code> element, we need to bind an <code>ng-app</code> attribute with the value of our module. This tells Angular where to bootstrap our application.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">ng-app</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">ng-app</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
@@ -171,11 +171,11 @@
 <p>Here's an example of how we declare some data inside the Controller.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript">$scope<span class="token punctuation">.</span>someValue <span class="token operator">=</span> <span class="token string">'Hello'</span><span class="token punctuation">;</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript">$scope<span class="token punctuation">.</span>someValue <span class="token operator">=</span> <span class="token string">'Hello'</span><span class="token punctuation">;</span>
 <span class="line-numbers-rows"><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>To render it out in the DOM, we need to connect a Controller to some HTML and tell Angular where to bind the value.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-controller</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>AppCtrl<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-controller</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>AppCtrl<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   {{ someValue }}
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>What we're seeing above is Angular's concept of scoping, which abides by some of JavaScript's rules of lexical scoping. Outside the element that a controller is scoped to, the data is out of scope, just like a variable would be out of scope if referenced outside a scope it was available in.</p>
@@ -191,7 +191,7 @@
 <p>Before a Controller can be used, it needs to be created, riding off the <code>module</code> method we previously created using the best practice chaining approach.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript">angular
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript">angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">controller<span class="token punctuation">(</span></span><span class="token string">'MainCtrl'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
@@ -200,7 +200,7 @@
 <p>To avoid making Angular methods look like callbacks, and to save indenting our code lots, I tend to place my function outside of Angular's syntax and pass any functions I need into it.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
 <span class="token punctuation">}</span>
 
@@ -215,7 +215,7 @@ angular
 <p>All the Controller does is talk to a Service, and pass the data in either the same or a different format across to our View, using the <code>$scope</code> Object. Once a View is updated, the Controller logic is also updated and can be passed back to the server using a Service. Before we dive into Services, we'll create some Objects in the Controller and bind them to the <code>$scope</code> to get a feel how Controllers really work. We wouldn't actually declare business logic or or data in a Controller, but for brevity we'll add it below, we'll later fetch data from a Service.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span>$scope<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span>$scope<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   $scope<span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
     name<span class="token punctuation">:</span> <span class="token string">'Scuba Diving Kit'</span><span class="token punctuation">,</span>
     id<span class="token punctuation">:</span> <span class="token number">7297510</span>
@@ -237,7 +237,7 @@ angular
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>Using the <code>$scope</code> Object we bind an <code>Array</code>. This <code>Array</code> is then available in the DOM, where we can pass it off to one of Angular's built-in Directives, <code>ng-repeat</code> to loop over the data and create DOM based on the template and data.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-controller</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MainCtrl<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-controller</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MainCtrl<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">ng-repeat</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item in items<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
           {{ item.name }}
@@ -250,7 +250,7 @@ angular
 <p>The first change for <code>controllerAs</code> is dropping <code>$scope</code> references for data bound inside the Controller and using <code>this</code> instead.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
     name<span class="token punctuation">:</span> <span class="token string">'Scuba Diving Kit'</span><span class="token punctuation">,</span>
     id<span class="token punctuation">:</span> <span class="token number">7297510</span>
@@ -275,7 +275,7 @@ angular
 <p>This means any data we reference inside the Controller sits under the <code>main</code> variable, so <code>items</code> in the previous example becomes <code>main.items</code>.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-controller</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MainCtrl as main<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-controller</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MainCtrl as main<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">ng-repeat</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item in main.items<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
           {{ item.name }}
@@ -303,7 +303,7 @@ angular
 <p>Angular gives us a <code>service</code> method for creating a new Object with, this could talk to a backend or provide utilities to handle business logic. A <code>service</code> is just a <code>constructor</code> Object that gets called with the <code>new</code> keyword, which means we'll be using the <code>this</code> keyword to bind our logic to the Service. The <code>service</code> creates a singleton Object created by a service factory.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> UserService <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> UserService <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>sayHello <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token string">'Hello there '</span> <span class="token operator">+</span> name<span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -315,7 +315,7 @@ angular
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>We could then inject the Service into a Controller to use it.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span>UserService<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span>UserService<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>sayHello <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     UserService<span class="token punctuation">.</span><span class="token function">sayHello<span class="token punctuation">(</span></span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -330,7 +330,7 @@ angular
 <p>We'll recreate the <code>UserService</code> above using the <code>factory</code> method for comparison.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> UserService <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> UserService <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> UserService <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
   <span class="token keyword">function</span> greeting <span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token string">'Hello there '</span> <span class="token operator">+</span> name<span class="token punctuation">;</span>
@@ -347,7 +347,7 @@ angular
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>I've split the <code>greeting</code> function out to show how we can emulate private scope through closures. We could have done something similar inside the <code>service</code> method <code>constructor</code>, but this shows what gets returned and what stays inside the Service scope. We could create private functions such as helpers that remain in the scope after the function has returned, but are still available for use by the public methods. We use Services created by the <code>factory</code> method in the exact same way inside a Controller.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span>UserService<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span>UserService<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>sayHello <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     UserService<span class="token punctuation">.</span><span class="token function">sayHello<span class="token punctuation">(</span></span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -375,7 +375,7 @@ angular
 <p>Let's take the following Controller:</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
     name<span class="token punctuation">:</span> <span class="token string">'Scuba Diving Kit'</span><span class="token punctuation">,</span>
     id<span class="token punctuation">:</span> <span class="token number">7297510</span>
@@ -397,7 +397,7 @@ angular
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>We can then retrieve the length of the Array by declaring an expression that makes use of the <code>length</code> property of an Array. This might indicate to the user how many items are in stock.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-controller</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MainCtrl as main<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-controller</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MainCtrl as main<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   {{ main.items.length }} in stock
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>Angular will render out the length property, so we'll see "4 items in stock" in the DOM.</p>
@@ -406,7 +406,7 @@ angular
 <p>Angular gives us a whole heap of built in <code>ng-*</code> prefixed Directives, let's start with <code>ng-click</code> and bind a function to a new piece of HTML template. We're not limited to using an expression once, <code>$scope</code> is just an Object so we can reuse it as much as we like. Here I'm going to iterate over the <code>items</code> Array and show how many items are in stock.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-controller</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MainCtrl as main<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-controller</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>MainCtrl as main<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
     {{ main.items.length }} items in stock
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -420,7 +420,7 @@ angular
 <p>Now the function is setup, we can add it to the Controller, I'll keep the <code>items</code> Array brief for visibility. I pass in the <code>$index</code> and the item, and on the <code>removeFromStock</code> method</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>removeFromStock <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>item<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>items<span class="token punctuation">.</span><span class="token function">splice<span class="token punctuation">(</span></span>index<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -434,7 +434,7 @@ angular
 <p>Our reworked Controller would look like this:</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> MainCtrl <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
   vm<span class="token punctuation">.</span>removeFromStock <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>item<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     vm<span class="token punctuation">.</span>items<span class="token punctuation">.</span><span class="token function">splice<span class="token punctuation">(</span></span>index<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -454,7 +454,7 @@ angular
 <p>We've already looked at the ng-repeat, so we'll just show a simple example to recap.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">ng-repeat</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item in main.items<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     {{ item }}
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
@@ -464,27 +464,27 @@ angular
 <p>When we bind a Model onto our HTML, we're tying Model data to elements. To initialise a new Model, if it doesn't exist yet, or bind an existing Model we simply bind to <code>ng-model</code>.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.message<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.message<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Message: {{ main.message }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 <span class="line-numbers-rows"><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>If the <code>$scope</code> property <code>main.message</code> holds a value, the input's <code>value</code> attribute and property are both set to that value. If <code>main.message</code> doesn't exist inside your <code>$scope</code>, Angular will just initialise it. We might pass these values to other Angular Directives, such as <code>ng-click</code>.</p>
 <p><strong>8.3 ng-click</strong></p>
 <p>The beauty of ng-click is that we don't have to manually bind event listeners to multiple elements, Angular will evaluate the expression(s) inside the <code>ng-click</code> for us and bind the relevant listeners. This makes our development much faster, imagine binding event listeners and callbacks to DOM elements manually, adding and removing them whilst the DOM is destroyed and recreated on the fly. Unlike the old <code>onclick="</code> attribute in HTML, Angular directives such as <code>ng-click</code> are scoped, and therefore are not global (which functions would need to be to be available for <code>onclick</code>).</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.message<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.message<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span> ng-click<span class="token punctuation">=</span><span class="token punctuation">"</span></span><span class="token attr-name">main</span>.<span class="token attr-name">showMessage</span>(<span class="token attr-name">main</span>.<span class="token attr-name">message</span>);"<span class="token punctuation">&gt;</span></span>Show my message<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
 <span class="line-numbers-rows"><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>You can see here I'm passing in <code>main.message</code> into the <code>main.showMessage</code> method, this passes a plain JavaScript Object into Angular for evaluation. This is the beauty of working with Angular, all DOM data-binding corresponds with an Object, we can just parse it, manipulate it, parse to JSON and send off to the backend. Methods such as <code>main.showMessage</code> will live inside the Controller that's powering the view, in this case I'm assuming it's <code>MainCtrl as main</code>.</p>
 <p><strong>8.4 ng-href/ng-src</strong></p>
 <p>Angular takes care of any browser quirks with dynamically setting a <code>href</code> and <code>src</code> value, typically in IE. Instead of using <code>href="</code> and <code>src="</code> inside our templates, we use <code>ng-href="</code> and <code>ng-src="</code>.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">ng-href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{ main.someValue }}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Go<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">ng-href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{ main.someValue }}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Go<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">ng-src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{ main.anotherValue}}<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 <span class="line-numbers-rows"><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p><strong>8.5 ng-class</strong></p>
 <p>The <code>ng-class</code> Directive has a somewhat stranger syntax to other Directives, it takes on the form of an Object with properties and values. Instead of doing the traditional <code>elem.addClass(className)</code> and <code>elem.removeClass(className)</code>, Angular will add and remove classes based on the expression you provide it, along with a <code>className</code>.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>notification<span class="token punctuation">"</span></span> <span class="token attr-name">ng-class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>notification<span class="token punctuation">"</span></span> <span class="token attr-name">ng-class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{
   warning: main.response <span class="token punctuation">=</span><span class="token punctuation">=</span> 'error',
   ok: main.response <span class="token punctuation">=</span><span class="token punctuation">=</span> 'success'
 }<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -496,7 +496,7 @@ angular
 <p>To show an element, we might use an <code>ng-click</code> to bind a value to, and toggle it to show and hide the element.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span> ng-click<span class="token punctuation">=</span><span class="token punctuation">"</span></span><span class="token attr-name">showMenu</span> = !<span class="token attr-name">showMenu</span>"<span class="token punctuation">&gt;</span></span>Toggle menu!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span> ng-click<span class="token punctuation">=</span><span class="token punctuation">"</span></span><span class="token attr-name">showMenu</span> = !<span class="token attr-name">showMenu</span>"<span class="token punctuation">&gt;</span></span>Toggle menu!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">ng-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>showMenu<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
@@ -507,14 +507,14 @@ angular
 <p>Unlike <code>ng-show</code> or <code>ng-hide</code>, which uses a class to toggle element's visibility on the page, <code>ng-if</code> actually destroys the DOM and the <code>$scope</code> it creates. If the element needs recreating due to value changes, Angular will create new <code>$scope</code> for that particular element. This also adds to improved performance, as removing elements via <code>ng-if</code> removes the <code>$scope</code>, which in turn lowers the <code>$$watchers</code> count inside Angular, speeding up further <code>$digest</code> cycles.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.userExists<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.userExists<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   Please log in
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p><strong>8.8 ng-switch</strong></p>
 <p>Think a typical <code>switch</code> case, but in the DOM or better yet, an <code>ng-if</code> on steroids. Provide Angular multiple chunks of HTML for it to swap in and out based on a single <code>$scope</code> value. This allows us to provide different HTML for different users for example, </p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-switch</span> <span class="token attr-name">on</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.user.access<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-switch</span> <span class="token attr-name">on</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.user.access<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-switch-when</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>admin<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token comment" spellcheck="true">&lt;!-- code for admins --&gt;</span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -529,7 +529,7 @@ angular
 <p>We're using to rendering values in the DOM using <code>{{ value }}</code> bindings, but there is another alternative called <code>ng-bind</code> which you can see the difference in syntax here.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{ main.name }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{ main.name }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">ng-bind</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 <span class="line-numbers-rows"><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>We would use <code>ng-bind</code> when we don't want to see any flicker whilst Angular is loading and parsing data. Angular automatically shields any content that's dynamically created with Directives or inside a dynamic view (<code>ng-view</code>). If your bindings are outside of these, we might see <code>{{</code> and <code>}}</code> text in the document, which is bad. To get around this, we use <code>ng-bind</code> which is invisible as Angular resolves the value once it's ready and removes the need for <code>{{ }}</code> bindings.</p>
 <p><strong>8.10 ng-view</strong></p>
@@ -546,7 +546,7 @@ angular
 <p>Angular provides us four ways to use its Directives, through Custom Elements, Custom Attributes, class names and comments. The last two I generally avoid as it can become confusing which is a comment and which is a class name - comments also have IE issues. The safest route for cross-browser compatibility is using a Custom Attribute. Let's explore the four options and their syntax in the following order: Element, Attribute, Class, Comment.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-element</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-element</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-element</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-element</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">my-element</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>my-element<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token comment" spellcheck="true">&lt;!-- directive: my-element --&gt;</span>
@@ -556,7 +556,7 @@ angular
 <p>Shadow DOM allows us to specify the bare bones of the HTML, and also content to be "imported" into the Shadow DOM. This means we could put text inside a Custom Element:</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-element</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-element</span><span class="token punctuation">&gt;</span></span>
   Hi there!
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-element</span><span class="token punctuation">&gt;</span></span>
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>And the <code>Hi there!</code> text could be made available in the Shadow DOM. Angular has an option called <code>transclude</code>, which allows us to pull through existing content into Directive templates before being compiled and sent back to the DOM. It acts in a similar fashion to Shadow DOM, but doesn't provide the powerful scoping.</p>
@@ -568,7 +568,7 @@ is the <code>String</code> formatted template that Angular then compiles into li
 <p>An example:</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token punctuation">{</span>
   template<span class="token punctuation">:</span> <span class="token string">'&lt;div&gt;'</span> <span class="token operator">+</span>
     <span class="token string">'&lt;ul&gt;'</span> <span class="token operator">+</span>
       <span class="token string">'&lt;li ng-repeat="item in vm.items"&gt;'</span> <span class="token operator">+</span>
@@ -580,7 +580,7 @@ is the <code>String</code> formatted template that Angular then compiles into li
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>If I'm using this setup (which can be nice as we can write JavaScript logic in between the Strings), I use <code>[].join('')</code> to make the template clearer to read and easier to indent, comma separation is also much nicer to look at.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token punctuation">{</span>
   template<span class="token punctuation">:</span> <span class="token punctuation">[</span>
     <span class="token string">'&lt;div&gt;'</span><span class="token punctuation">,</span>
       <span class="token string">'&lt;ul&gt;'</span><span class="token punctuation">,</span>
@@ -596,14 +596,14 @@ is the <code>String</code> formatted template that Angular then compiles into li
 <p>If we specified:</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token punctuation">{</span>
   templateUrl<span class="token punctuation">:</span> <span class="token string">'items.html'</span>
 <span class="token punctuation">}</span>
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>Angular would first scan the DOM for a <code>&lt;script&gt;</code> element with the <code>id</code> that matches, if it doesn't exist it'll attempt a <code>HTTP GET</code>.</p>
 <p>Let's look at how the <code>&lt;script&gt;</code> implementation works.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token script"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/ng-template<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/hello.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token script"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/ng-template<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/hello.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
       <span class="token operator">&lt;</span>li ng<span class="token operator">-</span>repeat<span class="token operator">=</span><span class="token string">"item in vm.items"</span><span class="token operator">&gt;</span>
@@ -620,7 +620,7 @@ is the <code>String</code> formatted template that Angular then compiles into li
 <p>Now we've learned the concepts behind custom Directives, we can begin to create our own. Let's checkout more of the API, which begins with a <code>return</code> statement which returns an Object. This is all we need to get a custom Directive up and running.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> someDirective <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> someDirective <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">{</span>
 
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -632,7 +632,7 @@ angular
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>Let's look at some of the most commonly used Object properties for Directives. We've covered the <code>restrict</code> property, next we'll add <code>replace</code>, <code>controllerAs</code>, <code>controller</code>, <code>link</code> and <code>template</code>, this will give us an idea of how things hang together.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> someDirective <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> someDirective <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">{</span>
     restrict<span class="token punctuation">:</span> <span class="token string">'EA'</span><span class="token punctuation">,</span>
     replace<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
@@ -673,7 +673,7 @@ angular
 <p>We’ll create a <code>&lt;compose-email&gt;</code> element which acts as our placeholder for Directive injection, this means we can declare <compose-email>` multiple times in the DOM, and Angular will inject our template/component each time with a fresh instance. Let’s start with our Directive template and get the basic template up and running:</compose-email></p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> composeEmail <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> composeEmail <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">{</span>
     restrict<span class="token punctuation">:</span> <span class="token string">'EA'</span><span class="token punctuation">,</span>
     replace<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
@@ -713,17 +713,17 @@ angular
 <p>HTML expression syntax.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup">{{ filter_expression | filter : expression : comparator }}
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup">{{ filter_expression | filter : expression : comparator }}
 <span class="line-numbers-rows"><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>JavaScript syntax.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript">$<span class="token function">filter<span class="token punctuation">(</span></span><span class="token string">'filter'</span><span class="token punctuation">)</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> expression<span class="token punctuation">,</span> comparator<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript">$<span class="token function">filter<span class="token punctuation">(</span></span><span class="token string">'filter'</span><span class="token punctuation">)</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> expression<span class="token punctuation">,</span> comparator<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="line-numbers-rows"><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>Usually, we'll use the HTML style expression as it's easy and concise. Let's look at a few of Angular's built-in filters.</p>
 <p><strong>10.1 Date filters</strong></p>
 <p>Working with dates can often be a time consuming and logic-heavy process, with Angular things get really easy thanks to the built-in <a href="https://docs.angularjs.org/api/ng/filter/date">date filter</a>. Let's use a milliseconds time example (something like <code>1408466687250</code>) and bind it using <code>$scope.timeNow = new Date().getTime();</code>.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
   Today's date: {{ timeNow | date:'dd-MM-yyyy' }}
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>The above would render out as today's date, in <code>dd-MM-yyyy</code> format, for instance <code>19-08-2014</code>.</p>
@@ -731,7 +731,7 @@ angular
 <p>The built-in JSON filter converts a JavaScript Object to a JSON String, this is really helpful for outputting Model values in the DOM during development to see values update. It's also a great help when debugging as all values will be updated. To get the best pretty printed JSON Object, wrap any JSON filters in <code>&lt;pre&gt;</code> tags.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span><span class="token punctuation">&gt;</span></span>
 {{ myObject | json }}
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pre</span><span class="token punctuation">&gt;</span></span>
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p><strong>10.3 limitTo and orderBy</strong></p>
@@ -739,7 +739,7 @@ angular
 <p>Using <code>limitTo</code>, we can put a cap on the amounts of data that's presented to the View at a given time, this would generally be used inside an <code>ng-repeat</code> - Filters work here too!</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">ng-repeat</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user in users | limitTo:10<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     {{ user.name }}
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
@@ -748,13 +748,13 @@ angular
 <p>Using <code>orderBy</code> allows us to specify which order our Array will render based on a property inside one of the Objects. For instance, if we had a user Object:</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token punctuation">{</span>
   name<span class="token punctuation">:</span> <span class="token string">'Todd Motto'</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span>
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>We might want to render the list alphabetically, this is where the Filter comes in handy.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">ng-repeat</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span> user in users | orderBy:'name' <span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     {{ user.name }}
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
@@ -768,7 +768,7 @@ angular
 <p>Here's a look at an empty Filter setup which we can then build from.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> myFilter <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> myFilter <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// return filtered output
 </span>  <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -780,7 +780,7 @@ angular
 <p>Let's pass in an argument and create a basic Filter. Angular already has a "make lowercase" Filter, but it makes for a really simple example so we'll create our own too but call it something different.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> toLowercase <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> toLowercase <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> item<span class="token punctuation">.</span><span class="token function">toLowerCase<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -792,13 +792,13 @@ angular
 <p>Usage is the exact same as any other Filter in Angular.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{ user.name | toLowercase }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>{{ user.name | toLowercase }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 <span class="line-numbers-rows"><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p><strong>11.2 Data set Filters</strong></p>
 <p>We often need to iterate over a set of data and return a Filtered set of that data, whatever it may be. Let's take a real world example, our application might want to filter names in an address book by the first letter of their name.</p>
 <p>Let's create a Filter that looks for users whose name starts with <code>'a'</code>.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> namesStartingWithA <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> namesStartingWithA <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>items<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> items<span class="token punctuation">.</span><span class="token function">filter<span class="token punctuation">(</span></span><span class="token keyword">function</span> <span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">return</span> <span class="token regex">/$a/i</span><span class="token punctuation">.</span><span class="token function">test<span class="token punctuation">(</span></span>item<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -811,7 +811,7 @@ angular
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>Usage would be inside an <code>ng-repeat</code>.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">ng-repeat</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item in items | namesStartingWithA<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     {{ item }}
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
@@ -819,7 +819,7 @@ angular
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>We can also pass items into Filters, which become available as further arguments in the closure. This would allow us to pass a specific letter into a Filter function to make it dynamic. The syntax for passing in arguments is separated with a colon <code>:</code>.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">ng-repeat</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item in items | namesStartingWithA:something<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     {{ item }}
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
@@ -827,7 +827,7 @@ angular
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>The <code>something</code>, be it a Model value or variable, can be passed in and accessed in the Filter closure.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> namesStartingWithA <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> namesStartingWithA <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>items<span class="token punctuation">,</span> something<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// access to "items" and "something"
 </span>  <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -840,7 +840,7 @@ angular
 <p>Taking the example above, we can create <code>this.namesStartingWithA</code> as a function inside a local Controller. This means our Filter is only available inside that Controller, and not elsewhere in the app. This assumes using <code>controllerAs</code> syntax instead of using <code>$scope</code> for public methods.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> SomeCtrl <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> SomeCtrl <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>namesStartingWithA <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -851,7 +851,7 @@ angular
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>There's a slight difference in syntax when using it in the DOM as an Angular expression, we need to use <code>filter</code> as the first argument to our Filter.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">ng-repeat</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item in vm.items | filter:namesStartingWithA<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     {{ item }}
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
@@ -871,7 +871,7 @@ angular
 <p>Inside our application's main module, we need to include is as a dependency, we'll assume the relevant JavaScript file is also available as well. The Angular module we need is called <code>ngRoute</code>.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript">angular
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript">angular
   <span class="token punctuation">.</span><span class="token function">module<span class="token punctuation">(</span></span><span class="token string">'app'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
     <span class="token string">'ngRoute'</span>
   <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -879,7 +879,7 @@ angular
 <p>After injecting <code>$routeProvider</code>, we then get access to the <code>.when()</code> method which allows us to setup our router. Let's assume I've got an email inbox, we might want our application to hit <code>/inbox</code> and show us all our emails. The first argument we pass the <code>.when()</code> method is a String, which describes the "URL" that the application can hit, and once it does we can tell it to do something. The second argument to <code>.when()</code> is an Object, which specifies all our extras. We also get an <code>.otherwise()</code> method which will redirect people to a specific route should a route they're attempting to reach doesn't exist.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> router <span class="token punctuation">(</span>$routeProvider<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> router <span class="token punctuation">(</span>$routeProvider<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   $routeProvider
   <span class="token punctuation">.</span><span class="token function">when<span class="token punctuation">(</span></span><span class="token string">'/inbox'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">otherwise<span class="token punctuation">(</span></span><span class="token punctuation">{</span>
@@ -893,7 +893,7 @@ angular
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>Let's populate our first route to see how easy it is to configure. The first choice we need to make is typically the template we want to use with a particular view, let's assume we want the <code>inbox.html</code> template, whatever it may look like. We can use the standard <code>template</code> property we get with Directives, but this would be insane for full pages of view templates, so we'll use the <code>templateUrl</code> property and decouple our template from router config.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript">$routeProvider
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript">$routeProvider
 <span class="token punctuation">.</span><span class="token function">when<span class="token punctuation">(</span></span><span class="token string">'/inbox'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
   templateUrl<span class="token punctuation">:</span> <span class="token string">'views/inbox.html'</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
@@ -903,7 +903,7 @@ angular
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>All views need a Controller, Angular provides us a <code>controller</code> property and <code>controllerAs</code> to alias it.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript">$routeProvider
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript">$routeProvider
 <span class="token punctuation">.</span><span class="token function">when<span class="token punctuation">(</span></span><span class="token string">'/inbox'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
   templateUrl<span class="token punctuation">:</span> <span class="token string">'views/inbox.html'</span><span class="token punctuation">,</span>
   controller<span class="token punctuation">:</span> <span class="token string">'InboxCtrl'</span><span class="token punctuation">,</span>
@@ -917,7 +917,7 @@ angular
 <p>Putting this together, we'll end up with something like the following.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> router <span class="token punctuation">(</span>$routeProvider<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> router <span class="token punctuation">(</span>$routeProvider<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   $routeProvider
   <span class="token punctuation">.</span><span class="token function">when<span class="token punctuation">(</span></span><span class="token string">'/inbox'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
     templateUrl<span class="token punctuation">:</span> <span class="token string">'views/inbox.html'</span><span class="token punctuation">,</span>
@@ -941,7 +941,7 @@ angular
 <p>Typically we'll have something like this.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-view</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">ng-view</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="line-numbers-rows"><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>The <code>ng-view</code> attribute sits in the "middle" of our app, and any changes to the window's location, Angular will reference the router to see if it needs to inject a new template. This is really all there is to getting Ajax views working.</p>
 <p><strong>12.1 $routeParams</strong></p>
 <p>Angular gives us a <code>$routeParams</code> service, that automatically parses the current URI to retrieve a set of parameters and maps them back to us as an Object.</p>
@@ -949,7 +949,7 @@ angular
 <p>The access the <code>$routeParams</code> Object, simply inject it like any other dependency and fire it off to the backend, a simple example inside a Controller to show how to pass <code>$routeParams</code> around using the properties - with a dummy <code>EmailService</code>.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> EmailCtrl <span class="token punctuation">(</span>$routeParams<span class="token punctuation">,</span> EmailService<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> EmailCtrl <span class="token punctuation">(</span>$routeParams<span class="token punctuation">,</span> EmailService<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">// $routeParams { id: 20999851 }
 </span>  EmailService
   <span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>$routeParams<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// pass the Object in
@@ -972,7 +972,7 @@ angular
 <p>To get our form validation setup, we need a form with a <code>name</code> attribute to namespace the form scope.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>myForm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>myForm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
 <span class="line-numbers-rows"><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>Angular will recognise this as soon as the page has rendered and check things as the user fills them out, constantly watching the state and any rules we give inputs, such as <code>required</code> attributes to ensure users fill them in.</p>
 <p><strong>13.1 HTML5 features</strong></p>
 <p>In HTML5 we've seen the addition of the <code>pattern</code> attribute, which allows the browser to validate against a custom Regular Expression (RegExp), this is just one example of how Angular ties these new features into its framework. Angular also rebuilt the <code>required</code> checking and tied it into the framework under a Directive called <code>ng-required</code> which is also continuously being evaluated against Model changes. Let's look at how some of these features are expressed by Angular form states.</p>
@@ -989,7 +989,7 @@ angular
 <p>A simple example to toggle the enabled/disabled state of a <code>&lt;button&gt;</code> based on previous Model data. If a user hasn't entered their name, they can't update it.</p>
 <!--code lang=markup linenums=true-->
 
-<pre class="line-numbers  language-markup"><code class="  language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user.name<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Enter your name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers  language-markup"><code class="language-markup" data-language="markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user.name<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Enter your name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">ng-disabled</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>!user.name.length<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
   Update name
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
@@ -1011,7 +1011,7 @@ angular
 <p>I favour the simplicity of the shorthand methods usually so we'll use these for demonstrations. Here's a simple <code>HTTP GET</code>.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript">$http<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/url'</span><span class="token punctuation">)</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript">$http<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/url'</span><span class="token punctuation">)</span>
 <span class="token punctuation">.</span><span class="token function">success<span class="token punctuation">(</span></span><span class="token keyword">function</span> <span class="token punctuation">(</span>data<span class="token punctuation">,</span> status<span class="token punctuation">,</span> headers<span class="token punctuation">,</span> config<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
@@ -1021,7 +1021,7 @@ angular
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>Success and error callbacks are invoked asynchronously, and Angular also passes us <code>data, status, headers, config</code> back in the response. We don't usually need all of them, so we could always aim for something a little simpler:</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript">$http<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/url'</span><span class="token punctuation">)</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript">$http<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/url'</span><span class="token punctuation">)</span>
 <span class="token punctuation">.</span><span class="token function">success<span class="token punctuation">(</span></span><span class="token keyword">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
@@ -1031,7 +1031,7 @@ angular
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>I like to adopt a more native Promise like pattern using the <code>.then()</code> method, which Angular supports:</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript">$http<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/url'</span><span class="token punctuation">)</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript">$http<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/url'</span><span class="token punctuation">)</span>
 <span class="token punctuation">.</span><span class="token function">then<span class="token punctuation">(</span></span><span class="token keyword">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">// success
 </span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>reason<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1042,7 +1042,7 @@ angular
 <p>Alongside <code>$http</code> we can optionally include the <code>ngResource</code> module. This module gives us an API called <code>$resource</code>, and is extremely useful for CRUD based operations, you can even use it alongside <code>$http</code> depending on your use case. <code>$resource</code> creates an Object that lets you interact with RESTful server-side data sources.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> MovieService <span class="token punctuation">(</span>$resource<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> MovieService <span class="token punctuation">(</span>$resource<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> $<span class="token function">resource<span class="token punctuation">(</span></span><span class="token string">'/api/movies/:id'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token string">'@_id'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">{</span>
       update<span class="token punctuation">:</span> <span class="token punctuation">{</span>
@@ -1057,7 +1057,7 @@ angular
 <span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><footer><!--  Like learning from posts like this? <a onclick="$(&#39;#postSubscribeEmail&#39;).focus()"><b>Subscribe for more!</b></a>  --></footer></pre><p>We could dependency inject this simple Factory called <code>Movies</code> into our Controllers to obtain the data we need.</p>
 <!--code lang=javascript linenums=true-->
 
-<pre class="line-numbers  language-javascript"><code class="  language-javascript" data-language="javascript"><span class="token keyword">function</span> MovieCtrl <span class="token punctuation">(</span>MovieService<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers  language-javascript"><code class="language-javascript" data-language="javascript"><span class="token keyword">function</span> MovieCtrl <span class="token punctuation">(</span>MovieService<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> movies <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MovieService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// have something update a movie
 </span>  movies<span class="token punctuation">.</span><span class="token function">update<span class="token punctuation">(</span></span><span class="token comment" spellcheck="true">/* some data */</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
