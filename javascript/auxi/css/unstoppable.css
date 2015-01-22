@@ -8,6 +8,7 @@ a:visited{color:#3498db;/* Peter River blue */ }
 .body{background-color:#f8f8f8;padding-bottom:2rem;}
 .bbl_list{color:#222222;font-family:Share, Share-Regular, 'Archer A','Archer B',georgia,serif;font-weight:500;font-style:normal;}
 .bbl_category_title{font-family:Share-Bold, 'Archer A','Archer B',georgia,serif;font-weight:800;font-style:normal;font-size:1.6154rem;color:#b93c2f;padding:2rem 0 1rem 0;}
+h3.bbl_category_title { font-size:1.3rem;}
 .bbl_title{font-size:1.6154rem;padding:1rem 0 .5rem 0; font-family: Share-Bold; margin-top: 12pt; line-height: 1.6rem;}
 .email-form-box{max-width:43rem;margin:0 auto;background:#f8f8f8;padding:1rem;border:1px solid #c7c8c9;}
 .email-form-box h2{padding:0;font-size:1rem;color:#3a99c7;}
