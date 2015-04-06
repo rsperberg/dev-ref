@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!-- saved from url=(0140)http://facebook.github.io/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html?utm_source=javascriptweekly&utm_medium=email -->
+<html class="wf-proximanova-i3-active wf-proximanova-i4-active wf-proximanova-i7-active wf-proximanova-n3-active wf-proximanova-n4-active wf-proximanova-n7-active wf-sourcecodepro-n4-active wf-sourcecodepro-n7-active wf-active">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>Building The Facebook News Feed With Relay | React</title>
+  <meta name="viewport" content="width=device-width"/>
+  <meta property="og:title" content="Building The Facebook News Feed With Relay | React">/
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="http://facebook.github.io/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html"/>
+  <meta property="og:image" content="http://facebook.github.io/react/img/logo_og.png"/>
+  <meta property="og:description" content="A JavaScript library for building user interfaces"/>
+  <meta property="fb:app_id" content="623268441017527"/>
+
+  <link rel="shortcut icon" href="http://facebook.github.io/react/favicon.ico"/>
+  <link rel="alternate" type="application/rss+xml" title="React" href="http://facebook.github.io/react/feed.xml"/>
+
+  <link rel="stylesheet" href="./auxi/css/react-syntax-cobalt.css"/>
+  <link rel="stylesheet" href="./auxi//css/codemirror.css"/>
+  <link rel="stylesheet" href="./auxi//css/react.css"/>
+
+  <script id="facebook-jssdk" src="./building-Facebook-newsfeed-w-relay_files/all.js"></script>
+  <script id="twitter-wjs" src="./building-Facebook-newsfeed-w-relay_files/widgets.js"></script>
+  <!--  script async="" src="./building-Facebook-newsfeed-w-relay_files/analytics.js"></script  -->
+  <script type="text/javascript" src="./building-Facebook-newsfeed-w-relay_files/vqa1hcx.js"></script>
+  <style type="text/css">.tk-proxima-nova{font-family:"proxima-nova",sans-serif;}.tk-source-code-pro{font-family:"source-code-pro",sans-serif;}</style>
+  <link rel="stylesheet" href="http://use.typekit.net/c/7ca479/1w;proxima-nova,2,b5v:R:i3,b5x:R:i4,b61:R:i7,b5t:R:n3,b5w:R:n4,bBh:R:n7;source-code-pro,2,Y1M:R:n4,Y1P:R:n7/d?3bb2a6e53c9684ffdc9a99f61d5b2a62d862a545ba27340c777c33e490306f6a3d03760008c210490ab5bc19aec9467514fa83a07c942f5f838fc92dcf0cbd0e58e05382dc0ee097a2e6aec8738c92a5d47756e29900953100f719c75b9f3b21cdc630be2b678fc0fd4b5c7c3bf14194525db4e8a536a4492fa5341c830ccf377e15395acdf3e677fa272e405c9d840a6c5e95406398b914e26ac4c62c908bb1331b31ab532a249d69450bf842c76ce7845ec6fe7076f67b42d1b86581e107b8b2914b080e94d4d18f14effb1f839b47f4c3ccd30e883b5442226cee707e84d8d2268f0b787d6d4c92ffb124d7c48c4692288c71e9666a2523436661c923377a94e0257269538f31ec2ed32bb8f35199748156f60a2104346cb738efa5eb2e718148030c631da41e2edecd1590b1c5e19face1"/>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <!--[if lte IE 8]>
+  <script type="text/javascript" src="/react/js/html5shiv.min.js"></script>
+  <script type="text/javascript" src="/react/js/es5-shim.min.js"></script>
+  <script type="text/javascript" src="/react/js/es5-sham.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="./building-Facebook-newsfeed-w-relay_files/codemirror.js"></script>
+  <script type="text/javascript" src="./building-Facebook-newsfeed-w-relay_files/javascript.js"></script>
+  <script type="text/javascript" src="./building-Facebook-newsfeed-w-relay_files/react.js"></script>
+  <script type="text/javascript" src="./building-Facebook-newsfeed-w-relay_files/JSXTransformer.js"></script>
+  <script type="text/javascript" src="./building-Facebook-newsfeed-w-relay_files/live_editor.js"></script>
+  <script type="text/javascript" src="./building-Facebook-newsfeed-w-relay_files/showdown.js"></script>
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style>
+<script type="text/javascript" src="chrome-extension://aadgmnobpdmgmigaicncghmmoeflnamj/ng-inspector.js"></script>
+</head>
+<body data-twttr-rendered="true">
+
+  <div class="container">
+
+    <div class="nav-main">
+      <div class="wrap">
+        <a class="nav-home" href="http://facebook.github.io/react/index.html">
+          <img class="nav-logo" src="./auxi/pix/logo.svg" width="36" height="36" />
+          React
+        </a>
+        <ul class="nav-site nav-site-internal">
+          <li><a href="http://facebook.github.io/react/docs/getting-started.html">Docs</a></li>
+          <li><a href="http://facebook.github.io/react/support.html">Support</a></li>
+          <li><a href="http://facebook.github.io/react/downloads.html">Download</a></li>
+          <li><a href="http://facebook.github.io/react/blog/" class="active">Blog</a></li>
+        </ul>
+
+        <ul class="nav-site nav-site-external">
+          <li><a href="https://github.com/facebook/react">GitHub</a>
+          </li><li><a href="http://facebook.github.io/react-native/">React Native</a>
+        </li></ul>
+      </div>
+    </div>
+
+
+
+    <section class="content wrap blogContent">
+  <div class="nav-docs nav-blog">
+  <div class="nav-docs-section">
+    <h3>Recent posts</h3>
+    <ul>
+
+        <li><a href="http://facebook.github.io/react/blog/2015/03/30/community-roundup-26.html">Community Round-up #26</a></li>
+
+        <li><a href="http://facebook.github.io/react/blog/2015/03/26/introducing-react-native.html">Introducing React Native</a></li>
+
+        <li><a href="http://facebook.github.io/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html" class="active">Building The Facebook News Feed With Relay</a></li>
+
+        <li><a href="http://facebook.github.io/react/blog/2015/03/16/react-v0.13.1.html">React v0.13.1</a></li>
+
+        <li><a href="http://facebook.github.io/react/blog/2015/03/10/react-v0.13.html">React v0.13</a></li>
+
+        <li><a href="http://facebook.github.io/react/blog/2015/03/04/community-roundup-25.html">Community Round-up #25</a></li>
+
+        <li><a href="http://facebook.github.io/react/blog/2015/03/03/react-v0.13-rc2.html">React v0.13 RC2</a></li>
+
+        <li><a href="http://facebook.github.io/react/blog/2015/02/24/react-v0.13-rc1.html">React v0.13 RC</a></li>
+
+        <li><a href="http://facebook.github.io/react/blog/2015/02/24/streamlining-react-elements.html">Streamlining React Elements</a></li>
+
+        <li><a href="http://facebook.github.io/react/blog/2015/02/20/introducing-relay-and-graphql.html">Introducing Relay and GraphQL</a></li>
+
+      <li><a href="http://facebook.github.io/react/blog/all.html">All posts ...</a></li>
+    </ul>
+  </div>
+</div>
+
+  <div class="inner-content">
+    <h1>Building The Facebook News Feed With Relay</h1>
+    <p class="meta">March 19, 2015 by Joseph Savona</p>
+
+    <hr />
+
+    <div class="post">
+      <p>At React.js Conf in January we gave a preview of Relay, a new framework for building data-driven applications in React. In this post we'll describe the process of creating a Relay application. This post assumes some familiarity with the concepts of Relay and GraphQL, so if you haven't already we recommend reading <a href="http://facebook.github.io/react/blog/2015/02/20/introducing-relay-and-graphql.html">our introductory blog post</a> or watching <a href="https://www.youtube.com/watch?v=9sc8Pyc51uU">the conference talk</a>.</p>
+
+<p>We're working hard to prepare GraphQL and Relay for public release. In the meantime, we'll continue to provide information about what you can expect.</p>
+
+<p><br /></p>
+<h2><a class="anchor" name="the-relay-architecture"></a>The Relay Architecture <a class="hash-link" href="http://facebook.github.io/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html?utm_source=javascriptweekly&utm_medium=email#the-relay-architecture">#</a></h2>
+<p>The diagram below shows the main parts of the Relay architecture on the client and the server:</p>
+
+<p><img src="./auxi/pix/relay-architecture.png" alt="Relay Architecture" width="650"/></p>
+
+<p>The main pieces are as follows:</p>
+
+<ul>
+<li>Relay Components: React components annotated with declarative data descriptions.</li>
+<li>Actions: Descriptions of how data should change in response to user actions.</li>
+<li>Relay Store: A client-side data store that is fully managed by the framework.</li>
+<li>Server: An HTTP server with GraphQL endpoints (one for reads, one for writes) that respond to GraphQL queries.</li>
+</ul>
+
+<p>This post will focus on <strong>Relay components</strong> that describe encapsulated units of UI and their data dependencies. These components form the majority of a Relay application.</p>
+
+<p><br /></p>
+<h2><a class="anchor" name="a-relay-application"></a>A Relay Application <a class="hash-link" href="http://facebook.github.io/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html?utm_source=javascriptweekly&utm_medium=email#a-relay-application">#</a></h2>
+<p>To see how components work and can be composed, let's implement a basic version of the Facebook News Feed in Relay. Our application will have two components: a <code>&lt;NewsFeed&gt;</code> that renders a list of <code>&lt;Story&gt;</code> items. We'll introduce the plain React version of each component first and then convert it to a Relay component. The goal is something like the following:</p>
+
+<p><img src="./auxi/pix/sample-newsfeed.png" alt="Sample News Feed" width="360"/></p>
+
+<p><br /></p>
+<h2><a class="anchor" name="the-ltstorygt-begins"></a>The <code>&lt;Story&gt;</code> Begins <a class="hash-link" href="http://facebook.github.io/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html?utm_source=javascriptweekly&utm_medium=email#the-ltstorygt-begins">#</a></h2>
+<p>The first step is a React <code>&lt;Story&gt;</code> component that accepts a <code>story</code> prop with the story's text and author information. Note that all examples uses ES6 syntax and elide presentation details to focus on the pattern of data access.</p>
+
+<!--  code here ============================================================== -->
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Story.react.js</span>
+<span class="kr">class</span> <span class="nc">Story</span> <span class="kr">extends</span> <span class="nc">React</span><span class="p">.</span><span class="nc">Component</span> <span class="cb">{</span>
+  <span class="nf">render</span><span class="p">()</span> <span class="cb">{</span>
+    <span class="kd">var</span> <span class="nv">story</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="py">story</span><span class="o">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="ab">&lt;</span><span class="nt">View</span><span class="ab">&gt;</span>
+        <span class="ab">&lt;</span><span class="nt">Image</span> <span class="na">uri</span><span class="o">=</span><span class="cb">{</span><span class="nv">story</span><span class="p">.</span><span class="py">author</span><span class="p">.</span><span class="py">profile_picture</span><span class="p">.</span><span class="py">uri</span><span class="cb">}</span> <span class="ab">/&gt;</span>
+        <span class="ab">&lt;</span><span class="nt">Text</span><span class="ab">&gt;</span><span class="cb">{</span><span class="nv">story</span><span class="p">.</span><span class="py">author</span><span class="p">.</span><span class="py">name</span><span class="cb">}</span><span class="ab">&lt;/</span><span class="nt">Text</span><span class="ab">&gt;</span>
+        <span class="ab">&lt;</span><span class="nt">Text</span><span class="ab">&gt;</span><span class="cb">{</span><span class="nv">story</span><span class="p">.</span><span class="py">text</span><span class="cb">}</span><span class="ab">&lt;/</span><span class="nt">Text</span><span class="ab">&gt;</span>
+      <span class="ab">&lt;/</span><span class="nt">View</span><span class="ab">&gt;</span>
+    <span class="p">)<span class="o">;</span></span>
+  <span class="cb">}</span>
+<span class="cb">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Story</span><span class="o">;</span>
+</code></pre></div>
+
+<p><br /></p>
+<h2><a class="anchor" name="whats-the-ltstorygt"></a>What's the <code>&lt;Story&gt;</code>? <a class="hash-link" href="http://facebook.github.io/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html?utm_source=javascriptweekly&utm_medium=email#whats-the-ltstorygt">#</a></h2>
+<p>Relay automates the process of fetching data for components by wrapping existing React components in Relay containers (themselves React components):</p>
+
+<!--  code here ============================================================== -->
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Story.react.js</span>
+<span class="kr">class</span> <span class="nc">Story</span> <span class="kr">extends</span> <span class="nc">React</span><span class="p">.</span><span class="nc">Component</span> <span class="cb">{</span> <span class="p">...</span> <span class="cb">}</span>
+
+<span class="kd">module</span><span class="p">.</span><span class="kd">exports</span> <span class="o">=</span> <span class="nc">Relay</span><span class="p">.</span><span class="nf">createContainer</span><span class="p">(</span><span class="nc">Story</span><span class="o">,</span> <span class="cb">{</span>
+  <span class="py">queries</span><span class="o">:</span> <span class="cb">{</span>
+    <span class="py">story</span><span class="o">:</span> <span class="cm">/* TODO */</span>
+  <span class="cb">}</span>
+<span class="cb">}</span>><span class="p">)<span class="o">;</span></span>
+</code></pre></div>
+
+<p>Before adding the GraphQL query, let's look at the component hierarchy this creates:</p>
+
+<p><img src="./auxi/pix/relay-containers.png" width="397" alt="React Container Data Flow"/></p>
+
+<p>Most props will be passed through from the container to the original component. However, Relay will return the query results for a prop whenever a query is defined. In this case we'll add a GraphQL query for <code>story</code>:</p>
+
+<!--  code here ============================================================== -->
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Story.react.js</span>
+<span class="kr">class</span> <span class="nc">Story</span> <span class="kr">extends</span> <span class="nc">React</span><span class="p">.</span><span class="nc">Component</span> <span class="cb">{</span> <span class="p">...</span> <span class="cb">}</span>
+
+<span class="kd">module</span><span class="p">.</span><span class="kd">exports</span> <span class="o">=</span> <span class="nc">Relay</span><span class="p">.</span><span class="nf">createContainer</span><span class="p">(</span><span class="nc">Story</span><span class="o">,</span> <span class="cb">{</span>
+  <span class="py">queries</span><span class="o">:</span> <span class="cb">{</span>
+    <span class="py">story</span><span class="o">:</span> <span class="nx">graphql</span><span class="p">`</span>
+      <span class="nc">Story</span> <span class="cb">{</span>
+        <span class="py">author</span> <span class="cb">{</span>
+          <span class="py">name</span><span class="o">,</span>
+          <span class="py">profile_picture</span> <span class="cb">{</span>
+            <span class="py">uri</span>
+          <span class="cb">}</span>
+        <span class="cb">}</span><span class="o">,</span>
+        <span class="py">text</span>
+      <span class="cb">}</span>
+    <span class="p">`</span>
+  <span class="cb">}</span>
+<span class="cb">}</span><span class="p">)<span class="o">;</span></span>
+</code></pre></div>
+
+<p>Queries use ES6 template literals tagged with the <code>graphql</code> function. Similar to how JSX transpiles to plain JavaScript objects and function calls, these template literals transpile to plain objects that describe queries. Note that the query's structure closely matches the object structure that we expected in <code>&lt;Story&gt;</code>'s render function.</p>
+
+<p><br /></p>
+<h2><a class="anchor" name="ltstorygts-on-demand"></a><code>&lt;Story&gt;</code>s on Demand <a class="hash-link" href="http://facebook.github.io/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html?utm_source=javascriptweekly&utm_medium=email#ltstorygts-on-demand">#</a></h2>
+<p>We can render a Relay component by providing Relay with the component (<code>&lt;Story&gt;</code>) and the ID of the data (a story ID). Given this information, Relay will first fetch the results of the query and then <code>render()</code> the component. The value of <code>props.story</code> will be a plain JavaScript object such as the following:</p>
+
+<!--  code here ============================================================== -->
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cb">{</span>
+  <span class="py">author</span><span class="o">:</span> <span class="cb">{</span>
+    <span class="py">name</span><span class="o">:</span> <span class="s2">"Greg"</span><span class="o">,</span>
+    <span class="py">profile_picture</span><span class="o">:</span> <span class="cb">{</span>
+      <span class="py">uri</span><span class="o">:</span> <span class="s2">"https://…"</span>
+    <span class="cb">}</span>
+  <span class="cb">}</span><span class="o">,</span>
+  <span class="py">text</span><span class="o">:</span> <span class="s2">"The first Relay blog post is up…"</span>
+<span class="cb">}</span>
+</code></pre></div>
+
+<p>Relay guarantees that all data required to render a component will be available before it is rendered. This means that <code>&lt;Story&gt;</code> does not need to handle a loading state; the <code>story</code> is <em>guaranteed</em> to be available before <code>render()</code> is called. We have found that this invariant simplifies our application code <em>and</em> improves the user experience. Of course, Relay also has options to delay the fetching of some parts of our queries.</p>
+
+<p>The diagram below shows how Relay containers make data available to our React components:</p>
+
+<p><img src="./auxi/pix/relay-containers-data-flow.png" width="650" alt="Relay Container Data Flow"/></p>
+
+<p><br /></p>
+<h2><a class="anchor" name="ltnewsfeedgt-worthy"></a><code>&lt;NewsFeed&gt;</code> Worthy <a class="hash-link" href="http://facebook.github.io/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html?utm_source=javascriptweekly&utm_medium=email#ltnewsfeedgt-worthy">#</a></h2>
+<p>Now that the <code class="inline"><span class="ab">&lt;</span><span class="nt">Story</span><span class="ab">&gt;</code> is over we can continue with the <code>&lt;NewsFeed&gt;</code> component. Again, we'll start with a React version:</p>
+
+<!--  code here ============================================================== -->
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// NewsFeed.react.js</span>
+<span class="kr">class</span> <span class="nc">NewsFeed</span> <span class="kr">extends</span> <span class="nc">React</span><span class="p">.</span><span class="nc">Component</span> <span class="cb">{</span>
+  <span class="nf">render</span><span class="p">()</span> <span class="cb">{</span>
+    <span class="kd">var</span> <span class="nv">stories</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="py">props</span><span class="p">.</span><span class="py">viewer</span><span class="p">.</span><span class="py">stories</span><span class="o">;</span> <span class="c1">// `viewer` is the active user</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="ab">&lt;</span><span class="nt">View</span><span class="ab">&gt;</span>
+        <span class="cb">{</span><span class="nv">stories</span><span class="p">.</span><span class="kd">map</span><span class="p">(</span><span class="py">story</span> <span class="o">=&gt;</span> <span class="ab">&lt;</span><span class="nt">Story</span> <span class="na">story</span><span class="o">=</span><span class="cb">{</span><span class="py">story</span><span class="cb">}</span> <span class="ab">/&gt;</span><span class="p">)</span><span class="cb">}</span>
+        <span class="ab">&lt;</span><span class="nt">Button</span> <span class="na">onClick</span><span class="o">=</span><span class="cb">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nf">loadMore</span><span class="p">()</span><span class="cb">}</span><span class="ab">&gt;</span><span class="tx">Load More</span><span class="ab">&lt;/</span><span class="nt">Button</span><span class="ab">&gt;</span>
+      <span class="ab">&lt;/</span><span class="nt">View</span><span class="ab">&gt;</span>
+    <span class="p">)<span class="o">;</span></span>
+  <span class="cb">}</span>
+
+  <span class="nf">loadMore</span><span class="p">()</span> <span class="cb">{</span>
+    <span class="c1">// TODO: fetch more stories</span>
+  <span class="cb">}</span>
+<span class="cb">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">NewsFeed</span><span class="o">;</span>
+</code></pre></div>
+
+<p><br /></p>
+<h2><a class="anchor" name="all-the-news-fit-to-be-relayed"></a>All the News Fit to be Relayed <a class="hash-link" href="http://facebook.github.io/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html?utm_source=javascriptweekly&utm_medium=email#all-the-news-fit-to-be-relayed">#</a></h2>
+<p><code>&lt;NewsFeed&gt;</code> has two new requirements: it composes <code>&lt;Story&gt;</code> and requests more data at runtime.</p>
+
+<p>Just as React views can be nested, Relay queries can compose queries from child components. Composition in GraphQL uses ES6 template literal substitution: <code>${Component.getQuery('prop')}</code>. Pagination can be accomplished with a query parameter, specified with <code>&lt;param&gt;</code> (as in <code>stories(first: &lt;count&gt;)</code>):</p>
+
+<!--  code here ============================================================== -->
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// NewsFeed.react.js</span>
+<span class="kr">class</span> <span class="nc">NewsFeed</span> <span class="kr">extends</span> <span class="nc">React</span><span class="p">.</span><span class="nc">Component</span> <span class="cb">{</span> <span class="p">...</span> <span class="cb">}</span>
+
+<span class="kd">module</span><span class="p">.</span><span class="kd">exports</span> <span class="o">=</span> <span class="nc">Relay</span><span class="p">.</span><span class="nf">createContainer</span><span class="p">(</span><span class="nc">NewsFeed</span><span class="o">,</span> <span class="cb">{</span>
+  <span class="py">queryParams</span><span class="o">:</span> <span class="cb">{</span>
+    <span class="py">count</span><span class="o">:</span> <span class="mi">3</span>                             <span class="cm">/* default to 3 stories */</span>
+  <span class="cb">}</span><span class="o">,</span>
+  <span class="py">queries</span><span class="o">:</span> <span class="cb">{</span>
+    <span class="py">viewer</span><span class="o">:</span> <span class="nx">graphql</span><span class="err">`</span>
+      <span class="nc">Viewer</span> <span class="cb">{</span>
+        <span class="py">stories</span><span class="p">(</span><span class="py">first</span><span class="o">:</span> <span class="ab">&lt;</span><span class="nt">count</span><span class="ab">&gt;</span><span class="p">)</span> <span class="cb">{</span>        <span class="cm">/* fetch viewer's stories */</span>
+          <span class="py">edges</span> <span class="cb">{</span>                        <span class="cm">/* traverse the graph */</span>
+            <span class="py">node</span> <span class="cb">{</span>
+              <span class="k">$</span><span class="cb">{</span><span class="nc">Story</span><span class="p">.</span><span class="nf">getQuery</span><span class="p">(</span><span class="s1">'story'</span><span class="p">)}</span> <span class="cm">/* compose child query */</span>
+            <span class="cb">}</span>
+          <span class="cb">}</span>
+        <span class="cb">}</span>
+      <span class="cb">}</span>
+    <span class="err">`</span>
+  <span class="cb">}</span>
+<span class="cb">}</span><span class="p">)<span class="o">;</span></span>
+</code></pre></div>
+
+<p>Whenever <code>&lt;NewsFeed&gt;</code> is rendered, Relay will recursively expand all the composed queries and fetch them in a single trip to the server. In this case, the <code>text</code> and <code>author</code> data will be fetched for each of the 3 story nodes.</p>
+
+<p>Query parameters are available to components as <code>props.queryParams</code> and can be modified with <code>props.setQueryParams(nextParams)</code>. We can use these to implement pagination:</p>
+
+<!--  code here ============================================================== -->
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// NewsFeed.react.js</span>
+<span class="kr">class</span> <span class="nc">NewsFeed</span> <span class="kr">extends</span> <span class="nc">React</span><span class="p">.</span><span class="nc">Component</span> <span class="cb">{</span>
+  <span class="nf">render</span><span class="p">()</span> <span class="cb">{</span> <span class="p">...</span> <span class="cb">}</span>
+
+  <span class="nf">loadMore</span><span class="p">()</span> <span class="cb">{</span>
+    <span class="c1">// read current params</span>
+    <span class="kd">var</span> <span class="nv">count</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="py">props</span><span class="p">.</span><span class="py">queryParams</span><span class="p">.</span><span class="py">count</span><span class="p"><span class="o">;</span></span>
+    <span class="c1">// update params</span>
+    <span class="k">this</span><span class="p">.</span><span class="py">props</span><span class="p">.</span><span class="nf">setQueryParams</span><span class="p">(</span><span class="cb">{</span>
+      <span class="py">count</span><span class="o">:</span> <span class="nv">count</span> <span class="o">+</span> <span class="mi">5</span>
+    <span class="cb">}</span><span class="p">)<span class="o">;</span></span>
+  <span class="cb">}</span>
+<span class="cb">}</span>
+</code></pre></div>
+
+<p>Now when <code>loadMore()</code> is called, Relay will send a GraphQL request for the additional five stories. When these stories are fetched, the component will re-render with the new stories available in <code>props.viewer.stories</code> and the updated count reflected in <code>props.queryParams.count</code>.</p>
+
+<p><br /></p>
+<h2><a class="anchor" name="in-conclusion"></a>In Conclusion <a class="hash-link" href="http://facebook.github.io/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html?utm_source=javascriptweekly&utm_medium=email#in-conclusion">#</a></h2>
+<p>These two components form a solid core for our application. With the use of Relay containers and GraphQL queries, we've enabled the following benefits:</p>
+
+<ul>
+<li>Automatic and efficient pre-fetching of data for an entire view hierarchy in a single network request.</li>
+<li>Trivial pagination with automatic optimizations to fetch only the additional items.</li>
+<li>View composition and reusability, so that <code>&lt;Story&gt;</code> can be used on its own or within <code>&lt;NewsFeed&gt;</code>, without any changes to either component.</li>
+<li>Automatic subscriptions, so that components will re-render if their data changes. Unaffected components will not re-render unnecessarily.</li>
+<li>Exactly <em>zero</em> lines of imperative data fetching logic. Relay takes full advantage of React's declarative component model.</li>
+</ul>
+
+<p>But Relay has many more tricks up its sleeve. For example, it's built from the start to handle reads and writes, allowing for features like optimistic client updates with transactional rollback. Relay can also defer fetching select parts of queries, and it uses a local data store to avoid fetching the same data twice. These are all powerful features that we hope to explore in future posts.</p>
+
+    </div>
+
+    <div class="fb-like fb_iframe_widget" data-send="true" data-width="650" data-show-faces="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=623268441017527&amp;container_width=650&amp;href=http%3A%2F%2Ffacebook.github.io%2Freact%2Fblog%2F2015%2F03%2F19%2Fbuilding-the-facebook-news-feed-with-relay.html%3Futm_source%3Djavascriptweekly%26utm_medium%3Demail&amp;locale=en_US&amp;sdk=joey&amp;send=true&amp;show_faces=false&amp;width=650"><span style="vertical-align: bottom; width: 650px; height: 20px;"><iframe name="f3caf67dd8" width="650px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./building-Facebook-newsfeed-w-relay_files/like.html" style="border: none; visibility: visible; width: 650px; height: 20px;" class=""></iframe></span></div>
+  </div>
+</section>
+
+
+    <footer class="wrap">
+      <div class="left">
+        A Facebook &amp; Instagram collaboration.<br />
+        <a href="http://facebook.github.io/react/acknowledgements.html">Acknowledgements</a>
+      </div>
+      <div class="right">
+        © 2013–2015 Facebook Inc.<br />
+        Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      </div>
+    </footer>
+  </div>
+  <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./building-Facebook-newsfeed-w-relay_files/6Dg4oLkBbYq.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./building-Facebook-newsfeed-w-relay_files/6Dg4oLkBbYq(1).html" style="border: none;"></iframe></div></div></div>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-41298772-1', 'facebook.github.io');
+    ga('send', 'pageview');
+
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=623268441017527";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+
+<iframe id="rdbIndicator" width="100%" height="270" border="0" src="./building-Facebook-newsfeed-w-relay_files/indicator.html" style="display: none; border: 0; position: fixed; left: 0; top: 0; z-index: 2147483647"></iframe></body></html>

@@ -1,0 +1,44 @@
+/*
+
+    Name:       cobalt-st
+    Author:     derived from Sublime Text cobalt theme
+
+    CodeMirror template constructed by Roger Sperberg
+
+*/
+
+.cm-s-cobalt-st.CodeMirror { background: #002240; color: #f8f8f8; }  /*  Very dark blue bg  */
+.cm-s-cobalt-st div.CodeMirror-selected { background: #b36539 !important; }  /*  moderate orange (looks brown)  */
+.cm-s-cobalt-st.CodeMirror ::selection { background: rgba(179, 101, 57, .99); }  /*  moderate orange (looks brown)  */
+.cm-s-cobalt-st.CodeMirror ::-moz-selection { background: rgba(179, 101, 57, .99); }  /*  moderate orange (looks brown)  */
+.cm-s-cobalt-st .CodeMirror-gutters { background: #002240; border-right: 1px solid #aaa; }  /*  Very dark blue bg  */
+.cm-s-cobalt-st .CodeMirror-guttermarker { color: #ffee80; }  /*  very light yellow  */
+.cm-s-cobalt-st .CodeMirror-guttermarker-subtle { color: #d0d0d0; }  /*  light gray  */
+.cm-s-cobalt-st .CodeMirror-linenumber { color: #d0d0d0; }  /*  light gray  */
+.cm-s-cobalt-st .CodeMirror-cursor { border-left: 1px solid white !important; }
+
+.cm-s-cobalt-st span.cm-comment     { color: #0088FF; font-style: italic; }  /*  Pure (or mostly pure) blue  */
+.cm-s-cobalt-st span.cm-def         { color: #ff1c1c; font-weight:bold; }
+.cm-s-cobalt-st span.cm-keyword     { color: #FF9D00; }  /*  Pure (or mostly pure) orange  */
+.cm-s-cobalt-st span.cm-builtin     { color: #ff9e59; }  /*  Light orange  */
+.cm-s-cobalt-st span.cm-variable    { color: #CCCCCC; }  /*  light gray  */
+.cm-s-cobalt-st span.cm-string      { color: #3AD900; }  /*  Pure (or mostly pure) green  */
+.cm-s-cobalt-st span.cm-number      { color: #ff80e1; }  /*  Very light magenta  */
+.cm-s-cobalt-st span.cm-atom        { color: #845dc4; }  /*  moderate violet  */
+
+.cm-s-cobalt-st span.cm-variable-2  { color: #9effff; }  /*  Pale cyan  */
+.cm-s-cobalt-st span.cm-variable-3  { color: #DDD; }  /*    */
+.cm-s-cobalt-st span.cm-property    {}
+.cm-s-cobalt-st span.cm-operator    { color: #E1EFFF;}  /*  punctuation  Very pale blue   */
+
+.cm-s-cobalt-st span.cm-meta        { color: #FF9D00; }  /*  Pure (or mostly pure) orange  */
+.cm-s-cobalt-st span.cm-qualifier   { color: #FFF700; }  /*    */
+.cm-s-cobalt-st span.cm-bracket     { color: #A99C6F; }  /*  khaki (mostly desaturated dark yellow)  */
+.cm-s-cobalt-st span.cm-tag         { color: #FFBD40; }  /*    */
+.cm-s-cobalt-st span.cm-attribute   { color: #FFF700; }  /*    */
+.cm-s-cobalt-st span.cm-error       { color: #F8F8F8; background: #800F00; }  /*  dark red background  */
+.cm-s-cobalt-st .CodeMirror-selected { background: #333d53 !important; }  /*    */
+.cm-s-cobalt-st span.cm-compilation { background: rgba(255, 255, 255, 0.12); }  /*    */
+.cm-s-cobalt-st .CodeMirror-activeline-background {background: #253540 !important;}  /*    */
+
+.cm-s-cobalt-st span.cm-angle     { color: #A99C6F; }  /*  khaki (mostly desaturated dark yellow)  */
